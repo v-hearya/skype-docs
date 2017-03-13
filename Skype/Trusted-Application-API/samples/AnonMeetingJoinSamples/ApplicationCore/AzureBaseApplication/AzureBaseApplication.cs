@@ -50,19 +50,8 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.ApplicationCore
                 platformSettings = new ClientPlatformSettings(Guid.Parse(aadClientId), appTokenCertThumbprint);
             }
             else if (!string.IsNullOrEmpty(aadClientSecret))
-            {                
-                //TAP partners use below code path:
-                platformSettings = new ClientPlatformSettings
-                   (
-                    null,
-                     Guid.Parse(aadClientId),
-                     null,
-                     aadClientSecret,
-                     true
-                   );
-
-                //public developers use below code path
-                //platformSettings = new ClientPlatformSettings(aadClientSecret, Guid.Parse(aadClientId));
+            {   
+                platformSettings = new ClientPlatformSettings(aadClientSecret, Guid.Parse(aadClientId));
             }
             else
             {
