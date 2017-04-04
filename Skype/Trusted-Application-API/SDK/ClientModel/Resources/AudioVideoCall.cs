@@ -95,16 +95,58 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
         #region Public methods
 
         /// <summary>
-        /// transfers the <see cref="AudioVideoCall"/>> as an asynchronous operation.
+        /// Transfers the audio video call to a user
         /// </summary>
-        /// <param name="transferTarget">The transfer target.</param>
-        /// <param name="replacesCallContext">The replaces call context.</param>
-        /// <param name="loggingContext">The logging context.</param>
-        /// <returns>Task&lt;ITransfer&gt;.</returns>
+        /// <param name="transferTarget">SIP uri of the user where the call needs to be transferred to</param>
+        /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        public Task<ITransfer> TransferAsync(SipUri transferTarget, LoggingContext loggingContext = null)
+        {
+            if(transferTarget == null)
+            {
+                throw new ArgumentNullException(nameof(transferTarget));
+            }
+
+            #pragma warning disable CS0618 // Type or member is obsolete
+            return TransferAsync(transferTarget, null, loggingContext);
+            #pragma warning restore CS0618 // Type or member is obsolete
+        }
+
+        /// <summary>
+        /// Transfers the audio video call by replacing an existing audio video call
+        /// </summary>
+        /// <param name="replacesCallContext"><see cref="CallContext"/> of the <see cref="IAudioVideoCall"/> which you are trying to transfer to</param>
+        /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        public Task<ITransfer> TransferAsync(string replacesCallContext, LoggingContext loggingContext = null)
+        {
+            if (replacesCallContext == null)
+            {
+                throw new ArgumentNullException(nameof(replacesCallContext));
+            }
+
+            #pragma warning disable CS0618 // Type or member is obsolete
+            return TransferAsync((SipUri)null, replacesCallContext, loggingContext);
+            #pragma warning restore CS0618 // Type or member is obsolete
+        }
+
+        /// <summary>
+        /// Transfers the audio video call.
+        /// </summary>
+        /// <param name="transferTarget">SIP uri of the user where the call needs to be transferred to</param>
+        /// <param name="replacesCallContext">
+        /// <see cref="P:Microsoft.SfB.PlatformService.SDK.ClientModel.IAudioVideoCall.CallContext" /> of the
+        /// <see cref="IAudioVideoCall" /> which you are trying to replace
+        /// </param>
+        /// <param name="loggingContext"><see cref="LoggingContext" /> to be used to log all related events</param>
+        /// <returns><see cref="ITransfer" /> which can be used to track the transfer operation</returns>
+        /// <remarks>only one of <paramref name="transferTarget" /> or <paramref name="replacesCallContext" /> is supported at a time</remarks>
         /// <exception cref="CapabilityNotAvailableException">Link to start transfer of AudioVideo is not available.</exception>
         /// <exception cref="RemotePlatformServiceException">Timeout to get incoming transfer started event from platformservice!</exception>
+        [Obsolete("Please use any of the other variations")]
         public async Task<ITransfer> TransferAsync(SipUri transferTarget, string replacesCallContext, LoggingContext loggingContext = null)
         {
+            // TODO : Make this method private and non obsolete when releasing 1.0.0
             string href = PlatformResource?.StartTransferLink?.Href;
             if (string.IsNullOrWhiteSpace(href))
             {
@@ -117,7 +159,7 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
             var tcs = new TaskCompletionSource<Transfer>();
 
             this.HandleNewTransferOperationKickedOff(operationId, tcs);
-            var input = new TransferOperationInput() { To = transferTarget.ToString(), ReplacesCallContext = replacesCallContext, OperationId = operationId };
+            var input = new TransferOperationInput() { To = transferTarget?.ToString(), ReplacesCallContext = replacesCallContext, OperationId = operationId };
             await PostRelatedPlatformResourceAsync(transferLink, input, new ResourceJsonMediaTypeFormatter(), loggingContext).ConfigureAwait(false);
 
             Transfer result = null;
@@ -133,7 +175,7 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
             return result;
         }
 
-        [Obsolete("Please use the other variation")]
+        [Obsolete("Please use any of the other variations")]
         public Task<ITransfer> TransferAsync(string transferTarget, string replacesCallContext, LoggingContext loggingContext = null)
         {
             return TransferAsync(new SipUri(transferTarget), replacesCallContext, loggingContext);
