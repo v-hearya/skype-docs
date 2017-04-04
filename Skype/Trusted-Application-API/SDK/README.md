@@ -4,6 +4,11 @@ Thank you for your interest in Skype for Business developer documentation!
 
 ## Release Notes
 
+### 1.0.0-prerelease8 (in progress; not yet released)
+
+Key changes:
+ 1. IAudioVideoCall.TransferAsync() has been deprecated and segregated into two methods with same name to clarify their use cases
+
 ### 1.0.0-prerelease7
 
 Deprecated interfaces:

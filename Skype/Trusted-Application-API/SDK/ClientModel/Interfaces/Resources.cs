@@ -361,21 +361,40 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
         /// <summary>
         /// Transfers the audio video call.
         /// </summary>
-        /// <param name="transferTarget">The transfer target.</param>
-        /// <param name="replacesCallContext">The replaces call context.</param>
+        /// <param name="transferTarget">SIP uri of the user where the call needs to be transferred to</param>
+        /// <param name="replacesCallContext"><see cref="CallContext"/> of the <see cref="IAudioVideoCall"/> which you are trying to transfer to</param>
         /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
-        /// <returns>Task&lt;ITransfer&gt;.</returns>
-        [Obsolete("Please use the other variation")]
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        /// <remarks>only one of <paramref name="transferTarget"/> or <paramref name="replacesCallContext"/> is supported at a time</remarks>
+        [Obsolete("Please use any of the other variations")]
         Task<ITransfer> TransferAsync(string transferTarget, string replacesCallContext, LoggingContext loggingContext = null);
 
         /// <summary>
         /// Transfers the audio video call.
         /// </summary>
-        /// <param name="transferTarget">The transfer target.</param>
-        /// <param name="replacesCallContext">The replaces call context.</param>
+        /// <param name="transferTarget">SIP uri of the user where the call needs to be transferred to</param>
+        /// <param name="replacesCallContext"><see cref="CallContext"/> of the <see cref="IAudioVideoCall"/> which you are trying to replace</param>
         /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
-        /// <returns>Task&lt;ITransfer&gt;.</returns>
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        /// <remarks>only one of <paramref name="transferTarget"/> or <paramref name="replacesCallContext"/> is supported at a time</remarks>
+        [Obsolete("Please use any of the other variations")]
         Task<ITransfer> TransferAsync(SipUri transferTarget, string replacesCallContext, LoggingContext loggingContext = null);
+
+        /// <summary>
+        /// Transfers the audio video call to a user
+        /// </summary>
+        /// <param name="transferTarget">SIP uri of the user where the call needs to be transferred to</param>
+        /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        Task<ITransfer> TransferAsync(SipUri transferTarget, LoggingContext loggingContext = null);
+
+        /// <summary>
+        /// Transfers the audio video call by replacing an existing audio video call
+        /// </summary>
+        /// <param name="replacesCallContext"><see cref="CallContext"/> of the <see cref="IAudioVideoCall"/> which you are trying to transfer to</param>
+        /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
+        /// <returns><see cref="ITransfer"/> which can be used to track the transfer operation</returns>
+        Task<ITransfer> TransferAsync(string replacesCallContext, LoggingContext loggingContext = null);
 
         /// <summary>
         /// Waits for the audio video flow to be connected.
