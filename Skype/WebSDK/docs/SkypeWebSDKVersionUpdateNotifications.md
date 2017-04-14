@@ -6,10 +6,10 @@
 | ------------- |:-------------:| :-----:|:----------:|
 | Conversation Control Preview     | 1.87.47 | 4/13/17 | 1.86.57
 | Skype Web SDK Preview    | 0.4.464 | 4/13/17 | 0.4.449
-| Conversation Control Production |  1.86.57 | 4/3/17 | 1.85.29
-| Skype Web SDK Production| 0.4.449 | 4/3/17 | 0.4.440 |
+| Conversation Control Production | unchanged | 4/3/17 | 1.86.57
+| Skype Web SDK Production| unchanged | 4/3/17 | 0.4.449 |
 
-The latest release fixes several bugs in relation to AV scnearios.
+There is no new production release of either the WebSDK or Conversation Control.
 
 **Bugs fixed in the new public preview build:**
 * Serialization of outgoing renegotiations
