@@ -212,7 +212,7 @@ namespace CallTransferSample
 
                 IAudioVideoCall av = invite.RelatedConversation.AudioVideoCall;
 
-                ITransfer t = await av.TransferAsync((SipUri)null, callContext, m_loggingContext).ConfigureAwait(false);
+                ITransfer t = await av.TransferAsync(callContext, m_loggingContext).ConfigureAwait(false);
                 await t.WaitForTransferCompleteAsync().TimeoutAfterAsync(TimeSpan.FromSeconds(30)).ConfigureAwait(false);
                 Logger.Instance.Information("[CallCenterJob] Transfer completed successfully!");
             }
