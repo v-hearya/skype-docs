@@ -1031,10 +1031,10 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
         Task AcceptAndBridgeAsync(string meetingUrl, string displayName, LoggingContext loggingContext = null);
 
         /// <summary>
-        /// Get custom content
+        /// Custom content provided by the caller in the invitation
         /// </summary>
-        /// <returns></returns>
-        string GetCustomContent();
+        /// <returns>Custom content as string or <code>null</code> if nothing was provided</returns>
+        string CustomContent { get; }
     }
 
     #endregion

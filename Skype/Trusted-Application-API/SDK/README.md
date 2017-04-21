@@ -4,6 +4,11 @@ Thank you for your interest in Skype for Business developer documentation!
 
 ## Release Notes
 
+### 1.0.0-prerelease9 (in progress; not yet published)
+
+Key changes:
+ 1. IMessagingInvitation.CustomContent property now retrieves the custom content that was sent by the caller in the invitation
+
 ### 1.0.0-prerelease8
 
 Key changes:

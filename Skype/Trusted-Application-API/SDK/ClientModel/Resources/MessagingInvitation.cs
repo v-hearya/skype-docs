@@ -112,18 +112,12 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
         }
 
         /// <summary>
-        /// Get custome content 
+        /// Custom content provided by the caller in the invitation
         /// </summary>
-        /// <returns></returns>
-        public string GetCustomContent()
+        /// <returns>Custom content as string or <code>null</code> if nothing was provided</returns>
+        public string CustomContent
         {
-            string value = string.Empty;
-            if (PlatformResource?.CustomContent?.Value != null)
-            {
-                value = PlatformResource?.CustomContent?.Value.ToString();
-            }
-
-            return value;
+            get { return PlatformResource?.CustomContent?.Value?.ToString(); }
         }
 
         #endregion
