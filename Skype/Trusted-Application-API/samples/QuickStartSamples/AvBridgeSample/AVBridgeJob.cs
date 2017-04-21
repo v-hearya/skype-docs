@@ -54,7 +54,7 @@ namespace AVBridgeSample
                     if (p.Exception != null)
                     {
                         Exception baseException = p.Exception.GetBaseException();
-                        Logger.Instance.Error(baseException, "StartHuntGroupFlow failed with exception. Job id {0} ", m_jobId);
+                        Logger.Instance.Error(baseException, "StartAVBridgeFlowAsync failed with exception. Job id {0} ", m_jobId);
                     }
                 }
                 else
