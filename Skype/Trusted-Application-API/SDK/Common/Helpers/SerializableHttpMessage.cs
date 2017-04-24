@@ -18,26 +18,31 @@ namespace Microsoft.SfB.PlatformService.SDK.Common
         /// </summary>
         /// <value>The request identifier.</value>
         public string RequestId { get; set; }
+
         /// <summary>
         /// Gets or sets the timestamp.
         /// </summary>
         /// <value>The timestamp.</value>
         public DateTime Timestamp { get; set; }
+
         /// <summary>
         /// Gets or sets the content.
         /// </summary>
         /// <value>The content.</value>
         public string Content { get; set; }
+
         /// <summary>
         /// Gets or sets the type of the content.
         /// </summary>
         /// <value>The type of the content.</value>
         public string ContentType { get; set; }
+
         /// <summary>
         /// Gets or sets the content headers.
         /// </summary>
         /// <value>The content headers.</value>
         public List<Tuple<string, string>> ContentHeaders { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is incoming.
         /// </summary>
@@ -74,7 +79,7 @@ namespace Microsoft.SfB.PlatformService.SDK.Common
                             }
                             else
                             {
-                                content.Headers.Add(header.Item1, header.Item2);
+                                content.Headers.TryAddWithoutValidation(header.Item1, header.Item2);
                             }
                         }
                     }
