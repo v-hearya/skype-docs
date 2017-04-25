@@ -17,7 +17,7 @@
         <div class="container">
             <div class="wrappingdiv">
                 <div class="anon-sign-in">
-
+                    <div class="GetAnonTokenSamples"></div>
                     <div>
                         <span id="btn-get-anontoken">
                             Get Anonymous Token and Discover URL
@@ -25,6 +25,10 @@
                     </div>
 
                     <div id="anontokenresult">
+                        <!--<p>
+                            <a id="imbridge_details" href="javascript:void(0);">The details:</a>
+                        </p>
+                        <p><div class="details_page" style="display: none;"></div></p>-->
                         <p>
                             The UCAP application initialized an intance and returned JSON object as below:
                         </p>
@@ -37,22 +41,30 @@
                             </p>
                         </div>
                     </div>
+                    <div class="GetAnonTokenDiscoverSamples">
+                    </div>
                 </div>
 
                 <div class="signinwithtoken">
+                    <h4>
+                        2) Sign in to the Web SDK using the Anonymous Token and Discover URL in your sign-in parameters.
+                    </h4>
                     <span id="btn-anon-sign-in">
                         Anonymous Sign in
                     </span>
                     <p id="signedinstatus" style="display:none">
                        Signed in anonymously
                     </p>
+                    <div class="GetAnonTokenSigninSamples" ></div>
                 </div>
 
                 <div class="signinwithtoken">
+                    <h4>                        3) Start Chat</h4>
                     <p id="btn-startchat" class="buttonstyle">
-                        Start chat
+                            Start chat
                     </p>
-                </div>
+                    <div class="GetAnonTokenChatSamples"></div>
+                 </div>
 
                 <div class="chat-service" style="display:none">
                     
@@ -96,6 +108,8 @@
         <script src="scripts/chat-service.js">
         </script>
         <script src="scripts/trustedappwebclient.js">
+        </script>
+        <script src="scripts/imbridge.js">
         </script>
     </body>
 </html>

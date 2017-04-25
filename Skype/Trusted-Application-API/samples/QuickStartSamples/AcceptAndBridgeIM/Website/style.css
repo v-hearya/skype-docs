@@ -41,6 +41,8 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
+    margin-left: 200;
+    margin-right: 200;
     font-family: "Segoe UI Light", "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
     font-weight: lighter;
 }
@@ -166,7 +168,7 @@ body {
     margin-top: 20px;
 }
 
-.wrappingdiv .sign-in h1, .wrappingdiv .token-sign-in h1, .anon-sign-in h1, .wrappingdiv .cc-login-options h1 {
+.wrappingdiv .sign-in h1, .wrappingdiv .token-sign-in h1, .anon-sign-in h1, .wrappingdiv .cc-login-options h1  {
     padding: 0;
     margin: 0;
     display: inline-block;
