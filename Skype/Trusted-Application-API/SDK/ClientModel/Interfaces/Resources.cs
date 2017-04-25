@@ -1029,6 +1029,12 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
         /// <param name="loggingContext"><see cref="LoggingContext"/> to be used to log all related events</param>
         /// <returns>Task.</returns>
         Task AcceptAndBridgeAsync(string meetingUrl, string displayName, LoggingContext loggingContext = null);
+
+        /// <summary>
+        /// Custom content provided by the caller in the invitation
+        /// </summary>
+        /// <returns>Custom content as string or <code>null</code> if nothing was provided</returns>
+        string CustomContent { get; }
     }
 
     #endregion

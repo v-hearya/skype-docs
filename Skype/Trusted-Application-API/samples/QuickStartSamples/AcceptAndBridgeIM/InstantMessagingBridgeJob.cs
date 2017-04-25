@@ -202,26 +202,15 @@ namespace AcceptAndBridgeIM
             #endregion
 
 
-            //#region Step 7 Send custom message to conference
-            //string customContent = e.NewInvite.GetCustomContent();
+            #region Step 7 Send custom message to conference
+            string customContent = e.NewInvite.CustomContent;
 
-            //if (!string.IsNullOrEmpty(customContent) && !string.IsNullOrWhiteSpace(customContent))
-            //{
-            //    Logger.Instance.Information(string.Format("[HandleIncomingMessageJob] Step 7 : Start send customcontent to conference: LoggingContext: {0}", LoggingContext));
-            //    await confMessaging.SendMessageAsync(customContent, LoggingContext).ConfigureAwait(false);
-            //}
-            //#endregion
-            //MessagingInviation from SDK.
-            //public string GetCustomContent()
-            //{
-            //    string value = string.Empty;
-            //    if (PlatformResource?.CustomContent?.Value != null)
-            //    {
-            //        value = PlatformResource?.CustomContent?.Value.ToString();
-            //    }
-
-            //    return value;
-            //}
+            if (!string.IsNullOrEmpty(customContent) && !string.IsNullOrWhiteSpace(customContent))
+            {
+                Logger.Instance.Information(string.Format("[HandleIncomingMessageJob] Step 7 : Start send customcontent to conference: LoggingContext: {0}", m_loggingContext));
+                await confMessaging.SendMessageAsync(customContent, m_loggingContext).ConfigureAwait(false);
+            }
+            #endregion
         }
 
         private void OnClientChatDisconnected()

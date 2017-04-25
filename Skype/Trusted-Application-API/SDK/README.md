@@ -4,6 +4,13 @@ Thank you for your interest in Skype for Business developer documentation!
 
 ## Release Notes
 
+### 1.0.0-prerelease9
+
+Key changes:
+ 1. IMessagingInvitation.CustomContent property now retrieves the custom content that was sent by the caller in the invitation
+ 2. Minor bug fix in SerializableHttpMessage
+ 3. Add a temporary workaround for a server issue which caused the server to return 500 Internal Server Error when a client tries to discover services. It will be reverted in the next release of the SDK.
+
 ### 1.0.0-prerelease8
 
 Key changes:

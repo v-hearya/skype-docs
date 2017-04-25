@@ -440,7 +440,7 @@ namespace Microsoft.SfB.PlatformService.SDK.Common
         /// <summary>
         /// The platform discover URI product
         /// </summary>
-        public static readonly Uri PlatformDiscoverUri_Prod = new Uri("https://api.skypeforbusiness.com/platformservice/discover");
+        public static readonly Uri PlatformDiscoverUri_Prod = new Uri("https://api.skypeforbusiness.com/platformservice/discover?Region=northamerica");
         /// <summary>
         /// The platform discover URI sand box
         /// </summary>

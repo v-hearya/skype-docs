@@ -111,6 +111,15 @@ namespace Microsoft.SfB.PlatformService.SDK.ClientModel
             return !string.IsNullOrWhiteSpace(href);
         }
 
+        /// <summary>
+        /// Custom content provided by the caller in the invitation
+        /// </summary>
+        /// <returns>Custom content as string or <code>null</code> if nothing was provided</returns>
+        public string CustomContent
+        {
+            get { return PlatformResource?.CustomContent?.Value?.ToString(); }
+        }
+
         #endregion
 
         #region Internal methods
