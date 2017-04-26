@@ -1,6 +1,4 @@
-﻿//$(function () {
-//    'use strict';
-    $("body").delegate(".code", "click", function () {
+﻿    $("body").delegate(".code", "click", function () {
 
         var element = $(this).next("div"), value = $(this).text().split(" ")[0];
 
@@ -26,42 +24,6 @@
      ajaxrequest('get', 'imbridge_template_startchat.html', '', 'text').done(function (result) {
          $(".GetAnonTokenChatSamples").html(result);
      });
-    //$("#imbridge_details").click(function () {
-
-    //    //var element = $(this).find(".details_page");
-
-    //    if ($(".details_page").is(":hidden"))
-    //    {
-    //        ajaxrequest('get', 'imbridge_template.html', '', 'text').done(function (result) {
-    //            $(".details_page").html(result);
-    //        });
-    //    }
-    //    else
-    //    {
-    //        $(".details_page").html("");
-    //    }
-    //    $(".details_page").toggle();
-    // });
-//})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function ajaxrequest(verb, url, data, datatype) {
     return $.ajax({

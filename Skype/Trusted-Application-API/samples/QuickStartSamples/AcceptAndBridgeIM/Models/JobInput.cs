@@ -54,8 +54,7 @@ namespace AcceptAndBridgeIM
     public class GetAnonTokenInput : PlatformServiceJobInputBase
     {
         public string AllowedOrigins { get; set; }
-        public string ApplicationSessionId { get; set; }
-        public string MeetingUrl { get; set; }
+        public string ApplicationSessionId { get; set; }        
     }
 
 }
