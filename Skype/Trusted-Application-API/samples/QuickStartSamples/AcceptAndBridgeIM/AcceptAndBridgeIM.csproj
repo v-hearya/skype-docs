@@ -225,8 +225,13 @@
     <Content Include="Website\images\presence\busy.png" />
     <Content Include="Website\images\presence\do-not-disturb.png" />
     <Content Include="Website\images\presence\unknown.png" />
+    <Content Include="Website\imbridge_template.html" />
+    <Content Include="Website\imbridge_template_discover.html" />
+    <Content Include="Website\imbridge_template_signin.html" />
+    <Content Include="Website\imbridge_template_startchat.html" />
     <Content Include="Website\index.html" />
     <Content Include="Website\scripts\chat-service.js" />
+    <Content Include="Website\scripts\imbridge.js" />
     <Content Include="Website\scripts\index.js" />
     <Content Include="Website\scripts\sign-in.js" />
     <Content Include="Website\scripts\trustedappwebclient.js" />

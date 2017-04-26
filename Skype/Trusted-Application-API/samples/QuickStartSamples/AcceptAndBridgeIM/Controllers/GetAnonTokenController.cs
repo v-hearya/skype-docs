@@ -1,4 +1,5 @@
 ﻿using Microsoft.Rtc.Internal.Platform.ResourceContract;
+using Microsoft.SfB.PlatformService.SDK.ClientModel;
 using Microsoft.SfB.PlatformService.SDK.Common;
 using System;
 using System.Net;
@@ -30,15 +31,12 @@ namespace AcceptAndBridgeIM
                 AnonymousApplicationTokenInput anoninput = new AnonymousApplicationTokenInput()
                 {
                     AllowedOrigins = input.AllowedOrigins,
-                    ApplicationSessionId = input.ApplicationSessionId,
-                    MeetingUrl = input.MeetingUrl
+                    ApplicationSessionId = input.ApplicationSessionId                    
                 };
 
                 var LoggingContext = new LoggingContext(jobId, "");
 
-
-
-                AnonymousApplicationTokenResource token = await WebApiApplication.ApplicationEndpoint.Application.GetAnonApplicationTokenAsync(LoggingContext, anoninput).ConfigureAwait(false);
+                IAnonymousApplicationToken token = await WebApiApplication.ApplicationEndpoint.Application.GetAnonApplicationTokenForP2PCallAsync(anoninput.AllowedOrigins,anoninput.ApplicationSessionId, LoggingContext).ConfigureAwait(false);
 
                 if (token == null)
                 {
@@ -47,7 +45,7 @@ namespace AcceptAndBridgeIM
 
                 AnonymousToken result = new AnonymousToken
                 {
-                    DiscoverUri = token.AnonymousApplicationsDiscover.Href,
+                    DiscoverUri = token.AnonymousApplicationsDiscoverUri.AbsoluteUri,
                     ExpireTime = token.AuthTokenExpiryTime,
                     Token = token.AuthToken,
                     TenantEndpointId = WebApiApplication.ApplicationEndpoint.ApplicationEndpointId.ToString()
@@ -57,8 +55,7 @@ namespace AcceptAndBridgeIM
             }
             catch (Exception ex)
             {
-                Logger.Instance.Error(ex, "Exception while scheduling job.");
-                //return CreateHttpResponse(HttpStatusCode.InternalServerError, "{\"Error\":\"+"+ ex.Message+ "+Hit exception when running the job\"}");
+                Logger.Instance.Error(ex, "Exception while scheduling job.");                
                 return CreateHttpResponse(HttpStatusCode.InternalServerError, "{\"Error\":\"Hit exception when running the job\"}");
             }
         }
