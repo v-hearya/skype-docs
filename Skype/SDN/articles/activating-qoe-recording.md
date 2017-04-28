@@ -16,10 +16,6 @@ ms.assetid: 32254d29-c4be-4d1d-80c1-3ec766f2b6f4
 
 If Quality of Experience (QoE) recording has not been activated in the Skype for Business monitoring server, you must activate it before installing the Skype for Business SDN Interface. You can verify and activate the QoE recording in one of the two ways: 
   
-    
-    
-
-
 - Using the Skype for Business Server Management Shell commands 
     
   
