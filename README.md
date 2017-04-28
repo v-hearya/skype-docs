@@ -16,16 +16,16 @@ You can contribute to [Skype Web SDK developer documentation](https://msdn.micro
 
 The content in the Skype-docs repository is grouped  by topic. The README.md file at the root of the topic directory specifies the structure of the articles within the topic.
 
-##Articles in this repository
-###Skype Web SDK
+## Articles in this repository
+### Skype Web SDK
 
 - [Skype Web SDK Conceptual Content](https://github.com/OfficeDev/skype-docs/blob/master/Skype/WebSDK/GeneralReference.md)
 
-###Skype App SDK
+### Skype App SDK
 
 - [Skype for Business App SDK preview](https://github.com/OfficeDev/skype-docs/tree/master/Skype/AppSDK/SkypeAppSDK.md)
 
-###Skype for Business Uris
+### Skype for Business Uris
 
 - [Skype for Business Uris](https://github.com/OfficeDev/skype-docs/tree/master/Skype/Skype-For-Business-Uris)
 
