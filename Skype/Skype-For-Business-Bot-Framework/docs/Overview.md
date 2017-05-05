@@ -4,13 +4,12 @@ This article will help you build and enable a Skype for Business bot using the M
 
 **In this section we’ll cover:**
 -	[Creating a Skype for Business bot](#create-bot)
-- [Who is this article for?](#audience)
--	Adding a bot to Skype for Business
--	Feature Support
--	Creating outbound bots
--	Supported Skype for Business versions
--	Removing a bot – Developer
--	Removing a bot – Tenant Administrator
+-	[Adding a bot to Skype for Business](#add-bot)
+-	[Feature Support](#feature-support)
+-	[Creating outbound bots](#create-outbound-bots)
+-	[Supported Skype for Business versions](#version-suport)
+-	[Removing a bot – Developer](#remove-bot-dev)
+-	[Removing a bot – Tenant Administrator](#remove-bot-tenant)
 
 <a name="create-bot"></a>
 ## Creating a Skype for Business bot
@@ -20,7 +19,9 @@ Skype for Business bots are created using the Microsoft Bot Framework.  Bots cre
 3.	Deploy the bot to a cloud service, such as Microsoft Azure
 4.	Register the bot with the Microsoft Bot Framework, and click Add Skype for Business as a channel.  Enable the channel in the configuration page.
 5.	Add the bot to a Skype for Business tenant by clicking Add to Skype for Business.
-Adding a bot to Skype for Business
+
+<a name="add-bot"></a>
+## Adding a bot to Skype for Business
 Bots can only be added to Skype for Business by Tenant Administrators of a Skype for Business Online environment.  By clicking Add to Skype for Business, you will launch a page that contains instructions for registering your bot. E.g. https://skypeappregistration.azurewebsites.net/bot/29415286-5a43-4a00-9dc5-bcbc2ce1f59e 
 The instructions contain the following information:
 
@@ -39,7 +40,9 @@ New-CsOnlineApplicationEndpoint 41ec7d50-ba91-1208-73ee-136b88859725 -Name NameO
 This command registers an instance of your bot with a Skype for Business Online tenant. A Skype for Business Admin can replace the name parameter with their desired Display Name and replace the Uri parameter with a unique user account from their domain (eg. mybot@contoso.com)
 
 NOTE: A newly registered bot can take up to 8 hours to be discoverable by all users in the Skype for Business tenant. More details on using PowerShell to manage bots and apps for Skype for Business can be found here.
-Feature Support
+
+<a name="feature-support"></a>
+## Feature Support
 For a full list of current supported features please refer to the Skype for Business Channel Inspector.
 Messages
 Your bot can send plain text, HTML, and emoticons to a user or group. Users can send rich text, HTML, and emoticons to your bot.
@@ -82,7 +85,8 @@ Skype for Business does not support cards and buttons in the Developer Preview. 
 Groups
 A bot can be enabled for groups in outgoing bot scenarios.  A bot can message multiple users in a group conversation.  Skype for Business does not support adding an additional participant to a 1:1 bot conversation. 
 
-Outbound bots
+<a name="create-outbound-bots"></a>
+## Creating outbound bots
 Skype for Business bots can initiate outbound messages to users proactively because they are enabled by a Tenant Administrator.  In order to initiate an outbound message, your bot must be Skype for Business tenant-specific (your code must be written for a bot that will be only be deployed in a single tenant. Eg. bot@contoso.com).  In addition, in order to initiate an outbound message, your bot must also have the Skype for Business identity of the user or users the bot will be messaging directly eg. user@contoso.com).
 Your bot will also need to add the Skype for Business Channel entry point URL (https://api.skypeforbusiness.com/platformservice/botframework) to the Trusted Service URLs.
 Here’s a code snippet that illustrates how to initiate an outbound message to a Skype for Business user using the C# Bot Builder SDK.
@@ -103,14 +107,20 @@ public async Task MakeOutboundCall(string[] to, string topic)
             this.UpdateServiceUrl(response.ServiceUrl); //remember response ServiceURL to send additional message requests to the same conversation
         }
 
-Support Skype for Business Versions
+<a name="version-suport"></a>
+## Supported Skype for Business versions
+
 The Skype for Business Bot Framework channel is currently supported for Skype for Business Online.  Skype for Business Server 2015 is not supported.
-Removing a bot - Developer
+
+<a name="remove-bot-dev"></a>
+## Removing a bot - Developer
 Disabling a bot
 To stop your bot receiving messages and remove it from directories go to your Bot Dashboard and Edit the Skype for Business channel. Disable the bot.
 Deleting a bot
 To delete your bot completely go to your Bot Dashboard and Edit the Skype for Business channel. Select the Delete button at the bottom.
-Removing a bot – Skype for Business Tenant Administrator
+
+<a name="remove-bot-tenant"></a>
+## Removing a bot – Skype for Business Tenant Administrator
 Deleting a bot
 To delete a bot completely from a Skype for Business Tenant, you must be the Tenant Administrator of a Skype for Business Online environment. A Tenant Administrator can easily add your bot by using the Skype for Business Admin PowerShell cmdlets. Complete the following steps to delete a bot:
 
