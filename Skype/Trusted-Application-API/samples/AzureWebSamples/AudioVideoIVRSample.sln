@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioVideoIVRSample", "AudioVideoIVRSample\AudioVideoIVRSample.csproj", "{73030DB3-A685-47DC-B5BB-D54B294B7BE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSamplesCommon", "QuickSamplesCommon\QuickSamplesCommon.csproj", "{F62716B7-64F4-46C5-A217-540B8576458B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSamplesCommon", "..\QuickStartSamples\QuickSamplesCommon\QuickSamplesCommon.csproj", "{F62716B7-64F4-46C5-A217-540B8576458B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

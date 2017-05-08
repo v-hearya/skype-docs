@@ -216,7 +216,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuickSamplesCommon\QuickSamplesCommon.csproj">
+    <ProjectReference Include="..\..\QuickStartSamples\QuickSamplesCommon\QuickSamplesCommon.csproj">
       <Project>{F62716B7-64F4-46C5-A217-540B8576458B}</Project>
       <Name>QuickSamplesCommon</Name>
     </ProjectReference>

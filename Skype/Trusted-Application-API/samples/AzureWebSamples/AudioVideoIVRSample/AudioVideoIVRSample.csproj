@@ -220,7 +220,7 @@
     <None Include="Properties\PublishProfiles\AudioVideoIVRSample.pubxml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuickSamplesCommon\QuickSamplesCommon.csproj">
+    <ProjectReference Include="..\..\QuickStartSamples\QuickSamplesCommon\QuickSamplesCommon.csproj">
       <Project>{f62716b7-64f4-46c5-a217-540b8576458b}</Project>
       <Name>QuickSamplesCommon</Name>
     </ProjectReference>
