@@ -56,10 +56,10 @@ tst
 |Join a Skype for Business meeting as a signed in user with audio and video (IE,Edge,Safari). |X|X|
 |Join a Skype for Business meeting as an anonymous user. |X|-|
 |In a Skype for Business meeting, one can open up to four video windows from different remote participants at the same time (IE,Edge,Safari).  |X|X|
-|Retrieve the different devices, and select a specific device from the list.  |X|-|
+|Retrieve the different devices, and select a specific device from the list (IE,Edge,Safari).  |X|X|
 |The application context can be passed to the remote party in the conversation invite.  |X|X|
 |Use Skype Conversation UI control in your applications for P2P/Group IM.  |X|X|
-|Use Skype Conversation UI control in your applications for P2P/Group AV.  |X|-|
+|Use Skype Conversation UI control in your applications for P2P/Group AV.  |X|X|
 
 ## Supported Browsers
 
