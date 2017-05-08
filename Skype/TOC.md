@@ -128,6 +128,7 @@
 ##### [The ConversationHelper class](AppSDK/ConversationHelperCodeList.md)
 #### [Submit your questions, bugs, feature requests, and contributions](AppSDK/Feedback.md)
 
+### [Skype for Business Bot Framework](Skype-For-Business-Bot-Framework/docs/Overview.md)
 ### [Trusted Application API](Trusted-Application-API/docs/Overview.md)
 #### [Enabling communications services for the cloud](Trusted-Application-API/docs/Trusted_Application_API_GeneralReference.md)
 

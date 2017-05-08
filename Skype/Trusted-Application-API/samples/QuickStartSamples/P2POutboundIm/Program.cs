@@ -27,6 +27,9 @@ namespace P2POutboundIm
             {
                 Console.WriteLine("Exception: " + ex.GetBaseException());
             }
+
+            Console.WriteLine("Sample run complete. Press any key to exit...");
+            Console.ReadKey();
         }
     }
 

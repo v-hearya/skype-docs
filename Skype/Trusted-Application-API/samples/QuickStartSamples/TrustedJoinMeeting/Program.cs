@@ -25,6 +25,9 @@ namespace TrustedJoinMeeting
             {
                 Console.WriteLine("Exception: " + ex.GetBaseException().ToString());
             }
+
+            Console.WriteLine("Sample run complete. Press any key to exit...");
+            Console.ReadKey();
         }
     }
 

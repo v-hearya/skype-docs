@@ -24,6 +24,9 @@ namespace RemoteAdvisorSample
             {
                 Console.WriteLine("Exception hit:" + ex.GetBaseException().ToString());
             }
+
+            Console.WriteLine("Sample run complete. Press any key to exit...");
+            Console.ReadKey();
         }
     }
 
