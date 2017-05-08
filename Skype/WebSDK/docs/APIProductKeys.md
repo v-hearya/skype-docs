@@ -59,7 +59,7 @@ tst
 |Retrieve the different devices, and select a specific device from the list (IE,Edge,Safari).  |X|X|
 |The application context can be passed to the remote party in the conversation invite.  |X|X|
 |Use Skype Conversation UI control in your applications for P2P/Group IM.  |X|X|
-|Use Skype Conversation UI control in your applications for P2P/Group AV.  |X|X|
+|Use Skype Conversation UI control in your applications for P2P/Group AV (IE,Edge,Safari).  |X|X|
 
 ## Supported Browsers
 
