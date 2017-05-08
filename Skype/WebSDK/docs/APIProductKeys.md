@@ -43,23 +43,23 @@ tst
 |Add/remove distribution groups in the contact list.   |X|X|
 |Add/remove contacts to groups in the contact list.   |X|X|
 |Add/remove telephone contacts to groups in the contact list. |X|X|
-|Start and have P2P chat conversations as a signed in user with another signed in Skype or Skype for business user via Skype Web SDK API (outgoing invitations)  |X|X|
-|Accept and have P2P chat conversations as a signed in user with another signed in Skype or Skype for business user via Skype Web SDK API. (incoming invitations) |X|X|
+|Start and have P2P chat conversations as a signed in user with another signed in Skype or Skype for business user via Skype Web SDK API (outgoing invitations).  |X|X|
+|Accept and have P2P chat conversations as a signed in user with another signed in Skype or Skype for business user via Skype Web SDK API. (incoming invitations). |X|X|
 |Start and have meeting chat conversations as a signed in user via Skype Web SDK API.  |X|X|
-|Start and have P2P or meeting audio/video conversations with the signed in users   |X|-|
-|Invite more participant to a Skype for Business meeting Chat conversation, or to a P2P Chat conversation to escalate to meeting via the Skype Web SDK API |X|X|
-|Invite more participant to an Skype for Business meeting AV conversation, or to a P2P AV conversation to escalate to meeting |X|-|
-|Start and have PSTN audio conversations (outgoing PSTN calling) |X|-|
-|Accept and have PSTN audio conversations (incoming PSTN calling) |X|-|
+|Start and have P2P or meeting audio/video conversations with the signed in users (IE,Edge,Safari).  |X|X|
+|Invite more participant to a Skype for Business meeting Chat conversation, or to a P2P Chat conversation to escalate to meeting via the Skype Web SDK API. |X|X|
+|Invite more participant to an Skype for Business meeting AV conversation, or to a P2P AV conversation to escalate to meeting (IE,Edge,Safari). |X|X|
+|Start and have PSTN audio conversations (outgoing PSTN calling) (IE,Edge,Safari). |X|X|
+|Accept and have PSTN audio conversations (incoming PSTN calling) (IE,Edge,Safari). |X|X|
 |Schedule a Skype for Business meeting. |X|X|
-|Join a Skype for Business meeting and start chat and/or audio service in the conversation. |X|-|
-|Join a Skype for Business meeting as a signed in user with audio and video. |X|-|
+|Join a Skype for Business meeting and start chat and/or audio service in the conversation (IE,Edge,Safari). |X|X|
+|Join a Skype for Business meeting as a signed in user with audio and video (IE,Edge,Safari). |X|X|
 |Join a Skype for Business meeting as an anonymous user. |X|-|
-|In a Skype for Business meeting, one can open up to four video windows from different remote participants at the same time.  |X|-|
+|In a Skype for Business meeting, one can open up to four video windows from different remote participants at the same time (IE,Edge,Safari).  |X|X|
 |Retrieve the different devices, and select a specific device from the list.  |X|-|
 |The application context can be passed to the remote party in the conversation invite.  |X|X|
-|Use Skype Conversation UI control in your applications for P2P/Group IM  |X|X|
-|Use Skype Conversation UI control in your applications for P2P/Group AV  |X|-|
+|Use Skype Conversation UI control in your applications for P2P/Group IM.  |X|X|
+|Use Skype Conversation UI control in your applications for P2P/Group AV.  |X|-|
 
 ## Supported Browsers
 
