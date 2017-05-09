@@ -9,9 +9,9 @@ five steps to deploy this application.  Be sure to get familiar with this sample
 
 ## Azure web application samples
 
-The [Trusted Application - Azure web app samples](TODO:LINK) are other "100 level" samples that can be deployed on in a cloud such as Azure to run simple Trusted Application scenarios.
+The [Trusted Application - Azure web app samples](https://github.com/OfficeDev/skype-docs/tree/live/Skype/Trusted-Application-API/samples/AzureWebSamples) are other "100 level" samples that can be deployed to a cloud such as Azure to run simple Trusted Application scenarios.
 
 ## Anonymous meeting join application sample
 
-This [sample](https://github.com/OfficeDev/skype-docs/tree/live/Skype/Trusted-Application-API/samples/AnonMeetingJoinSamples) can actually be deployed on in a cloud such as Azure and it will let you complete a simple online meeting join scenario. It requires that you
+This [sample](https://github.com/OfficeDev/skype-docs/tree/live/Skype/Trusted-Application-API/samples/AnonMeetingJoinSamples) can actually be deployed to a cloud such as Azure and it will let you complete a simple online meeting join scenario. It requires that you
 spend a little bit more time in Azure application registration so that you can set up needed Azure resources.
