@@ -1,6 +1,6 @@
 # Trusted Application API samples
 
-To jump start developement with the Trusted Application API, we've created two sample applications that you can clone or download from our **GitHub** OfficeDev organization.
+To jump start developement with the Trusted Application API, we've created the following sample applications that you can clone or download from our **GitHub** OfficeDev organization.
 
 ## QuickStart application samples
 
