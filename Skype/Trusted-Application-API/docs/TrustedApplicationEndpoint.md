@@ -21,14 +21,14 @@ Import-PSSession (New-CsOnlineSession -Credential Get-Credential)
 ```
 2. You will be prompted with a windows PowerShell credential dialog box. Sign in using the tenant credentials. 
 
-Successful completion of the above mentioned steps will create a Windows PowerShell session that makes a connection to Skype for Business Online. Now you can use PowerShell cmdlets to set up the application endpoint. 
+Successful completion of the above mentioned steps will create a Windows PowerShell session that makes a connection to the Skype for Business Online. Now you can use PowerShell cmdlets to set up the application endpoint. 
 
 For more information see: [Connecting to Skype for Business Online by using Windows PowerShell](https://technet.microsoft.com/en-us/library/dn362795.aspx)
 
 ## PowerShell cmdlets to setup Trusted Application Endpoint
 
->Note: **Assigning a phone number to the Trusted Application Endpoint is optional**, If you want to assign a service phone number to the Trusted Application Endpoint,  make sure that you complete the steps mentioned in [ Acquire and assign service phone number
- ](./AssignServiceNumber.md) to acquire a service phone number before proceeding to the following section. 
+>Note: **Assigning a service phone number to the Trusted Application Endpoint is optional**, If you want to assign a service number to the Trusted Application Endpoint,  make sure that you complete the steps mentioned in [Acquire the service phone number
+ ](./AquireServiceNumber.md) to acquire a service phone number before proceeding to the following section. 
 For **PSTN** or samples, assign the **service numbers** to the trusted application endpoint using cmdlets with **PhoneNumber parameter**, which is otherwise optional. Please refer examples at the end of this page. 
 
  The following cmdlets can be used to setup trusted application endpoints:
