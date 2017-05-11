@@ -55,7 +55,7 @@ Setup application's endpoint by using the following command in the Skype for Bus
   New-CsOnlineApplicationEndpoint -Uri "sip:sample_endpoint@domain.com" -ApplicationId "Your_Application_ID" -Name "avbridgesample" -PhoneNumber Your_Service_Number
 ```
     
->Note: Please refer [Setting up a Trusted Application Endpoint](./TrustedApplicationEndpoint.md) for details on PowerShell cmdlets and related parameters. 
+>Note: Please refer [Setting up a Trusted Application Endpoint](../../docs/TrustedApplicationEndpoint.md) for details on PowerShell cmdlets and related parameters. 
 
 ## Running the sample
 

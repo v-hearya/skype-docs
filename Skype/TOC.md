@@ -149,7 +149,7 @@
 ##### [Authentication and Authorization](Trusted-Application-API/docs/AuthenticationAndAuthorization.md)
 
 #####  [Trusted Application API PSTN communication](Trusted-Application-API/docs/PSTN.md)
-###### [Aquire and Assign Service Phone Number](Trusted-Application-API/docs/AssignServiceNumber.md)
+###### [Aquire the Service Phone Number](Trusted-Application-API/docs/AquireServiceNumber.md)
 #####  [Notifications: Service Application initiated chat conversations](Trusted-Application-API/docs/ApplicationCallFlow.md)
 ###### [Simple messaging call flow](Trusted-Application-API/docs/MessagingCallFlow.md)
 
