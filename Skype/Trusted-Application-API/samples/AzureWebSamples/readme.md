@@ -67,12 +67,12 @@ Setup application's endpoint by using the following command in the Skype for Bus
     
 | Key  |  Replace the value with  |
 | ------------- |:-------------:|
-| MyAudienceUri   |  Application's App ID URI (refer [Registration](#Registration)) 
-|MyCallbackUri |   Application' s Callback uri (refer [Registration](#Registration))  
-| ApplicationEndpointId |   The Trusted endpoint's sip uri ID(refer [Trusted Endpoint setup](#Provisioning))  |
-| AAD_ClientId |   Application's ID (refer [Registration](#Registration))     |
-| AAD_ClientSecret |   Application's Client Secret value (refer [Registration](#Registration))    |
-|MyAgentList|  sip uri of any agent who should receive the incoming calls|
+| MyAudienceUri   |Application's App ID URI (refer [Registration](#Registration) section)| 
+|MyCallbackUri |Application' s Callback uri (refer [Registration](#Registration) section)|
+| ApplicationEndpointId |The Trusted endpoint's sip uri ID(refer [Trusted Endpoint setup](#Provisioning) section)|
+| AAD_ClientId |Application's ID (refer [Registration](#Registration) section)|
+| AAD_ClientSecret |Application's Client Secret value (refer [Registration](#Registration) section)|
+|MyAgentList|sip uri of any agent who should receive the incoming calls|
 
 >Note: The **sip uri** for **ApplicationEndpointId** and **MyAgentList** should belong to the same tenant domain. e.g. ApplicationEndpointId = helpdesk@contoso.com and MyAgentList = abc@contoso.com  
 
