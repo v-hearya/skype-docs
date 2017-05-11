@@ -31,7 +31,7 @@ c) **App ID URI and Callback uri for your application** - Retrieve the saved URL
 
 d) **Application Permissions** - Select the relevant permissions for sample application.
 
-e) **Create my application** - This final step successfully registers your application with Azure and generates an Application ID and Client Secret for your application. **Please save  App ID URI, Callback uri, Application ID, and Client Secret somewhere safe for use in the upcoming steps.**
+e) **Create my application** - This step successfully registers your application with Azure and generates an Application ID and Client Secret for your application. **Please save  App ID URI, Callback uri, Application ID, and Client Secret somewhere safe for use in the upcoming steps.**
 
 >NOTE: You can optionally manually register your application in Azure Portal, where you will get a Client ID and set an App ID URI. Refer to [Registration in Azure Active Directory](https://github.com/OfficeDev/skype-docs/blob/master/Skype/Trusted-Application-API/docs/RegistrationInAzureActiveDirectory.md) for details.
 
