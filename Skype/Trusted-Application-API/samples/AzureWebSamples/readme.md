@@ -5,15 +5,15 @@ These quick-start Trusted Application Azure web app samples can be configured an
 - **AudioVideoIVRSample** - This sample enables PSTN incoming IVR with DTMF recognition, play audio prompts, stop the audio prompts.
 
 - **CallTransferSample** - This sample Enables PSTN incoming call with audio prompt and transfer the call  to a SIP user URI
-<a name="Prerequsite"></a>
+<a name="prerequisite"></a>
 ## Prerequisite 
 
 1. **Aquire the service phone number**
    
-    You are required to aquire the service phone number that will be assigned to the application's trusted endpoint in the upcoming section. Please complete the steps mentioned in [Acquire the service phone number](../../docs/AquireServiceNumber.md) section before proceeding.
+    In the upcoming sections, You will need to register the application in Azure Active Directory and assign service phone number to the application's trusted endpoint. So make sure that you complete the steps mentioned in [Acquire the service phone number](../../docs/AquireServiceNumber.md) section before proceeding.
 
-2. **Clone samples and Restore the NuGet Packages**
-3. **Deploy the samples to Azure App Service** 
+2. **Clone the samples and restore the NuGet packages**
+3. **Deploy the sample to Azure App Service** 
 
     These samples run in a cloud service such as Azure. Please follow the steps in [Publish To Azure](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-dotnet#publish-to-azure) to deploy the sample app to Azure app service. Once the sample is successfully deployed and launched in your default browser, **save the URL from the address bar somewhere safe for use in the upcoming steps.**, for example: **https://avbridgesample.azurewebsites.net** 
 
@@ -26,16 +26,17 @@ Use the [quick registration tool](https://aka.ms/skypeappregistration) for regis
 a) **Sign in** - Use an account which has azure subscription available to sign in to [quick registration tool](https://aka.ms/skypeappregistration)
 
 b) **Name of your application** - Set the name to  your desired application name.
-- **App ID URI and Callback uri for your application** - Retrieve the saved URL from the step 3 of **[Prerequsite](#Prerequsite)** and append **/callback** to it, for example: **https://avbridgesample.azurewebsites.net/callback**. Set this URL as your application's **Callback uri**. You do not need to change the prefilled value of **App ID URI** for these samples. 
 
-c) **Application Permissions** - Select the relevant permissions for sample application.
+c) **App ID URI and Callback uri for your application** - Retrieve the saved URL from the step 3 of **[prerequisite](#prerequisite)** and append **/callback** to it, for example: **https://avbridgesample.azurewebsites.net/callback**. Set this URL as your application's **Callback uri**. You do not need to change the prefilled value of **App ID URI** for these samples. 
 
-d) **Create my application** - This final step successfully registers your application with Azure and generates an Application ID and Client Secret for your application. **Please save  App ID URI, Callback uri, Application ID, and Client Secret somewhere safe for use in the upcoming steps.**
+d) **Application Permissions** - Select the relevant permissions for sample application.
+
+e) **Create my application** - This final step successfully registers your application with Azure and generates an Application ID and Client Secret for your application. **Please save  App ID URI, Callback uri, Application ID, and Client Secret somewhere safe for use in the upcoming steps.**
 
 >NOTE: You can optionally manually register your application in Azure Portal, where you will get a Client ID and set an App ID URI. Refer to [Registration in Azure Active Directory](https://github.com/OfficeDev/skype-docs/blob/master/Skype/Trusted-Application-API/docs/RegistrationInAzureActiveDirectory.md) for details.
 
 <a name="Provisioning"></a>
-### 2.  Tenant admin consent and Trusted Endpoint creation**
+### 2.  Tenant admin consent and Trusted Endpoint creation
 
 The final application registration step 3 of [quick registration tool](https://aka.ms/skypeappregistration)   includes Tenant Admin consent and Trusted Endpoint setup.
 
@@ -47,9 +48,9 @@ Follow the instructions in step 3 or refer to [Tenant Admin Consent](https://git
     
 b) **Trusted Endpoint setup**
       
-Setup application's endpoint by using the following command in the Skype for Business Admin PowerShell. Update the placeholder parameter to a desired SIP Address within your tenant domain.
+Setup application's endpoint by using the following command in the Skype for Business Admin PowerShell. Update the placeholder parameter to a desired SIP Address within your tenant domain. e.g. helpdesk@contoso.com 
     
->Note: These samples require you to assign a service phone number to the applications's endpoint. Anyone can call this number to reach  your application. Please make sure that you have [Aquire the service phone number](../../docs/AquireServiceNumber.md) before running the following PowerShell cmdlet. 
+>Note: These samples require you to assign a service phone number to the applications's endpoint. Anyone can call this number to reach  your application. Please make sure that you have [Aquired the service phone number](../../docs/AquireServiceNumber.md) before running the following PowerShell cmdlet. 
     
 ```PowerShell
   New-CsOnlineApplicationEndpoint -Uri "sip:sample_endpoint@domain.com" -ApplicationId "Your_Application_ID" -Name "avbridgesample" -PhoneNumber Your_Service_Number
@@ -66,12 +67,14 @@ Setup application's endpoint by using the following command in the Skype for Bus
     
 | Key  |  Replace the value with  |
 | ------------- |:-------------:|
-| MyAudienceUri   |  Application's App ID URI (refer step d of [Registration](#Registration)) 
-|MyCallbackUri |   Application' s Callback uri (refer step d of [Registration](#Registration))  
+| MyAudienceUri   |  Application's App ID URI (refer step e) of [Registration](#Registration)) 
+|MyCallbackUri |   Application' s Callback uri (refer step e) of [Registration](#Registration))  
 | ApplicationEndpointId |   The Trusted endpoint's sip uri ID(refer [Trusted Endpoint setup](#Provisioning))  |
-| AAD_ClientId |   Application's ID (refer step d of [Registration](#Registration))     |
-| AAD_ClientSecret |   Application's Client Secret value (refer step d of [Registration](#Registration))    |
-|MyAgentList|  SIP uri of any agent who should receive the incoming calls( same tenant domain as application's endpoint sip uri )|
+| AAD_ClientId |   Application's ID (refer step e) of [Registration](#Registration))     |
+| AAD_ClientSecret |   Application's Client Secret value (refer step e) of [Registration](#Registration))    |
+|MyAgentList|  sip uri of any agent who should receive the incoming calls|
+
+>Note: The **sip uri** for **ApplicationEndpointId** and **MyAgentList** should belong to the same tenant domain. e.g. ApplicationEndpointId = helpdesk@contoso.com and MyAgentList = abc@contoso.com  
 
 3. Redeploy the sample. Please refer [Update the app and redeploy](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-dotnet#update-the-app-and-redeploy) section for more detail.
 
