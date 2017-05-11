@@ -14,10 +14,13 @@ In order for a tenant to consent to the application, the following is required:
 
 This opens up a page after the tenant admin logs in. It lists the permissions the Service Application has asked for the tenant admin to consent. Once accepted the Service Application can get oauth tokens from AAD, for that tenant.
  
+ >Note: Ignore the **Page not found screen** after accepting the permissions.
+
 You can read more about [Building service apps in Office 365](https://msdn.microsoft.com/en-us/office/office365/howto/building-service-apps-in-office-365) to get a more complete understanding of Office 365 service applications.
 
 ![Tenant adiministrator consent dialog](images/TenantAdminConsentImage002.jpg "image") 
 
+ 
  
 ## Revoking tenant admin consent
  

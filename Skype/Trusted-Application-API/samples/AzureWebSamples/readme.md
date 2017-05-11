@@ -45,6 +45,8 @@ a) **Tenant admin consent**
 When the application is registered in AAD, it is registered in the context of a tenant.  For a tenant to use the Service Application, for example, when the application is developed as a multi-tenant application, it must be consented to by that tenant's admin. 
     
 Follow the instructions in step 3 or refer to [Tenant Admin Consent](https://github.com/OfficeDev/skype-docs/blob/master/Skype/Trusted-Application-API/docs/TenantAdminConsent.md) to provide the tenant consent.
+
+ >Note: Ignore the **Page not found screen** after accepting the permissions.
     
 b) **Trusted Endpoint setup**
       
