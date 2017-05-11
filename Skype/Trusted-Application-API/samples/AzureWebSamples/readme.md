@@ -5,12 +5,12 @@ These quick-start Trusted Application Azure web app samples can be configured an
 - **AudioVideoIVRSample** - This sample enables PSTN incoming IVR with DTMF recognition, play audio prompts, stop the audio prompts.
 
 - **CallTransferSample** - This sample Enables PSTN incoming call with audio prompt and transfer the call  to a SIP user URI
-
+<a name="Prerequsite"></a>
 ## Prerequisite 
 
 1. **Aquire the service phone number**
    
-    You are required to aquire a service phone number that will be assigned to the application's trusted endpoint in the upcoming section. Please complete the steps mentioned in [Acquire the service phone number](TODO) section before proceeding.
+    You are required to aquire the service phone number that will be assigned to the application's trusted endpoint in the upcoming section. Please complete the steps mentioned in [Acquire the service phone number](../../docs/AquireServiceNumber.md) section before proceeding.
 
 2. **Clone samples and Restore the NuGet Packages**
 3. **Deploy the samples to Azure App Service** 
@@ -26,7 +26,7 @@ Use the [quick registration tool](https://aka.ms/skypeappregistration) for regis
 a) **Sign in** - Use an account which has azure subscription available to sign in to [quick registration tool](https://aka.ms/skypeappregistration)
 
 b) **Name of your application** - Set the name to  your desired application name.
-- **App ID URI and Callback uri for your application** - Retrieve the saved URL from the step 3 of **[Prerequsite](TODO)** and append **/callback** to it, for example: **https://avbridgesample.azurewebsites.net/callback**. Set this URL as your application's **Callback uri**. You do not need to change the prefilled value of **App ID URI** for these samples. 
+- **App ID URI and Callback uri for your application** - Retrieve the saved URL from the step 3 of **[Prerequsite](#Prerequsite)** and append **/callback** to it, for example: **https://avbridgesample.azurewebsites.net/callback**. Set this URL as your application's **Callback uri**. You do not need to change the prefilled value of **App ID URI** for these samples. 
 
 c) **Application Permissions** - Select the relevant permissions for sample application.
 
@@ -49,7 +49,7 @@ b) **Trusted Endpoint setup**
       
 Setup application's endpoint by using the following command in the Skype for Business Admin PowerShell. Update the placeholder parameter to a desired SIP Address within your tenant domain.
     
->Note: These samples require you to assign a service phone number to the applications's endpoint. Anyone can call this number to reach  your application. Please make sure that you have [aquired a service phone number](TODO) before running the following PowerShell cmdlet. 
+>Note: These samples require you to assign a service phone number to the applications's endpoint. Anyone can call this number to reach  your application. Please make sure that you have [Aquire the service phone number](../../docs/AquireServiceNumber.md) before running the following PowerShell cmdlet. 
     
 ```PowerShell
   New-CsOnlineApplicationEndpoint -Uri "sip:sample_endpoint@domain.com" -ApplicationId "Your_Application_ID" -Name "avbridgesample" -PhoneNumber Your_Service_Number
