@@ -2,9 +2,18 @@
 
 These quick-start Trusted Application Azure web app samples can be configured and deployed to an Azure Cloud Service in just few simple steps. 
 
-- **AudioVideoIVRSample** - This sample enables PSTN incoming IVR with DTMF recognition, play audio prompts, stop the audio prompts.
+- **AudioVideoIVRSample** - This sample plays an audio promt and enables the PSTN incoming IVR with DTMF recognition.
 
-- **CallTransferSample** - This sample Enables PSTN incoming call with audio prompt and transfer the call  to a SIP user URI
+- **AvBridgeSample** - It creates an adhoc meeting, bridges the incoming PSTN call to the meeting, plays a prompt and invites agent mentioned in sample's web.config file to the meeting.
+
+- **AvBridgeToSipUriSample** -  This sample bridges the incoming PSTN call to the agent mentioned in sample's web.config file.
+
+- **CallForwardSample** -  This sample forwards an incoming PSTN call to the agent mentioned in sample's web.config file.
+
+- **CallTransferSample** - This sample enables PSTN incoming call with an audio prompt and transfers the call to a SIP user URI as mentioned in sample's web.config file.
+
+- **IMBridge** - Creates an adhoc meeting, bridges the incoming IM call to the meeting, sends a welcome message, adds the agent mentioned in web.config as a bridged participant to the meeting (this allows caller to see messages from the agent), adds the agent to the meeting, if the original IM invite contained any custom content it is sent as a message to the conference.
+
 <a name="prerequisite"></a>
 ## Prerequisite 
 
