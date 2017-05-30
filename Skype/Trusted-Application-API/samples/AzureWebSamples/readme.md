@@ -86,12 +86,13 @@ Setup application's endpoint by using the following command in the Skype for Bus
 | ------------- |:-------------:|
 | MyAudienceUri   |Application's App ID URI (refer [Registration](#Registration) section)| 
 |MyCallbackUri |Application' s Callback uri (refer [Registration](#Registration) section)|
-| ApplicationEndpointId |The Trusted endpoint's sip uri ID(refer [Trusted Endpoint setup](#Provisioning) section)|
+| ApplicationEndpointId |The Trusted endpoint's sip uri ID(refer [Trusted endpoint setup](#Provisioning) section)|
 | AAD_ClientId |Application's ID (refer [Registration](#Registration) section)|
 | AAD_ClientSecret |Application's Client Secret value (refer [Registration](#Registration) section)|
-|MyAgentList|sip uri of any agent who should receive the incoming calls|
+|MyAgentList/MyAgent|sip uri of any agent who should receive the incoming calls|
+|MyPhoneNumber|Service phone number assigned to the application's Trusted endpoint(refer [Trusted endpoint setup](#Provisioning) section) |
 
->Note: The **sip uri** for **ApplicationEndpointId** and **MyAgentList** should belong to the same tenant domain. e.g. ApplicationEndpointId = helpdesk@contoso.com and MyAgentList = abc@contoso.com  
+>Note: The **sip uri** for **ApplicationEndpointId** and **MyAgentList/MyAgent** should belong to the same tenant domain. e.g. ApplicationEndpointId = helpdesk@contoso.com and MyAgentList = abc@contoso.com  
 
 3. Redeploy the sample. See the [Update the app and redeploy](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-dotnet#update-the-app-and-redeploy) section for more detail.
 
