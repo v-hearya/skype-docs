@@ -21,7 +21,7 @@ Import-PSSession (New-CsOnlineSession -Credential Get-Credential)
 ```
 2. You will be prompted with a windows PowerShell credential dialog box. Sign in using the tenant credentials. 
 
-Successful completion of the above mentioned steps will create a Windows PowerShell session that makes a connection to the Skype for Business Online. Now you can use PowerShell cmdlets to set up the application endpoint. 
+Successful completion of the above mentioned steps will create a Windows PowerShell session that makes a connection to Skype for Business Online. Now you can use PowerShell cmdlets to set up the application endpoint. 
 
 For more information see: [Connecting to Skype for Business Online by using Windows PowerShell](https://technet.microsoft.com/en-us/library/dn362795.aspx)
 
