@@ -42,7 +42,7 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
                     return CreateHttpResponse(HttpStatusCode.BadRequest, "{\"Error\":\"Invalid job input or job type\"}");
                 }
 
-                AnonymousToken token = await job.ExecuteCoreWithResultAsync<AnonymousToken>().ConfigureAwait(false);
+                AnonymousToken token = await job.ExecuteWithResultAndRecordAsync<AnonymousToken>(Storage).ConfigureAwait(false);
                 if (token == null)
                 {
                     return CreateHttpResponse(HttpStatusCode.InternalServerError, "{\"Error\":\"Get nullable token\"}");

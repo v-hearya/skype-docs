@@ -10,7 +10,7 @@ General information about PowerShell cmdlets usage can be found in [Using Window
 2. Open Windows PowerShell as Administrator and run the following:
 
 ```PowerShell
-Import-PSSession (New-CsOnlineSession -Credential Get-Credential)
+Import-PSSession (New-CsOnlineSession -Credential (Get-Credential))
 ```
 
 For more information see: [Connecting to Skype for Business Online by using Windows PowerShell](https://technet.microsoft.com/en-us/library/dn362795.aspx)
@@ -60,8 +60,6 @@ For more information see: [Connecting to Skype for Business Online by using Wind
 - **ApplicationId**: The Azure ApplicationID/ClientID from the Azure portal registration steps.
 
 - **Name**: A friendly name of your application within Skype for Business Online.
-
-- **Tenant**: The Tenant ID of the tenant where you are registering a trusted application endpoint.
 
 - **Uri**: Sip Uri that identifies the tenant specific endpoint for the application. This must be a unique URI that does not conflict with an existing user in the tenant. Requests sent to this endpoint will trigger the **Trusted Application API** sending an event to the application, indicating that someone has sent a request. Eg. helpdesk@contoso.com
 

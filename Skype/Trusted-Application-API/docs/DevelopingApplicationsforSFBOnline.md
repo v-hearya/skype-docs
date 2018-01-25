@@ -1,6 +1,8 @@
 
 # Developing **Trusted Application API** applications for Skype for Business Online
 
+>Note: The Trusted Application API is in Developer Preview and not licensed for production usage.  As part of Microsoft’s [intellgent communications vision](https://aka.ms/intelligentcommunicationsblog), we’re building extensible communications capabilities into Teams.  For more Teams Developer information, check out [https://aka.ms/TeamsDeveloper](https://aka.ms/TeamsDeveloper)
+
 Learn how to develop **Trusted Application API** service applications.
 
 **Trusted Application API** uses Azure Active Directory (Azure AD) to provide authentication services that your application can use to get the right to access a set of capabilities. To do this, you need to do the following:

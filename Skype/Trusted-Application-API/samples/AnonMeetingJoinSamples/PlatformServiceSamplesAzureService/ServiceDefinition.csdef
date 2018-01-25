@@ -4,7 +4,7 @@
     <Sites>
       <Site name="Web">
         <Bindings>
-          <Binding name="Endpoint1" endpointName="Http" />          
+          <Binding name="Endpoint1" endpointName="Http" />
         </Bindings>
       </Site>
     </Sites>
@@ -24,23 +24,29 @@
         </Environment>
       </Task>
     </Startup>
-    <ConfigurationSettings>            
-      <Setting name="AAD_ClientId" />
-      <Setting name="AAD_ClientSecret" />      
+    <ConfigurationSettings>
+      <Setting name="SkypeForBusinessApplicationId" />
+      <Setting name="AAD_AuthorityUri" />
+      <Setting name="AAD_MetadataUri" />
       <Setting name="PlatformDiscoverUri" />
       <Setting name="PlatformAudienceUri" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" />
+      <Setting name="AAD_ClientId" />
+      <Setting name="AAD_ClientSecret" />
       <Setting name="ApplicationEndpointId" />
-      <Setting name="AAD_AuthorityUri" />
       <Setting name="CallbackUriFormat" />
       <Setting name="ResourcesUriFormat" />
-      <Setting name="SkypeForBusinessApplicationId" />
-      <Setting name="AAD_MetadataUri" />
       <Setting name="AudienceUri" />
-      <Setting name="LogFullHttpRequestResponse" />      
+      <Setting name="LogFullHttpRequestResponse" />
     </ConfigurationSettings>
     <Endpoints>
-      <InputEndpoint name="Http" protocol="http" port="80" />      
+      <InputEndpoint name="Http" protocol="http" port="80" />
+      <InputEndpoint name="Https" protocol="https" port="443" certificate="HttpsCert" />
     </Endpoints>
+    <Certificates>
+      <Certificate name="HttpsCert" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
     <Imports>
     </Imports>
   </WebRole>

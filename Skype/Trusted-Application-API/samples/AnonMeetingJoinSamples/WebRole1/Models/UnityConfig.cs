@@ -14,8 +14,16 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
         {
             //Register global used interface implementation here
             var container = IOCHelper.DefaultContainer;
-            container.RegisterType<IPlatformServiceLogger, ConsoleLogger>(new ContainerControlledLifetimeManager(),
-               new InjectionFactory(c => new ConsoleLogger()));
+            container.RegisterType<IPlatformServiceLogger, AzureDiagnosticLogger>(new ContainerControlledLifetimeManager(),
+               new InjectionFactory(c => new AzureDiagnosticLogger()));
+
+            var storageConnectionString = CloudConfigurationManager.GetSetting(Constants.STORAGE_CONNECTION);
+            var serviceBusConnectionString = CloudConfigurationManager.GetSetting(Constants.SERVICEBUS_CONNECTION);
+
+            container.RegisterType<IStorage, AzureStorage>(
+                       new ContainerControlledLifetimeManager(),
+                  new InjectionFactory(c => AzureStorage.Connect(storageConnectionString)));
+
         }
     }
 }

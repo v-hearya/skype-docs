@@ -1,5 +1,7 @@
 # **Trusted Application API (Public Preview)**
 
+>Note: The Trusted Application API is in Developer Preview and not licensed for production usage.  As part of Microsoft’s [intellgent communications vision](https://aka.ms/intelligentcommunicationsblog), we’re building extensible communications capabilities into Teams.  For more Teams Developer information, check out [https://aka.ms/TeamsDeveloper](https://aka.ms/TeamsDeveloper)
+
 The **Trusted Application API** is a Rest API that enables developers to build Skype for Business Online back-end communications services for the cloud.
 
 Built on the Skype for Business Online Platform, the **Trusted Application API** lets a developer build immersive, smart, and interactive communication experiences and trusted services.

@@ -35,7 +35,7 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
                     return CreateHttpResponse(System.Net.HttpStatusCode.BadRequest, "Invalid job input or job type");
                 }
 
-                AdhocMeetingToken token = await job.ExecuteCoreWithResultAsync<AdhocMeetingToken>().ConfigureAwait(false);
+                AdhocMeetingToken token = await job.ExecuteWithResultAndRecordAsync<AdhocMeetingToken>(Storage).ConfigureAwait(false);
                 if (token == null)
                 {
                     return CreateHttpResponse(System.Net.HttpStatusCode.InternalServerError, string.Format("Unable to start a job run"));

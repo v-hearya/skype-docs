@@ -41,7 +41,7 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.ApplicationCore
             this.ResourceUriFormat = resourcesUriFormat;
             this.CallbackUriFormat = callbackUriFormat;
 
-            var logger = IOCHelper.Resolve<ConsoleLogger>();
+            var logger = IOCHelper.Resolve<IPlatformServiceLogger>();
             logger.HttpRequestResponseNeedsToBeLogged = logFullHttpRequestResponse;
 
             ClientPlatformSettings platformSettings = null;

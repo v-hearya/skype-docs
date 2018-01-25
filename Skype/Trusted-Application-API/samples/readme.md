@@ -1,5 +1,7 @@
 # Trusted Application API samples
 
+>Note: The Trusted Application API is in Developer Preview and not licensed for production usage.  As part of Microsoft’s [intellgent communications vision](https://aka.ms/intelligentcommunicationsblog), we’re building extensible communications capabilities into Teams.  For more Teams Developer information, check out [https://aka.ms/TeamsDeveloper](https://aka.ms/TeamsDeveloper)
+
 To jump start developement with the Trusted Application API, we've created two sample applications that you can clone or download from our **GitHub** OfficeDev organization.
 
 ## QuickStart application sample

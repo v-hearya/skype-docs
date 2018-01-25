@@ -1,4 +1,78 @@
-# Skype Web SDK Version Updates
+## Skype Web SDK Version Update 10/02/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.101.19 | 9/6/17 | 1.99.7
+| Skype Web SDK Preview    | 0.4.631 | 9/6/17 | 0.4.614
+| Conversation Control Production | 1.101.19 | 9/6/17 | 1.99.7
+| Skype Web SDK Production| 0.4.631 | 9/6/17 | 0.4.596 |
+
+**Changes made in the new public preview build:**
+* Revised verbose logging mode
+
+## Skype Web SDK Version Update 9/06/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.99.7 | 8/4/17 | 1.97.4
+| Skype Web SDK Preview    | 0.4.607 | 8/21/17 | 0.4.596
+| Conversation Control Production | 1.97.4 | 8/4/17 | 1.94.32
+| Skype Web SDK Production| 0.4.582 | 8/4/17 | 0.4.545 |
+
+**Changes made in the new public preview build:**
+* Added verbose logging mode
+
+## Skype Web SDK Version Update 8/21/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.99.7 | 8/4/17 | 1.97.4
+| Skype Web SDK Preview    | 0.4.596 | 8/4/17 | 0.4.584
+| Conversation Control Production | 1.97.4 | 8/4/17 | 1.94.32
+| Skype Web SDK Production| 0.4.582 | 8/4/17 | 0.4.545 |
+
+**Bugs fixed in the new public preview build:**
+* Fixed the issue of sending origin when deployed on vanity domains
+* Changed graph api version
+* Fixed duplicate calls made to update user presence
+
+## Skype Web SDK Version Update 8/4/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.97.4 | 8/11/17 | 1.95.24
+| Skype Web SDK Preview    | 0.4.584 | 8/11/17 | 0.4.554
+| Conversation Control Production | 1.94.32 | 7/10/17 | 1.93.21
+| Skype Web SDK Production| 0.4.545 | 7/3/17 | 0.4.525 |
+
+**Bugs fixed in the new public preview build:**
+* Added ability to override _supportsMessaging_, _supportsAudio_ and _supportsVideo_ parameters from the sign-in parameters (settings object passed to `signinManager.signin(options)`
+* Fixed video rendering issue in Safari where participants video would not load unless self-video is turned on
+
+## Skype Web SDK Version Update 6/19/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.93.21 | 6/19/17 | 1.92.29
+| Skype Web SDK Preview    | 0.4.525 | 6/19/17 | 0.4.514
+| Conversation Control Production | 1.92.29 | 6/12/17 | 1.92.29
+| Skype Web SDK Production| 0.4.514 | 6/8/17 | 0.4.514 |
+
+**Bugs fixed in the new public preview build:**
+* Fix bug in hold/resume video in group converstations
+
+## Skype Web SDK Version Update 5/29/17
+
+| Product        | New Version           | Last Updated  |Previous Version
+| ------------- |:-------------:| :-----:|:----------:|
+| Conversation Control Preview     | 1.92.29 | 6/5/17 | 1.91.33
+| Skype Web SDK Preview    | 0.4.514 | 6/5/17 | 0.4.502
+| Conversation Control Production | 1.92.29 | 6/5/17 | 1.91.33
+| Skype Web SDK Production| 0.4.514 | 6/8/17 | 0.4.502 |
+
+**Bugs fixed in the new public preview build:**
+* Surface more detailed error on failure
+* Fix bug to allow html messaging in anonymous meetings
 
 ## Skype Web SDK Version Update 5/29/17
 

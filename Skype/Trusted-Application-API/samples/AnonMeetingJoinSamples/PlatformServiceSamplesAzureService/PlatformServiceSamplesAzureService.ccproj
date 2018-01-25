@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <!-- Items for the project -->
-  <ItemGroup>  
+  <ItemGroup>
     <ServiceDefinition Include="ServiceDefinition.csdef" />
     <ServiceConfiguration Include="ServiceConfiguration.Prod.cscfg" />
     <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
@@ -57,7 +57,6 @@
     <DiagnosticsConfiguration Include="FrontEndContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
-    <PublishProfile Include="Profiles\adhocmeetingProduction.azurePubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrontEndContent\bin\InstallNetFx.cmd">

@@ -99,6 +99,9 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
         {
             Exception e = (Exception)args.ExceptionObject;
             Logger.Instance.Error("Unhandle exception hit: " + e.ToString());
+
+            //TODO: log events?
         }
+
     }
 }

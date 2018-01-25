@@ -263,6 +263,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CallbackController.cs" />
     <Compile Include="Controllers\GetAdhocMeetingJobController.cs" />
     <Compile Include="Controllers\GetAnonTokenJobController.cs" />
     <Compile Include="Controllers\JobControllerBase.cs" />

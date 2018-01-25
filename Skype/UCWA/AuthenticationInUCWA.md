@@ -16,7 +16,7 @@ In order to authenticate a user in UCWA, an application needs to perform a numbe
 - The client application uses the OAuth token to make requests to the service.
  
 
- >Note: If your application authenticates against an on-premises server, follow the authentication flow as described in this article. If the application authenticates against an online server, follow the Azure AD authentication flow as described in "Authentication using Azure AD."
+ >Note: If your application authenticates against an on-premises server, follow the authentication flow as described in this article. If the application authenticates against an online server, follow the Azure AD authentication flow as described in [Authentication using Azure AD](https://msdn.microsoft.com/en-us/skype/ucwa/authenticationusingazuread).
 
 
 ## Authentication Flow
