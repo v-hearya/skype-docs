@@ -9,6 +9,7 @@ Represents the entry point to the API using user credentials.
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The user resource indicates that the application plans to use the API on behalf of a user.If an application attempts to use this resource without credentials, the server will respond with a 401 Not Authorized and authentication hints in the WWW-Authenticate Header.After credentials are acquired, this resource will point the application to the [applications](applications_ref.md) resource.In some cases, after credentials are acquired, the server might serve a [redirect](redirect_ref.md) resource indicating that the user is homed on another server.The application should follow this resource to the new server. Credentials might need to be resubmitted.
 
@@ -46,6 +48,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -96,7 +99,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/user H
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -139,7 +141,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/user H
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

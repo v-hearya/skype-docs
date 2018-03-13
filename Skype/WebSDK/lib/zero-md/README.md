@@ -23,28 +23,32 @@ Because web components. All in ~50 lines of code.
 **Basic usage**
 
 1. Import `webcomponents-lite` polyfill.
-  ```html
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  ```
+   ```html
+   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+   ```
 
 2. Import `<zero-md>` web component.
-  ```html
-  <link rel="import" href="bower_components/zero-md/zero-md.html">
-  ```
+   ```html
+   <link rel="import" href="bower_components/zero-md/zero-md.html">
+   ```
 
 3. Optionally import themes.
-  ```html
-  <link rel="stylesheet" href="bower_components/zero-md/highlight-themes/default.css">
-  <link rel="stylesheet" href="bower_components/zero-md/markdown-themes/default.css">
-  ```
+   ```html
+   <link rel="stylesheet" href="bower_components/zero-md/highlight-themes/default.css">
+
+   <link rel="stylesheet" href="bower_components/zero-md/markdown-themes/default.css">
+   ```
 
 4. Profit!
-  ```html
-  <zero-md file="https://raw.githubusercontent.com/zerodevx/zero-md/master/README.md">
+   ```html
+   <zero-md file="https://raw.githubusercontent.com/zerodevx/zero-md/master/README.md">
+
     <!-- Remember to pass in empty container of class="md-html". -->
+
     <div class="md-html"></div>
-  </zero-md>
-  ```
+
+   </zero-md>
+   ```
 
 **Advanced usage**
 
@@ -52,38 +56,45 @@ There are three ways to pass Markdown into `<zero-md>`:
 
 1. Load an external markdown file through AJAX using the `file` attribute.
 
-  ```html
-  <zero-md file="README.md">
+   ```html
+   <zero-md file="README.md">
+
     <div class="md-html"></div>
-  </zero-md>
-  ```
+
+   </zero-md>
+   ```
 
 2. Simply input the markdown string using the `text` attribute.
 
-  ```html
-  <zero-md text="H~~ell~~o *W*o**r**l***d***!">
+   ```html
+   <zero-md text="H~~ell~~o *W*o**r**l***d***!">
+
     <div class="md-html"></div>
-  </zero-md>
-  ```
+
+   </zero-md>
+   ```
 
 3. Place your markdown inside a `<xmp></xmp>` tag as a child element.
 
-  ```html
-  <zero-md>
+   ```html
+   <zero-md>
+
     <div class="md-html"></div>
+
     <xmp>
-  # This is my markdown
+   # This is my markdown
 
-  H~~ell~~o *W*o**r**l***d***!
+   H~~ell~~o *W*o**r**l***d***!
     </xmp>
-  </zero-md>
-  ```
 
-  Note that `<xmp>` tag usage is **static** - dynamic changes to contents
-  wrapped inside the `<xmp>` tag will **not** trigger a refresh of the rendered
-  HTML. You may manually trigger a reload by calling the `reload()` method.
+   </zero-md>
+   ```
 
-  This also means that your markdown **cannot** contain the string "`</xmp>`".
+   Note that `<xmp>` tag usage is **static** - dynamic changes to contents
+   wrapped inside the `<xmp>` tag will **not** trigger a refresh of the rendered
+   HTML. You may manually trigger a reload by calling the `reload()` method.
+
+   This also means that your markdown **cannot** contain the string "`</xmp>`".
 
 In order of priority, `<zero-md>` will first try to retrieve the URL location
 that's passed into the `file` attribute. If an error occurs, or `file` is
@@ -228,8 +239,9 @@ For example,
 Markdown themes are located in the `./markdown-themes` directory. Only one theme
 is included - a Github-flavoured theme by [sindresorhus](https://github.com/sindresorhus/github-markdown-css).
 
-| Filename                      | Description       |
-|-------------------------------|-------------------|
+
+|           Filename            |                  Description                   |
+|-------------------------------|------------------------------------------------|
 | ./markdown-themes/default.css | Github-flavoured theme by @sindresorhus v2.1.0 |
 
 Syntax highlight themes are located in the `./highlight-themes` directory and
@@ -257,6 +269,7 @@ you would normally.
   <link rel="stylesheet" href="bower_components/zero-md/markdown-themes/default.css">
   <link rel="stylesheet" href="bower_components/zero-md/highlight-themes/default.css">
 </head>
+
 <body>
   ...
   <zero-md file="README.md">
@@ -297,7 +310,9 @@ comprehensive example demonstrating the various markdown input methods,
 <link rel="import" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/build/zero-md.html">
 
 <!-- Themes -->
+
 <link rel="stylesheet" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/markdown-themes/default.css">
+
 <link rel="stylesheet" href="https://cdn.rawgit.com/zerodevx/zero-md/v0.2.0/highlight-themes/default.css">
 ```
 
@@ -307,7 +322,7 @@ comprehensive example demonstrating the various markdown input methods,
 
 Alternatively, download the project as a ZIP file and unpack into your
 components directory. Note that `<zero-md>` depends on:
-1. `Polymer`: https://github.com/Polymer/polymer;
+1. `Polymer`: <https://github.com/Polymer/polymer>;
 2. `marked`: https://github.com/chjj/marked JS library for markdown parsing;
 3. and `PrismJS`: https://github.com/PrismJS/prism for syntax highlighting.
 
@@ -338,15 +353,15 @@ MIT, though I'll greatly appreciate a note if you find this useful.
 ### Version history
 
 1. 2015-09-01: v0.1.0
-  * Initial commit.
+   * Initial commit.
 2. 2015-09-04: v0.1.1
-  * Minor patches to default markdown theme.
+   * Minor patches to default markdown theme.
 3. 2015-10-23: v0.2.0
-  * **Breaking changes** and is incompatible with earlier versions.
-  * Remove `style-module` usage - instead mandate a child container element
+   * **Breaking changes** and is incompatible with earlier versions.
+   * Remove `style-module` usage - instead mandate a child container element
     with `class="md-html"` for simpler styling.
-  * Remove `<iron-ajax>` dependency.
-  * Remove `zero-md-file-loaded` convenience event.
-  * Add `reload()` method to dynamically reload content inside `<xmp>` tags.
-  * Completely rewrite rendering algorithm. Smaller, lighter and faster!
+   * Remove `<iron-ajax>` dependency.
+   * Remove `zero-md-file-loaded` convenience event.
+   * Add `reload()` method to dynamically reload content inside `<xmp>` tags.
+   * Completely rewrite rendering algorithm. Smaller, lighter and faster!
 

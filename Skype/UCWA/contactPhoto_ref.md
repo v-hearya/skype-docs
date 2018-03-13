@@ -3,10 +3,11 @@
  _**Applies to:** Skype for Business 2015_
 
 The photo of a contact.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -37,6 +38,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -46,6 +48,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -59,10 +62,9 @@ Operation description coming soon...
 
 
 
-|**Name**|**Description**|**Required?**|
-|:-----|:-----|:-----|
-|size|The desired size of the photo.The string should be in a format similar to "HR{length}X{width}" e.g. "HR64X64".If no size is provided, the default is HR48X48.For more information about photo sizes, see http://msdn.microsoft.com/en-us/library/exchange/jj190905(v=exchg.150).aspx.|No|
-
+| <strong>Name</strong> | <strong>Description</strong>                                                                                                                                                                                                                                                          | <strong>Required?</strong> |
+|:----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
+| size                  | The desired size of the photo.The string should be in a format similar to "HR{length}X{width}" e.g. "HR64X64".If no size is provided, the default is HR48X48.For more information about photo sizes, see http://msdn.microsoft.com/en-us/library/exchange/jj190905(v=exchg.150).aspx. | No                         |
 
 #### Request body
 
@@ -111,7 +113,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPhoto
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: image/jpeg
-
 ```
 
 
@@ -138,7 +139,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPhoto
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: image/jpeg
-
 ```
 
 
@@ -151,7 +151,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 HTTP/1.1 200 OK
 Content-Type: image/jpeg
 Content-Length: 19
-
 ```
 
 

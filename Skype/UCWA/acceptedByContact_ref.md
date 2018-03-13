@@ -4,10 +4,11 @@
 
 
 Represents the [contact](contact_ref.md) who ultimately accepted an incoming invitation.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource is usually present in an incoming invitation that completes with failure when the invitation was forwarded to team members or delegates.
 
@@ -64,6 +66,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -73,6 +76,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -127,7 +131,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: a05a6c5a-d407-4c5e-8358-340e17e823fa
-
 ```
 
 
@@ -197,7 +200,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: c1fc5188-617c-4f0d-86ec-f87d6ee73726
-
 ```
 
 

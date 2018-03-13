@@ -4,10 +4,11 @@
 
 
 Provides a way to search for contacts.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource is used to search through the address book of the user's organization.The fields searched include name, email, URI, and phone number.
 
@@ -47,6 +49,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -56,6 +59,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -121,7 +125,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/search HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -389,7 +392,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/search HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -431,6 +433,7 @@ Content-Length: 7145
     <property name="uri">sip:alex@contoso.com</property>
     <property name="workPhoneNumber">tel:+1425554321;ext=54321</property>
   </resource>
+
   <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup">
     <link rel="addToContactList" href="/ucwa/v1/applications/192/groups/addToContactList" />
     <link rel="expandDistributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup/expandDistributionGroup" />
@@ -465,6 +468,7 @@ Content-Length: 7145
       <property name="uri">sip:alex@contoso.com</property>
       <property name="workPhoneNumber">tel:+1425554321;ext=54321</property>
     </resource>
+
     <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup">
       <link rel="addToContactList" href="/ucwa/v1/applications/192/groups/addToContactList" />
       <link rel="expandDistributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup/expandDistributionGroup" />
@@ -499,6 +503,7 @@ Content-Length: 7145
         <property name="uri">sip:alex@contoso.com</property>
         <property name="workPhoneNumber">tel:+1425554321;ext=54321</property>
       </resource>
+
       <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup">
         <link rel="addToContactList" href="/ucwa/v1/applications/192/groups/addToContactList" />
         <link rel="expandDistributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup/expandDistributionGroup" />
@@ -511,6 +516,7 @@ Content-Length: 7145
         <resource rel="contact" href="/ucwa/v1/applications/192/people/282" />
         <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup" />
       </resource>
+
     </resource>
   </resource>
 </resource>

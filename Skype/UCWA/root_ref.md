@@ -9,6 +9,7 @@ Represents the entry point to the API.
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The root resource lets the application choose the kind of credentials it is going to present. Currently, only [user](user_ref.md) credentials are supported.The root resource also informs the application about the location of the cross-domain frame ([xframe](xframe_ref.md)) needed for web programming.
 
@@ -46,6 +48,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -96,7 +99,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root HTTP/1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -139,7 +141,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root HTTP/1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

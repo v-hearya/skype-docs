@@ -11,9 +11,9 @@ A contact can be found via one of several resources, including: **myContacts**, 
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Parse the response from a GET request on the myGroups resource to obtain the specified group resource. 
- 
- The myGroups resource is embedded in the people resource.
- 
+
+   The myGroups resource is embedded in the people resource.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -57,13 +57,12 @@ The steps here assume that you have already created an application and have rece
     },
     "rel":"myGroups"
     }
-
     ```
 
 2. Send a GET request on the **groupContacts** resource from the **group** resource parsed above.
- 
- This request should return all of the contacts in the specified group. 
- 
+
+   This request should return all of the contacts in the specified group. 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/contacts?groupId=group_id HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -76,13 +75,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 3. Process the response from the previous GET request.
- 
- The successful response is 200 OK and contains a collection of the **contact** resources of the specified group.
- 
+
+   The successful response is 200 OK and contains a collection of the **contact** resources of the specified group.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -133,11 +131,10 @@ The steps here assume that you have already created an application and have rece
     },
     "rel":"groupContacts"
     }
-
     ```
 
 4. Send a GET request on the **contactPresence** resource parsed from the previous response.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/sarad@contoso.com/presence HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -150,13 +147,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 5. Process the response from the previous GET request. 
- 
- The successful response is 200 OK and contains the presence data of the specified contact. 
- 
+
+   The successful response is 200 OK and contains the presence data of the specified contact. 
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -178,9 +174,8 @@ The steps here assume that you have already created an application and have rece
     },
     "rel":"contactPresence"
     }
-
     ```
 
 
  In the **lastActive** property value above, **Date(1358827096000)** specifies a time period, in milliseconds, from January 1, 1970 UTC. The escaped string value (including the enclosing backslashes, "\/") characters can be used by **JavaScriptSerializer** in ASP.NET AJAX. For more information, see [ASP .NET AJAX: Inside JSON date and time string](http://msdn.microsoft.com/en-us/library/bb299886.aspx).
- 
+

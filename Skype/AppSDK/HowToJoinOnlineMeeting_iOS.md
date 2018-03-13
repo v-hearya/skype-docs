@@ -7,10 +7,10 @@ If the anonymous meeting your app joins is hosted in a **Skype for Business Onli
 your app is **not** enabled for Skype for Business preview features, then your app must get a **discovery Url** and an **anonymous meeting token** to join. This workflow requires that you create and deploy a Trused Application API-based service application that creates ad-hoc meetings, provides meeting join Urls, discovery Uris, and anonymous meeting tokens to the mobile apps that 
 request them.
 
->[!NOTE]
-**For mobile apps that enabled preview features:** If the anonymous meeting your app joins is hosted in a **Skype for Business Online** service and 
-your app is enabled for Skype for Business preview features, then your app can use a meeting Url to join. A Trusted Application API service application is **not** needed to complete the scenario in this case. To learn
-how to use a meeting Url, read [Use the App SDK to join a meeting with an iOS device](HowToJoinMeeting_iOS.md)
+> [!NOTE]
+> **For mobile apps that enabled preview features:** If the anonymous meeting your app joins is hosted in a **Skype for Business Online** service and 
+> your app is enabled for Skype for Business preview features, then your app can use a meeting Url to join. A Trusted Application API service application is **not** needed to complete the scenario in this case. To learn
+> how to use a meeting Url, read [Use the App SDK to join a meeting with an iOS device](HowToJoinMeeting_iOS.md)
 
 ## Getting started 
 

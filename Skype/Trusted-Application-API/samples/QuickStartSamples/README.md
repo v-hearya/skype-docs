@@ -32,7 +32,9 @@ When the application is registered in AAD, it is registered in the context of a 
 Configure required parameters in the <code>app.config</code> file, including authentication using client secret from the registration portal.
 ```xml
     <add key="AAD_ClientId" value="318fbf0c-d180-4cd9-8d13-7d0e2cacab9e" />
+
     <add key="AAD_ClientSecret" value="Z3YhEZAoknXcPRl++RrzdS2bnRTy6KKOx4zHf/vsuvU=" />
+
     <add key="ApplicationEndpointId" value="sip:yourtrustedapp@contoso.onmicrosoft.com" />
 
     <!--
@@ -44,12 +46,14 @@ Configure required parameters in the <code>app.config</code> file, including aut
     -->
 
     <!-- If using ngrok, populate these keys as specified below -->
+
     <!--
     <add key="MyCallbackUri" value="https://6afb33d7.ngrok.io/callback" />
     <add key="LocalServerListeningAddress" value="http://localhost:9000" />
     -->
 
     <!-- If the host machine is publicly accessible, uncomment and populate these keys -->
+
     <add key="MyCallbackUri" value="https://mydevbox.contoso.com/callback" />
 ```
 

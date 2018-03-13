@@ -4,10 +4,11 @@
 
 
 Represents the reportMyNetwork resource.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 Clients need to report their network whenever they encounter anychange in the network identifiers - listed below.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -52,6 +55,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -136,7 +140,6 @@ Content-Length: 191
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 201 Created
-
 ```
 
 
@@ -172,7 +175,6 @@ Content-Length: 481
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 201 Created
-
 ```
 
 

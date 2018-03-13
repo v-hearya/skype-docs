@@ -4,10 +4,11 @@
 
 
 A collection of phone resources that represent the phone numbers of the logged-on user.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This collection is read/write; it can be used to both create new phone resources, as well as to view and remove existing phone resources.
 
@@ -44,6 +46,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -53,6 +56,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -105,7 +109,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/me/phones HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -160,7 +163,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/me/phones HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -184,6 +186,7 @@ Content-Length: 656
     <property name="number">tel:+14255551234</property>
     <property name="type"> Other</property>
   </resource>
+
 </resource>
 ```
 

@@ -4,10 +4,11 @@
 
 
 Represents the subscription to a user's contacts and groups.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The application can use this resource to keep track of a user's contacts and groups via the event channel.Updates include the addition, removal, or modification of [group](group_ref.md)s or [contact](contact_ref.md)s.Additionally, an update on the event channel will inform the application that the subscription is about to expire.The application can then choose to refresh the subscription.Note that, unlike [presenceSubscription](presenceSubscription_ref.md), this resource does not subscribe to [presence](presence_ref.md), [note](note_ref.md), or [location](location_ref.md).
 
@@ -47,6 +49,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -54,33 +57,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Updated
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|myContactsAndGroupsSubscription|Medium|people|Indicates that the subscription will soon expire, giving the application a chance to refresh it.</p><p></p>|
+| <strong>Resource</strong>       | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                     |
+|:--------------------------------|:--------------------------|:------------------------|:------------------------------------------------------------------------------------------------------------|
+| myContactsAndGroupsSubscription | Medium                    | people                  | Indicates that the subscription will soon expire, giving the application a chance to refresh it.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "myContactsAndGroupsSubscription",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGroupsSubscription"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGroupsSubscription>"
           },
           "type" : "updated"
         }
@@ -95,6 +100,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -147,7 +153,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGro
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -188,7 +193,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGro
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

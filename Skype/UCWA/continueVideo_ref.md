@@ -4,10 +4,11 @@
 
 
 Continues video modality of a past conversation.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -34,6 +35,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -44,6 +46,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -122,7 +125,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 ```
 HTTP/1.1 201 Created
 Location: /ucwa/v1/applications/192/communication/invitations/507
-
 ```
 
 
@@ -153,7 +155,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 ```
 HTTP/1.1 201 Created
 Location: /ucwa/v1/applications/192/communication/invitations/507
-
 ```
 
 

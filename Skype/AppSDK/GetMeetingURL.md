@@ -1,10 +1,10 @@
 # Get a Skype for Business on-premise meeting URL
 If you have not written a server-side feature to schedule a meeting and return a new meeting URL, you can still get a meeting URL and develop against a live meeting. Users of your production app will rely on server logic to return a new meeting whenever they use the join meeting feature of the **App SDK**.
 
->[!NOTE]
-Production apps must use the generally available App SDK binaries. However, if you are prototyping an app or previewing new features of the App SDK, then you
-can enable the preview features of the App SDK by calling the [enablePreviewFeatures](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/ConfigurationManager.html#enablePreviewFeatures()) API method. Doing this allows you
-to use the tasks described in this article to join a meeting hosted in a Skype for Business Online server.
+> [!NOTE]
+> Production apps must use the generally available App SDK binaries. However, if you are prototyping an app or previewing new features of the App SDK, then you
+> can enable the preview features of the App SDK by calling the [enablePreviewFeatures](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/ConfigurationManager.html#enablePreviewFeatures()) API method. Doing this allows you
+> to use the tasks described in this article to join a meeting hosted in a Skype for Business Online server.
 
 
 ## While developing your app
@@ -15,9 +15,9 @@ While your app is in development, you can create your own anonymous Skype for Bu
   ![Meet Now button on the Skype for Business client](images/meetnow.PNG "Figure 1. Meet Now button on the Skype for Business client")
 
 * Schedule a **Skype for Business** meeting in outlook. You can set the meeting to run for multiple
-days so that you don't need to get a new meeting URL whenever you are testing your code.
+  days so that you don't need to get a new meeting URL whenever you are testing your code.
 
- ![Schedule a meeting in Outlook](images/outlookmeeting.PNG "Figure 2. Schedule a meeting in Outlook")
+  ![Schedule a meeting in Outlook](images/outlookmeeting.PNG "Figure 2. Schedule a meeting in Outlook")
  
 * Be sure to check the options for the new meeting are what you want, particularly the lobby options.
 

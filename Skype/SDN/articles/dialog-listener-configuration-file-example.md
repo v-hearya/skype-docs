@@ -8,16 +8,16 @@ ms.assetid: 6c325272-f444-4b8e-a9ac-80ebec5e2bff
 # Dialog Listener configuration file example
 
  **Last modified:** February 23, 2017
-  
-    
-    
+
+
+
 
  * **Applies to:** Lync Server 2010 | Lync Server 2013 | Skype for Business 2015
 
 The following code sample is an example of the Dialog Listener configuration file. 
-  
-    
-    
+
+
+
 
 
 ## A sample of DialogListener.exe.config file
@@ -30,7 +30,7 @@ The following code sample is an example of the Dialog Listener configuration fil
   <configSections>
     <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" requirePermission="true"/>
   </configSections>
- 
+
   <loggingConfiguration name="" tracingEnabled="true" defaultCategory="Error">
     <listeners>
       <add name="LNEAppLog" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.RollingFlatFileTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" fileName="c:\\temp\\DialogListener.log" footer="" formatter="LNEDetailFormatter" maxArchivedFiles="10" header="" rollFileExistsBehavior="Increment" rollInterval="Day" rollSizeKB="10000" traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack"/>
@@ -154,7 +154,6 @@ The following code sample is an example of the Dialog Listener configuration fil
     </assemblyBinding>
   </runtime>
 </configuration> 
-
 ```
 
 

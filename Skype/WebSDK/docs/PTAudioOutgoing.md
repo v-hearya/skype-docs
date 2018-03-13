@@ -3,7 +3,7 @@
 
  _**Applies to:** Skype for Business 2015_
 
-[!INCLUDE[ChromeWarning](includes/P2PChromeWarning.md)]
+[!INCLUDE [ChromeWarning](includes/P2PChromeWarning.md)]
 
 ## Starting a Call
 

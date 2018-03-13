@@ -4,10 +4,11 @@
 
 
 Represents your real-time communication application.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource represents an application on one of the user's devices.This resource is used as an entry point to start to communicate and collaborate. The application gives all supported capabilities and embeds the resources associated with the following relationships: [me](me_ref.md), [people](people_ref.md), [communication](communication_ref.md), [onlineMeetings](onlineMeetings_ref.md).The application resource will expire if the application remains idle (i.e. no HTTP requests are received for a period of time from the application) for a certain amount of time. The expiration time varies depending upon whether the application makes use of the event channel (by issuing pending GETs on events) or not.
 
@@ -58,6 +60,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -71,6 +74,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -122,7 +126,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: 441a2fc4-9d02-4c9d-b674-c0b8403308e8
-
 ```
 
 
@@ -363,7 +366,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: 102258d0-5c53-415f-a283-6c056129df46
-
 ```
 
 
@@ -426,6 +428,7 @@ Content-Length: 6401
       <item>Messaging</item>
     </propertyList>
   </resource>
+
   <resource rel="me" href="/ucwa/v1/applications/192/me">
     <link rel="callForwardingSettings" href="/ucwa/v1/applications/192/me/callForwardingSettings" />
     <link rel="location" href="/ucwa/v1/applications/192/me/location" />
@@ -451,6 +454,7 @@ Content-Length: 6401
     <property name="uri">sip:johndoe@contoso.com</property>
     <property name="workPhoneNumber">tel:+14257035449</property>
   </resource>
+
   <resource rel="onlineMeetings" href="/ucwa/v1/applications/192/onlineMeetings">
     <link rel="myAssignedOnlineMeeting" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/600" />
     <link rel="myOnlineMeetings" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings" />
@@ -461,6 +465,7 @@ Content-Length: 6401
     <link rel="phoneDialInInformation" href="/ucwa/v1/applications/192/onlineMeetings/phoneDialInInformation" />
     <property name="rel">onlineMeetings</property>
   </resource>
+
   <resource rel="people" href="/ucwa/v1/applications/192/people">
     <link rel="myContactsAndGroupsSubscription" href="/ucwa/v1/applications/192/people/myContactsAndGroupsSubscription" />
     <link rel="myContacts" href="/ucwa/v1/applications/192/contacts" />
@@ -473,6 +478,7 @@ Content-Length: 6401
     <link rel="subscribedContacts" href="/ucwa/v1/applications/192/subscribedContacts" />
     <property name="rel">people</property>
   </resource>
+
 </resource>
 ```
 
@@ -522,7 +528,6 @@ The errors below (if any) are specific to this resource. Generic errors that can
 Delete https://fe1.contoso.com:443/ucwa/v1/applications/192 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -533,7 +538,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -546,7 +550,6 @@ HTTP/1.1 204 No Content
 Delete https://fe1.contoso.com:443/ucwa/v1/applications/192 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -557,7 +560,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

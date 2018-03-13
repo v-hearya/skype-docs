@@ -5,10 +5,11 @@
 
 A resource that provides an outgoing audioVideo call its media answers. This resource appears only
 in the event channel or in a response to a request. It will not appear in a request.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -47,6 +48,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -55,33 +57,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Updated
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|audioVideoNegotiation|High|audioVideoInvitation|Delivered when the AudioVideo negotiation is updated.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                          |
+|:--------------------------|:--------------------------|:------------------------|:-----------------------------------------------------------------|
+| audioVideoNegotiation     | High                      | audioVideoInvitation    | Delivered when the AudioVideo negotiation is updated.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "audioVideoInvitation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/507",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/507>",
       "events" : [
         {
           "link" : {
             "rel" : "audioVideoNegotiation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/665/audioVideoNegotiation"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/665/audioVideoNegotiation>"
           },
           "type" : "updated"
         }
@@ -96,6 +100,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -146,7 +151,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -195,7 +199,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

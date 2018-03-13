@@ -26,9 +26,10 @@ The **processMessage** function begins the processing of data into an array of M
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|data|Data containing MIME messages.|
+| <strong>Parameter</strong> | <strong>Description</strong>   |
+|:---------------------------|:-------------------------------|
+| data                       | Data containing MIME messages. |
+
  **Returns**: An array of Message objects where each has the following form.
 
 
@@ -143,7 +144,6 @@ var data = {
  status: 200,
  statusText: 'OK'
 };
-
 ```
 
 In the following example, **processMessage** is used to process the data of the previous example.

@@ -4,10 +4,11 @@
 
 
 Represents the event channel resource.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 Each event in the event channel will have a link to the resource that produced the event. Optionally, the resource itself could also be embedded in the event channel.However, the application should handle events with or without embedded resource. If the resource is not embedded, the application can fetch the resource if needed.
 
@@ -43,6 +45,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -106,7 +109,6 @@ Only server-supplied query parameters, if any, are shown in the request sample.
 Get http://sample:80/ucwa/v1/applications/appId/events?ack=1 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -117,7 +119,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 
@@ -130,7 +131,6 @@ HTTP/1.1 200 OK
 Get http://sample:80/ucwa/v1/applications/appId/events?ack=1 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -141,7 +141,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 

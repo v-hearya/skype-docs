@@ -1,5 +1,5 @@
 # Skype for Business App SDK - API overview
-## SDK Object Model 	
+## SDK Object Model     
  
 Figure 1 provides an overview of the object model hierarchy of the Skype for Business App SDK. A brief description of the objects follows.  Detailed descriptions of the operations provided by each object are available in the Deep Dive section.
   

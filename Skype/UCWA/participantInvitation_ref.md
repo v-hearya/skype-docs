@@ -4,10 +4,11 @@
 
 
 Represents an invitation to an existing [conversation](conversation_ref.md) for an additional participant.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be incoming or outgoing.If outgoing, the participantInvitation can be created using [addParticipant](addParticipant_ref.md).This resource assists in keeping track of the invitation status; for example, the invitation could be accepted, declined, or ignored.An outgoing participantInvitation will be in the 'Connecting' state while waiting for the recipient to accept or decline it.Note that if the recipient does not respond in approximately thirty seconds, the participantInvitation will complete with failure.Ultimately, the participantInvitation will complete with success or failure (in which case a [reason](reason_ref.md) is supplied).The participantInvitation will complete with success only after the [participant](participant_ref.md) appears in the roster.There is no incoming participantInvitation; it will instead appear as an [onlineMeetingInvitation](onlineMeetingInvitation_ref.md).
 
@@ -59,6 +61,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -67,33 +70,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Started
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|participantInvitation|High|communication|Delivered when a participant invitation is started. This occurs when the application adds a participant to a conversation.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                    |
+|:--------------------------|:--------------------------|:------------------------|:---------------------------------------------------------------------------------------------------------------------------|
+| participantInvitation     | High                      | communication           | Delivered when a participant invitation is started. This occurs when the application adds a participant to a conversation. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "participantInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/303"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/303>"
           },
           "type" : "started"
         }
@@ -107,29 +112,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|participantInvitation|High|communication|Delivered when the participant invitation is updated.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                               |
+|:--------------------------|:--------------------------|:------------------------|:------------------------------------------------------|
+| participantInvitation     | High                      | communication           | Delivered when the participant invitation is updated. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "participantInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/303"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/303>"
           },
           "type" : "updated"
         }
@@ -144,6 +150,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -198,7 +205,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -403,7 +409,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -461,6 +466,7 @@ Content-Length: 6235
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="from" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196">
     <link rel="admit" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196/admit" />
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
@@ -490,9 +496,11 @@ Content-Length: 6235
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="startEmergencyCallInput" href="/ucwa/v1/applications/192/communication/invitations/665/startEmergencyCallParameters">
     <property name="rel">startEmergencyCallParameters</property>
   </resource>
+
 </resource>
 ```
 

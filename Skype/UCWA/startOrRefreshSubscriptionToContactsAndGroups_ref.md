@@ -4,10 +4,11 @@
 
 
 Starts or refreshes the subscription to a user's contacts and groups.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The presence of this resource indicates that a user can begin or extend a [myContactsAndGroupsSubscription](myContactsAndGroupsSubscription_ref.md).
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -48,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -117,7 +121,6 @@ Post https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -158,7 +161,6 @@ Post https://fe1.contoso.com:443/ucwa/v1/applications/192/people/myContactsAndGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

@@ -4,10 +4,11 @@
 
 
 Represents a persistent, system-created group where a user's contacts are placed by default.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 An application can subscribe to updates from members of this group. Updates include [presence](presence_ref.md),[location](location_ref.md), or [note](note_ref.md) changes for a specific contact.Currently, defaultGroup is a read-only resource and can be managed by other endpoints.An application must call [startOrRefreshSubscriptionToContactsAndGroups](startOrRefreshSubscriptionToContactsAndGroups_ref.md) before it can receive eventswhen a defaultGroup is created, modified, or removed.
 
@@ -48,6 +50,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -55,37 +58,39 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|contact|High|people|Indicates that a specific contact was added to this group. The application can decide to fetchthe updated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                           |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
+| contact                   | High                      | people                  | Indicates that a specific contact was added to this group. The application can decide to fetchthe updated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "contact",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282>"
           },
           "in" : {
             "rel" : "defaultGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup>"
           },
           "type" : "added"
         }
@@ -99,29 +104,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|defaultGroup|High|people|Indicates that the default group has been updated. The application can decide to fetch theupdated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                   |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| defaultGroup              | High                      | people                  | Indicates that the default group has been updated. The application can decide to fetch theupdated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "defaultGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup>"
           },
           "type" : "updated"
         }
@@ -135,33 +141,34 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|contact|High|people|Indicates that a specific contact was deleted from this group. The application can decide tofetch the updated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                               |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| contact                   | High                      | people                  | Indicates that a specific contact was deleted from this group. The application can decide tofetch the updated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "contact",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282>"
           },
           "in" : {
             "rel" : "defaultGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup>"
           },
           "type" : "deleted"
         }
@@ -176,6 +183,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -228,7 +236,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup HTT
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -270,7 +277,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/defaultGroup HTT
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

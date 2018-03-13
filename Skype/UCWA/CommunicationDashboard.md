@@ -10,6 +10,7 @@ The [communication](communication_ref.md) resource gives the user the ability to
 ## Resource representation
 <a name="sectionSection0"> </a>
 
+
 The following table contains a representation of the communication resource.
 
 
@@ -55,6 +56,7 @@ The following table contains a representation of the communication resource.
 ## conversations
 <a name="sectionSection1"> </a>
 
+
 A [conversations](conversations_ref.md) resource represents the user's ongoing conversations.
 
 
@@ -72,6 +74,7 @@ Users can determine which active modalities the local and remote participants ar
 
 ## conversationLogs
 <a name="sectionSection2"> </a>
+
 
 The **conversationLogs** resource serves as a kind of dashboard that represents the history of conversations the user has had as a collection of **conversationLog** resources.
 
@@ -104,11 +107,13 @@ The following table contains a representation of the **conversationLogs** resour
 ## joinOnlineMeeting
 <a name="sectionSection3"> </a>
 
+
 The [joinOnlineMeeting](joinOnlineMeeting_ref.md) resource enables a user to joins an online meeting.
 
 
 ## startMessaging
 <a name="sectionSection4"> </a>
+
 
 The [startMessaging](startMessaging_ref.md) resource starts a [messagingInvitation](messagingInvitation_ref.md) that adds the [messaging](messaging_ref.md) modality to a new conversation.
 
@@ -116,11 +121,13 @@ The [startMessaging](startMessaging_ref.md) resource starts a [messagingInvitati
 ## startOnlineMeeting
 <a name="sectionSection5"> </a>
 
+
 The [startOnlineMeeting](startOnlineMeeting_ref.md) resource creates and joins an _ad hoc_multiparty conversation.
 
 
 ## startPhoneAudio
 <a name="sectionSection6"> </a>
+
 
 The [startPhoneAudio](startPhoneAudio_ref.md) resource initiates a call-via-work by starting a [phoneAudioInvitation](phoneAudioInvitation_ref.md) that adds the [phoneAudio](phoneAudio_ref.md) modality to a new conversation.
 

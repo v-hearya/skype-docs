@@ -11,6 +11,7 @@ _**Applies to:** Skype for Business 2015_
 - [Related Topics](#related-topics)
 
 <a name="audience"></a>
+
 ## Who is this article for?
 
 If you are attempting to use the Azure AD authentication option to sign into the Skype for Business (SfB) Web SDK and you are seeing an AAD error page that looks like the following then this article is for you. The error page should have this message: "The reply address 'https://...' does not match the reply addresses configured for the application <...>"
@@ -20,11 +21,13 @@ If you are attempting to use the Azure AD authentication option to sign into the
 If this is not your issue, you can return to [Troubleshooting Azure AD Authentication Failures for Skype Web SDK](./AADAuthFailures.md) for a list of other potential issues.
 
 <a name="issue"></a>
+
 ## The Issue
 
 You either have not configured the URL where you're hosting your app as a valid reply URL in the registration of your app in AAD, or you have not specified the correct url as the **redirect_uri** query parameter of the URL when redirecting to the AAD sign in page to allow the user to enter credentials.
 
 <a name="solution"></a>
+
 ## The Solution
 
 You need to configure the main domain name where you're hosting your app as a reply URL in the AAD registration for your app and pass it as the **redirect_uri** when redirecting to AAD to allow the user to sign in.
@@ -54,6 +57,7 @@ Note in the code above that we are using **window.location.href** as the value o
 ---
 
 <a name="related-topics"></a>
+
 ## Related Topics
 
 - [Troubleshooting AAD Auth Failures for Skype Web SDK](./AADAuthFailures.md)

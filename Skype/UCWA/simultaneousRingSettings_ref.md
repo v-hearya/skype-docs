@@ -4,10 +4,11 @@
 
 
 Represents a user's settings to simultaneously send incoming calls to a specified target.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The user's incoming calls can be simultaneously sent to a contact, delegates, or team, as well as to the user.
 
@@ -50,6 +52,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -59,6 +62,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -111,7 +115,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: b3bc1546-31fd-4203-9a35-d8d7231d8af5
-
 ```
 
 
@@ -161,7 +164,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: d428ebf5-dba8-4702-bfe8-fd05e3789f31
-
 ```
 
 
@@ -256,7 +258,6 @@ Content-Length: 64
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 
@@ -288,7 +289,6 @@ Content-Length: 247
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 

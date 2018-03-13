@@ -17,6 +17,7 @@ This section shows how to develop a Skype Web SDK client application for Skype f
 ## Download the SDK and sign in
 <a name="sectionSection0"> </a>
 
+
 Add the following code to the document function of an index page in your app.
 
 ```js
@@ -36,6 +37,7 @@ Skype.initialize({
 
 ## Password grant authentication
 <a name="sectionSection1"> </a>
+
 
 In the password grant authentication flow, the SDK sends username and password to the server to get a web ticket:
 
@@ -140,6 +142,7 @@ app.signInManager.signIn(...).then(() => {
 ## Integrated Windows Authentication (IWA)
 <a name="sectionSection2"> </a>
 
+
 To sign in using the Integrated Windows Authentication (IWA) flow, provide the _domain_ parameter:
 
 ```js
@@ -154,6 +157,7 @@ This auth mode is enabled when 401 responses have `urn:microsoft.rtc:window` in 
 
 ## Anonymous meeting join
 <a name="sectionSection3"> </a>
+
 
 To sign in using the anonymous meeting join flow, your application needs to provide the URI of the online meeting:
 
@@ -170,6 +174,7 @@ This auth mode is enabled when 401 responses have `urn:microsoft.rtc:anonmeeting
 
 ## Passive/ADFS authentication
 <a name="sectionSection4"> </a>
+
 
 You can use the passive authentication if your on-premises server has ADFS configured. To use this auth, set the `auth` param:
 
@@ -188,6 +193,7 @@ This auth mode is enabled when 401 responses have `urn:microsoft.rtc:passive` in
 
 ## OAuth2 authentication
 <a name="sectionSection5"> </a>
+
 
 To use this authentication, set `client_id` of your registered app:
 

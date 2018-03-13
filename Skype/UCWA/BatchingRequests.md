@@ -51,7 +51,6 @@ Host: lyncweb.contoso.com
 Accept: application/json
 
 --77f2569d-c005-442b-b856-782305305e5f--
-
 ```
 
 The following is an example batch response. 
@@ -152,7 +151,6 @@ Content-Type: application/json; charset=utf-8
  "rel":"me"
 }
 --3968fb75-0b0e-4e11-8b0c-4e37d822ed0c--
-
 ```
 
 

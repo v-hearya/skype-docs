@@ -10,6 +10,7 @@ Use the functions in the GeneralHelper library to create namespaces, to check fo
 ## Create a GeneralHelper object
 <a name="sectionSection0"> </a>
 
+
 A **GeneralHelper** object is created as shown in the following example.
 
 
@@ -23,14 +24,16 @@ The variable declared in the preceding example is used in subsequent examples in
 ## extractDataFromDataUri(uri, options)
 <a name="sectionSection1"> </a>
 
+
 The **extractDataFromDataUri** function extracts textual data from a Data URI.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|uri|The Data URI to be decoded.|
-|options|The only option currently available is `options.unescape`. If set, replaces each escape sequence in the URI.|
+| <strong>Parameter</strong> | <strong>Description</strong>                                                                                 |
+|:---------------------------|:-------------------------------------------------------------------------------------------------------------|
+| uri                        | The Data URI to be decoded.                                                                                  |
+| options                    | The only option currently available is `options.unescape`. If set, replaces each escape sequence in the URI. |
+
  **Returns**: The string contained in the Data URI.
 
  **Syntax**
@@ -51,7 +54,6 @@ extractDataFromDataUri(uri , options )
 function decodeMessage(message) {
  return _generalHelper.extractDataFromDataUri(message, { unescape: true });
 }
-
 ```
 
 
@@ -63,13 +65,15 @@ In UCWA 2.0, Data URIs are used to transmit instant message bodies. For more inf
 ## extractOriginFromAbsoluteUrl(url)
 <a name="sectionSection2"> </a>
 
+
 The **extractOriginFromAbsoluteUrl** function extracts the origin from an absolute URL.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|url|The URL from which to extract the origin.|
+| <strong>Parameter</strong> | <strong>Description</strong>              |
+|:---------------------------|:------------------------------------------|
+| url                        | The URL from which to extract the origin. |
+
  **Returns**: The origin as a string or an empty string.
 
  **Syntax**
@@ -98,6 +102,7 @@ An origin consists of SCHEME + "://" + HOST + (optional) ":" + (optional) PORT. 
 
 ## generateUUID()
 <a name="sectionSection3"> </a>
+
 
 The **generateUUID** function generates a Universally Unique Identifier (UUID) based on the [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) specification.
 
@@ -141,13 +146,15 @@ messagingId = opRes.startOperation({
 ## isDefined(object)
 <a name="sectionSection4"> </a>
 
+
 The **isDefined** function verifies that the supplied object is defined; specifically, that it is not **undefined** and not **null**.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|object|Object to check.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| object                     | Object to check.             |
+
  **Returns**: Boolean indicating whether the object is defined.
 
  **Syntax**
@@ -179,13 +186,15 @@ function findRelation(data) {
 ## isEmpty(object)
 <a name="sectionSection5"> </a>
 
+
 The **isEmpty** function determines whether the specified object is empty.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|object|Object to check.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| object                     | Object to check.             |
+
  **Returns**: Boolean indicating whether the object is empty.
 
  **Syntax**
@@ -217,13 +226,15 @@ if (data.results._embedded.contact &amp;&amp; !_generalHelper.isEmpty(data.resul
 ## namespace(namespaceString)
 <a name="sectionSection6"> </a>
 
+
 The **namespace** function generates an object placed in a namespace, based on the supplied string. This function splits the namespace string on '.' and begins iterating over the parts, creating a new object if necessary.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|namespaceString|Namespace to generate.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| namespaceString            | Namespace to generate.       |
+
  **Returns**: JSON object representing the namespace.
 
  **Syntax**
@@ -242,6 +253,5 @@ namespace(namespaceString )
 
 ```
 _generalHelper. namespace("microsoft.rtc.ucwa.samples");
-
 ```
 

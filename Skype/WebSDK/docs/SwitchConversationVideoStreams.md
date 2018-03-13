@@ -33,7 +33,6 @@ var container = conversation.participant(0).video.channels(0).stream.source.sink
      container(null); // to hide video
 //... other app logic
      container(document.getElementById('videoContainer1')); // to show video
-
 ```
 
 

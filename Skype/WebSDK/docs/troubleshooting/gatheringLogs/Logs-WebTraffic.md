@@ -10,10 +10,11 @@
 
 Capturing the web traffic sent and received by your app can help make failures more obvious and easy to detect if your issue is due to a failing request to the server. This article provides instructions on how to use a web debugging proxy such as [Fiddler](http://www.telerik.com/fiddler) or [Charles](https://www.charlesproxy.com/) to capture a trace of your application's network activity. 
 
-> [!NOTE] 
-If you're submitting a web trace as part of an error report, submit the web trace as a **Fiddler** or **Charles** trace. Exceptions are only made when **Fiddler** and **Charles** aren't supported by the platform where your issue is occurring. 
+> [!NOTE]
+> If you're submitting a web trace as part of an error report, submit the web trace as a **Fiddler** or **Charles** trace. Exceptions are only made when **Fiddler** and **Charles** aren't supported by the platform where your issue is occurring. 
 
 <a name="fiddler"></a>
+
 ## Capturing web traffic with Fiddler
 
 Fiddler is fully supported on Windows machines and has begun beta support for OS X. Download Fiddler here: 
@@ -34,6 +35,7 @@ This is how the Fiddler options window should look if you've properly configured
 ![Fiddler Options Window](../../../images/troubleshooting/gatheringLogs/FiddlerOptions.PNG)
 
 <a name="charles"></a>
+
 ## Capturing web traffic with Charles
 
 Charles is supported on Windows, Mac OS, and Linux. You can download a previous release or a trial version of the latest release for free, but will have to pay if you wish to continue using the latest release when the trial expires. Download Charles here:
@@ -50,6 +52,7 @@ After the download completes, follow these steps to configure Charles to start c
 6. If you're capturing the web traffic to submit with an error report, or you'd like to revisit it later, go to **File > Save Session**, select an appropriate save location, name the trace, and click **save**.
 
 <a name="external-resources"></a>
+
 ## External resources
 - [Proxy HTTPS Traffic with Fiddler](http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS)
 - [Enable SSL Proxying with Charles](https://www.charlesproxy.com/documentation/proxying/ssl-proxying/)

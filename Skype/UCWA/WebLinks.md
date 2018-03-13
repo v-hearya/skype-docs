@@ -10,19 +10,19 @@ The response to an HTTP request typically contains one or more web links, which 
  **rel**
 
 - Indicates a relationship to a resource and forms the unit of documentation. For example, the [conversation](conversation_ref.md) and [phoneAudio](phoneAudio_ref.md) resources.
- 
+
 - The most common values are **self** and **next**.
- 
+
 - Can be versioned (for future use).
- 
- **href**
+
+  **href**
 
 - Points to the HTTP URL of the resource. Can be relative or absolute.
- 
- **title**
+
+  **title**
 
 - Provides additional data in the link, such as DisplayName of a participant or audio source ID. Most resources do not have this attribute in their web links.
- 
+
 
 ## JSON examples
 
@@ -39,7 +39,6 @@ The response to an HTTP request typically contains one or more web links, which 
  "title": "John Doe"
  }
 }
-
 ```
 
 
@@ -48,7 +47,7 @@ The response to an HTTP request typically contains one or more web links, which 
 
 ```XML
 <link rel="conversation" href="/ucwa/oauth/v1/applications/101246165550/communication/conversations/7c5c/" />
-<link rel="participant" href="/ucwa/oauth/v1/applications/101246165550/communication/conversations/7c5c/participants/johndoe@contoso.com" title="John Doe" />
 
+<link rel="participant" href="/ucwa/oauth/v1/applications/101246165550/communication/conversations/7c5c/participants/johndoe@contoso.com" title="John Doe" />
 ```
 

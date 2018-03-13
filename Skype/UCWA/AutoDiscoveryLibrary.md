@@ -22,7 +22,6 @@ var domain = "https://www.example.com",
 targetOrigin = "https://www.consoso.com",
 Transport = new microsoft.rtc.ucwa.samples.Transport(targetOrigin);
 AutoDiscovery = microsoft.rtc.ucwa.samples.AutoDiscovery(Transport);
-
 ```
 
 The variables declared in the preceding example are used in subsequent examples in this topic.
@@ -34,11 +33,12 @@ The **startDiscovery** function is the starting point for auto-discovery.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|domain|FQDN to use during auto-discovery.|
-|container|DOM element that will contain the injected iframe(s).|
-|callback|Method to execute when auto-discovery completes.|
+| <strong>Parameter</strong> | <strong>Description</strong>                          |
+|:---------------------------|:------------------------------------------------------|
+| domain                     | FQDN to use during auto-discovery.                    |
+| container                  | DOM element that will contain the injected iframe(s). |
+| callback                   | Method to execute when auto-discovery completes.      |
+
  **Syntax**
 
 

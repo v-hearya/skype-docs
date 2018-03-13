@@ -3,7 +3,7 @@
 
  _**Applies to:** Skype for Business 2015_
 
-[!INCLUDE[ChromeWarning](includes/P2PChromeWarning.md)]
+[!INCLUDE [ChromeWarning](includes/P2PChromeWarning.md)]
 
 ## Listening for incoming call notifications
 
@@ -27,14 +27,14 @@ In order to see the notification we need to:
     ```
 
 3. When the command becomes available we have received a notification. We can now prompt the user to accept ot decline the invitation.
-When the user accepts, we execute `conversation.audioService.accept()`. When they reject `conversation.audioService.reject()` is executed.
-```js
-if (confirm('Accept incoming Audio invitation?')) {
+   When the user accepts, we execute `conversation.audioService.accept()`. When they reject `conversation.audioService.reject()` is executed.
+   ```js
+   if (confirm('Accept incoming Audio invitation?')) {
     conversation.audioService.accept();
-} else {
+   } else {
     conversation.audioService.reject();
-}
-```
+   }
+   ```
 
 ## Conversation State
 We can subscribe to the conversation state to get information about the overall state of the conversation.

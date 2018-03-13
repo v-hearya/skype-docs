@@ -10,7 +10,7 @@ Searching for a user's contact requires accessing the search resource. It involv
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a GET request on the **search** resource following the links from **people** resource embedded in the **application** resource.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/search?query=sarad@contoso.com&amp;limit=3 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -23,13 +23,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 2. Process the response from the previous GET request to obtain the contact info.
- 
- The response you receive should be 200 OK. The body of the response contains an array property named "contact" that is an array of individual contacts. Each item in the array includes information about a contact's URI, source network, and screen name, as well as links to other information about the contact.
- 
+
+   The response you receive should be 200 OK. The body of the response contains an array property named "contact" that is an array of individual contacts. Each item in the array includes information about a contact's URI, source network, and screen name, as well as links to other information about the contact.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive

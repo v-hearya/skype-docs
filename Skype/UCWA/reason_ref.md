@@ -4,10 +4,11 @@
 
 
 Error response. This is never explicitly requested by the client - but the client will receive this in the event of an error.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -42,6 +43,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 

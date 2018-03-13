@@ -15,9 +15,9 @@ After the discovery and authentication processes, the application is registered 
 ![HTTP call flow prior to creating an application in UCWA](images/UCWA15Con_CreateApp.png)
 
 1. Send a GET request on the Autodiscovery URL. 
- 
- The Autodiscovery URL can be constructed by appending the domain name to the string "https://lyncdiscover". For example, if the domain name is "contoso.com", the Autodiscovery URL would be "https://lyncdiscover.contoso.com/". 
- 
+
+   The Autodiscovery URL can be constructed by appending the domain name to the string "<https://lyncdiscover>". For example, if the domain name is "contoso.com", the Autodiscovery URL would be "<https://lyncdiscover.contoso.com/>". 
+
     ```
     GET https://lyncdiscover.contoso.com/ HTTP/1.1
     X-Ms-Origin: http://app.fabrikam.com
@@ -32,17 +32,17 @@ After the discovery and authentication processes, the application is registered 
     ```
 
 2. Process the response from the previous request.
- 
- The response from the previous GET request should be 200 OK. The body of the response contains three links. Each link is a key-value pair that consists of a name ("rel") and an object. The object is also a key-value pair in which the key is "href" and the value is the URL. 
- 
- - self (the current resource)
- 
- - [user](user_ref.md) (the user on whose behalf you are logging in)
- 
- - [xframe](xframe_ref.md) (the cross-domain frame used for web-based applications. )
- 
+
+   The response from the previous GET request should be 200 OK. The body of the response contains three links. Each link is a key-value pair that consists of a name ("rel") and an object. The object is also a key-value pair in which the key is "href" and the value is the URL. 
+
+   - self (the current resource)
+
+   - [user](user_ref.md) (the user on whose behalf you are logging in)
+
+   - [xframe](xframe_ref.md) (the cross-domain frame used for web-based applications. )
+
    The user and xframe URLs will be used later, so it is important that you cache them.
- ```
+   ```
         HTTP/1.1 200 OK
         Connection: Keep-Alive
         Content-Length: 321
@@ -64,30 +64,29 @@ After the discovery and authentication processes, the application is registered 
         "xframe":{"href":"https://lyncweb.contoso.com/Autodiscover/XFrame/XFrame.html"}
         }
         }
-```
+   ```
 
 3. Send a GET request on the user URL, indicating that we want to authenticate as a user.
- 
- The URL in this GET request comes from the response body of the previous GET request. The **user** href is used for the URL in the request, and the **xframe** href is used in the Referer header of this request. Notice also that the Host header changes from lyncdiscover.contoso.com to lyncweb.contoso.com.
- 
- ```
- GET https://lyncweb.contoso.com/Autodiscover/AutodiscoverService.svc/root/oauth/user?originalDomain=contoso.com HTTP/1.1
-X-Ms-Origin: http://app.fabrikam.com
-Accept: application/json
-X-Requested-With: XMLHttpRequest
-Referer: https://lyncweb.contoso.com/Autodiscover/XFrame/XFrame.html
-Accept-Language: en-us
-Accept-Encoding: gzip, deflate
-User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
-Host: lyncweb.contoso.com
-Connection: Keep-Alive
 
- ```
+   The URL in this GET request comes from the response body of the previous GET request. The **user** href is used for the URL in the request, and the **xframe** href is used in the Referer header of this request. Notice also that the Host header changes from lyncdiscover.contoso.com to lyncweb.contoso.com.
+
+   ```
+   GET https://lyncweb.contoso.com/Autodiscover/AutodiscoverService.svc/root/oauth/user?originalDomain=contoso.com HTTP/1.1
+   X-Ms-Origin: http://app.fabrikam.com
+   Accept: application/json
+   X-Requested-With: XMLHttpRequest
+   Referer: https://lyncweb.contoso.com/Autodiscover/XFrame/XFrame.html
+   Accept-Language: en-us
+   Accept-Encoding: gzip, deflate
+   User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+   Host: lyncweb.contoso.com
+   Connection: Keep-Alive
+   ```
 
 4. Process the response from the previous request.
- 
- The response from the previous GET request should be 401 Unauthorized. This should be no surprise, as the user is not yet authenticated. The body of the response contains a URL that can be used to get an OAuth token that is used in all subsequent requests. 
- 
+
+   The response from the previous GET request should be 401 Unauthorized. This should be no surprise, as the user is not yet authenticated. The body of the response contains a URL that can be used to get an OAuth token that is used in all subsequent requests. 
+
     ```
     HTTP/1.1 401 Unauthorized
     Connection: Keep-Alive
@@ -101,26 +100,25 @@ Connection: Keep-Alive
     X-Powered-By: ASP.NET
     X-Content-Type-Options: nosniff
     Vary: Accept-Encoding
-
     ```
-The response body contains an HTML document (not shown here) with the following text:
- 
- > Server Error401 - Unauthorized: Access is denied due to invalid credentials. You do not have permission to view this directory or page using the credentials that you supplied.
+   The response body contains an HTML document (not shown here) with the following text:
+
+   > Server Error401 - Unauthorized: Access is denied due to invalid credentials. You do not have permission to view this directory or page using the credentials that you supplied.
 
 5. Send a POST request on the OAuth URL.
- 
- UCWA 2.0 supports three authentication mechanisms:
- 
- - Windows authentication - allow the browser to launch a Windows prompt that gets user credentials from the operating system.
- 
- - Anonymous meeting - allow an anonymous user to participate in an online meeting.
- 
- - Password authentication - collect the user's credentials in the code for your application.
- 
- To use password authentication, you must provide a function that gets a user's credentials. This can take the form of HTML ```<input>``` tags, a JavaScript input dialog box, or other means of getting input.
- 
- The response shown here uses password authentication. To use Windows authentication, for example, place the following in the request body- grant_type=urn:microsoft.rtc:windows.
- 
+
+   UCWA 2.0 supports three authentication mechanisms:
+
+   - Windows authentication - allow the browser to launch a Windows prompt that gets user credentials from the operating system.
+
+   - Anonymous meeting - allow an anonymous user to participate in an online meeting.
+
+   - Password authentication - collect the user's credentials in the code for your application.
+
+   To use password authentication, you must provide a function that gets a user's credentials. This can take the form of HTML ```<input>``` tags, a JavaScript input dialog box, or other means of getting input.
+
+   The response shown here uses password authentication. To use Windows authentication, for example, place the following in the request body- grant_type=urn:microsoft.rtc:windows.
+
     ```
     POST https://lyncweb.contoso.com/webticket/oauthtoken HTTP/1.1
     Accept: application/json
@@ -137,15 +135,14 @@ The response body contains an HTML document (not shown here) with the following 
     Cache-Control: no-cache
 
     grant_type=password&amp;username=lenea@contoso.com&amp;password=pass@word1
-
     ```
 
 6. Process the response from the previous request.
- 
- The response from the previous POST request should be 200 OK. The body of the response contains the OAuth token that must be used in all subsequent requests. 
- 
- For the sake of brevity, the OAuth token is not shown in its entirety.
- 
+
+   The response from the previous POST request should be 200 OK. The body of the response contains the OAuth token that must be used in all subsequent requests. 
+
+   For the sake of brevity, the OAuth token is not shown in its entirety.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -166,13 +163,12 @@ The response body contains an HTML document (not shown here) with the following 
     "ms_rtc_identityscope":"local",
     "token_type":"Bearer"
     }
-
     ```
 
 7. Send another GET request on the **user** resource, passing the OAuth token in the Authorization header of the request.
- 
- The previous GET request on the user resource resulted in a response code of 401 Not Authorized, because the request was made without an OAuth token. 
- 
+
+   The previous GET request on the user resource resulted in a response code of 401 Not Authorized, because the request was made without an OAuth token. 
+
     ```
     GET https://lyncweb.contoso.com/Autodiscover/AutodiscoverService.svc/root/oauth/user?originalDomain=contoso.com HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -185,13 +181,12 @@ The response body contains an HTML document (not shown here) with the following 
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 8. Process the response from the previous GET request. 
- 
- A successful response is 200 OK. The response body contains a link to the [applications](applications_ref.md) resource, which is used in the next step.
- 
+
+   A successful response is 200 OK. The response body contains a link to the [applications](applications_ref.md) resource, which is used in the next step.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -217,11 +212,11 @@ The response body contains an HTML document (not shown here) with the following 
     ```
 
 9. Send a POST request on the **applications** resource.
- 
- Now that you have user credentials, your request to access UCWA 2.0 as a user will be granted and you will receive a resource with a single link to the **applications** resource. Why do you care about the **applications** resource? This is how you register your application with UCWA 2.0 as an agent of the user whose credentials you obtained in a previous step.
- 
- The 's' at the end of applications indicates that it represents a collection of individual [application](application_ref.md) resources. In UCWA 2.0, the convention to create or add an item to a collection is to perform a POST request on the collection. To do that, we look at the reference documentation for the **applications** resource and see that it takes three input parameters, which are shown in the body of the following request.
- 
+
+   Now that you have user credentials, your request to access UCWA 2.0 as a user will be granted and you will receive a resource with a single link to the **applications** resource. Why do you care about the **applications** resource? This is how you register your application with UCWA 2.0 as an agent of the user whose credentials you obtained in a previous step.
+
+   The 's' at the end of applications indicates that it represents a collection of individual [application](application_ref.md) resources. In UCWA 2.0, the convention to create or add an item to a collection is to perform a POST request on the collection. To do that, we look at the reference documentation for the **applications** resource and see that it takes three input parameters, which are shown in the body of the following request.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications HTTP/1.1
     Accept: application/json
@@ -243,13 +238,12 @@ The response body contains an HTML document (not shown here) with the following 
     "EndpointId":"a917c6f4-976c-4cf3-847d-cdfffa28ccdf",
     "Culture":"en-US",
     }
-
     ```
 
 10. Process the response from the previous request. 
- 
- The response from the previous POST request should be 201 Created, which indicates that your application is now registered with the UCWA 2.0 server. The body of the response contains the application resource, which contains basic information about the application, links to related resources such as the [batch](batch_ref.md) and [events](events_ref.md) resources, and four resources that are so useful that they are embedded in the application resource - [me](me_ref.md), [people](people_ref.md), [onlineMeetings](onlineMeetings_ref.md), and [communication](communication_ref.md). 
- 
+
+    The response from the previous POST request should be 201 Created, which indicates that your application is now registered with the UCWA 2.0 server. The body of the response contains the application resource, which contains basic information about the application, links to related resources such as the [batch](batch_ref.md) and [events](events_ref.md) resources, and four resources that are so useful that they are embedded in the application resource - [me](me_ref.md), [people](people_ref.md), [onlineMeetings](onlineMeetings_ref.md), and [communication](communication_ref.md). 
+
     ```
     HTTP/1.1 201 Created
     Connection: Keep-Alive

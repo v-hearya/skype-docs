@@ -12,7 +12,7 @@ in the Skype dial pad.
 
  ![Skype call permission dialog](images/SkypeCallPerm.png)
 
-##Android code example
+## Android code example
 
  The following code is in the _onCreate_ method of an activity with a text entry field and a Skype call button.
 

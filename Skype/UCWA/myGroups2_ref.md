@@ -4,10 +4,11 @@
 
 
 A collection of groups in the contact list of the logged-on user.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This collection is read-only: it can be used only to view existing group resources. New groups can becreated using the Skype for Business desktop client.
 
@@ -54,6 +56,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -61,43 +64,45 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|group|High|people|Delivered when a roaming group is added to my groups.</p><p></p>|
-|defaultGroup|Low|people|Delivered when a default group is added to my groups.</p><p></p>|
-|pinnedGroup|Low|people|Delivered when a pinned group is added to my groups.</p><p></p>|
-|distributionGroup|High|people|Delivered when a distribution group is added to my groups.</p><p></p>|
-|delegatesGroup|High|people|Delivered when a delegate group is added to my groups.</p><p></p>|
-|delegatorsGroup|High|people|Delivered when a delegator group is added to my groups.</p><p></p>|
-|myOrganizationGroup|Low|people|Delivered when MyOrganizationGroup is added to my groups.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                               |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------|
+| group                     | High                      | people                  | Delivered when a roaming group is added to my groups.</p><p></p>      |
+| defaultGroup              | Low                       | people                  | Delivered when a default group is added to my groups.</p><p></p>      |
+| pinnedGroup               | Low                       | people                  | Delivered when a pinned group is added to my groups.</p><p></p>       |
+| distributionGroup         | High                      | people                  | Delivered when a distribution group is added to my groups.</p><p></p> |
+| delegatesGroup            | High                      | people                  | Delivered when a delegate group is added to my groups.</p><p></p>     |
+| delegatorsGroup           | High                      | people                  | Delivered when a delegator group is added to my groups.</p><p></p>    |
+| myOrganizationGroup       | Low                       | people                  | Delivered when MyOrganizationGroup is added to my groups.</p><p></p>  |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "myOrganizationGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGroup>"
           },
           "in" : {
             "rel" : "myGroups",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups>"
           },
           "type" : "added"
         }
@@ -111,34 +116,35 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|delegatorsGroup|High|people|Delivered when a delegator group is updated in my groups.</p><p></p>|
-|myOrganizationGroup|Low|people|Delivered when a MyOrganizationGroupis updated in my groups.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                 |
+|:--------------------------|:--------------------------|:------------------------|:------------------------------------------------------------------------|
+| delegatorsGroup           | High                      | people                  | Delivered when a delegator group is updated in my groups.</p><p></p>    |
+| myOrganizationGroup       | Low                       | people                  | Delivered when a MyOrganizationGroupis updated in my groups.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "myOrganizationGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGroup>"
           },
           "in" : {
             "rel" : "myGroups",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups>"
           },
           "type" : "updated"
         }
@@ -152,37 +158,38 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|group|High|people|Delivered when a roaming group is deleted from my groups.</p><p></p>|
-|defaultGroup|Low|people|Delivered when a default group is deleted from my groups.</p><p></p>|
-|pinnedGroup|Low|people|Delivered when a pinned group is deleted from my groups.</p><p></p>|
-|distributionGroup|High|people|Delivered when a distribution group is deleted from my groups.</p><p></p>|
-|delegatorsGroup|High|people|Delivered when a delegator group is removed from my groups.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                   |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------|
+| group                     | High                      | people                  | Delivered when a roaming group is deleted from my groups.</p><p></p>      |
+| defaultGroup              | Low                       | people                  | Delivered when a default group is deleted from my groups.</p><p></p>      |
+| pinnedGroup               | Low                       | people                  | Delivered when a pinned group is deleted from my groups.</p><p></p>       |
+| distributionGroup         | High                      | people                  | Delivered when a distribution group is deleted from my groups.</p><p></p> |
+| delegatorsGroup           | High                      | people                  | Delivered when a delegator group is removed from my groups.</p><p></p>    |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "delegatorsGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup>"
           },
           "in" : {
             "rel" : "myGroups",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups>"
           },
           "type" : "deleted"
         }
@@ -197,6 +204,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -260,7 +268,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -529,7 +536,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -587,6 +593,7 @@ Content-Length: 6585
       <property name="uri">sip:alex@contoso.com</property>
       <property name="workPhoneNumber">tel:+1425554321;ext=54321</property>
     </resource>
+
     <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup">
       <link rel="addToContactList" href="/ucwa/v1/applications/192/groups/addToContactList" />
       <link rel="expandDistributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup/expandDistributionGroup" />
@@ -621,6 +628,7 @@ Content-Length: 6585
         <property name="uri">sip:alex@contoso.com</property>
         <property name="workPhoneNumber">tel:+1425554321;ext=54321</property>
       </resource>
+
       <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup">
         <link rel="addToContactList" href="/ucwa/v1/applications/192/groups/addToContactList" />
         <link rel="expandDistributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup/expandDistributionGroup" />
@@ -633,6 +641,7 @@ Content-Length: 6585
         <resource rel="contact" href="/ucwa/v1/applications/192/people/282" />
         <resource rel="distributionGroup" href="/ucwa/v1/applications/192/groups/distributionGroup" />
       </resource>
+
     </resource>
   </resource>
   <resource rel="group" href="/ucwa/v1/applications/192/groups/group">
@@ -642,6 +651,7 @@ Content-Length: 6585
     <property name="id">7</property>
     <property name="name">MyPersonalGroup</property>
   </resource>
+
 </resource>
 ```
 
@@ -716,7 +726,6 @@ Content-Length: 29
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -745,7 +754,6 @@ Content-Length: 158
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

@@ -8,83 +8,84 @@ ms.assetid: b411b6d6-4597-416f-8a68-292527d3f226
 # Configuring SDN Interface using the command prompt
 
  **Last modified:** February 24, 2017
-  
-    
-    
+
+
+
 
  * **Applies to:** Lync Server 2013 | Skype for Business 2015
 
 Most settings used by the Dialog Listener and SDN Manager are kept in the central data store (local cache, SQL Server database, or Redis cache) that is managed by the configuration service. These settings can be accessed and modified through a command line tool (SDNManager.exe). SDNManager.exe can also get and set limits for quality metrics of call streams from the QoEMetrics database. 
-  
-    
-    
+
+
+
 
 
 > [!NOTE]
 > The command line tool must connect to running Configuration Service/SDN Manager (or SDN Manager pool). Using a local copy of the SDNManager.exe allows you to connect to any configuration service, but the default instance is the one used by the installation itself. 
-  
-    
-    
+
+
+
 
 Configuration settings are divided into three groups: 
 - **Manager**. (m)anager settings are used by the SDN Manager component.
-    
-  
+
+
 - **Listener**. (l)istener settings are used by the Dialog Listener component installed on a specified pool of Skype for Business Server front end machines. When a Dialog Listener installed on a new pool connects to the configuration service (which is running on an SDN Manager) a new group of Dialog Listener settings is generated for the fully qualified domain name of the Skype for Business Server front end pool.
-    
-  
+
+
 - **Subscriber**. (s)ubscriber settings are used for a specified receiver of the media stream, call, and quality messages. You need to manually create a settings group for each receiver.
-    
-  
+
+
 
 > [!NOTE]
 > Listener and manager settings are populated by default, but subscriber settings are not set until a subscriber is created. Also note that only one manager setting can be used. 
-  
-    
-    
+
+
+
 
 This article contains the following section: 
 -  [Command-line commands](configuring-sdn-interface-using-the-command-prompt.md#bk_commands)
-    
-  
+
+
 -  [Example commands for viewing settings](configuring-sdn-interface-using-the-command-prompt.md#bk_examples)
-    
-  
+
+
 -  [SDN manager configuration settings](configuring-sdn-interface-using-the-command-prompt.md#bk_manager)
-    
-  
+
+
 -  [Dialog Listener configuration settings](configuring-sdn-interface-using-the-command-prompt.md#bk_listener)
-    
-  
+
+
 -  [Subscriber configuration settings](configuring-sdn-interface-using-the-command-prompt.md#bk_subscriber)
-    
-  
+
+
 
 ## Command-line commands
 <a name="bk_commands"> </a>
 
+
 The command-line executable, SDNManager.exe, is located in the SDN Manager installation directory, which by default is located at  `C:\\Program Files\\Microsoft Skype for Business Server\\Microsoft Skype for Business SDN Manager`. The command-line interface provides three categories of commands: 
-  
-    
-    
+
+
+
 
 - CRUD (create, read, update, delete) operation commands on listener, subscriber, and manager settings. 
-    
-  
+
+
 - A command to download and sync threshold limit settings from the QoEMetrics database. 
-    
-  
+
+
 - Replay recorded log commands, which are debugging and test operations. For more information, see  [Debugging the SDN Interface SDN Manager](debugging-the-sdn-manager.md). 
-    
-  
+
+
 Each command allows you to explicitly specify the URI and, if necessary, client certificate thumbprint to connect to the configuration service to update settings or to the SDN Manager service to execute a replay file. 
-  
-    
-    
+
+
+
 To access help on the available commands, enter the following at the command prompt:  `C:\\ > SDNManager.exe /?`. The command produces the following output: 
-  
-    
-    
+
+
+
 
 
 
@@ -139,57 +140,56 @@ Copyright (C) Microsoft Corporation.  All rights reserved.
                     using the client certificate thumbprint.
       []  ... optional parameter
       Example for SDNManager uris: http://server:9333/Settings or http://localhost:9333/DL
-
-
-
 ```
 
 
 ## Example commands for viewing settings
 <a name="bk_examples"> </a>
 
+
 Use the following example commands to view settings. 
-  
-    
-    
+
+
+
 
 - **Sdnmanager.exe d l**
-    
+
     Displays all configured Dialog Listener settings. You will get one record after a Dialog Listener has started up and requested settings. 
-    
-  
+
+
 - **Sdnmanager.exe d s**
-    
+
     Displays all configured subscriber settings. 
-    
-  
-- **Sdnmanager.exe p s mynms submituri=http://my_nms/sdn**
-    
+
+
+- <strong>Sdnmanager.exe p s mynms submituri=<http://my_nms/sdn></strong>
+
     Modifies the **submituri** setting for **my_nms** or creates new settings group for **my_nms** if one does not already exist. Similarly, you can then modify other settings to adjust the output behavior (signaling, quality, sendrawsdp, and so forth).
-    
-  
+
+
 - **Sdnmanager.exe d s mynms mysettings.xml https://sdnhost:9333/Settings ‎23991123649b4cfcb48ccf14f2d08601221caa2c**
-    
+
     Connects to a configuration service running on **sdnpool** using https; a client certificate selected using its thumbprint is used to authenticate the request. The request downloads the **mynms** subscriber settings and saves them in the mysettings.xml file.
-    
-  
+
+
 - **Sdnmanager.exe u s mynms mysettings.xml**
-    
+
     Upload settings saved using the previous commands. 
-    
-  
+
+
 For a complete example of the output, see  [Appendix to Skype for Business SDN Interface](appendix.md). In addition, you can get all the threshold settings from the Skype for Business Server QoEMetrics database. The SDN Manager uses the downloaded thresholds to update the corresponding **manager** settings, as shown here ``C:\\>SDNManager.exe /q mySfB_BackEnd\\monitoring``. In the example, the fragment  ``mySfB_BackEnd\\monitoring`` represents the SQL Server instance hosting the Skype for Business Server QoEMetrics database. The command updates the threshold limits used to determine stream quality.
-  
-    
-    
+
+
+
 
 ## SDN manager configuration settings
 <a name="bk_manager"> </a>
 
+
 The **manager** settings group provides settings for the general operation of the SDN Manager. An example of the output of the **manager** settings can be found in the [Appendix to Skype for Business SDN Interface](appendix.md). 
-  
-    
-    
+
+
+
 
 
 |**Setting**|**Description**|
@@ -201,38 +201,39 @@ The **manager** settings group provides settings for the general operation of th
 | `maxcachesize`|Maximum number of call states cached in the internal cache when in cache mode. |
 | `timeouthandlerperiod`|Time interval between checks for call timeouts in the data store. |
 | `hidepii`|Set to **true** (the default value) to obfuscate or hide personal identifiable information (PII) in messages. Set to **false** to see PII, in particular a full SIP UI that includes the account name and telephone numbers.|
-   
+
 In addition to these configuration settings, the configuration file also contains a list of threshold values used by SDN Manager to determine stream quality. These threshold values are used for determining call quality. 
-  
-    
-    
+
+
+
 There are two threshold values for each metric: **Optimal** and **Acceptable**. The values define the three quality bands for each modality. For a call stream to have the  _Good_ quality, all the quality metrics must be below (better than) the **Optimal** level. A call is of _Poor_ quality when all the metrics are below the **Acceptable** threshold and one or more of them are above the **Optimal** threshold. A call is _Bad_ when one or more of the metrics are above (worse than) the **Acceptable** threshold.
-  
-    
-    
+
+
+
 You can modify these threshold settings by using the SDNManager.exe  `/p` the `/q` command. The `/p` command updates the value individually and the `/q` command downloads and updates all of the threshold settings from the Skype for Business Server QoEMetrics database.
-  
-    
-    
+
+
+
 
 > [!NOTE]
 > When Video-based Screen Sharing (VbSS) is active, SDN Manager uses the following bandwidth limits for evaluating bandwidth limits of application sharing media streams: >  `<parameter key="applicationsharing-AppliedBandwidthLimitAcceptable">14000</parameter>`
-  
-    
-    
+
+
+
  `<parameter key="applicationsharing-AppliedBandwidthLimitOptimal">15000</parameter>`
-  
-    
-    
+
+
+
 
 
 ## Dialog Listener configuration settings
 <a name="bk_listener"> </a>
 
+
 The **listener** settings group contains settings for the Dialog Listener running on a pool of Skype for Business front-end servers. Each server pool connected to the configuration service has its own settings group; however, all server front-ends in the pool use the same settings. Each pool is identified by its pool fully qualified domain name. You can find examples of output for the **listener** settings in the [Appendix to Skype for Business SDN Interface](appendix.md). 
-  
-    
-    
+
+
+
 
 
 |**Setting**|**Description**|
@@ -246,15 +247,16 @@ The **listener** settings group contains settings for the Dialog Listener runnin
 | `maxbackoff`|Specifies the maximum number of seconds to delay message delivery upon transmission errors. The delay starts at one second and increments another second with every failed delivery up to the specified  `maxbackoff` setting.|
 | `maxopen`|Specifies the maximum number of messages sent concurrently. |
 | `maxretrybeforefailover`|Specifies the maximum number of message transmission failures before attempting to fail over to the alternative SDN Manager instance or pool, if configured. |
-   
+
 
 ## Subscriber configuration settings
 <a name="bk_subscriber"> </a>
 
+
 The **subscriber** settings group describes the behavior that each subscriber expects. You can see an example of output from subscriber settings in the [Appendix to Skype for Business SDN Interface](appendix.md). 
-  
-    
-    
+
+
+
 
 
 |**Setting**|**Description**|
@@ -276,16 +278,17 @@ The **subscriber** settings group describes the behavior that each subscriber ex
 | `submitqueuelen`|Specifies the maximum unanswered and waiting messages to send to this recipient. Change this value only if network conditions require a longer queue length caused by fluctuating delays in messages delivered to the subscriber. |
 | `obfuscationseed`|Specifies an individual seed used for the obfuscation of SIP aliases and telephone numbers if the manager setting hidepii is set to true. |
 | `schemaextension`|Boolean value, when 'True' (the default) additional fields are presented to the subscriber. (See  [Schema Extensions](schema-extensions.md)) |
-   
+
 
 ## Additional resources
 <a name="bk_addresources"> </a>
 
 
+
 -  [Configuring Skype for Business SDN Interface](configuring-sdn-interface.md)
-    
-  
+
+
 -  [Skype for Business SDN Interface Schema Reference](skype-for-business-sdn-interface-schema-reference.md)
-    
-  
+
+
 

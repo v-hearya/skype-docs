@@ -4,10 +4,11 @@
 
 
 Initiates an operation that groups multiple, independent HTTP operations into a single HTTP request payload.
-             
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 Batch requests are submitted as a single HTTP POST request to the batch resource.The batch request must contain a Content-Type header specifying a content type of "multipart/batching" and a boundary specification.The body of a batch request is made up of an ordered series of HTTP operations.In the batch request body, each HTTP operation is represented as a distinct MIME part and is separated by the boundary marker defined in the Content-Type header of the request. Each MIME part representing an HTTP operation within the Batch includes both Content-Type and Content-Transfer-Encoding MIME headers.The batch request boundary is the name specified in the Content-Type Header for the batch.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -52,6 +55,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -278,7 +282,6 @@ Content-Type: application/vnd.microsoft.com.ucwa+xml; charset=utf-8
 
 <?xml version="1.0" encoding="utf-8"?><resource rel="phones" href="/ucwa/v1/applications/11540713861/me/phones" xmlns="http://schemas.microsoft.com/rtc/2012/03/ucwa"><resource rel="phone" href="/ucwa/v1/applications/11540713861/me/phones/work"><property name="number">tel:+14255554321;ext=54321</property><property name="type">work</property><property name="includeInContactCard">true</property><property name="etag">2758999089</property></resource><resource rel="phone" href="/ucwa/v1/applications/11540713861/me/phones/mobile"><link rel="changeNumber" href="/ucwa/v1/applications/11540713861/me/phones/mobile/changeNumber"/><link rel="changeVisibility" href="/ucwa/v1/applications/11540713861/me/phones/mobile/changeVisibility"/><property name="number">4255551212</property><property name="type">mobile</property><property name="includeInContactCard">true</property><property name="etag">2878440199</property></resource><resource rel="phone" href="/ucwa/v1/applications/11540713861/me/phones/home"><link rel="changeNumber" href="/ucwa/v1/applications/11540713861/me/phones/home/changeNumber"/><link rel="changeVisibility" href="/ucwa/v1/applications/11540713861/me/phones/home/changeVisibility"/><property name="number"/><property name="includeInContactCard">false</property><property name="type">home</property><property name="etag">2976547271</property></resource><resource rel="phone" href="/ucwa/v1/applications/11540713861/me/phones/other"><link rel="changeNumber" href="/ucwa/v1/applications/11540713861/me/phones/other/changeNumber"/><link rel="changeVisibility" href="/ucwa/v1/applications/11540713861/me/phones/other/changeVisibility"/><property name="number"/><property name="includeInContactCard">false</property><property name="type">other</property><property name="etag">1067208367</property></resource></resource>
 --0cac9abd--
-
 ```
 
 

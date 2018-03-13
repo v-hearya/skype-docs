@@ -9,19 +9,20 @@ Request and response payloads can be specified as either JSON or XML.
 UCWA 2.0 supports two payload formats for HTTP requests and responses: 
 
 - JSON, with content type application/json
- 
+
 - XML, with content type application/xml
- 
+
 Note that the more generic content types are used by popular convention. Clients that wish to be more precise can use the following:
 
 - JSON: application/vnd.microsoft.com.ucwa+json 
- 
+
 - XML: application/vnd.microsoft.com.ucwa+xml
- 
+
 The body of a request or response often contains a resource, which can have properties, links to other resources, or embedded resources. For more information, see [Resources in UCWA](ResourcesInUCWA.md).
 
 ## JSON representation
 <a name="sectionSection0"> </a>
+
 
 
 ```
@@ -40,7 +41,6 @@ The body of a request or response often contains a resource, which can have prop
  }
  }
 }
-
 ```
 
 
@@ -78,13 +78,14 @@ There can be as many levels of embedding as needed; however, in most cases UCWA 
 <a name="sectionSection1"> </a>
 
 
+
 ```XML
 <resource rel="resource" href="http://ucwa.lync.com/resource/1/">
  <property name="prop1">1</property>
  <resource rel="otherResource" href="http://ucwa.lync.com/otherResource/1">
  </resource>
-</resource>
 
+</resource>
 ```
 
 The XML representation used by UCWA 2.0 resources takes advantage of XML attributes. Because of this, there is not a 
@@ -93,20 +94,21 @@ straightforward mapping between XML and JSON representations. The most significa
 
 - Dates in XML are supplied in ISO 8601 format. 
 - A resource is enclosed in a `<resource xmlns="..." rel="..." href="...">` element, where "rel" and "href" form the self link to the resource.
- 
+
 - Links are represented by a `<link rel="..." href="..." [ title = "..."] />` element, child of `<resource>`
 . There is no explicit element for a self link because it is part of the enclosing `<resource>` element. In case of multiple
  links with the same "rel" value, the `<link>` element is repeated multiple times. Unlike in JSON, there is no way to 
  distinguish a single link from a one-element collection of links.
- 
+
 - Properties are represented by a `<property name="..."> [value]</property>` element. Array-valued properties are 
 represented by a `<propertyList name="...">` element, containing `<item> [value]</item>` elements for each array member 
 in order.
- 
+
 - Embedded resources are represented by a `<resource rel="..." href="...">` element inside the containing `<resource>` element.
- 
+
 ## Input formats
 <a name="sectionSection2"> </a>
+
 
 UCWA 2.0 accepts input for POST or PUT methods in the XML and JSON formats already listed. However, the manipulation of links 
 and embedded resources in POST or PUT inputs is not supported. UCWA 2.0 will ignore them, so it is safe to send a GET request on a 
@@ -116,6 +118,7 @@ links and embedded resources from the GET response).
 
 ## Data URI
 <a name="sectionSection3"> </a>
+
 
 Some UCWA 2.0 resources include content types that do not follow the JSON or XML resource. One example is an instant message, where the content can be a text/plain or text/html block. This type of resource is represented as a link, where the "href" is not an HTTP URL but a Data URI that contains the encoded non-UCWA 2.0 content.
 
@@ -133,6 +136,7 @@ The Data URI syntax is defined in [RFC 2397](http://tools.ietf.org/html/rfc2397)
 
 ## Required and optional parameters
 <a name="sectionSection4"> </a>
+
 
 Not all parameters are required in POST inputs. For each resource, the API reference provides details about the parameters that are required and other restrictions on their contents.
 

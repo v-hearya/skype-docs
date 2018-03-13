@@ -17,12 +17,12 @@ The **Trusted Application API** allows developers to build Service Applications 
  
  A **Trusted Application API** Endpoint is a specific instance of a 3rd party application running in the context of a single tenant.  Registration of a **Trusted Application API** Endpoint is the responsibility of a Tenant Administrator. When registering an endpoint, a Tenant Admin must assign the following values:
  
- - SIP URI that identifies the endpoint, for example: **helpdesk@contoso.com**
- - Phone number (for PSTN-enabled Service Applications)
- - Callback URI
- - [Audience URL](https://azure.microsoft.com/en-us/documentation/articles/active-directory-token-and-claims/)
+- SIP URI that identifies the endpoint, for example: **helpdesk@contoso.com**
+- Phone number (for PSTN-enabled Service Applications)
+- Callback URI
+- [Audience URL](https://azure.microsoft.com/en-us/documentation/articles/active-directory-token-and-claims/)
  
- >Note: All the **Trusted Application API** endpoints require authentication using **OAuth token**. Please refer [Azure Active Directory - Service to Service calls using Client Credentials](./AADS2S.md) for more information on how to get a OAuth Token.
+  >Note: All the **Trusted Application API** endpoints require authentication using **OAuth token**. Please refer [Azure Active Directory - Service to Service calls using Client Credentials](./AADS2S.md) for more information on how to get a OAuth Token.
    
 
 ## Unified Communications Web API

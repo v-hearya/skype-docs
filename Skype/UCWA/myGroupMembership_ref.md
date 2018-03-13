@@ -4,10 +4,11 @@
 
 
 Represents the [group](group_ref.md) membership of a single [contact](contact_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource captures a unique pair of [contact](contact_ref.md) and [group](group_ref.md).If a [contact](contact_ref.md) appears in multiple [group](group_ref.md)s, there will be a separate resource for each membership of this contact.
 
@@ -47,6 +49,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -56,6 +59,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -108,7 +112,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships/myGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -154,7 +157,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships/myGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

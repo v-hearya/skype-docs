@@ -11,6 +11,7 @@ Batch.js has a queuing mechanism that stores up to 20 requests before sending. T
 ## Create a Batch object
 <a name="sectionSection0"> </a>
 
+
 To create a **Batch** object, you must first create **Cache** and **Transport** objects, as in the following sample. For more information, see [Cache library](CacheLibrary.md) and [Transport library](TransportLibrary.md).
 
 
@@ -27,6 +28,7 @@ The variables declared in the preceding example are used in subsequent examples 
 
 ## processBatch()
 <a name="sectionSection1"> </a>
+
 
 The **processBatch** function processes any operations that were previously placed on the batch queue.
 
@@ -57,13 +59,15 @@ The **processBatch** function checks to see if the batch queue has any outstandi
 ## queueRequest(request)
 <a name="sectionSection2"> </a>
 
+
 The **queueRequest** function places an HTTP request on the queue to be sent at a later time.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|request|HTTP request object.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| request                    | HTTP request object.         |
+
  **Syntax**
 
 

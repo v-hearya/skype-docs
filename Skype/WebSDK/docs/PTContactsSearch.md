@@ -10,6 +10,7 @@
 - [Search for groups](#groups)
 
 <a name="overview"></a>
+
 ### Persons and groups
 
 A Person represents a user. The <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.person.html" target="">Person</a> object can be queried for information about a person, such as their availability to join a conversation. The <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.person.html" target="">Person</a> object is passed to the conversation starting methods, such as the <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.conversationsmanager.html#getconversation" target="">ConversationsManager.getConversation</a> method, so that the conversation invitation is sent to the person represented by the <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.person.html" target="">Person</a> object.
@@ -18,17 +19,18 @@ A <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfac
 The following procedure assumes that a user has signed in before searching for persons and groups.
 
 <a name="persons"> </a>
+
 ### Search for persons
 
 
 1. Create a  **SearchQuery** for person search: **personsAndGroupsManager.createPersonSearchQuery**.
-    
+
 2. Specify the search terms and a limit to the number of possible results in the  **SearchQuery**.
-    
+
 3. Execute the  **searchQuery.getMore** method and get the search **results** in the **onSuccess** method.
-    
+
 4. Call the  **forEach** method of the array of results. For each result, **Person** object is the result.result.
-    
+
 >**Note**:  The maximum number of results for a person search query is 50. 
 
   ```js
@@ -45,19 +47,19 @@ personSearchQuery.getMore().then(null, function (results) {
      // handle error
     });
 });
-
   ```
 
 <a name="groups"> </a>
+
 ### Search for groups
 
 
 1. Create a  **SearchQuery** for group search: **personsAndGroupsManager.createGroupSearchQuery**.
-    
+
 2. Specify the search terms a limit to the number of possible results in the  **SearchQuery**.
-    
+
 3. Execute the  **searchQuery.getMore** method and get the search **results** in the **onSuccess** method.
-    
+
 4. Call the  **forEach** method of the array of results. For each result, **Group** object is the **result.result**.
 
 
@@ -75,7 +77,6 @@ groupSearchQuery.getMore().then(null, function (results) {
       // error
     });
 });
-
   ```
 
 ## Additional resources

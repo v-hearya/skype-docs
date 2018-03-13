@@ -10,8 +10,8 @@ meeting access in this scenario. Read [Use the App SDK and the Trusted Applicati
 After completing the steps in this article, your app can join a **Skype for Business** video meeting with a
 meeting URL. No **Skype for Business** credentials are used to join the meeting.
 
->[!NOTE]
-Be sure to read [Getting started with Skype App SDK development](GettingStarted.md) to learn how to configure your Android project for the **Skype for Business** App SDK.  In particular, the following steps assume you have added the _ConversationHelper_ class to your source to let you complete the scenario with a minimum of code. 
+> [!NOTE]
+> Be sure to read [Getting started with Skype App SDK development](GettingStarted.md) to learn how to configure your Android project for the **Skype for Business** App SDK.  In particular, the following steps assume you have added the _ConversationHelper_ class to your source to let you complete the scenario with a minimum of code. 
 
 1. Initialize the **App SDK** application by calling the static _com.microsoft.office.sfb.appsdk.Application.getInstance(Context)_ method:
 
@@ -21,32 +21,30 @@ Be sure to read [Getting started with Skype App SDK development](GettingStarted.
    Conversation mConversation = null;
    ```
    >Note: Be sure to select the Application object in the _com.microsoft.office.sfb.appsdk_ package!
-   
-1. Enable platform preview features and set wifi required for audio/video
+
+2. Enable platform preview features and set wifi required for audio/video
    ```java
    mApplication.getConfigurationManager().enablePreviewFeatures(true);
    mApplication.getConfigurationManager().setRequireWiFiForAudio(true);
    mApplication.getConfigurationManager().setRequireWiFiForVideo(true);
    mApplication.getConfigurationManager().setMaxVideoChannelCount(2);
-   
    ```
-1. Start joining the meeting by calling _Application.joinMeetingAnonymously(String displayName, URI meetingUri)_   
+3. Start joining the meeting by calling _Application.joinMeetingAnonymously(String displayName, URI meetingUri)_   
 
    ```java
             mAnonymousSession = mApplication
                     .joinMeetingAnonymously(
                             getString(
                                     R.string.userDisplayName), meetingURI);
-   
    ```
    > Note: all of the SDK’s interfaces must be used only from the application main thread (main run loop).  Notifications are delivered in the same thread as well.  As a result, no synchronization around the SDK’s interfaces is required.  The SDK, however, may create threads for internal purposes.      
 
-1. Get the [**Conversation**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/Conversation.html) object that encapsulates the meeting from the [**AnonymousSession**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/AnonymousSession.html) object by calling _getConversation()_ on the anonymous session.  
+4. Get the [**Conversation**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/Conversation.html) object that encapsulates the meeting from the [**AnonymousSession**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/AnonymousSession.html) object by calling _getConversation()_ on the anonymous session.  
    ```java
      mConversation = mAnonymousSession.getConversation();
    ```  
 
-1. Show video codec license
+5. Show video codec license
 
     As per the license terms, before you start video for the first time after install, you **must** prompt the user to accept the Microsoft end-user license (also included in the SDK).  
     This is required to proceed with features that potentially use video codecs.
@@ -56,18 +54,18 @@ Be sure to read [Getting started with Skype App SDK development](GettingStarted.
     Once the api has been called, the user is considered in acceptance of the third party video codec license that we use to support video.  Subsequent meetings do not require the license acceptance.  
 
     [!code-java [sample](VideoLicense_Android.md)]  
-1. Connect the conversation property callback to the [**Conversation**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/Conversation.html) object returned in the previous step.
+6. Connect the conversation property callback to the [**Conversation**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/Conversation.html) object returned in the previous step.
    ```java
        mConversation.addOnPropertyChangedCallback(
            new ConversationPropertyChangeListener()); 
    ```
    - Declare a callback class to handle conversation property change Notifications
-   ```java
+     ```java
       ```java
       /**
      * Callback implementation for listening for conversation property changes.
      */
-    class ConversationPropertyChangeListener extends
+     class ConversationPropertyChangeListener extends
             Observable.OnPropertyChangedCallback {
         ConversationPropertyChangeListener() {
         }
@@ -104,11 +102,11 @@ Be sure to read [Getting started with Skype App SDK development](GettingStarted.
                 }
             }
         }
-    }
-   ```
+     }
+     ```
 
    ```
-1. When the state of the conversation changes to Conversation.State.ESTABLISHED, construct a ConversationHelper object. Pass the following objects:
+7. When the state of the conversation changes to Conversation.State.ESTABLISHED, construct a ConversationHelper object. Pass the following objects:
    * The [**Conversation**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/Conversation.html) object returned in a prior step
    * the [**Application.DevicesManager**](https://ucwa.skype.com/reference/appSDK/Android/com/microsoft/office/sfb/appsdk/DevicesManager.html)
    * A **TextureView** control to show a preview of outgoing video
@@ -131,7 +129,7 @@ Be sure to read [Getting started with Skype App SDK development](GettingStarted.
    application scenario has requirements that are not covered in this how to article. In that case, take the **ConversationHelper** as a starting point and modify or 
    extend it to suite your requirements.
 
-1. Start the incoming and outgoing meeting video.
+8. Start the incoming and outgoing meeting video.
 
    >Note: as per the license terms, before you start video for the first time after install, you must prompt the user to accept the Microsoft end-user license (also included in the SDK). Please refer step 5 - Show video codec license for the sample code.
 
@@ -142,7 +140,7 @@ Be sure to read [Getting started with Skype App SDK development](GettingStarted.
    ```
 
 
-1. Implement the **ConversationHelper.ConversationCallback** interface
+9. Implement the **ConversationHelper.ConversationCallback** interface
 
    ```java
      implements ConversationHelper.ConversationCallback

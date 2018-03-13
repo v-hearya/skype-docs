@@ -4,10 +4,11 @@
 
 
 Represents an operation to escalate audio modality from P2P to conferencing
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -34,6 +35,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -44,6 +46,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -373,7 +376,6 @@ Host: fe1.contoso.com
 Content-Type: application/sdp
 Accept: application/xml
 Content-Length: 272
-
 ```
 
 
@@ -457,6 +459,7 @@ Content-Length: 8203
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="from" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196">
     <link rel="admit" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196/admit" />
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
@@ -486,9 +489,11 @@ Content-Length: 8203
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="startEmergencyCallInput" href="/ucwa/v1/applications/192/communication/invitations/665/startEmergencyCallParameters">
     <property name="rel">startEmergencyCallParameters</property>
   </resource>
+
 </resource>
 ```
 

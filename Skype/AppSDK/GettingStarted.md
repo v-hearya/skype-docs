@@ -8,8 +8,8 @@ The SDKs for iOS and Android are available for download from Microsoft.
 * [Skype for Business App SDK - iOS](http://aka.ms/sfbAppSDKDownload_ios)
 * [Skype for Business App SDK - Android](http://aka.ms/sfbAppSDKDownload_android)
 
->[!NOTE]
- We maintain a set of [App SDK samples](Samples.md) for Android and iOS on **GitHub**. These samples are configured to use the App SDK and are ready to run.  See the readme.md in each of these samples for instructions.
+> [!NOTE]
+>  We maintain a set of [App SDK samples](Samples.md) for Android and iOS on **GitHub**. These samples are configured to use the App SDK and are ready to run.  See the readme.md in each of these samples for instructions.
 
 
 ## Configure your project for the Skype for Business App SDK
@@ -22,22 +22,28 @@ The configuration steps are:
 
 1. **Add embedded binary**: In XCode, select the project node and open the project properties pane. Add SkypeForBusiness.framework as an "Embedded Binary" (not a "Linked Framework"). 
 
-  > [!NOTE] 
-  The SDK comes with a binary for use on physical devices (recommended) and a binary for running the iOS simulator (limited because audio and video function won't work correctly).  The binaries have the same name but are in separate folders. To run your app on a **device**, navigate to the location where you downloaded the App SDK and select the _SkypeForBusiness.framework_ file in the _AppSDKiOS_ folder. To run your app in a **simulator**,  selec the _SkypeForBusiness.framework_ file in the _AppSDKiOSSimulator_ folder.
+   > [!NOTE]
+   > The SDK comes with a binary for use on physical devices (recommended) and a binary for running the iOS simulator (limited because audio and video function won't work correctly).  The binaries have the same name but are in separate folders. To run your app on a **device**, navigate to the location where you downloaded the App SDK and select the _SkypeForBusiness.framework_ file in the _AppSDKiOS_ folder. To run your app in a **simulator**,  selec the _SkypeForBusiness.framework_ file in the _AppSDKiOSSimulator_ folder.
 
 2. **Add the Conversation Helper** into your project (optional): The SDK comes with an optional "conversation helper" class that can be used to  integrate Skype Audio/Video chat feature into your application. These helper classes simplify interaction with the core APIs in mainline scenarios.  To use these, add SfBConversationHelper.h/SfBConversationHelper.m files from the _Helpers_ folder in your SDK download into your app's source code. 
- > [!NOTE]
-  To add text chat feature in your application, you can refer _ChatHandler_ helper class in our [iOS sample apps](https://github.com/OfficeDev/skype-ios-app-sdk-samples). _ChantHandler_ class works similar to _conversation helper _ class and can be used to facilitate text chat integration.
+   > [!NOTE]
+   > To add text chat feature in your application, you can refer <em>ChatHandler</em> helper class in our [iOS sample apps](https://github.com/OfficeDev/skype-ios-app-sdk-samples). <em>ChantHandler</em> class works similar to <em>conversation helper </em> class and can be used to facilitate text chat integration.
 3. Make sure _Enable Bitcode_ option is set to NO in your iOS project . In the Project Navigator, select your project, go to the Editor pane, select Project -> Build Settings -> select All tab -> Build Options -> Enable Bitcode = NO
 
 4. **Add description of required permissions** to the application’s Info.plist (use appropriate messages):
-```xml
-<key>NSCameraUsageDescription</key>
+   ```xml
+   <key>NSCameraUsageDescription</key>
+
 <string>Access to the camera is required for making video calls.</string>
+
 <key>NSContactsUsageDescription</key>
+
 <string>Access to your address book is required for making calls to contacts.</string>
+
 <key>NSMicrophoneUsageDescription</key>
+
 <string>Access to the microphone is required for making calls.</string>
+
 ```
 
 5. **Configure AVAudioSession** before attempting to use audio:
@@ -58,13 +64,13 @@ The configuration steps are:
 2. **Add the Conversation Helper into your project (optional)**: The SDK comes with an optional "conversation helper" class that simplifies interaction with the core APIs in mainline scenarios.  To use it, add SfBConversationHelper.java from the _Helpers_ folder in your App SDK download into your app's source code.
 
 3. **Update the Conversation Helper package name**: If using the conversation helper, set it to match your app's own package name.
-  
+
 4. **Add the SDK libraries to the module Gradle dependencies struct:** 
-> [!NOTE]
- Be sure to include the ```compile fileTree(dir: 'libs', include: ['*.jar'])``` statement. 
- 
-  ```gradle
-  dependencies {
+   > [!NOTE]
+   > Be sure to include the ```compile fileTree(dir: 'libs', include: ['*.jar'])``` statement. 
+
+   ```gradle
+   dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile(name: "SkypeForBusinessNative", ext: 'aar')
     compile(name: "SkypeForBusinessPlatform", ext: 'aar')
@@ -74,52 +80,77 @@ The configuration steps are:
     compile(name: "SkypeForBusinessTelemetryClient", ext: 'aar')
     compile(name: "SkypeForBusinessInjector", ext: 'aar')
     compile(name: "android-database-sqlcipher", ext: 'aar')
-    
-  }
 
-  ```
-4. **Add app permissions**: Add _uses-permission_ tags to the project **AndroidManifest.xml** file. 
+   }
+   ```
+5. **Add app permissions**: Add _uses-permission_ tags to the project **AndroidManifest.xml** file. 
 
-  ```xml
+   ```xml
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:node="replace" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
+
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
     <uses-permission android:name="android.permission.READ_LOGS" />
+
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <uses-permission android:name="android.permission.READ_PROFILE" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+   ```
 
-  ```
+> [!NOTE]
+> Subsequent versions of the SDK will eliminate any unneccessary permissions.
 
->[!NOTE] 
-Subsequent versions of the SDK will eliminate any unneccessary permissions.
-  
-  
+
 ## Configure your Android application as a MultiDex application
 The libraries that support the Android Skype for Business App SDK include a large number of methods. If the total number of methods in your application - including the App SDK methods - exceed 64,000, then you
 must configure your app as a [MultiDex](https://developer.android.com/studio/build/multidex.html) application. To enable a basic MultDex configuration, you will add options to your module **build.gradle** file and 
@@ -139,7 +170,7 @@ the top level application class.
            multiDexEnabled true
        }
    ``` 
-1. Add a **dexOptions** structure to the module **build.gradle** file.
+2. Add a **dexOptions** structure to the module **build.gradle** file.
 
    ```gradle
        dexOptions {
@@ -148,12 +179,12 @@ the top level application class.
         javaMaxHeapSize "4g"
     }
    ```
-### Extend your application class as a **MultiDexApplication**
+   ### Extend your application class as a **MultiDexApplication**
 
-1. If your application does not have a class that extends the Application class, you must create one. Before you add an application class to your module, update 
-your **AndroidManifest.xml** `Application` node to include the attribute, `android:name="<YOUR PACKAGE NAME>.<YOUR APPLICATION CLASS NAME>">`
+3. If your application does not have a class that extends the Application class, you must create one. Before you add an application class to your module, update 
+   your **AndroidManifest.xml** `Application` node to include the attribute, `android:name="<YOUR PACKAGE NAME>.<YOUR APPLICATION CLASS NAME>">`
 
-1. Create or update your application class to extend **MultiDexApplication**. Be sure to override the **attachBaseContext** method.
+4. Create or update your application class to extend **MultiDexApplication**. Be sure to override the **attachBaseContext** method.
 
 ```java
 package com.microsoft.office.sfb.healthcare;

@@ -9,14 +9,15 @@ Use the functions in the Cache library to read data from or write data to a cook
 The cache has two parts:
 
 1. A links cache that is used to keep track of singleton resources such as [application](application_ref.md), [batch](batch_ref.md), or [events](events_ref.md).
- 
+
 2. A data cache that is used for resources that are delivered in the event channel.
- 
+
 The links cache is indexed by resource name; the data cache is indexed by href.
 Often, application latency can be decreased by accessing links or embedded resources that have previously been cached, rather than sending another HTTP request to get them.
 
 ## Create a Cache object
 <a name="sectionSection0"> </a>
+
 
 A **Cache** object is created as shown in the following example.
 
@@ -31,13 +32,15 @@ The variable declared in the preceding example is used in subsequent examples in
 ## cacheLinks(data)
 <a name="sectionSection1"> </a>
 
+
 The **cacheLinks** function caches links based on the supplied data.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|data|The data object to be stored in the cache.|
+| <strong>Parameter</strong> | <strong>Description</strong>               |
+|:---------------------------|:-------------------------------------------|
+| data                       | The data object to be stored in the cache. |
+
  **Syntax**
 
 
@@ -102,14 +105,16 @@ If there is a collision between a link to be cached and one already in the cache
 ## findEmbeddedLinkInCache(target, resource)
 <a name="sectionSection2"> </a>
 
+
 The **findEmbeddedLinkInCache** function finds a resource link stored in the singleton cache of embedded data. This function gets the JSON links from the cache, to check whether the resource exists in the embedded target resource.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|target|Target embedded resource.|
-|resource|Link to find in the embedded resource.|
+| <strong>Parameter</strong> | <strong>Description</strong>           |
+|:---------------------------|:---------------------------------------|
+| target                     | Target embedded resource.              |
+| resource                   | Link to find in the embedded resource. |
+
  **Returns:** Resource link if found, or an empty string.
 
  **Syntax**
@@ -160,13 +165,15 @@ var link = Cache.findEmbeddedLinkInCache("presence", "jean");
 ## findLinkInCache(resource)
 <a name="sectionSection3"> </a>
 
+
 The **findLinkInCache** function finds a resource link stored in the singleton cache. This function gets the JSON links from the cache, and determines whether the resource link exists.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|resource|Link to find in the cache.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| resource                   | Link to find in the cache.   |
+
  **Returns:** Resource link if found, or an empty string.
 
  **Syntax**
@@ -217,14 +224,16 @@ var link = Cache.findLinkInCache("contactLocation");
 ## findLinkInResource(rel, data)
 <a name="sectionSection4"> </a>
 
+
 The **findLinkInResource** function looks for a "rel" link that is stored in the singleton cache.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|rel|The relation type of the link to find in the data object.|
-|data|The data object to be searched.|
+| <strong>Parameter</strong> | <strong>Description</strong>                              |
+|:---------------------------|:----------------------------------------------------------|
+| rel                        | The relation type of the link to find in the data object. |
+| data                       | The data object to be searched.                           |
+
  **Returns:** The "rel" link if found, or an empty string.
 
  **Syntax**
@@ -280,13 +289,15 @@ This function searches the data object for "_links". If found, the function sear
 ## read(href)
 <a name="sectionSection5"> </a>
 
+
 The **read** function retrieves data received by way of the event channel from the cache using the _href_as a key.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|href|Link to find in the cache.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| href                       | Link to find in the cache.   |
+
  **Returns:** The data from the cache or an empty string ("").
 
  **Syntax**
@@ -347,13 +358,15 @@ var link2 = Cache.read(eventData1._embedded.contact._links.contactPhoto.href);
 ## write(data)
 <a name="sectionSection6"> </a>
 
+
 The **write** function writes object data received by way of the event channel to the cache using the href as the key.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|data|The JSON object representation of an event.|
+| <strong>Parameter</strong> | <strong>Description</strong>                |
+|:---------------------------|:--------------------------------------------|
+| data                       | The JSON object representation of an event. |
+
  **Returns:** The data object written to the cache.
 
  **Syntax**

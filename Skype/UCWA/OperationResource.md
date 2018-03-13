@@ -29,7 +29,6 @@ Content-Length: ...
  "operationId":"123", 
  "onlineMeetingUri":"sip:user@contoso.com;gruu;opaque=app:conf:focus:id:ABCDE"
 } 
-
 ```
 
 The POST response includes the **operation URL**.

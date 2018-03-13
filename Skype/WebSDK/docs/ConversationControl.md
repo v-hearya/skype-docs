@@ -32,17 +32,17 @@ The following table lists the methods of the  **Conversation Control** object.
 
 The following examples show the most common uses of the  **renderConversation** method. 
 
->Note: The HTML container that contains the conversation control must have a width and height set. If width and height are
-set to zero, the conversation control does not display. 
-```html
-<div id="container" style="width:864px; height: 900px">
-</div>
+> Note: The HTML container that contains the conversation control must have a width and height set. If width and height are
+> set to zero, the conversation control does not display. 
+> ```html
+> <div id="container" style="width:864px; height: 900px">
+> </div>
+
 ```
 
 #### Render a new conversation with no modalities enabled, and passing DOM element as container parameter.
 
 After the control is rendered the user can then click on the Add participants button and add people to the conversation.
-
 ```js
 renderConversation(document.querySelector('#container'));
 ```
@@ -65,7 +65,6 @@ If the sdk finds an existing conversation with that person, then that conversati
 renderConversation('#container', {
      participants: ['sip:denisd@contoso.com']
 });
-
 ```
 
 #### Render a 1:1 conversation with Chat modality
@@ -78,7 +77,6 @@ renderConversation('#container', {
      participants: ['sip:denisd@contoso.com'],
      modalities: ['Chat']
 });
-
 ```
 
 
@@ -91,7 +89,6 @@ renderConversation('#container', {
      participants: ['sip:remote1@contoso.com', 'sip:remote2@contoso.com'],
      modalities: ['Chat']
 });
-
 ```
 
 
@@ -105,7 +102,6 @@ renderConversation('#container', {
      conversation: conversation,
      modalities: ['Chat']
 });
-
 ```
 
 #### Join and render an existing group conversation with Chat modality using conversationId
@@ -122,5 +118,4 @@ renderConversation('#container', {
      conversationId: uri,
      modalities: ['Chat']
 });
-
 ```

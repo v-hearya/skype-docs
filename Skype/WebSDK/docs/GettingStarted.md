@@ -17,12 +17,14 @@ This section shows how to get started developing web applications with the Skype
 ## Using the Skype Web SDK in your application
 <a name="sectionSection0"> </a>
 
+
 >**Note** Please read the [release notes](ReleaseNotes.md) for the General Availability release of this SDK before you start a new production web app or update your existing Skype for Business Web SDK-powered app.
 
 Because the Skype Web SDK is hosted through the Content Delivery Network (CDN), you do not have to install it. Instead, you add Skype for Business functionality to your web applications simply by adding a ```<script/>``` tag to your HTML file that points to the Skype Web SDK entry point (swx.cdn.skype.com). Doing so bootstraps the Skype Web SDK JavaScript libraries in your application. For more information, see [Retrieve the API entry point and sign in a user](GetAPIEntrySignIn.md)
 
 ## Skype for Business Web App Plug-in/ORTC Support
 <a name="sectionSection1"> </a>
+
 
 The Skype for Business Web App plugin, available for browsers IE 11 and Safari, provides audio/video media capabilities. It is available for Windows and Mac computers from the following download locations:
 
@@ -33,11 +35,12 @@ The Skype for Business Web App plugin, available for browsers IE 11 and Safari, 
  **Note**  To enable audio/video functionality, browser applications must install the Skype for Business Web App Plug-in. Note that this restricts media modalities to desktop browsers only.
 
 ORTC support is available in the Microsoft Edge browser, which will allow audio/video calls without a plugin installed.  ORTC support for other browsers will be added in the near future, however the plugins are still available as a fallback.
- 
+
 
 
 ## Bootstrapping the application
 <a name="sectionSection2"> </a>
+
 
 The programming environment for the Skype Web SDK is JavaScript. Your web application must have a reference to the Skype Web SDK JavaScript libraries in the form of a ```<script>``` tag that points to the Skype Web SDK service endpoint (swx.cdn.skype.com). Doing so enables your application to bootstrap with the Skype Web SDK JavaScript libraries.
 
@@ -83,19 +86,19 @@ Skype.initialize({ apiKey: config.apiKey }, function (api) {
     });
 
 // Sign-in code typically follows here.
-
-
 ```
 
 
 ## Developing Skype Web SDK applications
 <a name="sectionSection3"> </a>
 
+
 After you have run the samples and examined the sample code, and you are ready to develop applications using the Skype Web SDK, see the topics in [Developing applications with Skype Web SDK](DevelopApplications.md). These topics explain the scenarios for developing Skype Web SDK applications: In the online server scenario, your application authenticates against Azure Active Directory. In the on-premises server scenario, your application authenticates against your own server with its own Active Directory.
 
 
 ## Downloading and running the Skype Web SDK Samples
 <a name="sectionSection4"> </a>
+
 
 The Microsoft Skype Web SDK includes a set of samples hosted on github at [Skype Web SDK Samples](https://github.com/OfficeDev/skype-web-sdk-samples).
   For a detailed description of what the samples do, and an explanation of how to run them, see [Downloading and running the Skype Web SDK samples](DownloadRunSamples.md).

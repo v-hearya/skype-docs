@@ -19,20 +19,25 @@ UCWA versioning scheme exists to allow each link-relation/Resource to evolve (ve
 
 
 - The UCWA server will use 'revision' attribute to indicate the version of REL/Resource available: `<link rel="contacts" revision="2" />`
- 
+
 - Lack of revision attribute will imply `version=1` (i.e. the first version when the REL/resource was introduced)
- 
+
 - All subsequent revisions of a REL/resource will be backward compatible.
- 
+
 - REL/Resource reference documentation will indicate list of supported query-parameters/properties and expected behavior for each REL/resource revision
- 
+
 
 ```HTML
 <!-- No revision attribute means it's the first version -->
+
 <link rel="Contacts" href="/ucwa/v1/Applications/Contacts" />
+
 <!-- The revisions have been made to REL 'contacts'; backward compatible with revision '1' -->
+
 <link rel="Contacts" revision="2" href="/ucwa/v1/Applications/Contacts" />
+
 <!-- The revisions have been made to REL 'contacts'; backward compatible with revisions '1' &amp; '2' -->
+
 <link rel="Contacts" revision="3" href="/ucwa/v1/Applications/Contacts" />
 ```
 
@@ -43,19 +48,19 @@ If theUCWA client is looking to implement/consume a particular version (for exam
 
 
 - The client must validate the capability is available by checking if `<link rel="Contacts" />` is present
- 
+
 - Link-revision attribute is greater than or equal to (>=) desired-REL-version (in this case '3')
- 
+
 - The client should use float (instead of integer) to compare revision-versions even if the server is giving revision in integer-form. This is for future extensibility.
- 
- When submitting a request to the server, the client can explicitly specify the version of resource-input (query-parameter and/or property) with HTTP header `'X-MS-RequiresMinResourceVersion'`, to ensure the server understands the client's request and behaves as expected per requested version.
- 
- Not specifying the version header may cause problems, as the client would expect the server understood query-parameters when, in fact, the server just ignored it, especially if failover occurred to an older version of server.
- 
- If the server can't honor the client's requested version of the resource, the server will reject the request with `404: {Code=NotFound &amp; SubCode=APIVersionNotSupported}`
- 
- Example of a server unable to honor the client's requested version of REL/Resource:
- 
+
+  When submitting a request to the server, the client can explicitly specify the version of resource-input (query-parameter and/or property) with HTTP header `'X-MS-RequiresMinResourceVersion'`, to ensure the server understands the client's request and behaves as expected per requested version.
+
+  Not specifying the version header may cause problems, as the client would expect the server understood query-parameters when, in fact, the server just ignored it, especially if failover occurred to an older version of server.
+
+  If the server can't honor the client's requested version of the resource, the server will reject the request with `404: {Code=NotFound &amp; SubCode=APIVersionNotSupported}`
+
+  Example of a server unable to honor the client's requested version of REL/Resource:
+
 
 
  ```HTML
@@ -69,11 +74,13 @@ X-MS-UcwaVersion: 1.7
 <resource>
 <link rel="application" rev="4" href="http://example.com/ucwa/v1/applications" />
 </resource>
+
 ===>
 POST /ucwa/v1/applications
 Accept: application/vnd.microsoft.ucwa+xml
 X-MS-RequiresMinResourceVersion: 4.0
 <input-with-parameters-known-only-by-revision-4 (x, y, z)>
+
 <===
 404 Not Found
 Content-Type: application/vnd.microsoft.ucwa+xml

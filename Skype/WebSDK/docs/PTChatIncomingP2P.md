@@ -16,7 +16,7 @@ After the conversation and chat modality are established messages events will be
 
 1. Listen for incoming conversations 
 
-  ```js
+   ```js
     var conversationsManager = application.conversationsManager;
     listeners.push(conversationsManager.conversations.added(function (conv) {
         conversation = conv;
@@ -36,31 +36,31 @@ After the conversation and chat modality are established messages events will be
             }
         }));
     }));
-  ```
+   ```
 
 2. Listen for converstation state changes
 
- ```js
+   ```js
     listeners.push(conversation.state.changed(function (newValue, reason, oldValue) {
         if (newValue === 'Disconnected' && (oldValue === 'Connected' || oldValue === 'Connecting')) {
             // conversation ended
         }
     }));
-  ```
+   ```
 3. Send an outgoing message
 
-  ```js
+   ```js
     var message = content.querySelector('.messageToSend');
     conversation.chatService.sendMessage(message.value).then(function () {
         // message send success
     }, function (error) {
         // handle error
     });
-  ```
+   ```
 
 4. End the conversation
 
-  ```js
+   ```js
     conversation.leave().then(function () {
         // conversation ended
     }, function (error) {
@@ -68,4 +68,4 @@ After the conversation and chat modality are established messages events will be
     }).then(function () {
         // clean up operations
     });
-  ```
+   ```

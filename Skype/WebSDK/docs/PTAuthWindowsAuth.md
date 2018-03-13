@@ -9,7 +9,7 @@ After bootstrapping the Skype Web SDK we have access to an api object which expo
 
 1. Provide domain to authenticate.
 
-  ```js
+   ```js
     var application = api.UIApplicationInstance;
     application.signInManager.signIn({
         version: version,
@@ -19,4 +19,4 @@ After bootstrapping the Skype Web SDK we have access to an api object which expo
     }, function (error) {
         console.log("Error: couldn't sign in");
     }).then(reset);
-  ```
+   ```

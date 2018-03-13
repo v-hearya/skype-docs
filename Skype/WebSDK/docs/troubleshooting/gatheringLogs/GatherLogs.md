@@ -11,12 +11,14 @@
 - [External resources](#external-resources)
 
 <a name="audience"></a>
+
 ## Who is this article for?
 
 If you are a developer adding the Skype Web SDK or Conversation Control into your web app and you aren't able to debug an issue with the help of the troubleshooting and programming documentation, this guide explains SDK activity log types used for troubleshooting.
 If you can't resolve your issue by looking at the logs on your own, this guide provides instructions for submitting an error report to the SDK development team.
 
 <a name="logs-for-self"></a>
+
 ## What logs will help me troubleshoot my issue?
 
 Depending on the type of issue you're facing, there are different logs which may be relevant to you.
@@ -26,6 +28,7 @@ For all issues regarding the SDK, the best place to start is with the [browser c
 If you cannot resolve your issue by looking at either of these logs or reviewing the appropriate [reference documentation](../../GeneralReference.md), you should submit an error report.
 
 <a name="logs-for-report"></a>
+
 ## How can I submit an error report?
 
 **Prerequisites**
@@ -72,6 +75,7 @@ If your failure scenario involves interaction between your Web SDK app and anoth
 Once you have all this information, you can either open an **issue** on [our GitHub page](https://github.com/OfficeDev/skype-docs/issues), or [ask a question on StackOverflow](http://stackoverflow.com/questions/tagged/skypedeveloper) - just make sure to tag your question with the **skypedeveloper** tag.
 
 <a name="related-topics"></a>
+
 ## Related topics
 
 - [Gathering Console Logs from the Skype Web SDK or Conversation Control](./Logs-Console.md)
@@ -80,6 +84,7 @@ Once you have all this information, you can either open an **issue** on [our Git
 - [Gathering Logs from a Skype for Business Desktop Client](./Logs-DesktopClient.md)
 
 <a name="external-resources"></a>
+
 ## External resources
 
 - [Skype Web SDK GitHub page](https://github.com/OfficeDev/skype-docs/issues)

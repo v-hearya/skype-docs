@@ -4,10 +4,11 @@
 
 
 Represents the user as a local [participant](participant_ref.md) in a specific [conversation](conversation_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 participant is the transient representation of the user that captures her attributes such as role or capabilities (such as promoting to leader or admitting from lobby).A localParticipant's lifetime is controlled by the server and starts when the user joins a [conversation](conversation_ref.md).It is removed when the participant leaves the [conversation](conversation_ref.md).
 
@@ -66,6 +68,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -74,33 +77,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|localParticipant|High|conversation|Indicates that the user has joined a [conversation](conversation_ref.md).</p><p>The application should use this as a hint to update its conversation cache.This event is raised when the user is first added.Other added events for the same participant indicate that the user has been admitted to the conference, promoted, demoted, or is typing a message.</p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                                                                                                                                                                                                                                                             |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| localParticipant          | High                      | conversation            | Indicates that the user has joined a [conversation](conversation_ref.md).</p><p>The application should use this as a hint to update its conversation cache.This event is raised when the user is first added.Other added events for the same participant indicate that the user has been admitted to the conference, promoted, demoted, or is typing a message.</p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "added"
         }
@@ -114,29 +119,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|localParticipant|High|conversation|Indicates that the user has been updated.</p><p>This event is raised when the user's capabilities as a participant have changed.Note that this is the only updated event for localParticipant.For example, if the user is was demoted from leader to attendee, the [enableAudienceMuteLock](enableAudienceMuteLock_ref.md) capability is no longer present.</p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|:--------------------------|:--------------------------|:------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| localParticipant          | High                      | conversation            | Indicates that the user has been updated.</p><p>This event is raised when the user's capabilities as a participant have changed.Note that this is the only updated event for localParticipant.For example, if the user is was demoted from leader to attendee, the <a href="enableAudienceMuteLock_ref.md" data-raw-source="[enableAudienceMuteLock](enableAudienceMuteLock_ref.md)">enableAudienceMuteLock</a> capability is no longer present.</p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "updated"
         }
@@ -150,29 +156,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|localParticipant|High|conversation|Indicates that the user has left a conversation.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                     |
+|:--------------------------|:--------------------------|:------------------------|:------------------------------------------------------------|
+| localParticipant          | High                      | conversation            | Indicates that the user has left a conversation.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "deleted"
         }
@@ -187,6 +194,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -237,7 +245,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -317,7 +324,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

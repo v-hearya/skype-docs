@@ -4,10 +4,11 @@
 
 
 Represents a transcript within a [conversationLog](conversationLog_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -45,6 +46,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -55,6 +57,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -105,7 +108,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -181,7 +183,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -205,15 +206,18 @@ Content-Length: 1563
     <property name="duration">samplevalue</property>
     <property name="status">Connected</property>
   </resource>
+
   <resource rel="errorTranscript" href="/ucwa/v1/applications/192/communication/conversationLogs/conversationLog/conversationLogTranscripts/conversationLogTranscript/errorTranscript">
     <property name="rel">errorTranscript</property>
     <property name="reason">TranscriptionFailed</property>
   </resource>
+
   <resource rel="messageTranscript" href="/ucwa/v1/applications/192/communication/conversationLogs/conversationLog/conversationLogTranscripts/conversationLogTranscript/messageTranscript">
     <link rel="htmlMessage" href="data:text/html;base64,base64-encoded-htmlmessage" />
     <link rel="plainMessage" href="data:text/plain;charset=utf8,URLEncodedMessageString" />
     <property name="rel">messageTranscript</property>
   </resource>
+
 </resource>
 ```
 

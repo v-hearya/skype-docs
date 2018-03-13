@@ -68,3 +68,4 @@ search.getMore().then(() => {
 
 <a href="https://msdn.microsoft.com/skype/websdk/docs/ptcontactssearch" target="">Search for persons and distribution groups</a>
 
+

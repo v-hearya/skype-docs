@@ -11,6 +11,7 @@ An [application](application_ref.md) resource represents a single application on
 ## Resource representation
 <a name="sectionSection0"> </a>
 
+
 The following table contains a representation of the **application** resource.
 
 
@@ -43,7 +44,6 @@ The following table contains a representation of the **application** resource.
 "me" : { ... },
 "onlineMeetings" : { ... },
 "people" : { ... }
-
 ```
 
 
@@ -61,21 +61,24 @@ The **application** resource can be thought of as a dashboard that shows the com
 ## Creating an application
 <a name="sectionSection1"> </a>
 
+
 An application is created by performing a POST on the [applications](applications_ref.md) resource. As a result of this operation the **application** resource is returned. The application can be fetched at any time by doing a GET on the **application** resource. When the user exits the application, the client must delete the application by sending a DELETE request on the **application** resource.
 
 
 ## Application lifetime
 <a name="sectionSection2"> </a>
 
+
 It is possible for a server to delete an application without a client sending a DELETE request on the application resource. This might happen for various reasons, and subsequent requests will fail with the relevant error codes. A client application should be prepared to handle the following errors, which may occur during any operation.
 
 
 
-|**HTTP status code**|**UCWA error subcode**|**Description**|
-|:-----|:-----|:-----|
-|404 NotFound|ApplicationNotFound|This implies that the application does not exist on the server any more.|
-|410 Gone|TooManyApplications|The total number of all applications created by the user exceeded the limit.|
-|410 Gone|InactiveApplicationExpired|Either the application did not park a pending get for too long; or the application did not report user activity for too long (this only applies if "MakeMeAvailable" was previously invoked).|
-|410 Gone|UserAgentNotAllowed|The UserAgent for the application is no longer supported.|
+| <strong>HTTP status code</strong> | <strong>UCWA error subcode</strong> | <strong>Description</strong>                                                                                                                                                                  |
+|:----------------------------------|:------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 404 NotFound                      | ApplicationNotFound                 | This implies that the application does not exist on the server any more.                                                                                                                      |
+| 410 Gone                          | TooManyApplications                 | The total number of all applications created by the user exceeded the limit.                                                                                                                  |
+| 410 Gone                          | InactiveApplicationExpired          | Either the application did not park a pending get for too long; or the application did not report user activity for too long (this only applies if "MakeMeAvailable" was previously invoked). |
+| 410 Gone                          | UserAgentNotAllowed                 | The UserAgent for the application is no longer supported.                                                                                                                                     |
+
 If a 404 ApplicationNotFound response is received unexpectedly, the client may possibly recreate the application and resume operations without user intervention. If 410 Gone is received it is best to display an error message to the user including the UCWA 2.0 error subcode, and then wait for the user to explicitly restart the client.
 

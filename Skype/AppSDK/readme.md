@@ -18,19 +18,19 @@ You can contribute to **Skype App SDK developer documentation** in a few differe
 
 The content in the Skype-docs repository is grouped  by topic. The README.md file at the root of the topic directory specifies the structure of the articles within the topic.
 
-##Articles in this repository
-###Skype App SDK
+## Articles in this repository
+### Skype App SDK
 
 - [Skype App SDK Conceptual Content](https://github.com/OfficeDev/skype-docs/blob/master/UCWeb_16Con.md)
 
-##Before we can accept your pull request
+## Before we can accept your pull request
 
-###Minor corrections
+### Minor corrections
 
 Minor corrections or clarifications you submit for documentation and code examples in this repository do not require a Contribution License Agreement (CLA). Submissions are taken in the form of pull requests. We will do our best to review pull requests within ten business days.
 
 
-###Larger submissions
+### Larger submissions
 
 If you submit new or significant changes to documentation and code examples, you need to send a signed Contribution License Agreement (CLA) before we can accept your pull request if you are in one of these groups:
 
@@ -49,7 +49,7 @@ Once we receive and process your CLA, we will do our best to review your pull re
 For more guidance on contributing to Office developer documentation, see [CONTRIBUTING.md](https://github.com/OfficeDev/skype-docs/blob/master/CONTRIBUTING.md) in this repo. 
 
 
-##Copyright
+## Copyright
 Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 

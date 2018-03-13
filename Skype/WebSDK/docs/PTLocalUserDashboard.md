@@ -26,12 +26,13 @@ app.personsAndGroupsManager.mePerson.status.set('Online').then(function () {
 <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.meperson.html" target="">MePerson</a> properties which can be set
 
 
-|||
-|:-----|:-----|
-|**Property**|**Description**|
-|location|Gets or sets the location of the signed in user.|
-|note.text|Gets or sets the personal note of the signed in user.|
-|status|Gets or sets the availability of the signed in user.|
+|                           |                                                       |
+|:--------------------------|:------------------------------------------------------|
+| <strong>Property</strong> | <strong>Description</strong>                          |
+| location                  | Gets or sets the location of the signed in user.      |
+| note.text                 | Gets or sets the personal note of the signed in user. |
+| status                    | Gets or sets the availability of the signed in user.  |
+
 >**Note:** When the above values contain special characters such as <, >, and they will be padded with zero width whitespace. This can cause equality operations to fail unexpectedly. One option for handling this situation is to filter out these special values so they are not used.
 
 <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.meperson.html" target="">MePerson</a> properties which are read-only
@@ -115,7 +116,9 @@ createContactCard(mePerson, contactsDiv.querySelector('.contact'));
 
 
 <a href="//msdn.microsoft.com/skype/websdk/docs/ptcontactscontactcard" target="">Show a person's information</a>
+
 #### Other resources
 
 
 <a href="//officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.meperson.html" target="">MePerson</a>
+

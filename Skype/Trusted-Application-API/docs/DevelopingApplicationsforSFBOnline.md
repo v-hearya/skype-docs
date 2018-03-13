@@ -22,14 +22,14 @@ Register Trusted Endpoints in a Skype for Business Online tenant using PowerShel
 **3. Provide consent**
 
 When the application is registered in AAD, it is registered in the context of a tenant.  For a tenant to use the Service Application, for example, when the application is developed as a multi-tenant application, it must be consented to by that tenant's admin. Refer to [Tenant Admin Consent](./TenantAdminConsent.md) for more details.
- 
+ 
 **4. Authentication** 
 
-Authenticate using either Client Secret or Certificate to obtain an Oauth token. Read [Azure Active Directory - Service to Service calls using Client Credentials](./AADS2S.md)
+Authenticate using either Client Secret or Certificate to obtain an Oauth token. Read [Azure Active Directory - Service to Service calls using Client Credentials](./AADS2S.md)
 for details.
 
 **5. Call the Trusted Application API.**
- 
+ 
 ### Auto Discovery
 It is the act of finding the **Trusted Application API**s home server using the discovery endpoint. This enables you to 
 connect to the API and use the exposed capabilities.

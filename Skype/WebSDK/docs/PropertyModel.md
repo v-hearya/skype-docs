@@ -14,6 +14,7 @@
 ### Model objects
 <a name="model"></a>
 
+
 These are plain JS objects that are called "model objects" because their members are of the four types:
 
 - other model objects
@@ -27,6 +28,7 @@ A model object can be wrapped by another model object in such a way that an obse
 
 ### Observable properties
 <a name="property"></a>
+
 
 Every property in the SDK is represented by an observable property with this interface. For instance, if there is a `Person` object which has a `displayName` property, the property will be presented in the form of an observable property:
 
@@ -43,7 +45,7 @@ function property(value) {
   return function (newValue) {
    if (arguments.length == 0)
     return value;
-   
+
    value = new Value;
   };
 }
@@ -65,9 +67,9 @@ On top of this very simple idea the SDK adds numerous methods to deal with the p
     console.log("couldnt pull the value of p:", err);
   });
   ```
-  
+
   It's safe to invoke `p.get()` multiple times in a row: the SDK puts such requests to a queue and executes them at the next event turn.
-  
+
   ```js
   // this sends just one GET /presence
   for (i = 0; i < 10; i++)
@@ -98,16 +100,16 @@ On top of this very simple idea the SDK adds numerous methods to deal with the p
     ```js
     setInterval(() => p.get(), 15 * 60 * 1000); // poll every 15 mins
     ```
-  
+
   This works well as long as there is just one place in the app that manages this polling. However when the app becomes more complex, this approach no longer works. A typical situation is when the same `Person` object needs to be displayed by different view models in different places in the UI, that have different lifetime: one UI element is ok to poll the property once every hour, another needs more frequent polling, while the third one needs a subscription. In such cases the `p.subscribe(300)` method becomes useful: it keeps track on how many and which type of subscriptions it has and upgrades/downgrades them as appropriate.
-  
+
     ```js
     s1 = p.subscribe(300); // poll every 300 seconds
     s2 = p.subscribe(50); // now poll every 50 seconds
     s3 = p.subscribe(); // stop polling and create a subscription
     s3.dispose(); // now continue polling every 50 seconds
     ```
-    
+
   In this example the SDK first upgrades the polling to a subscription and then downgrades it back at the app request.
 
 Every property object has a `changed` event, which is an instance of the `Event` object, and whenever the property value changes, it notifies observers via this event:
@@ -143,6 +145,7 @@ There are a few additional features of the property object that are mostly used 
 ### Observable collections
 <a name="collection"></a>
 
+
 Collections and properties have very similar interfaces and this is why a collection can be thought of as a property holding an array of values. Internally, a collection is a pair of arrays: one array with values, another array with keys. So on the one hand a collection is an array of items with a certain order, while on the other hand every item has a key associated with it and even if the item is relocated within the collection, it can still be found by its key.
 
 - `persons()` returns an array of items in the collection. This call doesn't have any side effects and simply returns the internal array of items (a copy of that array). `persons(3)` returns an item at the given index: same as `persons()[3]`.
@@ -154,7 +157,7 @@ Collections and properties have very similar interfaces and this is why a collec
     console.log("the list of persons:", ps); // ps is same as persons() here
   });
   ```
-  
+
   `persons.get(3)` does the same thing, but returns the item at the given index. The same result can be achieved with `persons.get().then(ps => ps[3])`.
 
 - `persons.subscribe()` creates a subscription to the collection. This is no different from this method works in property objects, except that subscription to some collections is generally heavier.
@@ -186,30 +189,31 @@ If the collection had some items, then `persons.changed(fn)` invokes `fn` once r
 There are a few methods to derive new collections based on existing ones.
 
 - `b = a.sort((lhs, rhs) => lhs.tag < rhs.tag)` creates a sorted read only collection. The new collection remains observable: it observes the parent collection and adds or removes items according to the given order. This is useful when the same collection needs to be displayed in one placed sorte by, say, display names, and in another placed sorted by online status:
-  
+
   ```js
   // s1 is the list of persons sorted by display name
   s1 = persons.sort((p1, p2) => p1.displayName() < p2.displayName());
-  
+
   // s2 is the list of persons sorted by online status
   s2 = persons.sort((p1, p2) => p1.status() < p2.status());
   ```
 
   Note the difference from `Array#sort`: the list of persons could be sorted with `persons().sort((p1, p2) => p1.displayName() < p2.displayName() ? -1 : 0)` but then the created sorted array would remain static and after the parent collection is changed, the array would remain the same.
-  
+
 - `b = a.filter(x => x.tag > 123)` creates a collection with items from the parent collection matching a certain predicate. The items appear in the same order.
 
   ```js
   // the new collection is observable, but contains messages only: no missed calls items and so on
   messages = conversation.historyService.activityItems.filter(x => x.type() == "TextMessage");
   ```
-  
+
   In this example the `messages` collection is observing the parent `activityItems` collection, checks if newly added items match the predicate and adds them ifthey do.
-  
+
 - `b = a.map(x => x.tag)` creates a collection which takes all items from the parent collection and applies to the the given mapping function. Same idea as in `Array#map` except that the result remains connected with the parent collection.
 
 ### Observable commands/methods
 <a name="command"></a>
+
 
 In the SDK a command is simply a function with the `enabled` boolean property. When a command is invoked, it checks the value of the `enabled` property and throws an error if it's `false`. There are two uses of the `enabled` property:
 
@@ -218,6 +222,7 @@ In the SDK a command is simply a function with the `enabled` boolean property. W
 
 ### Event object
 <a name="event"></a>
+
 
 The event object is simply an array of callbacks: the app can add or removed them and the SDK can "fire" the event to invoke the callbacks. In general, adding or removing event listeners doesn't have any side effects.
 
@@ -244,7 +249,7 @@ The third pattern is to use anonymous named callbacks:
 persons.status.changed(function fn(status) {
   if (status == "Offline")
     persons.status.changed.off(fn);
-    
+
   // do something else
 });
 ```
@@ -253,6 +258,7 @@ This pattern is useful to add one time event listeners that remove themselves. T
 
 ### Promise object
 <a name="promise"></a>
+
 
 In the SDK some methods are return the result right away, while some are asynchronous: they return a `Promise` object that is eventually resolved with the result. The SDK adheres to the `Promise/A+` specification which is well documented elsewhere, so here only common patterns with promise objects are explained.
 

@@ -4,10 +4,11 @@
 
 
 Represents the user's set of [presenceSubscription](presenceSubscription_ref.md) resources.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 /// This resource can be used to create new [presenceSubscription](presenceSubscription_ref.md)s as well as to modify and delete existing ones.
 
@@ -44,6 +46,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -57,6 +60,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -110,7 +114,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/presenceSubscriptions H
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -163,7 +166,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/presenceSubscriptions H
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -185,6 +187,7 @@ Content-Length: 647
     <property name="rel">presenceSubscription</property>
     <property name="id">3</property>
   </resource>
+
 </resource>
 ```
 

@@ -10,7 +10,7 @@ Getting a specific contact's information amounts to accessing the [contact](cont
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a GET request on the **myContacts** HREF.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/contacts HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -23,13 +23,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 2. Process the response from the previous GET request.
- 
-  The response you receive should be 200 OK. The body of the response contains an array property named "contact" that is an array of individual contacts. Each item in the array includes information about a contact's URI, source network, and screen name, as well as links to other information about the contact.
- 
+
+   The response you receive should be 200 OK. The body of the response contains an array property named "contact" that is an array of individual contacts. Each item in the array includes information about a contact's URI, source network, and screen name, as well as links to other information about the contact.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -84,11 +83,10 @@ The steps here assume that you have already created an application and have rece
     },
     "rel":"myContacts"
     }
-
     ```
 
 3. Send a GET request on a specified **contact** resource parsed from the previous response.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/lenea@contoso.com@contoso.com HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -101,13 +99,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 4. Process the response from the previous GET request.
- 
-  The successful response is 200 OK. The body of the response contains references to supported contact data.
- 
+
+   The successful response is 200 OK. The body of the response contains references to supported contact data.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -137,6 +134,5 @@ The steps here assume that you have already created an application and have rece
     "rel":"contact",
     "etag":"4061867540"
     }
-
     ```
 

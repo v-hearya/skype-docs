@@ -72,10 +72,10 @@ a participant joins the conversation.
 
  ```js
  // listener to notify us when conversation ended
- conversation.state.changed(function (newValue, reason, oldValue) {		
-    if (newValue === 'Disconnected' && (oldValue === 'Connected' || oldValue === 'Connecting')) {		
-        // Conversation ended		
-    }		
+ conversation.state.changed(function (newValue, reason, oldValue) {     
+    if (newValue === 'Disconnected' && (oldValue === 'Connected' || oldValue === 'Connecting')) {       
+        // Conversation ended       
+    }       
 })
 
 conversation.leave().then(function () {

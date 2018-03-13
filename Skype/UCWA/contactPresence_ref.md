@@ -4,10 +4,11 @@
 
 
 Represents a [contact](contact_ref.md)'s availability and activity.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 contactPresence is updated when a [contact](contact_ref.md)'s availability or activity changes.
 
@@ -48,6 +50,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -55,37 +58,39 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Updated
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|contactPresence|Medium|people|Indicates the contact's presence has changed. The application may decide to fetch the updated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                               |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------|
+| contactPresence           | Medium                    | people                  | Indicates the contact's presence has changed. The application may decide to fetch the updated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "contactPresence",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPresence"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPresence>"
           },
           "in" : {
             "rel" : "contact",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282>"
           },
           "type" : "updated"
         }
@@ -100,6 +105,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -152,7 +158,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPrese
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -190,7 +195,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282/contactPrese
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

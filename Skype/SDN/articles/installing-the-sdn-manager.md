@@ -46,11 +46,11 @@ To install Skype for Business SDN Manager, do the following:
   
 6. Do the same for the service logging directory; that is, set it to  `c:\\logdir\\`, then select the checkbox to enable debug level logging. 
     
-   > [!NOTE]
-   > While the number of log files is limited, for production environments it is not recommended that you activate debug logging unless investigating a particular issue, as extensive amounts of logs are written. 
+   > [!NOTE]
+   > While the number of log files is limited, for production environments it is not recommended that you activate debug logging unless investigating a particular issue, as extensive amounts of logs are written. 
 7. On the **SDN Manager Topology** wizard screen, select one of the three available options:
     
-  - Join (or create) a pool of SDN Managers using a REDIS cache 
+   - Join (or create) a pool of SDN Managers using a REDIS cache 
     
   
   - Join (or create) a pool of SDN Managers using a SQL Server database. 
@@ -68,13 +68,13 @@ To install Skype for Business SDN Manager, do the following:
   
 
     
-   > [!NOTE]
-   > To download and install Redis, visit the  [Redis web site](http://redis.io/). 
-8. Depending on your choice, select one of the following: 
+> [!NOTE]
+> To download and install Redis, visit the  [Redis web site](http://redis.io/). 
+> 8. Depending on your choice, select one of the following: 
     
 1. If the first option is selected, do the following: 
     
-  In the **REDIS Settings** wizard page (Figure 3), enter the connect string to a Redis cache service. You can enter the password, if required, as part of the connect string, or else enter the password in the separate **Password** field.
+   In the **REDIS Settings** wizard page (Figure 3), enter the connect string to a Redis cache service. You can enter the password, if required, as part of the connect string, or else enter the password in the separate **Password** field.
     
 
    **Figure 3. REDIS settings wizard screen**
@@ -87,13 +87,13 @@ To install Skype for Business SDN Manager, do the following:
     
     
     
-   > [!NOTE]
-   > **REDIS key space** field prevents multiple clients from using the same key, causing applications to interfere with one other. If you intend to use this cache for multiple SDN pools or other application, please ensure that each one has a different key space value.
-2. If you selected the second option (Join (or create) a pool of SDN Managers using a SQL Server database), do the following: 
+> [!NOTE]
+> **REDIS key space** field prevents multiple clients from using the same key, causing applications to interfere with one other. If you intend to use this cache for multiple SDN pools or other application, please ensure that each one has a different key space value.
+> 2. If you selected the second option (Join (or create) a pool of SDN Managers using a SQL Server database), do the following: 
     
-  - In **Skype for BusinessSDN Manager Database Settings** wizard page, enter a SQL Server name in the **Database Server** field, and the database instance name, if appropriate, in the **Database Name** field.
+- In **Skype for BusinessSDN Manager Database Settings** wizard page, enter a SQL Server name in the **Database Server** field, and the database instance name, if appropriate, in the **Database Name** field.
     
-   **Figure 4. SDN manager database settings**
+  **Figure 4. SDN manager database settings**
 
   
 
@@ -114,8 +114,8 @@ To install Skype for Business SDN Manager, do the following:
   
 3. If the third option is selected, no further settings are needed as the single SDN Manager instance will use its internal memory cache for tracking all ongoing call sessions. 
     
-   > [!NOTE]
-   > If you choose this final option please ensure that the SDN Manager host has sufficient memory for all concurrent ongoing sessions, 
+   > [!NOTE]
+   > If you choose this final option please ensure that the SDN Manager host has sufficient memory for all concurrent ongoing sessions, 
 9. In the **Ready to install** panel, click the Install button to start the installation.
     
   

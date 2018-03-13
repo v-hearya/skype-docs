@@ -4,10 +4,11 @@
 
 
 Represents a group of user's organization contacts
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 A organization group is a logical container for user's organization contacts including manager, peers and direct reports
 
@@ -48,6 +50,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -55,33 +58,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|delegatorsGroup|High|people|Indicates that the myOrganization group was added. The application can decide to fetchthe updated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                   |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| delegatorsGroup           | High                      | people                  | Indicates that the myOrganization group was added. The application can decide to fetchthe updated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "delegatorsGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup>"
           },
           "type" : "added"
         }
@@ -95,29 +100,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|delegatorsGroup|High|people|Indicates that the myOrganization group has been updated. The application can decide to fetch theupdated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                          |
+|:--------------------------|:--------------------------|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
+| delegatorsGroup           | High                      | people                  | Indicates that the myOrganization group has been updated. The application can decide to fetch theupdated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "delegatorsGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup>"
           },
           "type" : "updated"
         }
@@ -131,29 +137,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|delegatorsGroup|High|people|Indicates that the myOrganization group was deleted. The application can decide tofetch the updated information.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                     |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------|
+| delegatorsGroup           | High                      | people                  | Indicates that the myOrganization group was deleted. The application can decide tofetch the updated information.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "delegatorsGroup",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/delegatorsGroup>"
           },
           "type" : "deleted"
         }
@@ -168,6 +175,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -220,7 +228,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -262,7 +269,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/myOrganizationGr
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

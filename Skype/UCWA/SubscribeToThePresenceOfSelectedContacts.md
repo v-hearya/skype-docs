@@ -11,7 +11,7 @@ An application can proceed to get the new presence data whenever a contact's pre
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md). The steps also assume you have already found a contact whose presence you wish to subscribe to via the event channel. For more information, see [Get the user's contact list](GetUsersContactList.md) or [Search for a user's contact](SearchForUsersContact.md).
 
 1. Send a POST request on the **presenceSubscriptions** resource, as pointed to in the **people** resource embedded in the **application** resource. Specify the required **duration** parameter value and supply a list of SIP URIs (obtained from one or more contact resources) in the request body.
- 
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/presenceSubscriptions HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -27,14 +27,13 @@ The steps here assume that you have already created an application and have rece
     Content-Length: 45
 
     {"duration":11,"Uris": ["sip:SaraD@contoso.com"]}
-
     ```
-In this example, the subscription expires in 11 minutes, if it is not extended. The supplied list of **Uris** contains a single user's SIP URI.
- 
+   In this example, the subscription expires in 11 minutes, if it is not extended. The supplied list of **Uris** contains a single user's SIP URI.
+
 2. Process the response from the previous POST request.
- 
- The successful response should be 201 Created. The response body contains the ID and the relative URL of the newly created subscription. The subscription ID or URL can be used to extend or delete this subscription. Available functionalities or operations are also specified by the returned links. 
- 
+
+   The successful response should be 201 Created. The response body contains the ID and the relative URL of the newly created subscription. The subscription ID or URL can be used to extend or delete this subscription. Available functionalities or operations are also specified by the returned links. 
+
     ```
     HTTP/1.1 201 Created
     Connection: Keep-Alive
@@ -56,10 +55,9 @@ In this example, the subscription expires in 11 minutes, if it is not extended. 
     },
     "rel":"presenceSubscription"
     }
-
     ```
-When the event channel is activated, added events for **presenceSubscription** and **contact** and an updated event for **contactPresence** will be received in the event channel. The returned subscription URL in the **presenceSubscription** added event can be used to extend or delete this subscription.
- 
+   When the event channel is activated, added events for **presenceSubscription** and **contact** and an updated event for **contactPresence** will be received in the event channel. The returned subscription URL in the **presenceSubscription** added event can be used to extend or delete this subscription.
+
     ```
     "events": [{
     "link":{
@@ -91,8 +89,8 @@ When the event channel is activated, added events for **presenceSubscription** a
     "type":"updated"
     }]
     ```
-The **href** value is used to receive the actual presence data of the contact, which is discussed in [Get presence data of a contact](GetPresenceDataOfAContact.md).
- 
+   The **href** value is used to receive the actual presence data of the contact, which is discussed in [Get presence data of a contact](GetPresenceDataOfAContact.md).
+
 
 ## Receive presence data from the event channel
 
@@ -100,9 +98,9 @@ To get the actual presence data that appears in the event channel, start the eve
 
 
 1. Listen for an **updated** event for the **contactPresence** resource.
- 
- The following example shows that the presence for SaraD@contoso.com has been updated. 
- 
+
+   The following example shows that the presence for SaraD@contoso.com has been updated. 
+
     ```
     HTTP/1.1 200 OK
     {
@@ -123,10 +121,9 @@ To get the actual presence data that appears in the event channel, start the eve
     }
     ]
     }
-
     ```
-An application should listen for an **updated** event for the **presenceSubscription** resource. This can indicate that the subscription is about to expire.
- 
+   An application should listen for an **updated** event for the **presenceSubscription** resource. This can indicate that the subscription is about to expire.
+
     ```
     {
     "_links":{
@@ -158,7 +155,7 @@ An application should listen for an **updated** event for the **presenceSubscrip
     ```
 
 2. Send a GET request on the **presence** resource for the contact.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/sarad@contoso.com/presence HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -171,13 +168,12 @@ An application should listen for an **updated** event for the **presenceSubscrip
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 3. Process the response from the previous GET request to receive presence data.
- 
- As can be seen in the following example, the presence (availability) of saraD@contoso.com is Offline.
- 
+
+   As can be seen in the following example, the presence (availability) of saraD@contoso.com is Offline.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -198,6 +194,5 @@ An application should listen for an **updated** event for the **presenceSubscrip
     "self":{"href":"/ucwa/oauth/v1/applications/101/people/saraD@contoso.com/presence"}},
     "rel":"contactPresence"
     }
-
     ```
 

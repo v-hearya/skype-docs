@@ -4,10 +4,11 @@
 
 
 Represents a read-only version of the [onlineMeeting](onlineMeeting_ref.md) associated with this [conversation](conversation_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The resource captures information about the meeting, including the join URL, the attendees list, and the description.
 
@@ -76,37 +78,39 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|onlineMeeting|High|conversation|Indicates that the corresponding onlineMeeting has been added to a conversation.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                     |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------|
+| onlineMeeting             | High                      | conversation            | Indicates that the corresponding onlineMeeting has been added to a conversation.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "onlineMeeting",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting>"
           },
           "in" : {
             "rel" : "conversation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>"
           },
           "type" : "added"
         }
@@ -120,33 +124,34 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|onlineMeeting|High|conversation|Indicates that the corresponding onlineMeeting has been updated in a conversation.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                       |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------|
+| onlineMeeting             | High                      | conversation            | Indicates that the corresponding onlineMeeting has been updated in a conversation.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "onlineMeeting",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting>"
           },
           "in" : {
             "rel" : "conversation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>"
           },
           "type" : "updated"
         }
@@ -161,6 +166,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -211,7 +217,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -253,7 +258,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -304,6 +308,7 @@ Content-Length: 2431
     <property name="id">917823</property>
     <property name="type">RoamedParticipantData</property>
   </resource>
+
 </resource>
 ```
 

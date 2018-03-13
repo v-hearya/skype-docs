@@ -83,12 +83,12 @@ class ConversationPropertyChangeHandler extends Observable.OnPropertyChangedCall
 {
    public void onPropertyChanged(Observable observable, int propId) {
        switch(propId) {
-	// Handle property change
-	case Conversation.STATE_PROPERTY_ID:
-	// Get the new state	
-	conversationState = conversation.getState()
-	break;
-	}	
+    // Handle property change
+    case Conversation.STATE_PROPERTY_ID:
+    // Get the new state    
+    conversationState = conversation.getState()
+    break;
+    }   
 }
 
 // Join the meeting and register for events

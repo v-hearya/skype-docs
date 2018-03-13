@@ -8,6 +8,7 @@ Learn how to request that the event channel be started, and to process events wh
 ## Requesting events
 <a name="sectionSection0"> </a>
 
+
 The client application discovers a link to the event channel resource, the [events](events_ref.md) resource, from the [application](application_ref.md) resource. The link already includes some query parameters, so it is important that the client application uses a proper URL parsing/building algorithm to append its own parameters when needed, instead of doing simple string concatenation.
 
 An event channel URL provided by the server usually looks like the following.
@@ -38,31 +39,33 @@ An application normally does not need to repeat these parameters in every reques
 ## Processing events
 <a name="sectionSection1"> </a>
 
+
 A P-GET response consists of the following parts:
 
 
 - The **self** and **next** links; the client should use the URL in the **next** link in the next P-GET it sends.
- 
+
 - The "senders" section with the list of blocks for each event sender. A sender can occur multiple times, as event ordering is preserved. Each sender block includes a link that identifies the resource that sent the event.
- 
+
 A "sender" section has a block for every event that was sent by the sender. The block includes the following.
 
 
 - Event type: added, updated, deleted (for resources) or started, updated, completed (for operations). In a JSON response, the event type is a property. In an XML response, the event type is an element name.
- 
+
 - The link to the event target (the "link" property in JSON, or the "rel"/"href" attributes in XML).
- 
+
 - An optional "in" link if the resource was added or removed from a collection.
- 
+
 - Optionally, the content of the updated resource in an embedded form.
- 
+
 - For failed operations or server-initiated changes, a "reason" block that describes the details of the change. The block follows the common UCWA error response structure.
- 
+
 Clients should issue the next P-GET request before they process an event channel response, but must also carry out the processing in sequence.
 
 
 ## Sample JSON event response
 <a name="sectionSection2"> </a>
+
 
 The following is a sample event response in JSON format.
 
@@ -133,12 +136,12 @@ The following is a sample event response in JSON format.
  }] 
  }] 
 }
-
 ```
 
 
 ## Sample XML event response
 <a name="sectionSection3"> </a>
+
 
 
 
@@ -184,21 +187,21 @@ The following is a sample event response in XML format.
  <added rel="location" href="/ucwa/oauth/v1/applications/102/me/location" /> 
  </sender> 
 </events>
-
 ```
 
 
 ## Special responses
 <a name="sectionSection4"> </a>
 
+
 In the case of an error or a special condition - for example, when an application hasn't sent a request in a while and the ack number is too low - the event response can be different from the common case.
 
 
 - If the server application is active and the client sends an "ack" value that is out of order (lower than the earliest one that the server has, or higher than the latest one), the response will consist of a single link with rel="resync". Following the link will give the client the first unacknowledged event set. Such a response usually indicates a client bug and should never occur in normal operation.
- 
- The client should be prepared to see such a link in any response. If the client application receives such a link, the correct action for it is to clear the caches for all transient data (including active conversations and subscriptions). This indicates that the client application was not receiving events for some time, as there was no connectivity.
- 
+
+  The client should be prepared to see such a link in any response. If the client application receives such a link, the correct action for it is to clear the caches for all transient data (including active conversations and subscriptions). This indicates that the client application was not receiving events for some time, as there was no connectivity.
+
 - If the server application does not exist at all, UCWA will send a failure response (404) with subcode=ApplicationNotFound. If the client intends to continue using the application, it should recreate the application by sending a POST request on the [applications](applications_ref.md) resource.
- 
+
 - If the client sends another P-GET with the same ack ID, the previous P-GET will be released with a failure response (409 / Conflict) with UCWA error subcode PGetReplaced. If the client did in fact send another P-GET, it can ignore this code - otherwise it is an indication that the UCWA application ID is used by another active instance of the client application.
- 
+

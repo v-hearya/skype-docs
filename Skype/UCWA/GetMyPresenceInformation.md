@@ -10,9 +10,9 @@ Getting a user's presence involves resource navigation from [application](applic
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a POST request on the makeMeAvailable resource.
- 
- One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the href for the [makeMeAvailable](makeMeAvailable_ref.md) resource. Search for the [me](me_ref.md) resource embedded in your application, and then locate the href of the **makeMeAvailable** link.
- 
+
+   One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the href for the [makeMeAvailable](makeMeAvailable_ref.md) resource. Search for the [me](me_ref.md) resource embedded in your application, and then locate the href of the **makeMeAvailable** link.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/me/makeMeAvailable HTTP/1.1
     Accept: application/json
@@ -33,9 +33,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 2. Process the response from the request in the previous step.
- 
- The response you receive should be 204 No content, as shown here.
- 
+
+   The response you receive should be 204 No content, as shown here.
+
     ```
     HTTP/1.1 204 No Content
     Connection: Keep-Alive
@@ -48,9 +48,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 3. Send a GET request on the **application** resource.
- 
- A sample request is shown here.
- 
+
+   A sample request is shown here.
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -63,13 +63,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 4. Process the response from the previous request.
- 
- The response from the previous GET request should be 200 OK. Look for the **me** embedded resource, which has a **presence** link. The href associated with the **presence** link is used in the next step.
- 
+
+   The response from the previous GET request should be 200 OK. Look for the **me** embedded resource, which has a **presence** link. The href associated with the **presence** link is used in the next step.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -119,9 +118,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 5. Send a GET request on the **presence** resource.
- 
- A sample request is shown here.
- 
+
+   A sample request is shown here.
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/103/me/presence HTTP/1.1
     Authorization: Bearer cwt=AAEB...TT0buHc
@@ -138,9 +137,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 6. Process the response from the previous GET request.
- 
- The response you receive should be 200 OK. The body of the request contains an entry named availability that contains your presence, as well as a link to the **presence** resource.
- 
+
+   The response you receive should be 200 OK. The body of the request contains an entry named availability that contains your presence, as well as a link to the **presence** resource.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive

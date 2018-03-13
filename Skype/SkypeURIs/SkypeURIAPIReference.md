@@ -29,18 +29,18 @@ Currently supported Skype URIs include:
 * If the Skype client is already running—switches focus to the Skype client.
 * If the Skype client is already running and has the current focus—no effect; the Skype client retains focus.
 * If the Skype URI starts the Skype client, focus is set to the Skype client's main window (auto-login is enabled), 
-or to its sign-in dialog box (auto-login is not enabled). If the Skype client is already running, the focus is set to the 
-main Skype window, even if a Skype client dialog box, such as the  **Tools−>Options** dialog box, is open.
+  or to its sign-in dialog box (auto-login is not enabled). If the Skype client is already running, the focus is set to the 
+  main Skype window, even if a Skype client dialog box, such as the  **Tools−>Options** dialog box, is open.
 
- **Syntax**
+  **Syntax**
 
- `skype:`
+  `skype:`
 
- **Example**
+  **Example**
 
- `skype:`
+  `skype:`
 
- **Caveats**
+  **Caveats**
 
 On iOS, this Skype URI not only switches focus to the Skype client, but also attempts to initiate a call.
 

@@ -4,10 +4,11 @@
 
 
 Makes the user available for incoming communications.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource lets users share their availability and allows them to receive incoming invitations for the modalities of their choice.Please note that a user can initiate communications, such as joining an [onlineMeeting](onlineMeeting_ref.md) or starting a phone call, without invoking this capability.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -49,6 +52,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -134,7 +138,6 @@ Content-Length: 176
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -173,7 +176,6 @@ Content-Length: 455
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

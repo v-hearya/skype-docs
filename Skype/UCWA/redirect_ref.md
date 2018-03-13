@@ -9,6 +9,7 @@ Represents a pointer to a different server that the application should use for f
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The redirect resource indicates that the user is homed on a different server.The application must direct future requests to this server as the current server does not have all of this user's information.This can happen when a user hits an on-premises server and the user is homed online, or when a company has multiple servers.Credentials might need to be resubmitted after following the redirect.
 
@@ -45,6 +47,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -95,7 +98,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/user/r
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -135,7 +137,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/user/r
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

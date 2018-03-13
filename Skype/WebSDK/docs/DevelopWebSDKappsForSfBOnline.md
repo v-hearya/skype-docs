@@ -19,14 +19,15 @@ This section shows how to develop a Skype Web SDK client application for Skype f
 ## App registration
 <a name="sectionSection0"> </a>
 
+
 Skype for Business Online uses Azure Active Directory (Azure AD) to provide authentication services that your application can use to obtain rights to access the service APIs. Following is a brief overview of the steps required, with further details on each step below:
 
 1.  **Register your application in Azure AD**. To allow your application access to the Skype Web SDK APIs, you need to register your application in Azure AD. This will allow you to establish an identity for your application and specify the permission levels it needs in order to access the APIs. For details, see **Registering your application in Azure AD**.
-    
+
 2.  **Add a sign in feature to your app**. When a user visits your website and initiates sign-in, your application makes a request to the Microsoft common OAuth2 login endpoint. Azure AD validates the request and responds with a sign-in page, where the user signs in. A user must explicitly grant consent to allow your application to access user data by means of the Skype Web SDK APIs. The user reads the descriptions of the access permissions that your application is requesting, and then grants or denies the request. After consent is granted, the UI redirects the user back to your application. If authentication and authorization are successful, Azure AD returns a token and grants access to Skype for Business Online and identifies the current signed-in user. For details on authentication, see [Authentication Using Azure AD](http://technet.microsoft.com/library/f66482d2-ac35-4b25-9c8b-0f5f7ab89b01.aspx). For details of authorization, see [Skype for Business Online Scope Permissions](http://technet.microsoft.com/library/e292d8ef-3b05-4442-9983-378f6f958f8b.aspx).
-    
+
 3.  **Call the Skype Web SDK APIs**. The token that Azure AD provided when redirecting back to your app need not be saved, as the SDK can get its own tokens from AAD (on subsequent requests the browser passes along the requisite cookies to obtain tokens). Pass the `client_id` and `redirect_uri` registered in AAD to the SDK and it will be able to sign in.
-    
+
 
 ### Registering your application in Azure AD
 
@@ -34,15 +35,15 @@ Sign in to the Azure Management Portal, then do the following:
 
 
 1. Click the  **Active Directory** node in the left column and select the directory linked to your Skype for Business subscription.
-    
+
 2. Select the  **Applications** tab and then **Add** at the bottom of the screen.
-    
+
 3. Select  **Add an application my organization is developing**.
-    
+
 4. Choose a name for your application, such as  `skypewebsample`, and select  **Web application and/or web API** as its **Type**. Click the arrow to continue.
-    
+
 5. The value of  **Sign-on URL** is the URL at which your application is hosted.
-    
+
 6. The value of  **App ID URI** is a unique identifier for Azure AD to identify your application. You can use `http://{your_subdomain}/skypewebsample`, where  `{your_subdomain}` is the subdomain of the tenant you specified while signing up for your Skype for Business Web App (website) on Azure. Click the check mark to provision your application. For example, a tenant with name skypesample.onmicrosoft.com could use an App ID URI of `http://app.skypesample.onmicrosoft.com`.
 
 7. Select the **Configure** tab and set **Application is Multi-Tenant** to true if you would like to allow users from other tenants to sign in to the application hosted on your tenant. For a single tenant application leave this at false.
@@ -50,15 +51,15 @@ Sign in to the Azure Management Portal, then do the following:
 
 8. Specify one or more reply urls that your application may use. The reply url is typically what you provide to both Azure AD (when the user is initally redirected to enter credentials) and the `signInManager.signIn` method as the value of the redirect_uri parameter. Wild cards are allowed. For example, if your web application is hosted at `https://mycompany.onmicrosoft.com/myapp/signin/index.html` you could potentially provide a reply url like `"https://mycompany.onmicrosoft.com/myapp/*"`.
     >Note: During development it is a common practice to host your application on `http://localhost` and provide `http://localhost/*` as a reply url. Apart from this being a security issue (anyone can host a website on `http://localhost` and authenticate against your application if they know your client_id) this approach does not work for Internet Explorer because of how security zones work on Internet Explorer. `http://localhost` is in your local computer's trusted zone while Azure AD (login.microsoftonline.com) is in the Internet zone, and there is no cookie sharing between these zones. Hence, even if a user signs in on the Azure AD login page, the browser does not carry forward the necessary cookies on subsequent authentication requests to Azure AD from the SDK. 
-    
+
 9. Select the  **Configure** tab, scroll down to the **Permissions** to other applications section, and click the **Add application** button.
-    
+
 10. In order to show how to create online meetings, add the  **Skype for Business Online** application. Click the plus sign in the application's row and then click the check mark at the top right to add it. Then click the check mark at the bottom right to continue.
-    
+
 11. In the  **Skype for Business Online** row, select **Delegated Permissions**, and choose the permissions you wish to use.
-    
+
 12. Click  **Save** to save the application's configuration.
-    
+
 These steps register your application with Azure AD, but you still need to configure your app's manifest to use OAuth implicit grant flow, as explained below.
 
 
@@ -67,18 +68,19 @@ These steps register your application with Azure AD, but you still need to confi
 In order to get an access token for Skype for Business API requests, your application should use the OAuth implicit grant flow. You need to update the application's manifest to allow the OAuth implicit grant flow because it is not turned on by default.
 
 1. Select the  **Configure** tab of your application's entry in the Azure Management Portal.
-    
+
 2. Using the  **Manage Manifest** button in the drawer, download the manifest file for the application and save it to your computer.
-    
+
 3. Open the manifest file with a text editor. Search for the  `oauth2AllowImplicitFlow` property. By default it is set to false; change it to **true** and save the file.
-    
+
 4. Using the  **Manage Manifest** button, upload the updated manifest file.
-    
+
 This will register your application with Azure AD. In order for your Skype Web application to access Skype for Business Server resources (such as messaging or presence), it needs to obtain an access token using implicit grant flow. This token gives the application permission to access the resource.
 
 
 ## Update your code
 <a name="sectionSection1"> </a>
+
 
 To update your code to support Skype for Business Online, you'll need to update a web page in the app to show the Azure sign in screen. In addition, you'll need to make changes in JavaScript to initialize the Skype Web SDK API entry point. Finally, you'll need to call the `signInManager.signIn` method on the SDK (either on some button click or automatically when the user gets redirected back to your application from Azure AD).
 
@@ -122,11 +124,11 @@ The following HTML content shows the Azure AD sign in page to the user when load
 </head>
 <body>
     <script>
-    	var hasToken = /^#access_token=/.test(location.hash);
-    	var hasError = /^#error=/.test(location.hash);
-    	
-    	var client_id = '<add your client id here>';
-    
+        var hasToken = /^#access_token=/.test(location.hash);
+        var hasError = /^#error=/.test(location.hash);
+
+        var client_id = '<add your client id here>';
+
         // redirect to Org ID if there is no token in the URL
         if (!hasToken && !hasError) {
             location.assign('https://login.microsoftonline.com/common/oauth2/authorize?response_type=token' +
@@ -137,11 +139,11 @@ The following HTML content shows the Azure AD sign in page to the user when load
 
         // show the UI if the user has signed in
         if (hasToken) {
-		// Use Skype Web SDK to start signing in               
+        // Use Skype Web SDK to start signing in               
         }
-        
+
         if (hasError) {
-        	console.log(location.hash);
+            console.log(location.hash);
         }
     </script>
 </body>
@@ -198,11 +200,11 @@ The tenant administrator consent flow is important in two scenarios:
 
 ```js
 https://login.microsoftonline.com/common/oauth2/authorize?response_type=id_token
-	&client_id= ...
-	&redirect_uri=https://app.contoso.com/
-	&response_mode=form_post
-	&resource=https://webdir.online.lync.com
-	&prompt=admin_consent
+    &client_id= ...
+    &redirect_uri=https://app.contoso.com/
+    &response_mode=form_post
+    &resource=https://webdir.online.lync.com
+    &prompt=admin_consent
 ```
 
 Access the URL and authenticate using a tenant administrator credentials and accept the application permissions. Users will now be able to access the application.
@@ -210,13 +212,14 @@ Access the URL and authenticate using a tenant administrator credentials and acc
 ## Additional Resources
 <a name="bk_addresources"> </a>
 
+
 - [How to get an Azure Active Directory tenant](https://azure.microsoft.com/documentation/articles/active-directory-howto-tenant/)
-    
+
 - [Managing Applications with Azure Active Directory (AD)](https://azure.microsoft.com/documentation/articles/active-directory-enable-sso-scenario/)
-    
+
 - [Registering Your Application in Azure AD](http://technet.microsoft.com/library/9e4d9905-a17c-458d-8cf5-d384f5bd65fd.aspx)
 
 - [Integrating Applications with Azure Active Directory](http://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/)
 
 - [Active Directory Authentication Scenarios](http://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/)
-    
+

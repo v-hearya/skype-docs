@@ -13,6 +13,7 @@ If your failing scenario involves using Audio/Video with the Skype Web SDK or Co
 Depending on the browser and OS in which you're running the Skype Web SDK or Conversation Control, the location of media logs will vary. See below for the instructions on gathering media logs specific to your browser.
 
 <a name="ie"></a>
+
 ## Media logs in Internet Explorer
 
 Using Audio/Video in Internet Explorer requires the Skype For Business media plugin. The location of the logs will depend on where the plugin is installed. If the plugin is installed in the default install location on a Windows machine, the path of the log files looks like this:
@@ -27,6 +28,7 @@ After reproducing the scenario, close the browser, navigate to this directory an
 Include both files in the issue report.
 
 <a name="edge"></a>
+
 ## Media logs in Microsoft Edge
 
 Using Audio/Video in the Skype Web SDK in Microsoft Edge uses the Microsoft Edge native implementation of the ORTC (Object Real-Time Communications) protocol. In order to collect media logs for Audio/Video activity in Microsoft Edge, you must first enable Microsoft Edge ORTC media logging by setting a registry key.
@@ -50,15 +52,18 @@ After enabling media logging in this way, restart Microsoft Edge, reproduce the 
 This will copy the two most recent media log files from the default location where Microsoft Edge ORTC media logs are written into a folder in the home directory of your machine. Copy the entire folder containing these logs and include it in the issue report.
 
 <a name="safari"></a>
+
 ## Media logs in Safari
 
 Audio/Video support in Safari is provided by the Skype for Business Meetings Plugin just as in IE, so the Safari plugin media logs are available in a tracing directory within the directory where the plugin is installed, and should have names similar to the plugin media logs in IE.
 
 <a name="other"></a>
+
 ## Media logs in other browsers
 
 Once AV support expands to other browsers like Chrome and Firefox, we will add instructions on capturing media logs for these browsers.
 
 <a name="related-topics"></a>
+
 ## Related topics
 - [Release Notes](../../ReleaseNotes.md)

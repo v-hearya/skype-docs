@@ -19,12 +19,12 @@ for this software, unless other terms accompany those items. If so, those terms 
 
 **1.INSTALLATION AND USE RIGHTS.** 
 
-**a.	Installation and Use.** You may install and use any number of copies of the software on your devices to design, develop and test your applications that communicate only with Microsoft Skype for Business Server or Skype for Business Online.  
+**a.    Installation and Use.** You may install and use any number of copies of the software on your devices to design, develop and test your applications that communicate only with Microsoft Skype for Business Server or Skype for Business Online.  
 - You may use or test the functions of the pre-release software that has an X in the General Availability column listed on [http://aka.ms/SkypeWebSDKTerms](http://aka.ms/SkypeWebSDKTerms) in a live operating environment.
 
-**b.	Third Party Programs.** The software may include third party programs that Microsoft, not the third party, licenses to you under this agreement. Notices, if any, for the third party program are included for your information only.
+**b.    Third Party Programs.** The software may include third party programs that Microsoft, not the third party, licenses to you under this agreement. Notices, if any, for the third party program are included for your information only.
 
-**2.	SCOPE OF LICENSE.** 
+**2.    SCOPE OF LICENSE.** 
 The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. For more information, see [www.microsoft.com/licensing/userights](http://www.microsoft.com/licensing/userights).  
 You may not
 
@@ -34,23 +34,23 @@ You may not
 - use the software in any way that is against the law; or
 - share, publish, rent or lease the software, or provide the software as a stand-alone hosted as solution for others to use.
 
-**3.	PRE-RELEASE SOFTWARE.** The software contains some pre-release features. It may not work the way a final version of the software will. We may change it for the final, commercial version. We also may not release a commercial version of all the features.
+**3.    PRE-RELEASE SOFTWARE.** The software contains some pre-release features. It may not work the way a final version of the software will. We may change it for the final, commercial version. We also may not release a commercial version of all the features.
 
-**4.	UX GUIDELINES.**  You must follow the UX Guidelines provided with the Skype Web SDK documentation located on MSDN.
+**4.    UX GUIDELINES.**  You must follow the UX Guidelines provided with the Skype Web SDK documentation located on MSDN.
 
-**5.	DOCUMENTATION.** Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
-	
-**6.	TRANSFER TO ANOTHER DEVICE.** You may uninstall the software and install it on another device for your use. You may not do so to share this license between devices.
+**5.    DOCUMENTATION.** Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+    
+**6.    TRANSFER TO ANOTHER DEVICE.** You may uninstall the software and install it on another device for your use. You may not do so to share this license between devices.
 
-**7.	EXPORT RESTRICTIONS.** You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users and end use.  For further information on export restrictions, visit [aka.ms/exporting](http://aka.ms/exporting).
+**7.    EXPORT RESTRICTIONS.** You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users and end use.  For further information on export restrictions, visit [aka.ms/exporting](http://aka.ms/exporting).
 
-**8.	SUPPORT SERVICES.** Because this software is “as is,” we may not provide support services for it.
+**8.    SUPPORT SERVICES.** Because this software is “as is,” we may not provide support services for it.
 
-**9.	ENTIRE AGREEMENT.** This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+**9.    ENTIRE AGREEMENT.** This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
-**10.	APPLICABLE LAW.** If you acquired the software in the United States, Washington law applies to interpretation of and claims for breach of this agreement, and the laws of the state where you live apply to all other claims. If you acquired the software in any other country, its laws apply.
+**10.   APPLICABLE LAW.** If you acquired the software in the United States, Washington law applies to interpretation of and claims for breach of this agreement, and the laws of the state where you live apply to all other claims. If you acquired the software in any other country, its laws apply.
 
-**11.	CONSUMER RIGHTS; REGIONAL VARIATIONS.** This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state or country. Separate and apart from your relationship with Microsoft, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or mandatory country law applies, then the following provisions apply to you:
+**11.   CONSUMER RIGHTS; REGIONAL VARIATIONS.** This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state or country. Separate and apart from your relationship with Microsoft, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or mandatory country law applies, then the following provisions apply to you:
 
 
 a. Australia. You have statutory guarantees under the Australian Consumer Law and 
@@ -63,23 +63,23 @@ checking for and installing updates), or uninstalling the software. The product
 documentation, if any, may also specify how to turn off updates for your specific device 
 or software.
 
-c.	Germany and Austria.
+c.  Germany and Austria.
  
-\(i\)	Warranty. The properly licensed software will perform substantially as described in 
+\(i\)   Warranty. The properly licensed software will perform substantially as described in 
 any Microsoft materials that accompany the software. However, Microsoft gives no 
 contractual guarantee in relation to the licensed software.
    
-\(ii\)	Limitation of Liability. In case of intentional conduct, gross negligence, claims 
+\(ii\)  Limitation of Liability. In case of intentional conduct, gross negligence, claims 
 based on the Product Liability Act, as well as, in case of death or personal or 
 physical injury, Microsoft is liable according to the statutory law.
 
 Subject to the foregoing clause (ii), Microsoft will only be liable for slight negligence if Microsoft is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called "cardinal obligations"). In other cases of slight negligence, Microsoft will not be liable for slight negligence.
 
-**12.	LEGAL EFFECT.** This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+**12.   LEGAL EFFECT.** This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-**13.	DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.**
+**13.   DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.**
 
-**14.	LIMITATION ON AND EXCLUSION OF DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.**
+**14.   LIMITATION ON AND EXCLUSION OF DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.**
 
 - This limitation applies to (a) anything related to the software, services, content (including code) on third party Internet sites, or third party applications; and (b) claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
 

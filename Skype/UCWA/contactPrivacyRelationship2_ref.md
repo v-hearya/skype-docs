@@ -9,6 +9,7 @@ Represents the privacy relationship between the user and a [contact](contact_ref
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource captures the closeness of the relationship, with more information available in closer relationships. FriendsAndFamily contactssee appointment and meeting titles, while Colleagues see only Free or Busy.If an application has subscribed to a contact, events will be raised when a contact's privacy relationship changes.
 
@@ -46,12 +48,14 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
 
 ## Events
 <a name="sectionSection2"></a>
+
 
 ### Updated
 
@@ -102,6 +106,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -155,7 +160,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: 33934c8d-3574-4244-989d-a9109729b153
-
 ```
 
 
@@ -197,7 +201,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: f6eaac49-f760-4c51-8fa9-fb5ac9a7c4ff
-
 ```
 
 
@@ -284,7 +287,6 @@ Content-Length: 68
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 
@@ -315,7 +317,6 @@ Content-Length: 224
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 

@@ -10,7 +10,7 @@
 - [Render multiple Conversation Controls on a page](#multiple-cc)
 - [Additional resources](#additional-resources)
 
- >**Note**: The Audio and Video components of the conversation control are available as public preview.
+  >**Note**: The Audio and Video components of the conversation control are available as public preview.
 
 The Skype Web SDK <a href="//msdn.microsoft.com/skype/websdk/docs/conversationcontrol" target="">Conversation Control</a> object contains the logic and
 presentation layer that encapsulates IM and A/V conversations in one object. Use it when you want Skype
@@ -35,6 +35,7 @@ join an IM conversation.
 
 ---
 <a name="setup"> </a>
+
 ## Add the Conversation Control to a webpage
 
 The following sections walk through the process to initialize the Skype Web SDK API endpoint, add state change event logic for conversation invitations, and a button click 
@@ -44,7 +45,7 @@ event handler for starting a new IM conversation.
 ## Initialize the Skype Web SDK API endpoint.
 
 - Declare a structure to hold the API keys
-    
+
 >**Important**  The API key values shown in this example are the literal values that you must use in your application. If you use any other strings, 
 your application will not initialize the API endpoint.Change the value of the `version` key to uniquely identify your app. See <a href="https://msdn.microsoft.com/skype/websdk/docs/APIProductKeys" target="">Skype Web SDK Production Use Capabilities</a> for a list of supported API keys.
 
@@ -69,6 +70,7 @@ Skype.initialize({ apiKey: config.apiKeyCC }, function (api) {
 
 ---
 <a name='incoming-call'> </a>
+
 ## Render Conversation Control on incoming call
 
 Inside of the callback function passed into the  **initialize** method, add a callback to be invoked when a conversation is added to the 
@@ -138,6 +140,7 @@ app.conversationsManager.conversations.added(function (conversation) {
 
 ---
 <a name="outgoing-call"> </a>
+
 ## Render Conversation Control on outgoing call
 
 The following sample shows you how to render a Conversation Control to represent an outgoing
@@ -147,11 +150,11 @@ HTML elements of classes 'sip1' and 'sip2' respectively.
 When the user clicks a button called 'callButton', the code takes the following steps:
 
 - Takes the sip addresses specified in the text inputs sip1 and sip2 and...
-    
+
 - Creates a container to host the <a href="//msdn.microsoft.com/skype/websdk/docs/conversationcontrol" target="">Conversation Control</a> and adds it as a child of an element called 'conversationContainer.'
-    
+
 - Renders the <a href="//msdn.microsoft.com/skype/websdk/docs/conversationcontrol" target="">Conversation Control</a> in the new container by calling **renderConversation** and passing the hosting container, desired chat modality, and the array of invitee SIP addresses.
-    
+
 
 ``` js
 var conversationsManager = app.conversationsManager;
@@ -224,6 +227,7 @@ listeners.push(conversation.state.changed(function (newValue, reason, oldValue) 
 
 ---
 <a name="multi-cc"> </a>
+
 ## Render multiple Conversation Controls on a page
 
 Rendering multiple Conversation Controls in the same HTML page is very simple, and follows
@@ -254,6 +258,7 @@ api.renderConversation(div, {
 
 ---
 <a name="additional-resources"> </a>
+
 ## Additional resources
 
 - <a href="//msdn.microsoft.com/skype/websdk/docs/conversationcontrol" target="">Conversation Control</a>

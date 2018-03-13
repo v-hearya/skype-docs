@@ -567,10 +567,10 @@ and a fix for joining conferences anonymously in an ‘on prem’ topology.
 
 **Bugs fixed in the new public preview build:**
 
--	Accepting incoming video call with only audio briefly broadcasts video
--	'Meet Now' invitations come as group call instead of group IM in platforms
+-   Accepting incoming video call with only audio briefly broadcasts video
+-   'Meet Now' invitations come as group call instead of group IM in platforms
     which don't support audio
--	Use /autodiscover/xframe/xframe.html in the 'on prem' join URL discovery
+-   Use /autodiscover/xframe/xframe.html in the 'on prem' join URL discovery
 
 ---
 ## Skype Web SDK Version Update 9/27/16

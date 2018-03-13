@@ -10,6 +10,7 @@ _**Applies to:** Skype for Business 2015_
 > Application errors in the below format are currently only surfaced from the authentication API's (e.g. signinManager.signin or through the custom auth function)
 
 <a name="listOfErrors"></a>
+
 ### List of application errors
 
 | error code | message | category |
@@ -34,6 +35,7 @@ _**Applies to:** Skype for Business 2015_
 | Unauthorized | The user is unauthorized. Make sure the user is authenticated with a valid access token before making the request. | 
 
 <a name="errorAPI"></a>
+
 ### Error API and how to check for them
 
 Error messages are exposed in following format:

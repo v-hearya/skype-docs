@@ -1,6 +1,6 @@
 # AAD Auth Failures - Client requesting resource not in requiredResourceAccess list
 
-_"The client application has requested access to resource 'https://webdir.online.lync.com.' request has failed because the client has not specified this resource in its requiredResourceAccess list."_
+<em>"The client application has requested access to resource '<https://webdir.online.lync.com>.' request has failed because the client has not specified this resource in its requiredResourceAccess list."</em>
 
 _**Applies to:** Skype for Business 2015_
 
@@ -11,15 +11,17 @@ _**Applies to:** Skype for Business 2015_
 - [Related Topics](#related-topics)
 
 <a name="audience"></a>
+
 ## Who is this article for?
 
-If you are attempting to use the Azure AD authentication option to sign into the Skype for Business (SfB) Web SDK and you are seeing an AAD error page that looks like the following then this article is for you. The error page should have the message: "The client application has requested access to resource 'https://webdir.online.lync.com.' request has failed because the client has not specified this resource in its **requiredResourceAccess** list."
+If you are attempting to use the Azure AD authentication option to sign into the Skype for Business (SfB) Web SDK and you are seeing an AAD error page that looks like the following then this article is for you. The error page should have the message: "The client application has requested access to resource '<https://webdir.online.lync.com>.' request has failed because the client has not specified this resource in its <strong>requiredResourceAccess</strong> list."
 
 ![Need to delegate permission to SFB online API](../../../images/troubleshooting/auth/MustGrantDelegatedPermissions.PNG)
 
 If this is not your issue, you can return to [Troubleshooting Azure AD Authentication Failures for Skype Web SDK](./AADAuthFailures.md) for a list of other potential issues.
 
 <a name="issue"></a>
+
 ## The Issue
 
 You did not set permissions for the application to access the SfB Online APIs in Azure AD or set permissions incorrectly.
@@ -28,6 +30,7 @@ When registering your Skype Web SDK app in Azure AD, you need to indicate that y
 You can find more information about the Azure AD consent framework in [Integrating Applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-integrating-applications).
 
 <a name="solution"></a>
+
 ## The Solution
 
 Configure your application to access the SfB Online API by adding the API as one of the resources required by the application. In addition, indicate that your app needs all the delegated permissions made available by the API. Every permission requires administrator consent. This means that the before any user can sign in, an administrator must sign in and consent to the delegated permissions on behalf of all users in the tenant. Once the administrator consents, the application has all the specified delegated permissions in the context of the signed in user.
@@ -64,6 +67,7 @@ If you accidentally click **Cancel** rather than **Accept** and find yourself no
 ---
 
 <a name="related-topics"></a>
+
 ## Related Topics
 - [Troubleshooting AAD Auth Failures for Skype Web SDK](./AADAuthFailures.md)
 - [AAD Auth Failures - Administrator has not provided consent to use SfB Web APIs](./AADAuth-AdminConsent.md)

@@ -12,7 +12,7 @@
             let config: SfBConfigurationManager = sfb.configurationManager
             let key = "AcceptedVideoLicense"
             let defaults = NSUserDefaults.standardUserDefaults()
-            
+
             if defaults.boolForKey(key) {
             /**
             * Notify that user has accepted the Video license.
@@ -22,9 +22,9 @@
             */
                 config.setEndUserAcceptedVideoLicense()
                 self.performSegueWithIdentifier("joinOnlineAudioVideoChat", sender: nil)
-                
+
             } else {
-                
+
                 /** Show video license acceptance view. 
                 *   MicrosoftLicenseViewController is class that shows video license 
                 *   and stores user's acceptance or rejection of the video license
@@ -46,6 +46,4 @@
         let config: SfBConfigurationManager = sfb.configurationManager
         config.setEndUserAcceptedVideoLicense()
         self.performSegueWithIdentifier("joinOnlineAudioVideoChat", sender: nil)
-        
-
 ```

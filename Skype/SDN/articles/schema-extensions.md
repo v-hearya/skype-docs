@@ -7,26 +7,26 @@ ms.assetid: d4fda314-3096-4a7a-a5aa-9ee10271efe5
 # Schema Extensions
 Learn about schema D for Skype for Business SDN Interface. 
  **Last modified:** February 23, 2017
-  
-    
-    
+
+
+
 
  * **Applies to:** Lync Server 2013 | Skype for Business 2015
 
 ## Schema Extensions
 
 Learn about schema D for Skype for Business SDN Interface. 
-  
-    
-    
+
+
+
 New fields have been added to Schema D (see file in package). For backward compatibility, these fields can be suppressed on a per-subscriber basis by setting the Subscriber parameter 'schemaextension' to 'false'. The default value is 'true'. 
-  
-    
-    
+
+
+
 The new fields added (primarily to Audio InCallQuality messages) are: 
-  
-    
-    
+
+
+
 
 
 
@@ -91,7 +91,6 @@ The new fields added (primarily to Audio InCallQuality messages) are:
         <xs:annotation>
           <xs:documentation>The DNS suffix associated with the network adapter</xs:documentation>
         </xs:annotation>
-
 ```
 
 

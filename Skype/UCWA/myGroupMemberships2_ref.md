@@ -4,10 +4,11 @@
 
 
 Represents the version two of MyGroupMembershipsResource (a collection of groupMembership resources)
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The version two supports adding single contact to a particular group and removing a contact from the buddy list (all groups associated)
 
@@ -44,6 +46,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -57,6 +60,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -122,7 +126,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships HTTP
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -183,7 +186,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships HTTP
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -207,6 +209,7 @@ Content-Length: 778
     <link rel="pinnedGroup" href="/ucwa/v1/applications/192/groups/pinnedGroup" />
     <property name="rel">myGroupMembership</property>
   </resource>
+
 </resource>
 ```
 
@@ -289,7 +292,6 @@ Post https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships HTT
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -338,7 +340,6 @@ Post https://fe1.contoso.com:443/ucwa/v1/applications/192/myGroupMemberships HTT
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

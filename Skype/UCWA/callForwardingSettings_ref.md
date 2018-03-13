@@ -9,6 +9,7 @@ Represents settings that govern call forwarding.
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be used to set up rules on how to route audio calls for call forwarding and simultaneous ring.
 
@@ -51,6 +53,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -60,6 +63,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -112,7 +116,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: c5a45d19-1c5b-41c4-8a6b-c7982b0448bd
-
 ```
 
 
@@ -221,7 +224,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: 8fb98d93-0182-44b8-835b-06262615748f
-
 ```
 
 
@@ -250,6 +252,7 @@ Content-Length: 2851
     <property name="rel">immediateForwardSettings</property>
     <property name="target">None</property>
   </resource>
+
   <resource rel="simultaneousRingSettings" href="/ucwa/v1/applications/192/me/callForwardingSettings/simultaneousRingSettings">
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
     <link rel="simultaneousRingToContact" href="/ucwa/v1/applications/192/me/callForwardingSettings/simultaneousRingSettings/simultaneousRingToContact" />
@@ -259,6 +262,7 @@ Content-Length: 2851
     <property name="ringDelay">5</property>
     <property name="target">None</property>
   </resource>
+
   <resource rel="unansweredCallSettings" href="/ucwa/v1/applications/192/me/callForwardingSettings/unansweredCallSettings">
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
     <link rel="resetUnansweredCallSettings" href="/ucwa/v1/applications/192/me/callForwardingSettings/unansweredCallSettings/resetUnansweredCallSettings" />
@@ -268,6 +272,7 @@ Content-Length: 2851
     <property name="ringDelay">5</property>
     <property name="target">None</property>
   </resource>
+
 </resource>
 ```
 
@@ -342,7 +347,6 @@ Content-Length: 129
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 
@@ -375,7 +379,6 @@ Content-Length: 333
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 200 OK
-
 ```
 
 

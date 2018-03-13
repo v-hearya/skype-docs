@@ -17,6 +17,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="C">
 <!-- More documentation about the QoE metrics used: http://technet.microsoft.com/en-us/library/gg425961.aspx -->
+
   <xs:complexType name="CodecType">
     <xs:sequence>
       <xs:element minOccurs="0" name="Bandwidth" type="xs:string">
@@ -30,6 +31,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Name" type="xs:string" use="required">
       <xs:annotation>
@@ -51,6 +53,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Multiplexed" type="xs:int" use="optional">
       <xs:annotation>
@@ -112,6 +115,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!-- end remove -->
+
       <xs:element minOccurs="0" name="Inside" type="xs:boolean">
         <xs:annotation>
           <xs:documentation>(Deprecated - since Skype for Business 2013, this field is not reliable anymore.) Indicates if the source is registered within the enterprise (True) or not (False).  </xs:documentation>
@@ -133,6 +137,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
 <!-- 2.1 -->
+
       <xs:element minOccurs="0" name="ReflexiveIP">
         <xs:annotation>
           <xs:documentation>IP used outside of the NAT.</xs:documentation>
@@ -204,6 +209,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
   
@@ -282,6 +288,7 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -339,12 +346,14 @@ This topic shows the schema definition for **SDNInterface.Schema.C.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
       <xs:element minOccurs="0" name="Properties" type="StartPropertiesType">
         <xs:annotation>
           <xs:documentation>Properties of the started or updated media stream.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Type" type="xs:string" use="required">
       <xs:annotation>
@@ -591,6 +600,7 @@ codec used in the session. This metric is reported for audio streams when availa
           </xs:annotation>
         </xs:element>
 <!-- Added in 2.1 -->
+
         <xs:element name="CaptureDevice">
           <xs:annotation>
             <xs:documentation>
@@ -776,6 +786,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:element>
 
         <!-- Attention: this field is obsolete and won't be filled anyomre. The content is the same as above VideoLocalFrameLossPercentageAvg -->
+
         <xs:element name="LocalFrameLossPercentageAvg" type="xs:string">
           <xs:annotation>
             <xs:documentation>
@@ -938,6 +949,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -1016,6 +1028,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Originator" type="xs:string" use="optional">
       <xs:annotation>
@@ -1035,6 +1048,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -1137,6 +1151,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
       <xs:element minOccurs="0" name="Properties" type="EndedProperties">
         <xs:annotation>
           <xs:documentation>Properties of the Error.</xs:documentation>
@@ -1295,6 +1310,7 @@ Average error of speech render stream time stamp, in milliseconds, or the last 2
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 

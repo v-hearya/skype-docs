@@ -11,23 +11,24 @@ In order for your UCWA 2.0 application to access Skype for Business resources (s
 The authentication and authorization flow comprises the following steps:
 
 - Register your application in Azure AD.
- 
+
 - Sign in your application to the Azure AD authorization endpoint.
- 
+
 - Perform autodiscovery to find the user's UCWA home pool.
- 
+
 - Request an access token for the Autodiscover URL, using Oauth implicit grant flow.
- 
+
 - Resend an autodiscovery request with the access token.
- 
+
 - Request an access token for the UCWA home pool resource returned in the autodiscovery response, using implicit grant flow.
- 
+
 - Use the access token to access the UCWA resource.
- 
+
 For more information on the Office 365 authentication flow, see [Understanding authentication with Office 365 APIs](https://msdn.microsoft.com/en-us/office/office365/howto/common-app-authentication-tasks).
 
 ## Registering an application in Azure AD
 <a name="sectionSection0"> </a>
+
 
 If the application authenticates against an online server, you must first register it with Azure Active Directory (Azure AD) so that it can access Office 365 APIs. You'll need an Office 365 business account and an Azure AD subscription associated with that account.
 
@@ -45,6 +46,7 @@ You can do all of these steps in the Azure Management Portal. The registration p
 ## Sign-in
 <a name="sectionSection1"> </a>
 
+
 When a user visits your website and initiates sign-in, your application redirects the user to the Azure AD authorization endpoint. Azure AD validates the request and responds with a sign-in page, where the user signs in. The user initiates sign in, for example, by clicking a sign-in button or link. The browser sends a GET request to the Azure AD authorization endpoint. This request includes the client ID and reply URI in the query parameters, as in the following example:
 
 
@@ -59,6 +61,7 @@ Your application now performs autodiscovery.
 
 ## Autodiscovery
 <a name="sectionSection2"> </a>
+
 
 The goal of autodiscovery is to find the user's UCWA home pool. Skype for Business services are distributed, so servers running in different pools respond to requests. Your application needs to determine which pool serves the authenticated user. The home pool URI that the autodiscovery service returns contains `webdirX.online.lync.com`, where X is alphanumeric; for example `webdir0a.online.lync.com`.
 
@@ -92,6 +95,7 @@ https://login.microsoftonline.com/oauth2/authorize
 
 ## Requesting an access token using implicit grant flow
 <a name="sectionSection3"> </a>
+
 
 After your application retrieves the home pool from the autodiscovery service, it requests an access token from Azure AD. To obtain an access token, send an HTTP GET request to a common or tenant-specific Azure AD authorization endpoint:
 
@@ -160,7 +164,6 @@ The response to a request for an access token has the following format:
  "scope": "user_impersonation",
  "id_token": "<unsigned-JSON-web-token>"
 }
-
 ```
 
 The access token response contains the following parameters:
@@ -168,16 +171,17 @@ The access token response contains the following parameters:
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|access_token|The requested access token.|
-|token_type|The token type value. The only type value that Azure AD supports is 'Bearer'. For more information about bearer tokens, see [OAuth 2.0 Authorization Framework: Bearer Token Usage](http://www.rfc-editor.org/rfc/rfc6750.txt).|
-|expires_in|The time period (in seconds) that the access token is valid.|
-|expires_on|Time in Unix epoch when the access token expires. The date is represented as the number of seconds from 1970-01-01T0:0:0Z UTC until the expiration time. This value is used to determine the lifetime of cached tokens.|
-|resource|The App ID URI of the Skype for Business API to which the access token applies.|
-|refresh_token|An OAuth 2.0 refresh token. Your application can use this token to acquire additional access tokens after the current one expires.|
-|scope|Impersonation permissions granted to the client application. The default permission is user_impersonation. The owner of the secured resource can register additional values in Azure AD.|
-|id_token|An unsigned JSON Web Token (JWT). Your application can use this token to request information about the user who consented. The application can cache the values and display them. For more information about JSON web tokens, see the [JWT IETF draft specification](http://go.microsoft.com/fwlink/?LinkId=392344).|
+| <strong>Parameter</strong> | <strong>Description</strong>                                                                                                                                                                                                                                                                                         |
+|:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| access_token               | The requested access token.                                                                                                                                                                                                                                                                                          |
+| token_type                 | The token type value. The only type value that Azure AD supports is 'Bearer'. For more information about bearer tokens, see [OAuth 2.0 Authorization Framework: Bearer Token Usage](http://www.rfc-editor.org/rfc/rfc6750.txt).                                                                                      |
+| expires_in                 | The time period (in seconds) that the access token is valid.                                                                                                                                                                                                                                                         |
+| expires_on                 | Time in Unix epoch when the access token expires. The date is represented as the number of seconds from 1970-01-01T0:0:0Z UTC until the expiration time. This value is used to determine the lifetime of cached tokens.                                                                                              |
+| resource                   | The App ID URI of the Skype for Business API to which the access token applies.                                                                                                                                                                                                                                      |
+| refresh_token              | An OAuth 2.0 refresh token. Your application can use this token to acquire additional access tokens after the current one expires.                                                                                                                                                                                   |
+| scope                      | Impersonation permissions granted to the client application. The default permission is user_impersonation. The owner of the secured resource can register additional values in Azure AD.                                                                                                                             |
+| id_token                   | An unsigned JSON Web Token (JWT). Your application can use this token to request information about the user who consented. The application can cache the values and display them. For more information about JSON web tokens, see the [JWT IETF draft specification](http://go.microsoft.com/fwlink/?LinkId=392344). |
+
 For more information on access token contents, see [Authorization Code Grant Flow](https://msdn.microsoft.com/en-us/library/azure/dn645542.aspx).
 
 User login is not requested again after this point because the user is already signed in and your application has a set of cookies for the authenticated user. If authentication is successful, Azure AD creates an ID token and returns it as a URL fragment to the application's Reply URI ( `redirect_uri`). For a production application, this Reply URL should be HTTPS. The returned token includes claims about the user and Azure AD that the application requires to validate the token. The JavaScript client code running in the browser extracts the token from the response to use in securing calls.
@@ -185,6 +189,7 @@ User login is not requested again after this point because the user is already s
 
 ## Resending an autodiscovery request with the bearer token
 <a name="sectionSection4"> </a>
+
 
 To finalize the authentication process, your client application running in the browser sends another autodiscover request with the access token in the Authorization header using the Bearer authorization scheme. The request will be as follows, where the 'X' in webdirX is a number. Set the Authorization header in this request to 'Bearer' plus the returned access token.
 
@@ -218,6 +223,7 @@ If the user is homed at a different location, the user resource targeted in the 
 
 ## Access the applications resource
 <a name="sectionSection5"> </a>
+
 
 Now that you have user credentials, your request to access UCWA as a user will be granted and you will receive a resource with a single link to the [applications](applications_ref.md) resource. You use the applications resource to register your application with UCWA as an agent of the user whose credentials you obtained in a previous step.
 

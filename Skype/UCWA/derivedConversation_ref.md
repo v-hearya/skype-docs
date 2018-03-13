@@ -4,10 +4,11 @@
 
 
 Represents a related conversation with a different [participant](participant_ref.md) than the one of the original conversation.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 A derivedConversation is created when a new modality is added to an existing [conversation](conversation_ref.md) but is answered by another participant (perhaps due to [simultaneousRingSettings](simultaneousRingSettings_ref.md)).
 
@@ -43,6 +45,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -53,6 +56,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -103,7 +107,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -205,7 +208,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

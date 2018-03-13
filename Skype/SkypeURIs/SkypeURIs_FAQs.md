@@ -26,10 +26,10 @@ This ID appears in two places in the generated code. Both places must be the sam
 
 ```html
 <div id="SkypeButton_Call_#echo123_1">
+
   ...
   "element": "SkypeButton_Call_#echo123_1",
   ...
-
 ```
 
  **Correct example**
@@ -41,10 +41,10 @@ the **"element"** property value.
 
 ```html
 <div id="SkypeButton_Call_#echo123_2">
+
   ...
   "element": "SkypeButton_Call_#echo123_2",
   ...
-
 ```
 
  **Incorrect example**
@@ -56,10 +56,10 @@ value has not been updated to match.
 ```html
 "element" property value has not been updated to match.
 <div id="SkypeButton_Call_#echo123_2">
+
   ...
   "element": "SkypeButton_Call_#echo123_1",
   ...
-
 ```
 
 

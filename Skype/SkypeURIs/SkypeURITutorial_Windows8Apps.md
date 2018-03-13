@@ -59,7 +59,6 @@ For an introduction to the Fixed Layout template, see [JavaScript project templa
 
   app.start();
 })();
-
 ```
 
  **default.html**
@@ -92,7 +91,6 @@ For an introduction to the Fixed Layout template, see [JavaScript project templa
   </div>
 </body>
 </html>
-
 ```
 
 ## Determine whether a Skype client is installed

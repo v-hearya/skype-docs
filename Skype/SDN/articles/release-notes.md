@@ -115,33 +115,33 @@ msiexec /i SkypeForBusinessSDNManager.msi /quiet /lv* install.log LOGPATH=c:\\Te
   MSI (s) (18:80) [14:02:27:052]: Invoking remote custom action. DLL: C:\\Windows\\Installer\\MSI1D29.tmp, Entrypoint: ExecuteSqlStrings
 ExecuteSqlStrings:  Error 0x80040e14: failed to execute SQL string, error: An object or column name is missing or empty. For SELECT INTO statements, verify each column has a name. For other statements, look for empty alias names. Aliases defined as "" or are not allowed. Change the alias to a valid name., SQL key: CreateUserScript25 SQL string: BEGIN TRY CREATE USER  FROM LOGIN$ END TRY BEGIN CATCH END CATCH
 MSI (s) (18!10) [14:02:27:364]: Product: Microsoft Skype for Business SDN Manager -- Error 26204. Error -2147217900: failed to execute SQL string, error detail: An object or column name is missing or empty. For SELECT INTO statements, verify each column has a name. For other statements, look for empty alias names. Aliases defined as "" or [] are not allowed. Change the alias to a valid name., SQL key: CreateUserScript25 SQL string: BEGIN TRY CREATE USER [] FROM LOGIN[\\$] END TRY BEGIN CATCH END CATCH
-
   ```
 
 
   Expected: 
-    
-    An actionable error, like: "Error: Aborting because COMPUTERNAME was not specified". 
-    
-  
-- Connection attempts using SSL from Dialog Listener to an SDN Manager installed on WS2008R2 fails. WS2008R2 machines do not support TLS1.2 by default. When hosting SDN Manager, the host must enable TLS1.2 support in its registry. See  [TLS/SSL Settings](https://technet.microsoft.com/en-us/library/dn786418%28v=ws.11%29.aspx)
-    
-  
-- Support for Lync 2010 is now deprecated. 
-    
-  
-- After installing version 3.0 in an active deployment, there may be some errors reported in the logs and reports lost for some calls due to a change in how QoE reports are kept in the data store. Only reports for events during the time of the upgrade may be affected. This is still true if they jump from 2.2 to 3.0. 
-    
-  
-- InCallQoE is referred to as InCallQoS in the SfB front-end powershell configuration, which can be misleading if you look for the setting to activate/deactivate. 
-    
-  
-- Due to changes in how we store state for calls, during an upgrade, some failures may be reported for ongoing calls during the upgrade. 
-    
-  
 
+    An actionable error, like: "Error: Aborting because COMPUTERNAME was not specified". 
+
+    
+- Connection attempts using SSL from Dialog Listener to an SDN Manager installed on WS2008R2 fails. WS2008R2 machines do not support TLS1.2 by default. When hosting SDN Manager, the host must enable TLS1.2 support in its registry. See  [TLS/SSL Settings](https://technet.microsoft.com/en-us/library/dn786418%28v=ws.11%29.aspx)
+
+    
+- Support for Lync 2010 is now deprecated. 
+
+    
+- After installing version 3.0 in an active deployment, there may be some errors reported in the logs and reports lost for some calls due to a change in how QoE reports are kept in the data store. Only reports for events during the time of the upgrade may be affected. This is still true if they jump from 2.2 to 3.0. 
+
+    
+- InCallQoE is referred to as InCallQoS in the SfB front-end powershell configuration, which can be misleading if you look for the setting to activate/deactivate. 
+
+    
+- Due to changes in how we store state for calls, during an upgrade, some failures may be reported for ongoing calls during the upgrade. 
+
+    
+  
 ## Additional resources
 <a name="bk_addresources"> </a>
+
 
 
 -  [Skype for Business SDN Interface schema reference](http://msdn.microsoft.com/library/b64912bd-27b1-40c6-99ab-8984f8706bd3.aspx)

@@ -8,12 +8,12 @@ ms.assetid: 2113f2b8-80b2-4110-a021-ad7df2d2b517
 # SDN Manager configuration file example
 
  **Last modified:** February 23, 2017
-  
+
 
  * **Applies to:** Lync Server 2013 | Skype for Business 2015
 
 The following is an example of the SDN Manager configuration file (SDNManager.exe.config). 
-  
+
 
 ## A sample of the SDNManager.exe.config file
 
@@ -294,7 +294,7 @@ The following is an example of the SDN Manager configuration file (SDNManager.ex
 
               revocationMode takes the following value list: None, Online or Cached. None is saying that CRL (Certificate Revocation List) is not checked. Online demands that service checks (at every request) whether the certificate is still valid and thus not revoked. Offline says that the certificate should only be checked against the cached CRL.
               Remark: Online does not mean that CRL will be downloaded from the CA CRL endpoint at every request. It means it will check a local copy of it at every request. Every CRL has a validity period, when it expires, it is downloaded again.
-              
+
               <authentication certificateValidationMode="ChainTrust" revocationMode="Online"/>-->
             </clientCertificate>
           </serviceCredentials>
@@ -310,7 +310,7 @@ The following is an example of the SDN Manager configuration file (SDNManager.ex
 
               revocationMode takes the following value list: None, Online or Cached. None is saying that CRL (Certificate Revocation List) is not checked. Online demands that service checks (at every request) whether the certificate is still valid and thus not revoked. Offline says that the certificate should only be checked against the cached CRL.
               Remark: Online does not mean that CRL will be downloaded from the CA CRL endpoint at every request. It means it will check a local copy of it at every request. Every CRL has a validity period, when it expires, it is downloaded again.
-              
+
               <authentication certificateValidationMode="ChainTrust" revocationMode="Online"/>-->
             </clientCertificate>
           </serviceCredentials>
@@ -334,7 +334,6 @@ The following is an example of the SDN Manager configuration file (SDNManager.ex
     <!--<serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />-->
   </system.serviceModel>
 </configuration>
-
 ```
 
 

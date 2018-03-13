@@ -16,7 +16,7 @@ After the conversation and chat modality are established messages events will be
 
 1. Invite participants to group conversation and start chat service
 
-  ```js
+   ```js
     var conversationsManager = application.conversationsManager;
     var id = content.querySelector('.id').value;
     var id2 = content.querySelector('.id2').value;
@@ -40,22 +40,22 @@ After the conversation and chat modality are established messages events will be
     conversation.chatService.start().then(null, function (error) {
         // handle error
     });
-  ```
+   ```
 
 2. Send messages to the group
 
-  ```js
+   ```js
     var message = content.querySelector('.messageToSend');
     conversation.chatService.sendMessage(message.value).then(function () {
         // message send success
     }, function (error) {
         // handle error
     });
-  ```
+   ```
 
 3. End the conversation
 
-  ```js
+   ```js
     conversation.leave().then(function () {
         // conversation ended
     }, function (error) {
@@ -63,4 +63,4 @@ After the conversation and chat modality are established messages events will be
     }).then(function () {
         // clean up operations
     });
-  ```
+   ```

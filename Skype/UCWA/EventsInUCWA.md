@@ -11,6 +11,7 @@ To begin using the event channel, a client sends a GET request to the event chan
 ## Pending GET (P-GET) response
 <a name="sectionSection0"> </a>
 
+
 The response to a P-GET describes important changes to the state of resources. Each event has an associated "type" parameter. The types for UCWA 2.0 events are started/updated/completed for operations, and added/updated/deleted for resources. Each event additionally has the target link (the resource that the event is about) and a sender link (pointing to the resource that generated the event - the owner or controller of the target resource). Optionally some events include a third link - "in" - for events where a resource can belong to more than one collection at a time. 
 
 In addition to the actual events, a P-GET response contains a "next" link - the URL the client should use to send the next P-GET. The URL changes with each request and is used by the server to keep track of which events the client has seen. By sending a request using a URL that came in a P-GET response, the client proves to the server that it has received that response. This gives the client a guarantee that the event channel will never send duplicate events or skip events - each event will be sent exactly once, and the next P-GET response will resume exactly where the previous one left off. 
@@ -22,12 +23,13 @@ An event can contain a link to the changed resource, or for some resources it ca
 <a name="sectionSection1"> </a>
 
 
+
 - self link - common to all UCWA 2.0 resources.
- 
+
 - next link - the URL to which the client should send the next P-GET.
- 
+
 - sender array - each sender in the array contains an array of events that were sent by that sender.
- 
+
 The following is an example event response and an explanation. 
 
 The _links property contains a self link and a next link.
@@ -100,12 +102,12 @@ The events array under conversation contains two elements. The first of these ev
  }
  ]
 }
-
 ```
 
 
 ## Aggregation
 <a name="sectionSection2"> </a>
+
 
 UCWA 2.0 tries to minimize the consumed bandwidth and number of HTTP roundtrips a client needs to make - an optimization for clients with limited bandwidth and battery life. One way these goals are accomplished is by a mechanism called event aggregation, where some lower-priority events do not cause the P-GET to be released immediately - UCWA 2.0 holds it for some time and bundles multiple such events together in one P-GET response when possible. However, the aggregation rules are set up in such a way to ensure that real-time events are still delivered to the client as quickly as possible.
 
@@ -121,6 +123,7 @@ Note that even though events have different priority levels, their relative orde
 ## Timeouts
 <a name="sectionSection3"> </a>
 
+
 When UCWA 2.0 sends no events for a long period of time, it is possible that the network connection has been interrupted without the client noticing it. To prevent this, a P-GET has a timeout interval - after which the server will send back a response with no events, and containing just the "next" link. A client can control the timeout interval by the use of a query parameter. 
 
 If the client sends another P-GET request before the current one is released, the server will hold on to the latest request and respond to the earlier one with HTTP code 409, UCWA error subcode PGetReplaced.
@@ -130,6 +133,7 @@ If a client sends multiple replacement P-GETs in quick succession (such as, to c
 
 ## Resume/resynchronize
 <a name="sectionSection4"> </a>
+
 
 If a client has not sent a P-GET for a long time, the server can clean up its state to conserve resources. One effect of this inactivity is that it shuts down all active presence subscriptions, and closes all conversations.
 

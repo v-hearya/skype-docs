@@ -4,10 +4,11 @@
 
 
 Declines an incoming invitation.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource is used to decline an incoming [messagingInvitation](messagingInvitation_ref.md), [phoneAudioInvitation](phoneAudioInvitation_ref.md) or [onlineMeetingInvitation](onlineMeetingInvitation_ref.md) as part of a new or existing [conversation](conversation_ref.md).decline causes the corresponding invitation to fail with an indication that it was declined.For an incoming [messagingInvitation](messagingInvitation_ref.md), decline will make the instant messaging modality disconnected in the corresponding conversation.For an incoming [phoneAudioInvitation](phoneAudioInvitation_ref.md), decline will make the phone audio modality disconnected in the corresponding conversation.For an incoming [onlineMeetingInvitation](onlineMeetingInvitation_ref.md), decline will terminate the conversation. Other participants may remain active in the [onlineMeeting](onlineMeeting_ref.md).
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -49,6 +52,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -115,7 +119,6 @@ Content-Length: 18
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -144,7 +147,6 @@ Content-Length: 147
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

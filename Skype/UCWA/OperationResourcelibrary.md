@@ -5,7 +5,7 @@ OperationResource.js is a JavaScript library that helps start operations whose o
 
  _**Applies to:** Skype for Business 2015_
 
- 
+
 The OperationResource module simplifies the process of starting an operation resource in the event channel. Use the functions in this module to track event channel data based on href, resource, or everything.
 Some UCWA resources, such as [addMessaging](addMessaging_ref.md), [startMessaging](startMessaging_ref.md), [addPhoneAudio](addPhoneAudio_ref.md), [startPhoneAudio](startPhoneAudio_ref.md), [addParticipant](addParticipant_ref.md), [joinOnlineMeeting](joinOnlineMeeting_ref.md), and [startOnlineMeeting](startOnlineMeeting_ref.md), cause the server to create an operation resource that usually takes the form of an invitation. For more information, see [Operation resource](OperationResource.md). For example, the **addMessaging** and **startMessaging** resources cause the server to create a [messagingInvitation](messagingInvitation_ref.md) resource, and the **addParticipant** resource causes a [participantInvitation](participantInvitation_ref.md) resource to be sent.
 After the server creates the invitation, it sends it on the event channel. If a UCWA application has created a handler for this type of event, the application can process the invitation.
@@ -14,15 +14,16 @@ The functions in the OperationResource module simplify the actions that are need
 ## Create an OperationResource object
 <a name="sectionSection0"> </a>
 
+
 An **OperationResource** object carries out the following steps (order matters!).
 
 
 1. Create an operation ID.
- 
+
 2. Register handlers with the Event module for the operation ID in step 1.
- 
+
 3. Issue an HTTP request via the Transport module using the operation ID from step 1.
- 
+
 The OperationResource module is a thin wrapper around the Transport and Events modules. As a result, when an **OperationResource** object is created, **Transport** and **Events** objects must also be created. For more information, see [Transport library](TransportLibrary.md) and [Events library](EventsLibrary.md).
 
 
@@ -44,14 +45,16 @@ The variables declared in the preceding examples are used in subsequent examples
 ## startOperation(data, callbacks)
 <a name="sectionSection1"> </a>
 
+
 Begins processing of an operation.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|data|Request object to process.|
-|handlers|The set of handlers, one for each event type.|
+| <strong>Parameter</strong> | <strong>Description</strong>                  |
+|:---------------------------|:----------------------------------------------|
+| data                       | Request object to process.                    |
+| handlers                   | The set of handlers, one for each event type. |
+
  **Returns**: A number representing the operation ID.
 
  **Syntax**
@@ -88,7 +91,6 @@ handlers = {
  }
 },
 operationId = opRes.startOperation(request, handlers);
-
 ```
 
 
@@ -98,15 +100,15 @@ The **startOperation** function does the following:
 
 
 1. Generates an operation ID.
- 
+
 2. Registers the provided event handlers using the operation ID from step 1 as the trigger.
- 
+
 3. Starts the event channel.
- 
+
 4. Adds the operation ID to the request object.
- 
+
 5. Calls the Transport library to issue the request.
- 
+
 A _request_parameter should be an object in the form of:
 
 
@@ -140,13 +142,15 @@ The _handlers_parameter should an object in the form of:
 ## stopOperation(id)
 <a name="sectionSection2"> </a>
 
+
 Stops a UCWA operation resource and removes handlers for changes from the event channel.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|id|The identifier of the UCWA operation.|
+| <strong>Parameter</strong> | <strong>Description</strong>          |
+|:---------------------------|:--------------------------------------|
+| id                         | The identifier of the UCWA operation. |
+
  **Syntax**
 
 
@@ -163,6 +167,5 @@ stopOperation(id )
 
 ```
 opRes.stopOperation(operationId);
-
 ```
 

@@ -92,11 +92,11 @@ Callback functionality is implemented using [Webhooks](./Webhooks.md).
 
 When coding with the Trusted Application , you should keep the following tips in mind:
 
->Unless otherwise mentioned, all call flows shown in the documentation require an Oauth token to be sent in every request made to the API.
-
->The API can return relative paths in the links returned in the response. When this happens the application is expected to use the same base FQDN for these links, as the base FQDN for that request.
-
->Capabilities enabled for a Service Application, depend on the Application Permissions that your Service Application selected for Skype for Business Online in the Azure management portal.
+> Unless otherwise mentioned, all call flows shown in the documentation require an Oauth token to be sent in every request made to the API.
+> 
+> The API can return relative paths in the links returned in the response. When this happens the application is expected to use the same base FQDN for these links, as the base FQDN for that request.
+> 
+> Capabilities enabled for a Service Application, depend on the Application Permissions that your Service Application selected for Skype for Business Online in the Azure management portal.
 
 ## In this section
 

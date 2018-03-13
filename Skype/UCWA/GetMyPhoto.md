@@ -10,9 +10,9 @@ Getting a user's photo involves resource navigation from [application](applicati
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a POST request on the makeMeAvailable resource.
- 
-  One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the HREF for the [makeMeAvailable](makeMeAvailable_ref.md) resource, which can be found in the embedded me resource.
- 
+
+   One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the HREF for the [makeMeAvailable](makeMeAvailable_ref.md) resource, which can be found in the embedded me resource.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/me/makeMeAvailable HTTP/1.1
     Accept: application/json
@@ -33,9 +33,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 2. Process the response from the request in the previous step.
- 
-  The response you receive should be 204 No content, as shown here.
- 
+
+   The response you receive should be 204 No content, as shown here.
+
     ```
     HTTP/1.1 204 No Content
     Connection: Keep-Alive
@@ -48,9 +48,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 3. Send a GET request on the **application** resource.
- 
- A sample request is shown here. 
- 
+
+   A sample request is shown here. 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -63,13 +63,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 4. Process the response from the previous request.
- 
- You should receive a response code of 200 OK. The following is a typical response to the previous GET request. The photo link in the response will be used in a subsequent step, so it is important to cache it. For brevity, some parts of the response body are omitted, and IDs and tokens are shortened.
- 
+
+   You should receive a response code of 200 OK. The following is a typical response to the previous GET request. The photo link in the response will be used in a subsequent step, so it is important to cache it. For brevity, some parts of the response body are omitted, and IDs and tokens are shortened.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -117,9 +116,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 5. Send a GET request on the **photo** resource. Note that, for browsers, this typically consists of creating an <img> tag and populating its src attribute with the photo's absolute URL.
- 
- A sample request is shown here.
- 
+
+   A sample request is shown here.
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102035238221/photos/Dana@contoso.com HTTP/1.1
     Accept: */*
@@ -131,13 +130,12 @@ The steps here assume that you have already created an application and have rece
     DNT: 1
     Connection: Keep-Alive
     Cookie: cwt_ucwa=AAEB...G9z
-
     ```
 
 6. Process the response from the previous GET request. The photo contents are returned in the response body. Note that if the browser method mentioned previously is used, the application is not required to do any further processing. 
- 
- The response you receive should be 200 OK. 
- 
+
+   The response you receive should be 200 OK. 
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive

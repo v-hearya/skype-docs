@@ -25,7 +25,7 @@ After the conversation and chat modality are established messages events will be
 
 1. Initiate a conversation with a person 
 
-  ```js
+   ```js
     var id = content.querySelector('.id').value;
     var conversationsManager = application.conversationsManager;
     conversation = conversationsManager.getConversation(id);
@@ -43,22 +43,22 @@ After the conversation and chat modality are established messages events will be
             // conversation ended
         }
     }));
-  ```
+   ```
 
 2. Send an outgoing message
 
-  ```js
+   ```js
     var message = content.querySelector('.messageToSend');
     conversation.chatService.sendMessage(message.value).then(function () {
         // message send success
     }, function (error) {
         // handle error
     });
-  ```
+   ```
 
 3. End the conversation
 
-  ```js
+   ```js
     conversation.leave().then(function () {
         // conversation ended
     }, function (error) {
@@ -66,4 +66,4 @@ After the conversation and chat modality are established messages events will be
     }).then(function () {
         // clean up operations
     });
-  ```
+   ```

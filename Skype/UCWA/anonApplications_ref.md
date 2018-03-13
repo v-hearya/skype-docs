@@ -4,10 +4,11 @@
 
 
 Represents the entry point for registering this anonymous application with the server.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -34,6 +35,7 @@ None
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -403,6 +405,7 @@ Content-Length: 6401
       <item>Messaging</item>
     </propertyList>
   </resource>
+
   <resource rel="me" href="/ucwa/v1/applications/192/me">
     <link rel="callForwardingSettings" href="/ucwa/v1/applications/192/me/callForwardingSettings" />
     <link rel="location" href="/ucwa/v1/applications/192/me/location" />
@@ -428,6 +431,7 @@ Content-Length: 6401
     <property name="uri">sip:johndoe@contoso.com</property>
     <property name="workPhoneNumber">tel:+14257035449</property>
   </resource>
+
   <resource rel="onlineMeetings" href="/ucwa/v1/applications/192/onlineMeetings">
     <link rel="myAssignedOnlineMeeting" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/600" />
     <link rel="myOnlineMeetings" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings" />
@@ -438,6 +442,7 @@ Content-Length: 6401
     <link rel="phoneDialInInformation" href="/ucwa/v1/applications/192/onlineMeetings/phoneDialInInformation" />
     <property name="rel">onlineMeetings</property>
   </resource>
+
   <resource rel="people" href="/ucwa/v1/applications/192/people">
     <link rel="myContactsAndGroupsSubscription" href="/ucwa/v1/applications/192/people/myContactsAndGroupsSubscription" />
     <link rel="myContacts" href="/ucwa/v1/applications/192/contacts" />
@@ -450,6 +455,7 @@ Content-Length: 6401
     <link rel="subscribedContacts" href="/ucwa/v1/applications/192/subscribedContacts" />
     <property name="rel">people</property>
   </resource>
+
 </resource>
 ```
 
@@ -499,7 +505,6 @@ Options https://fe1.contoso.com:443/ucwa/v1/anonApplications HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -540,7 +545,6 @@ Options https://fe1.contoso.com:443/ucwa/v1/anonApplications HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

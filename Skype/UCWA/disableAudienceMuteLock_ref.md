@@ -9,6 +9,7 @@ Disables the forced mute of attendees in a [conversation](conversation_ref.md).
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The presence of this resource indicates that the user has the ability to remove the forced mute fromattendees.Using this ability will not actually unmute attendees; however, they will be able to unmute themselves.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Receive|Receive conversation invites|Allows the app to receive instant messages, audio, video, and desktop sharing invitations on-behalf of the signed-in user|
@@ -48,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -97,7 +101,6 @@ The errors below (if any) are specific to this resource. Generic errors that can
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/disableAudienceMuteLock HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -108,7 +111,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -121,7 +123,6 @@ HTTP/1.1 204 No Content
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/disableAudienceMuteLock HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -132,7 +133,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

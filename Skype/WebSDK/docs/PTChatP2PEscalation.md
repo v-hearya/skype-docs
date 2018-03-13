@@ -16,7 +16,7 @@ After the conversation and chat modality are established messages events will be
 
 1. Initiate a conversation with a person and start chat
 
-  ```js
+   ```js
     var id = content.querySelector('.id').value;
     var conversationsManager = application.conversationsManager;
     conversation = conversationsManager.getConversation(id);
@@ -37,7 +37,7 @@ After the conversation and chat modality are established messages events will be
     conversation.chatService.start().then(null, function (error) {
         // handle error
     });
-  ```
+   ```
 
 2. Add participant to the established P2P conversation
 
@@ -52,18 +52,18 @@ After the conversation and chat modality are established messages events will be
 
 3. Send messages to the group
 
-  ```js
+   ```js
     var message = content.querySelector('.messageToSend');
     conversation.chatService.sendMessage(message.value).then(function () {
         // message send success
     }, function (error) {
         // handle error
     });
-  ```
+   ```
 
 4. End the conversation
 
-  ```js
+   ```js
     conversation.leave().then(function () {
         // conversation ended
     }, function (error) {
@@ -71,4 +71,4 @@ After the conversation and chat modality are established messages events will be
     }).then(function () {
         // clean up operations
     });
-  ```
+   ```

@@ -4,10 +4,11 @@
 
 
 Represents an invitation to a [conversation](conversation_ref.md) for the [phoneAudio](phoneAudio_ref.md) modality.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be incoming or outgoing. If outgoing, the phoneAudioInvitation can be created in one of two ways.First, [startPhoneAudio](startPhoneAudio_ref.md) will create a phoneAudioInvitation that also creates a [conversation](conversation_ref.md).Second, [addPhoneAudio](addPhoneAudio_ref.md) will attempt to add the [phoneAudio](phoneAudio_ref.md) modality to an existing [conversation](conversation_ref.md). Anoutgoing invitation will first ring the user on the supplied phone number. After the user answers the call,the phoneAudioInvitation will be then be sent to the target.This resource assists in keeping track of the invitation status; for example, the invitation could be forwarded or sent to all members of the invitee's team (team ring).Ultimately, the phoneAudioInvitation will complete with success or failure (in which case a [reason](reason_ref.md) is supplied).If the phoneAudioInvitation succeeds, the participant ([acceptedByParticipant](acceptedByParticipant_ref.md)) who accepts the call can be different from the original target ([to](to_ref.md)).The application can determine when the target is different by comparing the [contact](contact_ref.md) in the [acceptedByParticipant](acceptedByParticipant_ref.md) with the contact represented by the [to](to_ref.md) resource.In the case of [addPhoneAudio](addPhoneAudio_ref.md), the corresponding phoneAudioInvitation will cause the creation of a new, related conversation ([derivedConversation](derivedConversation_ref.md)) with the new remote [participant](participant_ref.md)s.If incoming, the phoneAudioInvitation might create a new [conversation](conversation_ref.md) or attempt to add the [phoneAudio](phoneAudio_ref.md) modality to an existing [conversation](conversation_ref.md).Note that a phoneAudioInvitation cannot be accepted using the API; instead it is accepted when the user answers the phone call.It can, however, be declined using the API.Additionally, an incoming phoneAudioInvitation can be the result of being transferred by a contact ([transferredBy](transferredBy_ref.md)) or by being forwarded by by a contact ([forwardedBy](forwardedBy_ref.md)).It can also be received on behalf of another user ([onBehalfOf](onBehalfOf_ref.md)) of the calling party ([from](from_ref.md)).
 
@@ -73,6 +75,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -80,33 +83,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Started
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|phoneAudioInvitation|High|communication|Delivered when a phone audio invitation is started. This occurs when the application adds the local participant's phone to a conversation.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                                    |
+|:--------------------------|:--------------------------|:------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| phoneAudioInvitation      | High                      | communication           | Delivered when a phone audio invitation is started. This occurs when the application adds the local participant's phone to a conversation. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "phoneAudioInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/146"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/146>"
           },
           "type" : "started"
         }
@@ -120,29 +125,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|phoneAudioInvitation|High|communication|Delivered when the phone audio invitation is updated.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                               |
+|:--------------------------|:--------------------------|:------------------------|:------------------------------------------------------|
+| phoneAudioInvitation      | High                      | communication           | Delivered when the phone audio invitation is updated. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "phoneAudioInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/146"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/146>"
           },
           "type" : "updated"
         }
@@ -157,6 +163,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -211,7 +218,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -450,7 +456,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -522,6 +527,7 @@ Content-Length: 7303
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="from" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196">
     <link rel="admit" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196/admit" />
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
@@ -551,9 +557,11 @@ Content-Length: 7303
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="startEmergencyCallInput" href="/ucwa/v1/applications/192/communication/invitations/665/startEmergencyCallParameters">
     <property name="rel">startEmergencyCallParameters</property>
   </resource>
+
 </resource>
 ```
 

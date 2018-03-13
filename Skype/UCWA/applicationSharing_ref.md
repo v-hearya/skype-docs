@@ -4,10 +4,11 @@
 
 
 Represents the application sharing modality in the corresponding [conversation](conversation_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 In this version of the API, viewing or sharing of content is not supported.However, this information can be useful for UI updates or for letting the user contact the sharer to let the user see the content that is being shared.The absence of this resource indicates that no one is sharing a program or their screen.
 
@@ -48,6 +50,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -56,33 +59,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Updated
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|applicationSharing|High|conversation|Indicates that the application sharing modality was updated.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                 |
+|:--------------------------|:--------------------------|:------------------------|:------------------------------------------------------------------------|
+| applicationSharing        | High                      | conversation            | Indicates that the application sharing modality was updated.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "applicationSharing",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/applicationSharing"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/applicationSharing>"
           },
           "type" : "updated"
         }
@@ -97,6 +102,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -147,7 +153,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -191,7 +196,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

@@ -11,55 +11,50 @@ The Application allows you to save a snapshot of its state so it can be restored
 
 
 1. Sign in to the Application.
-    
+
 
   ```js
-  
+
   application.signInManager.signIn ({
     username: $('#username').text(),
     password: $('#password').text()
   });
-
   ```
 
 2. Obtain a snapshot of the Application state.
-    
+
 
   ```js
-  
+
   var snapshot = application.getSnapshot();
-	 
   ```
 
 3. Serialize the snapshot to JSON.
-    
+
 
   ```js
-  
+
   var snapshotJson = JSON.stringify(snapshot);
-	 
   ```
 
 4. Save the snapshot JSON to session storage.
-    
+
 
   ```js
-  
+
   sessionStorage.setItem('snapshot', snapshot);    
-	 
   ```
 
 5. Sign in to an Application object using the snapshot data.
-    
+
 
   ```js
-  
+
   var promise = client.signInManager.signIn({
     username: $('#username').text(),
     password: $('#password').text(),
     snapshot: JSON.parse(sessionStorage.getItem('snapshot'))
   });  
-	 
   ```
 
 The following example demonstrates how to sign in with Skype Web SDK, take a snapshot, save it to the session storage, and then restore the state from that snapshot.
@@ -136,6 +131,5 @@ $(function () {
         return $('<div>').append($('<span>').text(label), span);
     }
 });
-
 ```
 

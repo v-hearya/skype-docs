@@ -9,6 +9,7 @@ Removes a [distributionGroup](distributionGroup_ref.md) from contact list.
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The RemoveFromContactList resource can be used to remove a [distributionGroup](distributionGroup_ref.md) from contact list.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -48,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -110,7 +114,6 @@ Only server-supplied query parameters, if any, are shown in the request sample.
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/removeFromContactList HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -121,7 +124,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -134,7 +136,6 @@ HTTP/1.1 204 No Content
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/groups/removeFromContactList HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -145,7 +146,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

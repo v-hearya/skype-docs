@@ -66,32 +66,32 @@ The following example shows an excerpt of the Dialog Listener configuration file
        <add key="checkdns" value="false" />   <!-- use a URI provided by the DNS SRV record for locating the configuration service -->
        <add key="msplidentifier" value="SDN22" />
   </appSettings>
-
 ```
 
 In the XML code example, the **configurationserviceuri** key value specifies the URI to the appropriate configuration service. For HTTP, the default port number is 9333; for HTTPS the default port number is 9332.
+
   
-    
     
 The **configurationrefresh** key value specifies the time span between which the Dialog Listener checks for updates to its settings. In the example, this value is set to one minute (00.01:00).
+
   
-    
     
 The **configurationcertificate** key value contains the thumbprint of an installed client certificate for authenticating the current Dialog Listener to the SDN Manager if HTTPS is used and mutual authentication is required.
+
   
-    
     
 The **checkdns** key value is used to override the **configurationserviceuri** key. If it is set to **true**, the Dialog Listener is forced to use the URI defined in the DNS SRV record to locate the SDN Manager. For more information, see  [Setting up a DNS service location record](setting-up-a-dns-service-location-record.md). 
+
   
-    
     
 The **msplidentifier** key value allows you to change the identifier that is used to register with the Skype for Business Server.
+
   
     
     
-
 ## Additional resources
 <a name="bk_addresources"> </a>
+
 
 
 -  [Configuring Skype for Business SDN Interface](configuring-sdn-interface.md)

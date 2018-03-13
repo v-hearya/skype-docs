@@ -9,6 +9,7 @@ Changes or clears the number stored in the corresponding [phone](phone_ref.md) r
 ## Web Link
 <a name = "sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 The presence of this resource indicates that the user can change the number stored in this phone resource.The server will normalize the number if necessary and if no number is provided, the existing number is deleted.Please note that the user is responsible for supplying a valid number.Additionally, this resource can be used to change the visibility of the supplied number without needing a second request.
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -48,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -115,7 +119,6 @@ Only server-supplied query parameters, if any, are shown in the request sample.
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/me/phones/phone/changeNumber HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -126,7 +129,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -139,7 +141,6 @@ HTTP/1.1 204 No Content
 Post https://fe1.contoso.com:443/ucwa/v1/applications/192/me/phones/phone/changeNumber HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -150,7 +151,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 

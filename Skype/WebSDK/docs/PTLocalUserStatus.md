@@ -22,4 +22,6 @@ mePerson.status.set(status).then(function () {
 #### Other resources
 
 <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.meperson.html" target="">MePerson</a>
+
 <a href="http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.status.html" target="">Status</a>
+

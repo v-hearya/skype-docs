@@ -4,10 +4,11 @@
 
 
 Represents whether a participant is using the audio modality in a conversation.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -20,6 +21,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource helps the application track when a participant joins or leaves this modality.
 
@@ -51,6 +53,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -59,38 +62,40 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|participantAudio|High|conversation|Indicates that a participant is now using the audio modality. The application can choose to fetch the updated information.</p><p></p>|
-|participantAudio|High|conversation|Indicates that the user is now using the audio modality.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                               |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| participantAudio          | High                      | conversation            | Indicates that a participant is now using the audio modality. The application can choose to fetch the updated information.</p><p></p> |
+| participantAudio          | High                      | conversation            | Indicates that the user is now using the audio modality.</p><p></p>                                                                   |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "participantAudio",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio>"
           },
           "in" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "added"
         }
@@ -104,34 +109,35 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|participantAudio|High|conversation|Indicates that a participant's audio modality has changed. The application can choose to fetch the updated information.</p><p></p>|
-|participantAudio|High|conversation|Indicates that the user's audio modality has changed.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                            |
+|:--------------------------|:--------------------------|:------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|
+| participantAudio          | High                      | conversation            | Indicates that a participant's audio modality has changed. The application can choose to fetch the updated information.</p><p></p> |
+| participantAudio          | High                      | conversation            | Indicates that the user's audio modality has changed.</p><p></p>                                                                   |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "participantAudio",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio>"
           },
           "in" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "updated"
         }
@@ -145,34 +151,35 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|participantAudio|High|conversation|Indicates that a participant is no longer using the audio modality. The application can choose to fetch the updated information.</p><p></p>|
-|participantAudio|High|conversation|Indicates that the user is no longer using the audio modality.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                                     |
+|:--------------------------|:--------------------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| participantAudio          | High                      | conversation            | Indicates that a participant is no longer using the audio modality. The application can choose to fetch the updated information.</p><p></p> |
+| participantAudio          | High                      | conversation            | Indicates that the user is no longer using the audio modality.</p><p></p>                                                                   |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "conversation",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137>",
       "events" : [
         {
           "link" : {
             "rel" : "participantAudio",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/participants/196/participantAudio>"
           },
           "in" : {
             "rel" : "localParticipant",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/onlineMeeting/295>"
           },
           "type" : "deleted"
         }
@@ -187,6 +194,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -237,7 +245,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -283,7 +290,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversat
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

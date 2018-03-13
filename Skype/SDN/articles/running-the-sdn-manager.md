@@ -38,7 +38,7 @@ The SDN Manager setup wizard will install, configure, and start SDN Manager serv
 
     
 > [!NOTE]
-  You can control the service using the windows **net** or **sc** commands, for example, `sc start "Skype for Business SDN Manager"`. 
+>   You can control the service using the windows **net** or **sc** commands, for example, `sc start "Skype for Business SDN Manager"`. 
 
 ## Running the SDN Manager as console application
 

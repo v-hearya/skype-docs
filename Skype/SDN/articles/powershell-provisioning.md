@@ -7,98 +7,98 @@ ms.assetid: 00f474ba-ffbe-4a3d-969f-2993a382df56
 # PowerShell Provisioning
 Learn to use Skype SDN Interface Powershell commands. 
  **Last modified:** February 24, 2017
-  
-    
-    
+
+
+
 
  * **Applies to:** Lync Server 2013 | Skype for Business 2015
 
 ## PowerShell Provisioning
 
 After the installation of SDN Manager, the Windows Start Menu contains an SDN Manager PowerShell link that allows execution of provisioning commands like the command line provisioning interface. 
-  
-    
-    
+
+
+
 The SDN Interface PowerShell can be accessed from any SDN Manager in the SDN Manager pool by clicking on "SDNManager Powershell" under the Windows Start menu as seen in the screenshot below. 
-  
-    
-    
+
+
+
 
 **SDN Manager PowerShell location on Windows Start menu:**
 
-    
-![SDN Manager PowerShell location on Windows Start menu:](../images/5e2fffd3-2196-4df1-8114-87a21d5ff90b.png)
-  
-    
-    
-Below is the list of SDN Manager PowerShell commands, from "(Get-Command *cssdn*).Name": 
-  
-    
-    
-Add-CsSdnListener
-  
-    
-    
-Add-CsSdnSubscriber
-  
-    
-    
-Get-CsSdnCatalog
-  
-    
-    
-Get-CsSdnListener
-  
-    
-    
-Get-CsSdnLog
-  
-    
-    
-Get-CsSdnManager
-  
-    
-    
-Get-CsSdnStatus
-  
-    
-    
-Get-CsSdnSubscriber
-  
-    
-    
-Get-CsSdnSubscriberStatus
-  
-    
-    
-Set-CsSdnListenerParameter
-  
-    
-    
-Set-CsSdnManagerParameter
-  
-    
-    
-Set-CsSdnSubscriberParameter
-  
-    
-    
-Remove-CsSdnListener
-  
-    
-    
-Remove-CsSdnSubscriber
-  
-    
-    
 
-  
-    
-    
+![SDN Manager PowerShell location on Windows Start menu:](../images/5e2fffd3-2196-4df1-8114-87a21d5ff90b.png)
+
+
+
+Below is the list of SDN Manager PowerShell commands, from "(Get-Command *cssdn*).Name": 
+
+
+
+Add-CsSdnListener
+
+
+
+Add-CsSdnSubscriber
+
+
+
+Get-CsSdnCatalog
+
+
+
+Get-CsSdnListener
+
+
+
+Get-CsSdnLog
+
+
+
+Get-CsSdnManager
+
+
+
+Get-CsSdnStatus
+
+
+
+Get-CsSdnSubscriber
+
+
+
+Get-CsSdnSubscriberStatus
+
+
+
+Set-CsSdnListenerParameter
+
+
+
+Set-CsSdnManagerParameter
+
+
+
+Set-CsSdnSubscriberParameter
+
+
+
+Remove-CsSdnListener
+
+
+
+Remove-CsSdnSubscriber
+
+
+
+
+
+
+
 Example output for Add-CsSdnListener -SdnPoolUri http://localhost:9333/Settings -Identifier SdnPool.CONTOSO.COM 
-  
-    
-    
+
+
+
 
 
 
@@ -108,9 +108,9 @@ true
 ```
 
 Example output for Get-CsSdnCatalog -SdnPoolUri http://localhost:9333/Settings 
-  
-    
-    
+
+
+
 
 
 
@@ -147,13 +147,12 @@ Example output for Get-CsSdnCatalog -SdnPoolUri http://localhost:9333/Settings
   <Topic Name="NCQuality" Version="1.0" Schemas="nc.uctp.skype">
   </Topic>
 </Catalog>
-
 ```
 
 Example output for Get-CsSdnListener -SdnPoolUri http://localhost:9333/Settings -Identifier SdnPool.CONTOSO.COM 
-  
-    
-    
+
+
+
 
 
 
@@ -171,13 +170,12 @@ Example output for Get-CsSdnListener -SdnPoolUri http://localhost:9333/Settings 
   <parameter key="maxretrybeforefailover">10</parameter>
   <parameter key="Created">2016-12-29T17:05:19.5358543-08:00</parameter>
 </Configuration>
-
 ```
 
 Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Identifier lneapplog 
-  
-    
-    
+
+
+
 
 
 
@@ -187,13 +185,12 @@ Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Iden
 
 ...
 </Log>
-
 ```
 
 Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Identifier siphonstate 
-  
-    
-    
+
+
+
 
 
 
@@ -203,22 +200,21 @@ Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Iden
 ```
 
 Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Identifier serverstate 
-  
-    
-    
+
+
+
 
 
 
 ```xml
 <ServerStates Version="1.0">
 </ServerStates>
-
 ```
 
 Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Identifier connections 
-  
-    
-    
+
+
+
 
 
 
@@ -228,9 +224,9 @@ Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Iden
 ```
 
 Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Identifier config 
-  
-    
-    
+
+
+
 
 
 
@@ -245,13 +241,12 @@ Example output for Get-CsSdnLog -SdnPoolUri http://localhost:9333/Settings -Iden
   <add key="identifier" value="MySDNDB" />
   <add key="usedapi" value="False" />
 </Config>
-
 ```
 
 Example output for Get-CsSdnManager -SdnPoolUri http://localhost:9333/Settings 
-  
-    
-    
+
+
+
 
 
 
@@ -269,13 +264,12 @@ Example output for Get-CsSdnManager -SdnPoolUri http://localhost:9333/Settings
 ...
   <parameter key="video-VideoPostFECPLROptimal">0.05</parameter>
 </Configuration>
-
 ```
 
 Example output for Get-CsSdnStatus -SdnPoolUri http://localhost:9333/Settings 
-  
-    
-    
+
+
+
 
 
 
@@ -285,13 +279,12 @@ Example output for Get-CsSdnStatus -SdnPoolUri http://localhost:9333/Settings
   <UpTime>1:59:01.1725951</UpTime>
   <SinceLastRequest>00:00:10.2136107</SinceLastRequest>
 </Status>
-
 ```
 
 Example output for Get-CsSdnSubscriber -SdnPoolUri http://localhost:9333/Settings -Identifier MySubscriber 
-  
-    
-    
+
+
+
 
 
 
@@ -317,13 +310,12 @@ Example output for Get-CsSdnSubscriber -SdnPoolUri http://localhost:9333/Setting
   <parameter key="schemaextension">true</parameter>
   <parameter key="Created">Manual</parameter>
 </Configuration>
-
 ```
 
 Example output for Get-CsSdnSubscriberStatus -SdnPoolUri http://localhost:9333/Settings -Identifier MySubscriber 
-  
-    
-    
+
+
+
 
 
 
@@ -350,13 +342,12 @@ Example output for Get-CsSdnSubscriberStatus -SdnPoolUri http://localhost:9333/S
     <LastMsgDelivered>N/A</LastMsgDelivered>
   </Connection>
 </Status>
-
 ```
 
 Example output for Set-CsSdnListenerParameter -SdnPoolUri http://localhost:9333/Settings -Identifier SdnPool.CONTOSO.COM -Parameter submitqueuelen -Value 2000 
-  
-    
-    
+
+
+
 
 
 
@@ -366,9 +357,9 @@ True
 ```
 
 Example output for Set-CsSdnManagerParameter -SdnPoolUri http://localhost:9333/Settings -Parameter hidepii -Value True 
-  
-    
-    
+
+
+
 
 
 
@@ -377,9 +368,9 @@ True
 ```
 
 Example output for Set-CsSdnSubscriberParameter -SdnPoolUri http://localhost:9333/Settings -Identifier MySubscriber -Parameter maxopen -Value 101 
-  
-    
-    
+
+
+
 
 
 
@@ -388,9 +379,9 @@ True
 ```
 
 Example output for Remove-CsSdnListener -SdnPoolUri http://localhost:9333/Settings -Identifier SdnPool.CONTOSO.COM 
-  
-    
-    
+
+
+
 
 
 
@@ -399,9 +390,9 @@ True
 ```
 
 Example output for Remove-CsSdnSubscriber -SdnPoolUri http://localhost:9333/Settings -Identifier MySubscriber 
-  
-    
-    
+
+
+
 
 
 

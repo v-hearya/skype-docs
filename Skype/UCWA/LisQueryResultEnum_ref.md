@@ -5,11 +5,12 @@
 _** Applies to: **Skype for Business 2015_
 
 An enumeration summarizing the LIS query result.
-            
+
 ## Members
 
 
 
-|**Name**|**Description**|
-|:-----|:-----|
-|Failed|LIS query failed.|
+| <strong>Name</strong> | <strong>Description</strong> |
+|:----------------------|:-----------------------------|
+| Failed                | LIS query failed.            |
+

@@ -8,6 +8,7 @@
 Console logs are invaluable for troubleshooting any issue related to the Skype Web SDK. If you're trying to troubleshoot an issue on your own, you can first try enabling console logging in real-time. If you're just interested in saving console logs for an error report, or you'd prefer to run your scenario and then examine the logs after, you can enable silent logging and then download the results once the scenario is complete. 
 
 <a name="real-time"></a>
+
 ## Enable browser console logging in real-time
 
 The SDK provides the following flags for enabling logging related to its different components. You can set any or all of these flags to `true` to enable logging related to that component.
@@ -27,6 +28,7 @@ Skype.Web.Settings.logMedia = true;
 ```
 
 <a name="save-console"></a>
+
 ## Enable browser console silent logging and download log file
 
 On a page with the Skype Web SDK loaded, open the developer console and enter the following: 

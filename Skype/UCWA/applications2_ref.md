@@ -9,6 +9,7 @@ Represents the entry point for registering this application with the server.
 ## Web Link
 <a name="sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -20,6 +21,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name="sectionSection1"> </a>
+
 
 
 
@@ -42,6 +44,7 @@ This resource can have the following relationships.
 
 ## Operations
 <a name="sectionSection2"> </a>
+
 
 
 
@@ -88,8 +91,6 @@ The errors below (if any) are specific to this resource. Generic errors that can
  Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
  Host: fe1.contoso.com
  Accept: application/json
- 
-									
 ```
 
 
@@ -281,7 +282,6 @@ This sample is given only as an illustration of response syntax. The semantic co
  ]
  }
 }
-									
 ```
 
 
@@ -294,8 +294,6 @@ This sample is given only as an illustration of response syntax. The semantic co
  Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
  Host: fe1.contoso.com
  Accept: application/xml
- 
-									
 ```
 
 
@@ -342,6 +340,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <item>Messaging</item>
  </propertyList>
  </resource>
+
  <resource rel="me" href="//v1/applications/833/me">
  <link rel="callForwardingSettings" href="//v1/applications/833/me/callForwardingSettings" />
  <link rel="location" href="//v1/applications/833/me/location" />
@@ -360,6 +359,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <property name="title">Senior Manager</property>
  <property name="uri">sip:johndoe@contoso.com</property>
  </resource>
+
  <resource rel="onlineMeetings" href="//v1/applications/833/onlineMeetings">
  <link rel="myAssignedOnlineMeeting" href="//v1/applications/833/onlineMeetings/myOnlineMeetings/318" />
  <link rel="myOnlineMeetings" href="//v1/applications/833/onlineMeetings/myOnlineMeetings" />
@@ -370,6 +370,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <link rel="phoneDialInInformation" href="//v1/applications/833/onlineMeetings/phoneDialInInformation" />
  <property name="rel">onlineMeetings</property>
  </resource>
+
  <resource rel="people" href="//v1/applications/833/people">
  <link rel="myContactsAndGroupsSubscription" href="//v1/applications/833/people/myContactsAndGroupsSubscription" />
  <link rel="myContacts" href="//v1/applications/833/contacts" />
@@ -382,9 +383,9 @@ This sample is given only as an illustration of response syntax. The semantic co
  <link rel="subscribedContacts" href="//v1/applications/833/subscribedContacts" />
  <property name="rel">people</property>
  </resource>
+
  </resource>
 </resource>
-									
 ```
 
 
@@ -443,7 +444,6 @@ The errors below (if any) are specific to this resource. Generic errors that can
  "instanceId" : "samplevalue",
  "userAgent" : "ContosoApp/1.0 (Windows Phone OS 7.5)"
 }
-									
 ```
 
 
@@ -624,7 +624,6 @@ This sample is given only as an illustration of response syntax. The semantic co
  }
  }
 }
-									
 ```
 
 
@@ -646,7 +645,6 @@ This sample is given only as an illustration of response syntax. The semantic co
  <property name="instanceId">samplevalue</property>
  <property name="userAgent">ContosoApp/1.0 (Windows Phone OS 7.5)</property>
 </input>
-									
 ```
 
 
@@ -692,6 +690,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <item>Messaging</item>
  </propertyList>
  </resource>
+
  <resource rel="me" href="//v1/applications/833/me">
  <link rel="callForwardingSettings" href="//v1/applications/833/me/callForwardingSettings" />
  <link rel="location" href="//v1/applications/833/me/location" />
@@ -710,6 +709,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <property name="title">Senior Manager</property>
  <property name="uri">sip:johndoe@contoso.com</property>
  </resource>
+
  <resource rel="onlineMeetings" href="//v1/applications/833/onlineMeetings">
  <link rel="myAssignedOnlineMeeting" href="//v1/applications/833/onlineMeetings/myOnlineMeetings/318" />
  <link rel="myOnlineMeetings" href="//v1/applications/833/onlineMeetings/myOnlineMeetings" />
@@ -720,6 +720,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <link rel="phoneDialInInformation" href="//v1/applications/833/onlineMeetings/phoneDialInInformation" />
  <property name="rel">onlineMeetings</property>
  </resource>
+
  <resource rel="people" href="//v1/applications/833/people">
  <link rel="myContactsAndGroupsSubscription" href="//v1/applications/833/people/myContactsAndGroupsSubscription" />
  <link rel="myContacts" href="//v1/applications/833/contacts" />
@@ -732,7 +733,7 @@ This sample is given only as an illustration of response syntax. The semantic co
  <link rel="subscribedContacts" href="//v1/applications/833/subscribedContacts" />
  <property name="rel">people</property>
  </resource>
+
 </resource>
-									
 ```
 

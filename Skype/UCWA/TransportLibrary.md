@@ -10,6 +10,7 @@ Use the functions in the Transport library to issue HTTP requests to a remote lo
 ## Create a Transport object
 <a name="sectionSection0"> </a>
 
+
 Before the **Transport** constructor is called, its _targetOrigin_parameter must be set to the origin of the Web page to which messages are sent.
 
 
@@ -26,13 +27,15 @@ The variables declared in the preceding example are used in subsequent examples 
 ## clientRequest(request)
 <a name="sectionSection1"> </a>
 
+
 Uses the HTML 5 **postMessage** function to send a Request object to a remote location.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|request|Object containing request data.|
+| <strong>Parameter</strong> | <strong>Description</strong>    |
+|:---------------------------|:--------------------------------|
+| request                    | Object containing request data. |
+
  **Syntax**
 
 
@@ -102,6 +105,7 @@ Finally, it uses the internal element to post a message by transforming the Requ
 ## getDomain()
 <a name="sectionSection2"> </a>
 
+
 The **getDomain** function gets the domain that Transport is currently sending requests to.
 
  **Returns**: String representing the domain.
@@ -137,15 +141,17 @@ function processSingleContact(contactData) {
 ## injectFrame(xframe, container, callback)
 <a name="sectionSection3"> </a>
 
+
 The **injectFrame** function injects an iframe that is located on the domain into the supplied container.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|xframe|Absolute URL to the iframe's target.|
-|container|DOM element that will contain the iframe.|
-|callback|Callback to execute when the iframe is loaded into the DOM.|
+| <strong>Parameter</strong> | <strong>Description</strong>                                |
+|:---------------------------|:------------------------------------------------------------|
+| xframe                     | Absolute URL to the iframe's target.                        |
+| container                  | DOM element that will contain the iframe.                   |
+| callback                   | Callback to execute when the iframe is loaded into the DOM. |
+
  **Syntax**
 
 
@@ -157,7 +163,7 @@ injectFrame(xframe , container , callback )
 
  **Example**
 
-In the following example, the caller of the _startAutoDiscover_function shown here would supply values for the _domain_(such as contoso.com) and _container_(such as an DOM element on the page into which a cross-domain frame is injected), and the prefix (such as "https://lyncdiscoverinternal." or "https://lyncdiscover.").
+In the following example, the caller of the <em>startAutoDiscover_function shown here would supply values for the _domain</em>(such as contoso.com) and <em>container</em>(such as an DOM element on the page into which a cross-domain frame is injected), and the prefix (such as "<https://lyncdiscoverinternal>." or "<https://lyncdiscover>.").
 
 The _handleFrameLoad_callback is not shown.
 
@@ -183,7 +189,6 @@ function startAutoDiscover(domain, container, prefix) {
  var frameLoc = _discoveryLocation + "/xframe";
  transport. injectFrame(frameLoc, _container, handleFrameLoad);
 }
-
 ```
 
 
@@ -195,14 +200,16 @@ After the iframe is created, an event handler is set up to run after the functio
 ## setAuthorization(accessToken, tokenType)
 <a name="sectionSection4"> </a>
 
+
 The **setAuthorization** function sets the authorization credentials to be used in requests.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|accessToken|Unique identifier.|
-|tokenType|Type of access token.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| accessToken                | Unique identifier.           |
+| tokenType                  | Type of access token.        |
+
  **Syntax**
 
 
@@ -225,14 +232,16 @@ Transport.setAuthorization("cwt=AAEBHAEFAAAAAAAFFQAAACZfw6hMpZ-w7RAMgdAEAACBEPDt
 ## setElement(element, xframe)
 <a name="sectionSection5"> </a>
 
+
 The **setElement** function sets the DOM element and domain to be used for requests.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|element|Element that will receive requests.|
-|xframe|Absolute URL of the iframe's target.|
+| <strong>Parameter</strong> | <strong>Description</strong>         |
+|:---------------------------|:-------------------------------------|
+| element                    | Element that will receive requests.  |
+| xframe                     | Absolute URL of the iframe's target. |
+
  **Syntax**
 
 
@@ -252,7 +261,6 @@ var domain = "https://www.example.com",
 element = $("#frame") [0].contentWindow,
 
 Transport.setElement(element, domain);
-
 ```
 
 
@@ -264,13 +272,15 @@ After the element and **xframe** are set, the Transport library can attempt to m
 ## setRequestCallbacks(callbacks)
 <a name="sectionSection6"> </a>
 
+
 The **setRequestCallbacks** function sets the request callbacks that are to be executed when requests are started and stopped.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|callbacks|Object containing callbacks.|
+| <strong>Parameter</strong> | <strong>Description</strong> |
+|:---------------------------|:-----------------------------|
+| callbacks                  | Object containing callbacks. |
+
 The callbacks parameter should be an object in the form of:
 
 

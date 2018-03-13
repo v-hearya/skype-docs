@@ -8,16 +8,16 @@ ms.assetid: 7a7c63ad-4f64-46a1-9e2c-2dd51f261aeb
 # SDN Manager command-line example
 
  **Last modified:** February 24, 2017
-  
-    
-    
+
+
+
 
  * **Applies to:** Lync Server 2013 | Skype for Business 2015
 
 The following code examples show the input and output resulting from running the SDN Manager console application. Examples are shown for the Manager, the Listener, and the Subscriber. 
-  
-    
-    
+
+
+
 
 
 ## Manager settings
@@ -87,16 +87,15 @@ Response code: SUCCESS Detail: TimeStamp: 2016-12-30T19:14:37.0170985Z
   <parameter key="video-VideoPostFECPLROptimal">0.05</parameter>
   <parameter key="build">6.0.9323.0</parameter>
 </Configuration>
-
 ```
 
 
 ## Listener settings
 
 
-  
-    
-    
+
+
+
 
 ```xml
 
@@ -115,7 +114,6 @@ Response code: SUCCESS Detail: TimeStamp: 2016-12-29T23:08:01.3041954Z
   <parameter key="maxretrybeforefailover">10</parameter>
   <parameter key="requester">FE1LNEPROD.LNEPROD.contoso.com</parameter>
 </Configuration> 
-
 ```
 
 
@@ -145,7 +143,6 @@ Response code: SUCCESS Detail: TimeStamp: 2015-05-06T06:45:10.2224428Z
   <parameter key="obfuscationseed" />
   <parameter key="schemaextension">true</parameter>
 </Configuration>
-
 ```
 
 

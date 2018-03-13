@@ -26,28 +26,28 @@ enumerated in the UCWA 2.0 SDK.
 The following steps schedule an online meeting with a subject and expiration time.
 
 1. Create a new online meeting and store the returned [scheduledMeeting](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.scheduledmeeting.html) object. 
-This is still a client side operation and returns a model containing observable properties.
+   This is still a client side operation and returns a model containing observable properties.
 
-  ```js
-  var meeting = app.conversationsManager.createMeeting();
-  ```
+   ```js
+   var meeting = app.conversationsManager.createMeeting();
+   ```
 
 2. Set properties of the meeting if required. All parameters are optional.
-  >Note:  Meeting property values can only be set or updated before the meeting model is POSTed to the UCWA server endpoint. 
-  Set any desired properties before you get the onlineMeetingUri and join the meeting.
+   >Note:  Meeting property values can only be set or updated before the meeting model is POSTed to the UCWA server endpoint. 
+   Set any desired properties before you get the onlineMeetingUri and join the meeting.
 
-  ```js
-  meeting.subject('Planning meeting');
-  meeting.expirationTime(new Date + 24 * 3600 * 5);
-  ```
+   ```js
+   meeting.subject('Planning meeting');
+   meeting.expirationTime(new Date + 24 * 3600 * 5);
+   ```
 
 3. Call the [get()](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.scheduledmeeting.html#onlinemeetinguri) method on the [onlineMeetingUri](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.scheduledmeeting.html#onlinemeetinguri) 
-to create the meeting on the server.
+   to create the meeting on the server.
 
-  ```js
-  meeting.onlineMeetingUri.get().then(uri => {
+   ```js
+   meeting.onlineMeetingUri.get().then(uri => {
       var conversation = app.conversationsManager.getConversationByUri(uri);
-  });
-  ```
+   });
+   ```
 
 4. [Join the online meeting](https://msdn.microsoft.com/skype/websdk/joinmeeting) by using the [conversation](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.conversation.html) returned in the previous step.

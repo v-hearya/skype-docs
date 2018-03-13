@@ -4,10 +4,11 @@
 
 
 Represents the set of [myOnlineMeeting](myOnlineMeeting_ref.md)s currently on the user's calendar.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be used to create new [myOnlineMeeting](myOnlineMeeting_ref.md)s as well as to modify and delete existing ones.
 
@@ -45,6 +47,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Meetings.ReadWrite|Create Skype Meetings|Allows the app to create Skype meetings on-behalf of the signed-in user|
@@ -54,6 +57,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -104,7 +108,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/onlineMeetings/myOnline
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -240,7 +243,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/onlineMeetings/myOnline
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -287,6 +289,7 @@ Content-Length: 4254
       <property name="id">917823</property>
       <property name="type">RoamedParticipantData</property>
     </resource>
+
   </resource>
   <resource rel="myOnlineMeeting" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/943">
     <link rel="onlineMeetingExtensions" href="/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/943/onlineMeetingExtensions" />
@@ -319,6 +322,7 @@ Content-Length: 4254
       <property name="id">917823</property>
       <property name="type">RoamedParticipantData</property>
     </resource>
+
   </resource>
 </resource>
 ```
@@ -548,6 +552,7 @@ Content-Length: 2089
     <property name="id">917823</property>
     <property name="type">RoamedParticipantData</property>
   </resource>
+
 </resource>
 ```
 

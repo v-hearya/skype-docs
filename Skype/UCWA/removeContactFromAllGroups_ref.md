@@ -8,6 +8,7 @@ Removes all group memberships that a contact belongs to.
 ## Web link
 <a name="sectionSection0"> </a>
 
+
 For more on web links, see [Web links](WebLinks.md).
 
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name="sectionSection1"> </a>
+
 
 
 
@@ -35,6 +37,7 @@ None
 
 ## Operations
 <a name="sectionSection2"> </a>
+
 
 
 
@@ -96,7 +99,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -117,6 +119,5 @@ This sample is given only as an illustration of response syntax. The semantic co
 
 ```
 HTTP/1.1 204 No Content
-
 ```
 

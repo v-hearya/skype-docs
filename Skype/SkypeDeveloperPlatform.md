@@ -1,4 +1,4 @@
-#Skype Developer Platform
+# Skype Developer Platform
 
  **Last modified:** March 30, 2016
 
@@ -25,22 +25,24 @@ Related sites
 - [Introducing Skype for Business](http://blogs.skype.com/2014/11/11/introducing-skype-for-business/)
 - [Skype for Business Server 2015](https://technet.microsoft.com/en-us/library/gg398616.aspx)
 
-##Skype Developer Platform composition
+## Skype Developer Platform composition
 
 ![Skype developer platform](images/SkypeDevPlatform.png)
 
-##Skype Developer Platform supported topologies
+## Skype Developer Platform supported topologies
 
 The table lists the supported SDKs and APIs for Skype for Business Server and Skype for Business Online, as well as for Lync 2013.
 
-|**APIs**|**Lync 2013**|**Skype for Business**|**Skype for Business Online**|
-|:-----|:-----|:-----|:-----|
-|[Skype Web SDK](WebSDK/docs/SkypeWebSDK.md)|Basic|Yes|Yes|
-|[Skype for Business App SDK Preview](AppSDK/SkypeAppSDK.md)|Basic|Yes|Yes|
-|[Skype for Business - Mobile URIs](Skype-For-Business-Uris/SfBMobileURI.md)|Basic|Yes|Yes|
-|[Unified Communications Managed API (UCMA)](https://msdn.microsoft.com/en-us/library/office/dn454984(v=office.16).aspx)|Yes|Yes|No|
-|[Unified Communications Web API](ucwa/UnifiedCommunicationsWebAPI2_0.md)|Yes|Yes|Yes|
-|[Lync Server 2013 SDK](https://msdn.microsoft.com/en-us/library/office/dn454964.aspx)|Yes|Yes|No|
-|[Lync (Client) 2013 SDK](https://msdn.microsoft.com/en-us/library/office/jj933180.aspx)|Yes|Yes|Yes|
-|[Lync Server 2013 Persistent Chat SDK](https://msdn.microsoft.com/en-us/library/office/dn454982.aspx)|Yes|Yes|No|
-|[Skype for Business Software Defined Networking (SDN) Interface 3.0](SDN/articles/skype-for-business-sdn-interface.md)|Yes|Yes|No|
+
+| <strong>APIs</strong>                                                                                                   | <strong>Lync 2013</strong> | <strong>Skype for Business</strong> | <strong>Skype for Business Online</strong> |
+|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:------------------------------------|:-------------------------------------------|
+| [Skype Web SDK](WebSDK/docs/SkypeWebSDK.md)                                                                             | Basic                      | Yes                                 | Yes                                        |
+| [Skype for Business App SDK Preview](AppSDK/SkypeAppSDK.md)                                                             | Basic                      | Yes                                 | Yes                                        |
+| [Skype for Business - Mobile URIs](Skype-For-Business-Uris/SfBMobileURI.md)                                             | Basic                      | Yes                                 | Yes                                        |
+| [Unified Communications Managed API (UCMA)](https://msdn.microsoft.com/en-us/library/office/dn454984(v=office.16).aspx) | Yes                        | Yes                                 | No                                         |
+| [Unified Communications Web API](ucwa/UnifiedCommunicationsWebAPI2_0.md)                                                | Yes                        | Yes                                 | Yes                                        |
+| [Lync Server 2013 SDK](https://msdn.microsoft.com/en-us/library/office/dn454964.aspx)                                   | Yes                        | Yes                                 | No                                         |
+| [Lync (Client) 2013 SDK](https://msdn.microsoft.com/en-us/library/office/jj933180.aspx)                                 | Yes                        | Yes                                 | Yes                                        |
+| [Lync Server 2013 Persistent Chat SDK](https://msdn.microsoft.com/en-us/library/office/dn454982.aspx)                   | Yes                        | Yes                                 | No                                         |
+| [Skype for Business Software Defined Networking (SDN) Interface 3.0](SDN/articles/skype-for-business-sdn-interface.md)  | Yes                        | Yes                                 | No                                         |
+

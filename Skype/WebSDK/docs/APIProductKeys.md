@@ -16,6 +16,7 @@ This section lists the API product keys and the supported capabilities that are 
 ## Product keys
 <a name="sectionSection0"> </a>
 
+
 |||
 |:-----|:-----|
 |**Release**|**Product keys**|
@@ -27,6 +28,7 @@ This section lists the API product keys and the supported capabilities that are 
 
 ## Feature support matrix
 <a name="sectionSection1"> </a>
+
 
 The following table is a mapping of Features to the API version that they are supported in.
 tst
@@ -72,7 +74,7 @@ tst
 ## Supported Server versions 
 
 - Lync 2013 cumulative update 6HF2 +, Skype for Business 2015 CU1+:
- 
+
    - Scenario:
     - Sign in
     - Sign out
@@ -81,7 +83,7 @@ tst
     - Groups
     - Chat services
     - Skype Conversation UI
-    
+
 
 - Skype for Business 2015 Cumulative Update 1+
 

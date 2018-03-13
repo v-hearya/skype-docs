@@ -32,7 +32,7 @@ app.personsAndGroupsManager.all.persons.added(person => {
     person.activity.changed(activity => $("#activity").text(activity));
     person.title.changed(title => $("#title").text(title));
     person.department.changed(department => $("#department").text(department));
-    
+
     // the online status changes often, so tell the SDK
     // to create a presence subscription; note, that
     // despite there are two .subscribe()s below, the SDK
@@ -49,6 +49,5 @@ app.personsAndGroupsManager.all.persons.added(person => {
     person.title.get();
     person.department.get();
 });
-
 ```
 

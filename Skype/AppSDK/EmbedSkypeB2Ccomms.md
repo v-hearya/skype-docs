@@ -39,15 +39,15 @@ This flow is available today.  You can experiment with it by creating a meeting 
    
 3. Ask the App SDK to join the meeting.
  
-## Online Meeting steps
+   ## Online Meeting steps
 
-1. Write a middle-tier application that makes RESTful calls to the [Trusted Application API](../Trusted-Application-API/docs/Overview.md)
+4. Write a middle-tier application that makes RESTful calls to the [Trusted Application API](../Trusted-Application-API/docs/Overview.md)
    * Receive a request from your client app to get a meeting join URL
       * Pass the meeting join URL to your client app
    * Receive a request from your client app to get a discovery URI and an anonymous meeting join token.
       * Pass the discovery URI and token to your client app
 
-2. Ask the App SDK to join the meeting by using the resources returned by the middle-tier application.   
+5. Ask the App SDK to join the meeting by using the resources returned by the middle-tier application.   
 
 ## Next steps
 

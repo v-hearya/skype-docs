@@ -12,7 +12,7 @@ The programming flow is illustrated in the following steps.
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a GET request on myGroups, following the links from the **people** resource embedded in the **application** resource.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/groups HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -28,9 +28,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 2. Process the response from the previous GET request. 
- 
- The response you receive should be 200 OK. The body of the response contains the supported groups for the user, including **pinnedGroup**, and **defaultGroup**. Each of these groups has an **id** property and a **name** property. The [groupContacts](groupContacts_ref.md) link points to the location where the contacts of a group can be fetched. The **subscribeToGroupPresence** link points to the location where a subscription to the group's contact presence can be created. The href attribute value of the **subscribeToGroupPresence** resource will be used in the next step to create a subscription to the group.
- 
+
+   The response you receive should be 200 OK. The body of the response contains the supported groups for the user, including **pinnedGroup**, and **defaultGroup**. Each of these groups has an **id** property and a **name** property. The [groupContacts](groupContacts_ref.md) link points to the location where the contacts of a group can be fetched. The **subscribeToGroupPresence** link points to the location where a subscription to the group's contact presence can be created. The href attribute value of the **subscribeToGroupPresence** resource will be used in the next step to create a subscription to the group.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -74,11 +74,10 @@ The steps here assume that you have already created an application and have rece
     },
     "rel":"myGroups"
     }
-
     ```
 
 3. Send a POST request on a **subscribeToGroupPresence** link that was received in the previous response.
- 
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/presenceSubscriptions?groupId=default_group_id&amp;duration=11 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -94,9 +93,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 4. Process the response from the previous POST request.
- 
- The successful response is 201 Created. The body of the response contains a link to the created presence subscription.
- 
+
+   The successful response is 201 Created. The body of the response contains a link to the created presence subscription.
+
     ```
     HTTP/1.1 201 Created
     Connection: Keep-Alive
@@ -127,9 +126,9 @@ To get the actual presence data that appears in the event channel, start the eve
 
 
 1. Listen for an updated event for the **contactPresence** resource.
- 
- The following example shows that the presence for SaraD@contoso.com has been updated. 
- 
+
+   The following example shows that the presence for SaraD@contoso.com has been updated. 
+
     ```
     HTTP/1.1 200 OK
     {
@@ -151,8 +150,8 @@ To get the actual presence data that appears in the event channel, start the eve
     ]
     }
     ```
-An application should listen for an **updated** event for the **presenceSubscription** resource. This can indicate that the subscription is about to expire.
- 
+   An application should listen for an **updated** event for the **presenceSubscription** resource. This can indicate that the subscription is about to expire.
+
     ```
     {
     "_links":{
@@ -184,7 +183,7 @@ An application should listen for an **updated** event for the **presenceSubscrip
     ```
 
 2. Send a GET request on the **presence** resource for the contact.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/people/sarad@contoso.com/presence HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHcmvDs1Z7CzwgNEPoG3XyftjBYhE5zTT0buHc
@@ -197,13 +196,12 @@ An application should listen for an **updated** event for the **presenceSubscrip
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 3. Process the response from the previous GET request to receive presence data.
- 
- As can be seen in the following example, the presence (availability) of saraD@contoso.com is Offline.
- 
+
+   As can be seen in the following example, the presence (availability) of saraD@contoso.com is Offline.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -224,6 +222,5 @@ An application should listen for an **updated** event for the **presenceSubscrip
     "self":{"href":"/ucwa/oauth/v1/applications/101/people/saraD@contoso.com/presence"}},
     "rel":"contactPresence"
     }
-
     ```
 

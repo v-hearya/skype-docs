@@ -33,15 +33,15 @@ and Discovery Uri with meetingUrl.
 */ 
 
 $.ajax({
-        url: https://metiobank.cloudapp.net/GetAnonTokenJob,
-        type: ‘post’,
-        dataType: ‘text’,
-        data: {
-                ApplicationSessionId: [guid()],
-                AllowedOrigins: [window.skypeWebApp.allowedOrigins] ,
-                MeetingUrl: [meetingurl]
-            }; 
-});  
+        url: https://metiobank.cloudapp.net/GetAnonTokenJob,
+        type: ‘post’,
+        dataType: ‘text’,
+        data: {
+                ApplicationSessionId: [guid()],
+                AllowedOrigins: [window.skypeWebApp.allowedOrigins] ,
+                MeetingUrl: [meetingurl]
+            }; 
+});  
 
 // Response data:
 

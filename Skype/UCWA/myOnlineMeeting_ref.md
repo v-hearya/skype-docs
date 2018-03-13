@@ -4,10 +4,11 @@
 
 
 Represents a scheduled meeting on the user's calendar.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 These meetings can be created and managed via the API.The resource captures information about the meeting, including the join URL, the attendees list, and the description.
 
@@ -63,6 +65,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -73,6 +76,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -124,7 +128,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: 386a2614-74c2-4b25-9f39-f277bca179d0
-
 ```
 
 
@@ -200,7 +203,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: 509a1bb3-a999-47b6-9fb5-42401155f270
-
 ```
 
 
@@ -246,6 +248,7 @@ Content-Length: 2095
     <property name="id">917823</property>
     <property name="type">RoamedParticipantData</property>
   </resource>
+
 </resource>
 ```
 
@@ -295,7 +298,6 @@ The errors below (if any) are specific to this resource. Generic errors that can
 Delete https://fe1.contoso.com:443/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/943 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -306,7 +308,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -319,7 +320,6 @@ HTTP/1.1 204 No Content
 Delete https://fe1.contoso.com:443/ucwa/v1/applications/192/onlineMeetings/myOnlineMeetings/943 HTTP/1.1
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
-
 ```
 
 
@@ -330,7 +330,6 @@ Host: fe1.contoso.com
 This sample is given only as an illustration of response syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 ```
 HTTP/1.1 204 No Content
-
 ```
 
 
@@ -554,6 +553,7 @@ Content-Length: 2092
     <property name="id">917823</property>
     <property name="type">RoamedParticipantData</property>
   </resource>
+
 </resource>
 ```
 

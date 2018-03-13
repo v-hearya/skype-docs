@@ -11,7 +11,7 @@ The steps here assume that you have already created an application and have rece
 
 1. Send a POST request on the **myOnlineMeetings** resource.
  
- A sample request is shown here. The data include meeting-specific information such as subject and attendees.
+   A sample request is shown here. The data include meeting-specific information such as subject and attendees.
  
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/103...740/onlineMeetings/myOnlineMeetings HTTP/1.1
@@ -41,7 +41,7 @@ The steps here assume that you have already created an application and have rece
 
 2. Process the response from the previous POST request.
  
- The response you receive should be 200 OK. The body of the response contains meeting settings such as subject, description, invitees and organizer, and meeting ID.
+   The response you receive should be 200 OK. The body of the response contains meeting settings such as subject, description, invitees and organizer, and meeting ID.
  
     ```
     HTTP/1.1 200 OK

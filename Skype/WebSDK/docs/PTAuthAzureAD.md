@@ -13,12 +13,12 @@ It is advised to not be logged into multiple MSA accounts when testing out OAuth
 
 1. Provide a client id to sign-in.
 
-  ```js
+   ```js
     window.sessionStorage.setItem('client_id', client_id);
     var href = 'https://login.microsoftonline.com/common/oauth2/authorize?response_type=token&client_id=';
     href += client_id + '&resource=https://webdir.online.lync.com&redirect_uri=' + window.location.href;
     window.location.href = href;
-  ```
+   ```
 
 ## Detailed Setup Instructions
 -  <a href="//msdn.microsoft.com/skype/websdk/docs/developwebsdkappsforsfbonline" target="">Developing Web SDK applications for Skype for Business Online</a>

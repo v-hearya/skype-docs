@@ -37,34 +37,34 @@ Once users have a meeting URI from the organizer, for example: `sip:user@contoso
 
 2. Create a conversation object for this conference.
 
-  ```js
-  var conversation = application.conversationsManager.getConversationByUri(uri);
-  ```
+   ```js
+   var conversation = application.conversationsManager.getConversationByUri(uri);
+   ```
 
 3. Start the needed service in the conversation.
 
-  ```js
-  conversation.chatService.start().then(function() {
-	// Successfully joined conversation chat
-	...
-  });
-  ```
+   ```js
+   conversation.chatService.start().then(function() {
+    // Successfully joined conversation chat
+    ...
+   });
+   ```
 
-4.  **Alternatively:** Clients can join the meeting by starting the audio service or video service, as shown below.
+4. **Alternatively:** Clients can join the meeting by starting the audio service or video service, as shown below.
 
-  Join the meeting by starting the audio service.
+   Join the meeting by starting the audio service.
   
-  ```js
-  conversation.audioService.start().then(function() {
-	// Successfully joined conversation audio
-  });
-  ```
+   ```js
+   conversation.audioService.start().then(function() {
+   // Successfully joined conversation audio
+   });
+   ```
 
-  Join the meeting by starting the video service.
+   Join the meeting by starting the video service.
   
-  ```js
-  conversation.videoService.start().then(function() {
-	// Successfully joined conversation video
-  });
-  ```
+   ```js
+   conversation.videoService.start().then(function() {
+   // Successfully joined conversation video
+   });
+   ```
 

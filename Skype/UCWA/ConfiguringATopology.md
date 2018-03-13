@@ -14,22 +14,23 @@ Browser-based UCWA 2.0 applications require server-side configuration before the
 
 
 
-|**Item**|**Example**|
-|:-----|:-----|
-|Scheme|https|
-|Host|apps.contoso.com|
-|Port|80|
+| <strong>Item</strong> | <strong>Example</strong> |
+|:----------------------|:-------------------------|
+| Scheme                | https                    |
+| Host                  | apps.contoso.com         |
+| Port                  | 80                       |
+
 According to the definition, all three of the following are different:
 
 
 - http://contoso.com
- 
+
 - http://contoso.com:8080
- 
+
 - https://contoso.com
- 
+
 - https://app.contoso.com
- 
+
 Given these nuances, an admin must be careful when editing the allowed list.
 
 The samples will indicate that the host domain is not on the allowed list by alerting the following string, sent by the server in the headers of a 403 response:
@@ -60,7 +61,6 @@ From the Skype for Business Management Shell on each server (front end, edge, an
 ```
 $x = New-CsWebOrigin -Url "{https://apps.contoso.com}"
 Set-CsWebServiceConfiguration -Identity "{YOUR_IDENTITY}" -CrossDomainAuthorizationList @{Add=$x}
-
 ```
 
 If you do not know the value of **Identity** for your Skype for Business Server, you can run the following command to see all identities configured on the server:
@@ -70,6 +70,5 @@ If you do not know the value of **Identity** for your Skype for Business Server,
 
 ```
 Get-CsWebServiceConfiguration | select identity
-
 ```
 

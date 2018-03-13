@@ -11,6 +11,7 @@ Users can create and manage online meetings in Skype for Business by using the [
 ## Resource representation
 <a name="sectionSection0"> </a>
 
+
 The following table contains a representation of the **onlineMeetings** resource.
 
 
@@ -45,7 +46,6 @@ The following table contains a representation of the **onlineMeetings** resource
 "phoneDialInInformation" : {
  "href" : "/ucwa/v1/applications/878/onlineMeetings/phoneDialInInformation"
 }
-
 ```
 
 
@@ -55,11 +55,13 @@ Every online meeting is considered a private meeting. Only those who know the co
 ## myOnlineMeetings
 <a name="sectionSection1"> </a>
 
+
 The [myOnlineMeetings](myOnlineMeetings_ref.md) resource can be used to create a new online meeting as well as to modify or delete an existing online meeting.
 
 
 ## myAssignedOnlineMeeting
 <a name="sectionSection2"> </a>
+
 
 The client can send a GET request on the [myAssignedOnlineMeeting](myAssignedOnlineMeeting_ref.md) resource to get the public meeting that is created by default in the Skype for Business store if the deployment supported it. By default this is displayed to the user when she chooses to create an online meeting.
 
@@ -67,11 +69,13 @@ The client can send a GET request on the [myAssignedOnlineMeeting](myAssignedOnl
 ## onlineMeetingDefaultValues
 <a name="sectionSection3"> </a>
 
+
 Use the [onlineMeetingDefaultValues](onlineMeetingDefaultValues_ref.md) resource to represent the default values for various properties of a meeting. This set of default values is used by the application to provide a meaningful UI to the user when an online meeting is created.
 
 
 ## onlineMeetingEligibleValues
 <a name="sectionSection4"> </a>
+
 
 Use the [onlineMeetingEligibleValues](onlineMeetingEligibleValues_ref.md) resource to represent the set of allowed values that certain properties can have in a meeting. This set of values is used by the application to provide a meaningful UI to the user when an online meeting is created.
 
@@ -79,17 +83,20 @@ Use the [onlineMeetingEligibleValues](onlineMeetingEligibleValues_ref.md) resour
 ## onlineMeetingPolicies
 <a name="sectionSection5"> </a>
 
+
 Use the [onlineMeetingPolicies](onlineMeetingPolicies_ref.md) resource to set and get the policies used to create and manage meetings. Before scheduling a meeting, a client is expected to retrieve and honor these policies. If a client schedules a meeting that violates these policies, the scheduling request can fail. To get the current policies, send a GET request on the **onlineMeetingPolicies** resource.
 
 
 ## phoneDialInInformation
 <a name="sectionSection6"> </a>
 
+
 Use the [phoneDialInInformation](phoneDialInInformation_ref.md) resource to retrieve local telephone number information that is helpful for attendees to know about available numbers based on their region. The client provides the local telephone number in the UI presented to the user.
 
 
 ## onlineMeetingInvitationCustomization
 <a name="sectionSection7"> </a>
+
 
 Use the [onlineMeetingInvitationCustomization](onlineMeetingInvitationCustomization_ref.md) resource to get data that can be used to customize a meeting for the particular company. This includes properties such as the company help URL, company logo, meeting invitation footer, and others.
 

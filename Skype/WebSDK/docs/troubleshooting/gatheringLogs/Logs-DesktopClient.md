@@ -8,6 +8,7 @@ If your failure scenario involves a Skype for Business desktop client as the rem
 You can view the desktop client logs on your own, but we haven't documented the logging format so you probably won't find resources to make sense of them. Instead, collect the logs and submit them with your bug report. 
 
 <a name="log-types"></a>
+
 ## Logs available for the Skype for Business desktop client
 
 There are two types of logs available from the desktop client:
@@ -18,6 +19,7 @@ There are two types of logs available from the desktop client:
 For any bugs related to Audio/Video, please attach both log types if possible. For bugs not related to Audio/Video, the **.UccApilog** files should be sufficient.
 
 <a name="collecting-logs"></a>
+
 ## Collecting logs from a Skype for Business desktop client
 
 On a Windows machine, the logs for a Skype for business desktop client will be located in the following directory:

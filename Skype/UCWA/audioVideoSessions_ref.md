@@ -4,10 +4,11 @@
 
 
 Represents a link resource to a collection for all sessions in an AudioVideo
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -34,6 +35,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -42,33 +44,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|audioVideoSession|High|communication|Delivered when an audiovideo session is added.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                   |
+|:--------------------------|:--------------------------|:------------------------|:----------------------------------------------------------|
+| audioVideoSession         | High                      | communication           | Delivered when an audiovideo session is added.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "audioVideoSession",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession>"
           },
           "type" : "added"
         }
@@ -82,29 +86,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|audioVideoSession|High|communication|Delivered when the audiovideo session is updated.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                      |
+|:--------------------------|:--------------------------|:------------------------|:-------------------------------------------------------------|
+| audioVideoSession         | High                      | communication           | Delivered when the audiovideo session is updated.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "audioVideoSession",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession>"
           },
           "type" : "updated"
         }
@@ -118,29 +123,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|audioVideoSession|High|communication|Delivered when the audiovideo session is deleted.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                      |
+|:--------------------------|:--------------------------|:------------------------|:-------------------------------------------------------------|
+| audioVideoSession         | High                      | communication           | Delivered when the audiovideo session is deleted.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "audioVideoSession",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/conversations/137/audioVideo/audioVideoSession>"
           },
           "type" : "deleted"
         }
@@ -155,3 +161,4 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+

@@ -4,10 +4,11 @@
 
 
 A collection of contacts for which the logged-on user has created active presence subscriptions.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This collection is read-only: it can be used only to view contacts with existing presencesubscriptions.New presence subscriptions are created by using either the [presenceSubscriptions](presenceSubscriptions_ref.md) resource or the[subscribeToGroupPresence](subscribeToGroupPresence_ref.md) resource.These contacts can be members of a group or the result of an ad hoc subscription.
 
@@ -44,6 +46,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -55,37 +58,39 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Added
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|contact|Medium|people|Delivered when a contact resource is added.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                |
+|:--------------------------|:--------------------------|:------------------------|:-------------------------------------------------------|
+| contact                   | Medium                    | people                  | Delivered when a contact resource is added.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "contact",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282>"
           },
           "in" : {
             "rel" : "subscribedContacts",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts>"
           },
           "type" : "added"
         }
@@ -99,33 +104,34 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|contact|Medium|people|Delivered when a contact resource is deleted.</p><p></p>|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                  |
+|:--------------------------|:--------------------------|:------------------------|:---------------------------------------------------------|
+| contact                   | Medium                    | people                  | Delivered when a contact resource is deleted.</p><p></p> |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "people",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people>",
       "events" : [
         {
           "link" : {
             "rel" : "contact",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/people/282>"
           },
           "in" : {
             "rel" : "subscribedContacts",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts>"
           },
           "type" : "deleted"
         }
@@ -140,6 +146,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -192,7 +199,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts HTTP
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -231,7 +237,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/subscribedContacts HTTP
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 

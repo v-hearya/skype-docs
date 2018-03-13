@@ -39,54 +39,54 @@ In [Registering your application in Azure AD](./RegistrationInAzureActiveDirecto
 
    >Note: All the **Trusted Application API** endpoints require authentication using **OAuth token**. Please refer [Azure Active Directory - Service to Service calls using Client Credentials](./AADS2S.md) for more information on how to get a OAuth Token.
     
-    - The Service Application gets an anonymous application token, and a discover url, when it passes in the meeting url to the AnonApplicationsToken endpoint of the **Trusted Application API**. The flow is as follow:
+   - The Service Application gets an anonymous application token, and a discover url, when it passes in the meeting url to the AnonApplicationsToken endpoint of the **Trusted Application API**. The flow is as follow:
     
-        1. **Discovery**
-            - Discover request - The Service Application also known as SaaS application(SA) discovers the location of the **Trusted Application API**. This GET request must be authenticated with a valid **OAuth token**.
+     1. **Discovery**
+         - Discover request - The Service Application also known as SaaS application(SA) discovers the location of the **Trusted Application API**. This GET request must be authenticated with a valid **OAuth token**.
 
-                 ```
-                GET https://api.skypeforbusiness.com/platformservice/discover
-                ```
-            - Discovery Response - returns the link to the Trusted Applications API.
-                ```
-                200 OK, "service:applications":{"href":"https://api.skypeforbusiness.com/platformService/v1/applications"}
-                ```
-        2. **Get the capabilities**
+              ```
+             GET https://api.skypeforbusiness.com/platformservice/discover
+             ```
+         - Discovery Response - returns the link to the Trusted Applications API.
+             ```
+             200 OK, "service:applications":{"href":"https://api.skypeforbusiness.com/platformService/v1/applications"}
+             ```
+     2. **Get the capabilities**
        
-            - We send a GET request with Trusted Applications API link received from the previous discovery Request. This GET request must be authenticated with a valid **OAuth token**.
+         - We send a GET request with Trusted Applications API link received from the previous discovery Request. This GET request must be authenticated with a valid **OAuth token**.
                 
-                ```
-                    //Capabilities request without valid Oauth token gets '401 Unauthorized' response
+             ```
+                 //Capabilities request without valid Oauth token gets '401 Unauthorized' response
             
-                    GET https://api.skypeforbusiness.com/platformService/v1/applications
+                 GET https://api.skypeforbusiness.com/platformService/v1/applications
 
-                    //Capabilities request with valid Oauth token
+                 //Capabilities request with valid Oauth token
             
-                    GET https://api.skypeforbusiness.com/platformService/v1/applications
-                    Authorization: Bearer XXXX
+                 GET https://api.skypeforbusiness.com/platformService/v1/applications
+                 Authorization: Bearer XXXX
 
-                    //Capabilities Response - Anonymous application tokens capabilities.
+                 //Capabilities Response - Anonymous application tokens capabilities.
 
-                    200 OK,service:anonApplicationTokens":{"href":"/platformservice/v1/applications/1627259584/anonApplicationTokens?endpointId=sip:helpdesk@contoso.com"}
-                ```
-        3. **Request for Token and service:discover links**
+                 200 OK,service:anonApplicationTokens":{"href":"/platformservice/v1/applications/1627259584/anonApplicationTokens?endpointId=sip:helpdesk@contoso.com"}
+             ```
+     3. **Request for Token and service:discover links**
         
-            - Post on anonApplicationTokens link to get the "token" and "service:discover" links**
+        - Post on anonApplicationTokens link to get the "token" and "service:discover" links**
                 
-                ```
-                    Post /platformservice/v1/applications/1627259584/anonApplicationTokens?endpointId=sip:helpdesk@contoso.com
-                    "applicationSessionId":"uniqueString","allowedOrigins":"https://contoso.com;https://litware.com","meetingUrl":"https://meet.lync.com/contoso/testuser/1SD8D0WZ"
-                ```
-            - Response - 200 OK with token and discovery link
-                ```
-                    "token":"psat=eyJ0eX...","expiryTime":"2016-06-27T01:42:13.094Z","service:discover":{"href":"https://api.skypeforbusiness.com/platformService/discover?anonymousContext=psat%253deyJ0eX..."}
-                ```
-                > Note: It is important to pass in a unique applicationSessionId parameter for every client that wants to join a meeting anonymously. This can be a Guid. 
+            ```
+                Post /platformservice/v1/applications/1627259584/anonApplicationTokens?endpointId=sip:helpdesk@contoso.com
+                "applicationSessionId":"uniqueString","allowedOrigins":"https://contoso.com;https://litware.com","meetingUrl":"https://meet.lync.com/contoso/testuser/1SD8D0WZ"
+            ```
+        - Response - 200 OK with token and discovery link
+            ```
+                "token":"psat=eyJ0eX...","expiryTime":"2016-06-27T01:42:13.094Z","service:discover":{"href":"https://api.skypeforbusiness.com/platformService/discover?anonymousContext=psat%253deyJ0eX..."}
+            ```
+            > Note: It is important to pass in a unique applicationSessionId parameter for every client that wants to join a meeting anonymously. This can be a Guid. 
    
-    - The Service Application then passes the token and the discover url to the client that initially pinged it, in order to join the meeting anonymously.
-        ```
-        send service:discover url and token
-        ```
+   - The Service Application then passes the token and the discover url to the client that initially pinged it, in order to join the meeting anonymously.
+       ```
+       send service:discover url and token
+       ```
 
 5. The client then does a GET on the discover url, to know the _'AnonApplications Endpoint'_ and the _'Conference ID'_. The anonApplications endpoint is the UCWA API endpoint to which the client has to connect.
     
@@ -112,15 +112,15 @@ In [Registering your application in Azure AD](./RegistrationInAzureActiveDirecto
     - Reponse - '201 Created'
 
 7. From the resources in the response, the client then does a POST on onlineMeetingInvitations, passing in the conference from Step5, ultimately joining the meeting anonymously.
-    - Create the meeting
-        ```
-        POST /ucwa/psanon/v1/applications/10485150973/communication/onlineMeetingInvitations
-        Origin : https://litware.com
-        {"anonymousDisplayName":"John Doe","importance":"Normal",
-        "onlineMeetingUri":"sip:testuser@contoso.onmicrosoft.com;gruu;opaque=app:conf:focus:id:1SD8D0WZ",
-        "operationId":"abc","subject":"mysubject"}   
-        ```
-> Note: Multiple such clients can join the meeting anonymously. In case a client drops out and needs to rejoin for any reason, you can pass in the same applicationSessionId parameter to get a new token and discover url. The client can use the new values, to rejoin the meeting.
+   - Create the meeting
+       ```
+       POST /ucwa/psanon/v1/applications/10485150973/communication/onlineMeetingInvitations
+       Origin : https://litware.com
+       {"anonymousDisplayName":"John Doe","importance":"Normal",
+       "onlineMeetingUri":"sip:testuser@contoso.onmicrosoft.com;gruu;opaque=app:conf:focus:id:1SD8D0WZ",
+       "operationId":"abc","subject":"mysubject"}   
+       ```
+     > Note: Multiple such clients can join the meeting anonymously. In case a client drops out and needs to rejoin for any reason, you can pass in the same applicationSessionId parameter to get a new token and discover url. The client can use the new values, to rejoin the meeting.
 
 ![alt text](./images/CallFlowAnonMeetingJoin.jpg "image")
 

@@ -12,13 +12,13 @@
 
 In order to make a phone audio call we need to:
 1. create a conversation
-```js
-var conversation = application.conversationsManager.getConversation('sip:XXXX');
-```
+   ```js
+   var conversation = application.conversationsManager.getConversation('sip:XXXX');
+   ```
 2. start the audio call with the user, specifying the phone # where we want to connect the phone audio from
-```js
-conversation.phoneAudioService.start({ teluri: 'tel:+1XXXX' });
-```
+   ```js
+   conversation.phoneAudioService.start({ teluri: 'tel:+1XXXX' });
+   ```
 
 ## Conversation Call State
 We can subscribe to the conversation call state to get information about the overall call status.

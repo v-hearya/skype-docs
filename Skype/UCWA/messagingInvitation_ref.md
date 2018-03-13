@@ -4,10 +4,11 @@
 
 
 Represents an invitation to a [conversation](conversation_ref.md) for the [messaging](messaging_ref.md) modality.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be incoming or outgoing.If outgoing, the messagingInvitation can be created in one of two ways.First, [startMessaging](startMessaging_ref.md) will create a messagingInvitation that also creates a [conversation](conversation_ref.md).Second, [addMessaging](addMessaging_ref.md) will attempt to add the [messaging](messaging_ref.md) modality to an existing [conversation](conversation_ref.md).This resource assists in keeping track of the invitation status; for example, the invitation could be accepted, declined, or ignored.An outgoing messagingInvitation will be in the 'Connecting' state while waiting for the recipient to accept or decline it; during this time, the messagingInvitation can be terminated using [cancel](cancel_ref.md).Note that if the recipient does not respond in approximately thirty seconds, the messagingInvitation will complete with failure.Ultimately, the messagingInvitation will complete with success or failure (in which case a [reason](reason_ref.md) is supplied).If the messagingInvitation succeeds, the participant that accepts it will be provided ([acceptedByParticipant](acceptedByParticipant_ref.md)).If incoming, the messagingInvitation can create a new [conversation](conversation_ref.md) or attempt to add the [messaging](messaging_ref.md) modality to an existing [conversation](conversation_ref.md).
 
@@ -65,12 +67,14 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
 
 ## Events
 <a name="sectionSection2"></a>
+
 
 ### Started
 
@@ -149,7 +153,6 @@ This sample is given only as an illustration of event syntax. The semantic conte
     }
   ]
 }
-					
 ```
 
 
@@ -169,6 +172,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -223,7 +227,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -447,7 +450,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -512,6 +514,7 @@ Content-Length: 6744
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="from" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196">
     <link rel="admit" href="/ucwa/v1/applications/192/communication/conversations/137/participants/196/admit" />
     <link rel="contact" href="/ucwa/v1/applications/192/people/282" />
@@ -541,9 +544,11 @@ Content-Length: 6744
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="startEmergencyCallInput" href="/ucwa/v1/applications/192/communication/invitations/665/startEmergencyCallParameters">
     <property name="rel">startEmergencyCallParameters</property>
   </resource>
+
 </resource>
 ```
 

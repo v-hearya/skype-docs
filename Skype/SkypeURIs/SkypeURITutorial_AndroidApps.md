@@ -43,7 +43,6 @@ public void initiateSkypeUri(Context myContext, String mySkypeUri) {
 
   return;
 }
-
 ```
 
 
@@ -88,7 +87,6 @@ public void goToMarket(Context myContext) {
 
   return;
 }
-
 ```
 
 

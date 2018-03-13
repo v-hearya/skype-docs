@@ -10,9 +10,9 @@ The [Application](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/i
 The [SignInManager.SignIn](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.signinmanager.html#signin) method and the [SignInManager.SignOut](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.signinmanager.html#signout) method are asynchronous and return a [Promise](http://officedev.github.io/skype-docs/Skype/WebSDK/model/api/interfaces/jcafe.promise.html) object. Use the **Promise#then** method to set operation success or failure callbacks.
 
 
- >**Note**: To enable audio/video functionality for IE 11 and Safari you need to install the Skype for Business Web App Plug-in. It is available for Windows and Mac computers:  
- - [Windows Download](https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeMeetingsApp.msi)
- - [Mac Download](https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeForBusinessPlugin.pkg)
+> **Note**: To enable audio/video functionality for IE 11 and Safari you need to install the Skype for Business Web App Plug-in. It is available for Windows and Mac computers:  
+>  - [Windows Download](https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeMeetingsApp.msi)
+>  - [Mac Download](https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeForBusinessPlugin.pkg)
 
 ### Get the SDK entry point and sign in a user
 
@@ -78,7 +78,7 @@ The following example uses the password grant authentication to sign a user in w
   <script>
     Skype.initialize({ apiKey: 'a42fcebd-5b43-4b89-a065-74450fb91255' }, api => {
       var app = new api.application;
-      
+
       app.signInManager.signIn ({
         username: '****',
         password: '****'

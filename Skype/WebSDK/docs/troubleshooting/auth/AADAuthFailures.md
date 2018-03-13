@@ -14,6 +14,7 @@ If you are developing an application with the Skype Web SDK and [authenticating 
 Depending on the specific failure case you are experiencing while trying to authenticate to the Skype Web SDK, this article provides specific guidance to fix your issue. 
 
 <a name="error-messages"></a>
+
 ## Common AAD Signin Error Messages
 
 If your user is redirected to the AAD sign in page, enters correct credentials for a Skype for Business Online user, and gets to an error page with the text "Sorry, but we're having trouble signing you in," there is a small section in the bottom right of the page labeled **Additional technical information**. This section provides a more specific error message to figure out exactly what is going wrong with the user's sign in attempt.
@@ -33,7 +34,7 @@ Read [AAD Auth Failures - Providing incorrect client ID](./AADAuth-ClientID.md) 
 
 ### Client requesting resource not in requiredResourceAccess list
 
-_"The client application has requested access to resource 'https://webdir.online.lync.com.' request has failed because the client has not specified this resource in its requiredResourceAccess list."_
+<em>"The client application has requested access to resource '<https://webdir.online.lync.com>.' request has failed because the client has not specified this resource in its requiredResourceAccess list."</em>
 
 This error indicates that you have not configured your AAD app to be able to access the Skype for Business Online APIs.
 Read [AAD Auth Failures - Client requesting resource not in requiredResourceAccess list](./AADAuth-DelegatePermissions.md) to learn how to correct the error.
@@ -60,6 +61,7 @@ This error indicates that you still have to manually edit the application manife
 Read [AAD Auth Failures - Implicit OAuth is not enabled for the application](./AADAuth-EnableImplicitOAuth.md) to learn how to correct the error.
 
 <a name="other-failures"></a>
+
 ## Other Common AAD Authentication Failures
 
 Some failures are a little more difficult to detect because the app will silently fail to sign in instead of redirecting to an error page with a helpful error message. You might need to use a web debugging proxy such as [Fiddler](http://www.telerik.com/fiddler) or [Charles](https://www.charlesproxy.com/) to identify what request is failing. The error message can sometimes be buried in an HTTP response that appears successful, such as in a response where the body is an HTML page with an error message hidden somewhere on the page.
@@ -77,6 +79,7 @@ The solution is to:
 > In Internet Explorer and Microsoft Edge, this file may be necessary for passing the OAuth token back from AAD and forward when signing in to SfB online.
 
 <a name="MS-specific"></a>
+
 ### AAD Authentication Failures in Internet Explorer and Microsoft Edge
 
 There are two failures that occur only on Internet Explorer and Microsoft Edge. In both of these cases, the user experiences the following:
@@ -103,6 +106,7 @@ Read [AAD Auth Failures - Invalid CORS redirect URI in Internet Explorer and Mic
 ---
 
 <a name="related-topics"></a>
+
 ## Related Topics
 
 - [Authentication using Azure Active Directory (AAD)](../../PTAuthAzureAD.md)
@@ -110,6 +114,7 @@ Read [AAD Auth Failures - Invalid CORS redirect URI in Internet Explorer and Mic
 - [Gathering Web Traffic Logs using the Skype Web SDK](../gatheringLogs/Logs-WebTraffic.md)
 
 <a name="external-resources"></a>
+
 ## External Resources
 
 - [Get and set up Fiddler](http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/InstallFiddler)

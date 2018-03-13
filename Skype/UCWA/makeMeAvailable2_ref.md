@@ -7,10 +7,11 @@ This resource lets users share their availability and allows them to receive inc
 Please note that a user can initiate communications, such as joining an [onlineMeeting](onlineMeeting_ref.md) or starting a phone call, without invoking this capability.
 This version will silently succeed if access is denied to one operation due to insufficient permissions. In the command channel we return what 
 operations succeeded
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -37,6 +38,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |User.ReadWrite|Read/write Skype user information|Allows the app to read and update presence, photo, location, note, call forwarding settings of the signed-in user|
@@ -49,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 

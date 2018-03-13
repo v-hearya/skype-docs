@@ -52,8 +52,8 @@ Follow these steps to use the **Setup Wizard** to install the Dialog Listener co
   
 
     
-   > [!NOTE]
-   > While the number of log files is limited, for production environments it is not recommended that you activate debug logging unless investigating a particular issue, as extensive amounts of logs are written. 
+   > [!NOTE]
+   > While the number of log files is limited, for production environments it is not recommended that you activate debug logging unless investigating a particular issue, as extensive amounts of logs are written. 
 
    The installer will attempt to locate a DNS SRV record referring to an SDN configuration service pool and let you choose this SRV record to connect to the configuration service. If you use this option, you will be prompted to specify a client certificate and an account under which the Dialog Listener Windows Service should run before continuing the installation.
     

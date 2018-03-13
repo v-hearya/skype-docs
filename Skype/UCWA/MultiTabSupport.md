@@ -16,7 +16,7 @@ When creating an application resource from different tabs, the underlying resour
 ```
 POST https://ext.vdomain.com:4443/ucwa/v1/applications HTTP/1.1
 X-MS-RequiresMinResourceVersion: 2
- 
+
 {
  "culture": "en-us",
  "endpointId": "123",
@@ -24,7 +24,6 @@ X-MS-RequiresMinResourceVersion: 2
  "userAgent": "foo",
  "instanceId": "abc"
 }
-
 ```
 
  **Sample Response**
@@ -34,7 +33,7 @@ X-MS-RequiresMinResourceVersion: 2
 
 ```
 HTTP/1.1 201 (or 200) OK
- 
+
 {
  "culture": "en-us",
  "userAgent": "foo",
@@ -55,12 +54,12 @@ HTTP/1.1 201 (or 200) OK
  "rel": "application",
  "etag": "4059573954"
 }
-
 ```
 
 
 ## 
 <a name="bk_addresources"> </a>
+
 
 When deleting an application resource the application may have other event channels assigned to it. If there are other event channels for other instanceIds, only the event channel for the given instanceId is deleted.
 

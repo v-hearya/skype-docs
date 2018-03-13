@@ -14,9 +14,9 @@ Receiving messages in a conversation involves getting a conversation object and 
 
 1. Get the conversation history service.
 
-  ```js
-  var historyService = conversation.historyService;
-  ```
+   ```js
+   var historyService = conversation.historyService;
+   ```
 
 2. Listen for new incoming messages.
 
@@ -38,7 +38,7 @@ Receiving messages in a conversation involves getting a conversation object and 
   ```
 
 4. Get the message sender's name.
-    
+
     The displayName property contains the display name of the sender. If the display name is not available, the sender's id value is returned. Otherwise, the example returns 'Unknown participant'.
 
 
@@ -55,7 +55,7 @@ Receiving messages in a conversation involves getting a conversation object and 
 
 
     The message can also be sent as an HTML-formatted message.
-    
+
 
 
   ```js
@@ -109,7 +109,6 @@ historyService.activityItems.added(function (item) {
         }
     }
 });
-
 ```
 
 The following example puts the previous procedure steps to together to show how to send a message.
@@ -124,7 +123,5 @@ var chatService = conversation.chatService;
 conversation.selfParticipant.chat.state.when('Connected', function () {
     chatService.sendMessage(text);
 });
-
-
 ```
 

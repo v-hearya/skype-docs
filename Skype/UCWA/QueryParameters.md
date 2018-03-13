@@ -30,7 +30,6 @@ The next example shows a POST request on the **note** resource, with a query par
 
 ```
 POST https://lyncweb.contoso.com/ucwa/v1/applications/113/me/note? Message=I'm%20away%20today HTTP/1.1
-
 ```
 
 
@@ -44,6 +43,5 @@ GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/103/people/search? qu
  .
  .
  .
-
 ```
 

@@ -4,10 +4,11 @@
 
 
 Represents a person or service that the user can communicate and collaborate with.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 contact is the persistent representation of a person or service.A contact can be referenced by a [participant](participant_ref.md) or in the context of communication.A contact resource can also be referenced by various containers such as a [group](group_ref.md) or [subscribedContacts](subscribedContacts_ref.md).
 
@@ -64,6 +66,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Contacts.ReadWrite|Read/write Skype user contacts and groups|Allows the app to read and write Skype user contacts and groups|
@@ -73,6 +76,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -127,7 +131,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
 if-none-match: 314c9ffc-cafc-4885-9b6b-d01e2962656c
-
 ```
 
 
@@ -197,7 +200,6 @@ Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
 if-none-match: 53624482-5f90-4309-bac4-f62f6e607304
-
 ```
 
 

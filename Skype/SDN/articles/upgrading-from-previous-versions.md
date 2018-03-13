@@ -28,16 +28,16 @@ When upgrading from version 2.4 to 3.0, follow the instructions below without dr
     
 
 1. For each SDN Manager instance of each SDN Manager pool: 
-  - Uninstall the 2.4 SdnManager. 
-  - Install the 3.0 SdnManager. 
-  - While upgrade is being performed on an SDN Manager in a pool, the other SDN Managers in the pool may continue to run on the previous version. 
-  - Once upgraded, an SDN Manager can be started up while other SDN Managers continue to run on the older version, as the pool is upgraded one server at a time. 
+   - Uninstall the 2.4 SdnManager. 
+   - Install the 3.0 SdnManager. 
+   - While upgrade is being performed on an SDN Manager in a pool, the other SDN Managers in the pool may continue to run on the previous version. 
+   - Once upgraded, an SDN Manager can be started up while other SDN Managers continue to run on the older version, as the pool is upgraded one server at a time. 
     
   
 2. For each Dialog Listener instance: 
-  - Uninstall the 2.4 Dialog Listener. 
-  - Install the 3.0 Dialog Listener. 
-  - The SDN Managers can continue to receive streams from the 2.4 Dialog Listeners while the upgrade is in progress. 
+   - Uninstall the 2.4 Dialog Listener. 
+   - Install the 3.0 Dialog Listener. 
+   - The SDN Managers can continue to receive streams from the 2.4 Dialog Listeners while the upgrade is in progress. 
     
   
 
@@ -49,25 +49,25 @@ When upgrading from version 2.2 to 3.0, follow the instructions below without dr
     
 
 1. Prior to upgrade, capture existing Listener/Subscriber configurations for post-upgrade re-application: 
-  - Invoke `SdnManager /d s <Identifier> Subscriber.<Identifier>.xml` to capture each individual Subscriber configuration. 
-  - Invoke `SdnManager /d l <Identifier> Listener.<Identifier>.xml` to capture each individual Listener pool configuration. 
-  - The files created will have the settings/format compatible for 3.0 uploading, post-upgrade. 
+   - Invoke `SdnManager /d s <Identifier> Subscriber.<Identifier>.xml` to capture each individual Subscriber configuration. 
+   - Invoke `SdnManager /d l <Identifier> Listener.<Identifier>.xml` to capture each individual Listener pool configuration. 
+   - The files created will have the settings/format compatible for 3.0 uploading, post-upgrade. 
 2. For each SdnManager instance of each SdnManager pool: 
-  - Uninstall the 2.2 SdnManager. 
-  - Install the 3.0 SdnManager. 
-  - While upgrade is being performed on an SdnManager in a pool, the other SdnManagers in the pool may continue to run on the previous version. 
-  - Once upgraded, an SdnManager can be started up while other SdnManagers continue to run on the older version, as the pool is upgraded one server at a time. 
+   - Uninstall the 2.2 SdnManager. 
+   - Install the 3.0 SdnManager. 
+   - While upgrade is being performed on an SdnManager in a pool, the other SdnManagers in the pool may continue to run on the previous version. 
+   - Once upgraded, an SdnManager can be started up while other SdnManagers continue to run on the older version, as the pool is upgraded one server at a time. 
 3. Remove and re-add each Subscriber (For each 'Subscriber.<Identifier>.xml' file): 
-  - Invoke `SdnManager /r s <Identifier>` to remove the individual 2.2 Subscriber. 
-  - Invoke `SdnManager /u s <Identifier> Subscriber.<Identifier>.xml` to re-add an individual 3.0 Subscriber configuration. 
+   - Invoke `SdnManager /r s <Identifier>` to remove the individual 2.2 Subscriber. 
+   - Invoke `SdnManager /u s <Identifier> Subscriber.<Identifier>.xml` to re-add an individual 3.0 Subscriber configuration. 
 4. For each DialogListener instance: 
-  - Uninstall the 2.2 DialogListener. 
-  - Install the 3.0 DialogListener. 
-  - The SdnManagers can continue to receive streams from the 2.2 DialogListeners while the upgrade is in progress. 
+   - Uninstall the 2.2 DialogListener. 
+   - Install the 3.0 DialogListener. 
+   - The SdnManagers can continue to receive streams from the 2.2 DialogListeners while the upgrade is in progress. 
   
 5. Remove and re-add each Listener pool (For each `Listener.<Identifier>.xml` file): 
     
-  - Invoke `SdnManager /r l <Identifier>` to remove the individual 2.2 Listener pool. 
+   - Invoke `SdnManager /r l <Identifier>` to remove the individual 2.2 Listener pool. 
     
   
   - Within 10 seconds, repeat the invoking of `SdnManager /r l <Identifier>` to remove the individual 2.2 Listener pool. 

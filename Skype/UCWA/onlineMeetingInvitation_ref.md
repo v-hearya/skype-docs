@@ -4,10 +4,11 @@
 
 
 Represents an invitation to a new or existing [onlineMeeting](onlineMeeting_ref.md).
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 This resource can be incoming or outgoing.If outgoing, the onlineMeetingInvitation can be created using [joinOnlineMeeting](joinOnlineMeeting_ref.md).This resource assists in keeping track of the invitation status; for example, the invitation could be accepted, declined, or ignored.An outgoing onlineMeetingInvitation will be in the 'Connecting' state while the invitation is being processed.Note that the onlineMeetingInvitation will not complete until the user has been admitted ([admit](admit_ref.md)). Even after the user is in the [lobby](lobby_ref.md), the onlineMeetingInvitation will still be in the 'Connecting' state.The onlineMeetingInvitation will complete with success if the user is admitted from the lobby or with failure if he or she is rejected.Ultimately, the onlineMeetingInvitation will complete with success or failure (in which case a [reason](reason_ref.md) is supplied).The onlineMeetingInvitation will complete with success only after the [participant](participant_ref.md) appears in the roster.If incoming, the onlineMeetingInvitation was created after the user accepted a [participantInvitation](participantInvitation_ref.md).Note that this is the only way an incoming onlineMeetingInvitation can occur.
 
@@ -64,6 +66,7 @@ This resource can have the following relationships.
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -72,33 +75,35 @@ The user must have at least one of these scopes for operations on the resource t
 ## Events
 <a name="sectionSection2"></a>
 
+
 ### Started
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|onlineMeetingInvitation|High|communication|Delivered when an online meeting invitation is started. This occurs when the application joins the [onlineMeeting](onlineMeeting_ref.md) modality.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                                                                                                            |
+|:--------------------------|:--------------------------|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
+| onlineMeetingInvitation   | High                      | communication           | Delivered when an online meeting invitation is started. This occurs when the application joins the [onlineMeeting](onlineMeeting_ref.md) modality. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "onlineMeetingInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/711"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/711>"
           },
           "type" : "started"
         }
@@ -112,29 +117,30 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 
-|**Resource**|**Priority**|**Sender**|**Reason**|
-|:-----|:-----|:-----|:-----|
-|onlineMeetingInvitation|High|communication|Delivered when the online meeting invitation is updated.|
+| <strong>Resource</strong> | <strong>Priority</strong> | <strong>Sender</strong> | <strong>Reason</strong>                                  |
+|:--------------------------|:--------------------------|:------------------------|:---------------------------------------------------------|
+| onlineMeetingInvitation   | High                      | communication           | Delivered when the online meeting invitation is updated. |
+
 Sample of returned event data.
 This sample is given only as an illustration of event syntax. The semantic content is not guaranteed to correspond to a valid scenario.
 {
   "_links" : {
     "self" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=1"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=1>"
     },
     "next" : {
-      "href" : "http://sample:80/ucwa/v1/applications/appId/events?ack=2"
+      "href" : "<http://sample:80/ucwa/v1/applications/appId/events?ack=2>"
     }
   },
   "sender" : [
     {
       "rel" : "communication",
-      "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication",
+      "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication>",
       "events" : [
         {
           "link" : {
             "rel" : "onlineMeetingInvitation",
-            "href" : "https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/711"
+            "href" : "<https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitations/711>"
           },
           "type" : "updated"
         }
@@ -149,6 +155,7 @@ This sample is given only as an illustration of event syntax. The semantic conte
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -203,7 +210,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/json
-
 ```
 
 
@@ -356,7 +362,6 @@ Get https://fe1.contoso.com:443/ucwa/v1/applications/192/communication/invitatio
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: application/xml
-
 ```
 
 
@@ -424,9 +429,11 @@ Content-Length: 4276
     <property name="uri">sip:john@contoso.com</property>
     <property name="workPhoneNumber">tel:+14251111111</property>
   </resource>
+
   <resource rel="startEmergencyCallInput" href="/ucwa/v1/applications/192/communication/invitations/665/startEmergencyCallParameters">
     <property name="rel">startEmergencyCallParameters</property>
   </resource>
+
 </resource>
 ```
 

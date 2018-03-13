@@ -11,6 +11,7 @@ Some UCWA resources, such as the [participantInvitation](participantInvitation_r
 ## Create an Events object
 <a name="sectionSection0"> </a>
 
+
 The **Events** constructor has two parameters: a **Cache** object and a **Transport** object. For more information, see [Cache library](CacheLibrary.md) and [Transport library](TransportLibrary.md). Before an **Events** object can be created, objects representing the two parameters must be created.
 
 
@@ -30,14 +31,16 @@ The variables declared in the preceding example are used in subsequent examples 
 ## addEventHandlers(raiser, handlers)
 <a name="sectionSection1"> </a>
 
+
 The **addEventHandlers** function adds an event handler for a specified resource.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|raiser|The resource that raises the event that will trigger the handlers.|
-|handlers|The set of handlers, one for each event type.|
+| <strong>Parameter</strong> | <strong>Description</strong>                                       |
+|:---------------------------|:-------------------------------------------------------------------|
+| raiser                     | The resource that raises the event that will trigger the handlers. |
+| handlers                   | The set of handlers, one for each event type.                      |
+
  **Syntax**
 
 
@@ -45,7 +48,6 @@ The **addEventHandlers** function adds an event handler for a specified resource
 
 ```
 addEventHandlers(raiser , handlers )
-
 ```
 
  **Example**
@@ -65,7 +67,7 @@ handlers = {
  started: handlePresence,
  updated: handlePresence
 };
- 
+
 function handlePresence(data) {
  if (data.results !== undefined) {
  alert(data.results);
@@ -80,7 +82,6 @@ The next example passes the objects that are created in the previous example as 
 
 ```
 Events.addEventHandlers(raiser, handlers);
-
 ```
 
 
@@ -114,13 +115,15 @@ The _handlers_parameter should be an object containing _one or more_of the follo
 ## removeEventHandlers(raiser)
 <a name="sectionSection2"> </a>
 
+
 The **removeEventHandlers** function removes event handlers for a specified resource.
 
 
 
-|**Parameter**|**Description**|
-|:-----|:-----|
-|raiser|The raiser of the event whose handlers are to be removed.|
+| <strong>Parameter</strong> | <strong>Description</strong>                              |
+|:---------------------------|:----------------------------------------------------------|
+| raiser                     | The raiser of the event whose handlers are to be removed. |
+
  **Syntax**
 
 
@@ -150,6 +153,7 @@ If a raiser for the event is not found, a message will be displayed in the conso
 ## startEvents()
 <a name="sectionSection3"> </a>
 
+
 The **startEvents** function begins listening on the event channel.
 
  **Syntax**
@@ -178,6 +182,7 @@ Checks whether event handling is already active; if not, it makes the initial re
 
 ## stopEvents()
 <a name="sectionSection4"> </a>
+
 
 The **stopEvents** function stops listening on the event channel and clears the event handler array.
 

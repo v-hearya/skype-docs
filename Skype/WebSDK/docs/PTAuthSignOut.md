@@ -9,10 +9,10 @@ After sign-in  and creation of the application object we can get access to the s
 
 1. Signing Out.
 
- ```js
+   ```js
     application.signInManager.signOut().then(function () {
         // signed out succesfully
     }, function (error) {
         // handle error
     });
-  ```
+   ```

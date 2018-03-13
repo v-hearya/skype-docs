@@ -13,13 +13,13 @@ The following procedure assumes that a user has signed in before searching for p
 
 
 1. Create a  **SearchQuery** for person search: **personsAndGroupsManager.createPersonSearchQuery**.
-    
+
 2. Specify the search terms in the  **SearchQuery**.
-    
+
 3. Execute the  **searchQuery.getMore** method and get the search **results** in the **onSuccess** method.
-    
+
 4. Call the  **forEach** method of the array of results. For each result, **Person** object is the result.result.
-    
+
 >**Note**:  The maximum number of results for a person search query is 50. 
 
   ```js
@@ -37,7 +37,6 @@ personSearchQuery.getMore().then(null, function (results) {
         });
     });
 });
-
   ```
 
 
@@ -45,11 +44,11 @@ personSearchQuery.getMore().then(null, function (results) {
 
 
 1. Create a  **SearchQuery** for group search: **personsAndGroupsManager.createGroupSearchQuery**.
-    
+
 2. Specify the search terms in the  **SearchQuery**.
-    
+
 3. Execute the  **searchQuery.getMore** method and get the search **results** in the **onSuccess** method.
-    
+
 4. Call the  **forEach** method of the array of results. For each result, **Group** object is the **result.result**.
 
 
@@ -63,7 +62,6 @@ groupSearchQuery.getMore().then(null, function (results) {
         console.log('Distribution Group ', group.name());
     });
 });
-
   ```
 
 

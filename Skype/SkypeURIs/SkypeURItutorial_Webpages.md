@@ -106,7 +106,6 @@ the 32 pixel, white image asset:
         });
     </script>
 </div>
-
 ```
 
 

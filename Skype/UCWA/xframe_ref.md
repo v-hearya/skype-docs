@@ -4,10 +4,11 @@
 
 
 Represents the cross-domain frame used for web-based applications.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 To prevent against cross-domain attacks, AJAX requests are not allowed between two different domains.Instead, the browser-based postMessage feature is used between the application's domain and the server's domain using this special iframe.
 
@@ -43,6 +45,7 @@ This resource can have the following relationships.
 
 
 <a name="sectionSection2"></a>
+
 
 ### GET
 
@@ -93,7 +96,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/xframe
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: text/html
-
 ```
 
 
@@ -120,7 +122,6 @@ Get https://fe1.contoso.com:443/autodiscover/autodiscoverservice.svc/root/xframe
 Authorization: Bearer cwt=PHNhbWw6QXNzZXJ0aW9uIHhtbG5...uZm8
 Host: fe1.contoso.com
 Accept: text/html
-
 ```
 
 

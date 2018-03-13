@@ -17,14 +17,14 @@ After the conversation and audio modality are established we can begin communica
 
 1. Start group audio conversation, and track participant events 
 
-  ```js
+   ```js
     var conversationsManager = application.conversationsManager;
     conversation = conversationsManager.createConversation();
 
     conversation.selfParticipant.audio.state.when('Connected', function () {
         conversation.participants.added(function (person) {
             person.audio.state.when('Connected', function () {
-				// Conversation established
+                // Conversation established
             });
         });
     });
@@ -40,7 +40,7 @@ After the conversation and audio modality are established we can begin communica
     conversation.audioService.start().then(null, function (error) {
         // handle error
     });
-  ```
+   ```
 
 2. **Advanced**: Track remote participant audio mute state
 
@@ -51,11 +51,11 @@ After the conversation and audio modality are established we can begin communica
     person.audio.isMuted.when(false, function () {
        // person.displayName() unmuted their audio
     });
-  ```
+   ```
 
 3. End the conversation
 
-  ```js
+   ```js
     conversation.leave().then(function () {
         // conversation ended
     }, function (error) {
@@ -63,4 +63,4 @@ After the conversation and audio modality are established we can begin communica
     }).then(function () {
         // clean up operations
     });
-  ```
+   ```

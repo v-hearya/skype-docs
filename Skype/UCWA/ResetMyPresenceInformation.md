@@ -10,9 +10,9 @@ Resetting a **me** user's presence involves finding the embedded resource in the
 The steps here assume that you have already created an application and have received a response that contains the href for an [application](application_ref.md) resource. For more information, see [Create an application](CreateAnApplication.md).
 
 1. Send a POST request on the makeMeAvailable resource.
- 
- One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the href for the [makeMeAvailable](makeMeAvailable_ref.md) resource. Search for the [me](me_ref.md) resource embedded in your application, and then locate the href of the **makeMeAvailable** link.
- 
+
+   One of the hypermedia links that are served in the response for the [application](application_ref.md) resource is the href for the [makeMeAvailable](makeMeAvailable_ref.md) resource. Search for the [me](me_ref.md) resource embedded in your application, and then locate the href of the **makeMeAvailable** link.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101/me/makeMeAvailable HTTP/1.1
     Accept: application/json
@@ -33,9 +33,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 2. Process the response from the request in the previous step.
- 
- The response you receive should be 204 No content, as shown here.
- 
+
+   The response you receive should be 204 No content, as shown here.
+
     ```
     HTTP/1.1 204 No Content
     Connection: Keep-Alive
@@ -48,9 +48,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 3. Send a GET request on the **application** resource.
- 
- A sample request is shown here.
- 
+
+   A sample request is shown here.
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/101 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -63,13 +63,12 @@ The steps here assume that you have already created an application and have rece
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 4. Process the response from the previous request.
- 
- The response from the previous GET request should be 200 OK. The link that is of interest here is the **presence** link in the embedded **me** resource.
- 
+
+   The response from the previous GET request should be 200 OK. The link that is of interest here is the **presence** link in the embedded **me** resource.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -115,9 +114,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 5. Send a POST request on the **presence** resource.
- 
- Resetting one's presence amounts to sending a POST request on the **presence** link, with an empty body. This allows the system to set presence to the value that is appropriate based on your current activity, availability, and calendar information. A sample request is shown here.
- 
+
+   Resetting one's presence amounts to sending a POST request on the **presence** link, with an empty body. This allows the system to set presence to the value that is appropriate based on your current activity, availability, and calendar information. A sample request is shown here.
+
     ```
     POST https://contoso.com/ucwa/oauth/v1/applications/102/me/presence HTTP/1.1
     Accept: application/json
@@ -148,9 +147,9 @@ The steps here assume that you have already created an application and have rece
     ```
 
 6. Process the response from the previous POST request.
- 
- The response you receive should be 204 No Content. This means that your presence request has been received by the server. An event will confirm that your application is the most active and this presence is now being shared with other contacts.
- 
+
+   The response you receive should be 204 No Content. This means that your presence request has been received by the server. An event will confirm that your application is the most active and this presence is now being shared with other contacts.
+
     ```
     HTTP/1.1 204 No Content
     Connection: Keep-Alive
@@ -160,6 +159,5 @@ The steps here assume that you have already created an application and have rece
     X-AspNet-Version: 4.0.30319
     X-MS-Server-Fqdn: W15-LYNC-SE1.contoso.com
     X-Powered-By: ASP.NET
-
     ```
 

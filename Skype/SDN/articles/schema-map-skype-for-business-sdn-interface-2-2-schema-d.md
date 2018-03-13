@@ -18,6 +18,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="D">
   <!-- More documentation about the QoE metrics used: http://technet.microsoft.com/en-us/library/gg425961.aspx -->
+
   <xs:complexType name="CodecType">
     <xs:sequence>
       <xs:element name="Bandwidth" type="BandwidthDataType" minOccurs="0">
@@ -31,6 +32,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Name" type="xs:string" use="required">
       <xs:annotation>
@@ -57,6 +59,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Multiplexed" type="xs:int" use="optional">
       <xs:annotation>
@@ -141,6 +144,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!-- 2.1 -->
+
       <xs:element minOccurs="0" name="ReflexiveIP" type="ipAddressPattern">
         <xs:annotation>
           <xs:documentation>IP used outside of the NAT.</xs:documentation>
@@ -212,6 +216,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!-- 2.2 -->
+
       <xs:element name="Trunk" minOccurs="0" type="xs:string">
         <xs:annotation>
           <xs:documentation>Identifier for the SipTrunk or other SIP device used to connect to the endpoint.</xs:documentation>
@@ -233,6 +238,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -312,6 +318,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!-- 2.2 -->
+
       <xs:element name="TenantId" minOccurs="0" type="xs:string">
         <xs:annotation>
           <xs:documentation>Identifier for the tenanat that this endpoing belongs to.</xs:documentation>
@@ -344,6 +351,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
       </xs:element>
 
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -423,6 +431,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
 <!-- 2.2 -->      
+
       <xs:element name="TenantId" minOccurs="0" type="xs:string">
         <xs:annotation>
           <xs:documentation>Identifier for the tenanat that this endpoing belongs to.</xs:documentation>
@@ -454,6 +463,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -514,7 +524,9 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
 <!-- 2.2 -->
+
       <xs:element name="TenantId" minOccurs="0" type="xs:string">
         <xs:annotation>
           <xs:documentation>Identifier for the tenanat that this endpoing belongs to.</xs:documentation>
@@ -625,6 +637,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!-- 2.2 -->
+
       <xs:element name="TenantId" minOccurs="0" type="xs:string">
         <xs:annotation>
           <xs:documentation>Identifier for the tenanat that this endpoing belongs to.</xs:documentation>
@@ -656,6 +669,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -687,12 +701,14 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
       <xs:element minOccurs="0" name="Properties" type="StartPropertiesType">
         <xs:annotation>
           <xs:documentation>Properties of the started or updated media stream.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Type" type="xs:string" use="required">
       <xs:annotation>
@@ -1056,6 +1072,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
           </xs:annotation>
         </xs:element>
         <!-- Added in 2.1 -->
+
         <xs:element name="CaptureDevice" type="xs:string">
           <xs:annotation>
             <xs:documentation>
@@ -1242,6 +1259,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:element>
 
         <!-- Attention: this field is obsolete and won't be filled anyomre. The content is the same as above VideoLocalFrameLossPercentageAvg -->
+
         <xs:element name="LocalFrameLossPercentageAvg" type="DoubleBetween0And100">
           <xs:annotation>
             <xs:documentation>
@@ -1369,6 +1387,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -1559,6 +1578,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
       </xs:element>
       
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
     <xs:attribute name="Originator" type="xs:string" use="optional">
       <xs:annotation>
@@ -1578,6 +1598,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 
@@ -1682,6 +1703,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
       <xs:element minOccurs="0" name="Properties" type="EndedProperties">
         <xs:annotation>
           <xs:documentation>Properties of the Error.</xs:documentation>
@@ -1789,6 +1811,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
 
       <xs:element minOccurs="0" name="Properties" type="MessageProperties">
         <!-- for Error and ended -->
+
         <xs:annotation>
           <xs:documentation>Details of the Error or reason for ending the streams.</xs:documentation>
         </xs:annotation>
@@ -1874,6 +1897,7 @@ This topic shows the schema definition for **SDNInterface.Schema.D.xsd**.
         </xs:annotation>
       </xs:element>
       <!--<xs:any namespace="##other" processContents="lax"/>-->
+
     </xs:sequence>
   </xs:complexType>
 

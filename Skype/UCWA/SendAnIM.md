@@ -11,9 +11,9 @@ The steps shown here assume that you have already created an application and hav
 
 
 1. Send a POST request on the [startMessaging](startMessaging_ref.md) resource, which can be found in the [communication](communication_ref.md) resource embedded in **application**. A POST request on this resource causes a [messagingInvitation](messagingInvitation_ref.md) resource to be created and started in the event channel.
- 
- The sample shown here includes a request body with values for **sessionContext**, **to**, **operationID**, and other values. The "to" person is one of the contacts obtained in a previous step.
- 
+
+   The sample shown here includes a request body with values for **sessionContext**, **to**, **operationID**, and other values. The "to" person is one of the contacts obtained in a previous step.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/communication/startmessaging HTTP/1.1
     Accept: application/json
@@ -38,11 +38,10 @@ The steps shown here assume that you have already created an application and hav
     "to":"sip:lenea@contoso.com",
     "operationId":"5028e824-2268-4b14-9e59-1abad65ff393"
     }
-
     ```
 
 2. Process the response from the previous request. If the request is successful, a response code of 201 Created is returned.
- 
+
     ```
     HTTP/1.1 201 Created
     Connection: Keep-Alive
@@ -57,7 +56,7 @@ The steps shown here assume that you have already created an application and hav
     ```
 
 3. Send a GET request on the [events](events_ref.md) resource.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/events?ack=2 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -73,9 +72,9 @@ The steps shown here assume that you have already created an application and hav
     ```
 
 4. Process the response from the previous request. 
- 
- The **messagingInvitation** is returned as an embedded resource. Another embedded resource that is the [conversation](conversation_ref.md) resource, which is used in the next step. Other information contained here is that the **conversation** is in the Connecting state.
- 
+
+   The **messagingInvitation** is returned as an embedded resource. Another embedded resource that is the [conversation](conversation_ref.md) resource, which is used in the next step. Other information contained here is that the **conversation** is in the Connecting state.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -207,17 +206,16 @@ The steps shown here assume that you have already created an application and hav
     .
     .
     .
-    
-    }
-    ]
-    }
-    ]
-    }
 
+    }
+    ]
+    }
+    ]
+    }
     ```
 
 5. Send a GET request on the **events** resource.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/events?ack=3 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -230,13 +228,12 @@ The steps shown here assume that you have already created an application and hav
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 6. Process the response from the previous request.
- 
- Here we find that the conversation state has progressed to the **Connected** state, that the **messagingInvitation** status is **Success**, and that LeneA has been added to the **conversation**.
- 
+
+   Here we find that the conversation state has progressed to the **Connected** state, that the **messagingInvitation** status is **Success**, and that LeneA has been added to the **conversation**.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -419,13 +416,12 @@ The steps shown here assume that you have already created an application and hav
     }
     ]
     }
-
     ```
 
 7. Send a GET request on the **conversation** resource.
- 
- The response from this request provides information about the conversation, as well as links to other capabilities.
- 
+
+   The response from this request provides information about the conversation, as well as links to other capabilities.
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/communication/conversations/21a1 HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -438,13 +434,12 @@ The steps shown here assume that you have already created an application and hav
     User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
     Host: lyncweb.contoso.com
     Connection: Keep-Alive
-
     ```
 
 8. Process the response from the previous request.
- 
- Now that the **conversation** is in the **Connected** state, the response from the previous GET request provides links that can enable the application begin the process of adding modalities or adding new participants.
- 
+
+   Now that the **conversation** is in the **Connected** state, the response from the previous GET request provides links that can enable the application begin the process of adding modalities or adding new participants.
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -479,13 +474,12 @@ The steps shown here assume that you have already created an application and hav
     },
     "rel":"conversation"
     }
-
     ```
 
 9. Send a POST request on the [sendMessage](sendMessage_ref.md) resource embedded in the **conversation**.
- 
- In this step the text of the instant message ("What's up?") is sent as the body of the POST request.
- 
+
+   In this step the text of the instant message ("What's up?") is sent as the body of the POST request.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/communication/conversations/21a1/messaging/messages?OperationContext=6b6ce55c-d4b9-4303-a61f-5813ecb2d7b1 HTTP/1.1
     Accept: application/json
@@ -506,7 +500,7 @@ The steps shown here assume that you have already created an application and hav
     ```
 
 10. Process the response from the previous request.
- 
+
     ```
     HTTP/1.1 201 Created
     Connection: Keep-Alive
@@ -518,11 +512,10 @@ The steps shown here assume that you have already created an application and hav
     X-AspNet-Version: 4.0.30319
     X-MS-Server-Fqdn: W15-LYNC-SE1.contoso.com
     X-Powered-By: ASP.NET
-
     ```
 
 11. Send a GET request on the **events** resource.
- 
+
     ```
     GET https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/events?ack=6 HTTP/1.1
     Authorization: Bearer cwt=AAEB ...buHc
@@ -538,7 +531,7 @@ The steps shown here assume that you have already created an application and hav
     ```
 
 12. Process the response from the previous request. This can contain information, such as any messages sent by your application, messages sent by other participants, the addition of modalities, and the addition of participants.
- 
+
     ```
     HTTP/1.1 200 OK
     Connection: Keep-Alive
@@ -585,9 +578,9 @@ The steps shown here assume that you have already created an application and hav
     ```
 
 13. Send a POST request on the [stopMessaging](stopMessaging_ref.md) href.
- 
- Sending a POST request on the **stopMessaging** href terminates the conversation.
- 
+
+    Sending a POST request on the **stopMessaging** href terminates the conversation.
+
     ```
     POST https://lyncweb.contoso.com/ucwa/oauth/v1/applications/102/communication/conversations/21a1/messaging/terminate HTTP/1.1
     Authorization: Bearer cwt=AAEB...buHc
@@ -602,11 +595,10 @@ The steps shown here assume that you have already created an application and hav
     Content-Length: 0
     Connection: Keep-Alive
     Cache-Control: no-cache
-
     ```
 
 14. Process the response from the previous request.
- 
+
     ```
     HTTP/1.1 204 No Content
     Connection: Keep-Alive
@@ -616,6 +608,5 @@ The steps shown here assume that you have already created an application and hav
     X-AspNet-Version: 4.0.30319
     X-MS-Server-Fqdn: W15-LYNC-SE1.contoso.com
     X-Powered-By: ASP.NET
-
     ```
 

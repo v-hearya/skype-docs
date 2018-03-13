@@ -11,7 +11,7 @@ The steps here assume that you have already created an application and have rece
 
 1. Send a PUT request on the myOnlineMeetings resource.
  
- A PUT request is used to update an existing online meeting. In contrast, a POST request is used to create a new online meeting. A sample request is shown here. Note that the etag is supplied in the If-Match header. If the meeting has changed on the server, this will trigger an error. The client should re-fetch the meeting and alert the user that the meeting has changed so she can resolve the changes.
+   A PUT request is used to update an existing online meeting. In contrast, a POST request is used to create a new online meeting. A sample request is shown here. Note that the etag is supplied in the If-Match header. If the meeting has changed on the server, this will trigger an error. The client should re-fetch the meeting and alert the user that the meeting has changed so she can resolve the changes.
  
     ```
     PUT https://lyncweb.contoso.com/ucwa/oauth/v1/applications/103985322388/onlineMeetings/myOnlineMeetings/PYC58WSY HTTP/1.1
@@ -60,7 +60,7 @@ The steps here assume that you have already created an application and have rece
 
 2. Process the response from the previous PUT request.
  
- The response you receive should be 200 OK. The body of the response contains a series of key-value pairs for the updated meeting. As was stated before, a 4xx response indicates that the meeting has changed on the server. The client should re-fetch the meeting and alert the user that the meeting has changed so she can resolve the changes.
+   The response you receive should be 200 OK. The body of the response contains a series of key-value pairs for the updated meeting. As was stated before, a 4xx response indicates that the meeting has changed on the server. The client should re-fetch the meeting and alert the user that the meeting has changed so she can resolve the changes.
  
     ```
     HTTP/1.1 200 OK

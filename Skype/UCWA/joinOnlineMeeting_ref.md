@@ -4,10 +4,11 @@
 
 
 Joins an online meeting.
-            
+
 
 ## Web Link
 <a name = "sectionSection0"> </a>
+
 
 For more on web links, see [Web links](WebLinks.md).
 
@@ -19,6 +20,7 @@ For more on web links, see [Web links](WebLinks.md).
 
 ## Resource description
 <a name = "sectionSection1"> </a>
+
 
 joinOnlineMeeting enables an application to join an already scheduled online meeting using theassigned meeting URI. Use [myOnlineMeetings](myOnlineMeetings_ref.md) to schedule, retrieve, or update an online meeting.Note that if no onlineMeetingUri is supplied, the user will join a newly created [onlineMeeting](onlineMeeting_ref.md).
 
@@ -39,6 +41,7 @@ None
 
 
 The user must have at least one of these scopes for operations on the resource to be allowed.
+
 |**Scope**|**Permission**|**Description**|
 |:-----|:-----|:-----|
 |Conversations.Initiate|Initiate conversations and join meetings|Allows the app to initiate instant messages, audio, video, and desktop sharing conversations; and join meetings on-behalf of the signed-in user|
@@ -48,6 +51,7 @@ The user must have at least one of these scopes for operations on the resource t
 
 
 <a name="sectionSection2"></a>
+
 
 ### POST
 
@@ -138,7 +142,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 ```
 HTTP/1.1 201 Created
 Location: /ucwa/v1/applications/192/communication/invitations/711
-
 ```
 
 
@@ -172,7 +175,6 @@ This sample is given only as an illustration of response syntax. The semantic co
 ```
 HTTP/1.1 201 Created
 Location: /ucwa/v1/applications/192/communication/invitations/711
-
 ```
 
 
